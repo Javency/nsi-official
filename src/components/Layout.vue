@@ -1,0 +1,263 @@
+<template>
+    <div>
+        <div class="header">
+            <!-- logo -->
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="logoContainer">
+                                <a href="javascript:;"><img src="../assets/img/logo.png" alt="" width="220" height="45"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- nav -->
+            <div class="nav-bg searchBar" :class="searchBarFixed==true?'isFixed':''" id="searchBar">
+                <div class="container plpr0 navContainer">
+                    <div class="row">
+                        <div class="col-md-12 plpr0">
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-center">
+                                            <li><router-link :to="{path:'/'}">首页</router-link><span class="sr-only">(current)</span></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们<span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">公司使命</a></li>
+                                                    <li><a href="#">团队介绍</a></li>
+                                                    <li><a href="#">合作伙伴</a></li>
+                                                    <li><a href="#">联系我们</a></li>
+                                                    <!-- <li role="separator" class="divider"></li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li><a href="#">One more separated link</a></li> -->
+                                                </ul>
+                                            </li>
+                                            <li><router-link :to="{path:'/page01'}">咨询中心</router-link></li>
+                                            <li><a href="#">会议活动</a></li>
+                                            <li><a href="#">新荷学校</a></li>
+                                            <li><a href="#">研究院</a></li>
+                                            <li><a href="#">咨询服务</a></li>
+                                        </ul>
+                                    </div><!-- /.navbar-collapse -->
+                                </div><!-- /.container-fluid -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <!-- <router-link :to="{path:'/'}">首页</router-link>
+            <router-link :to="{path:'/page01'}">第一页</router-link> -->
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </div>
+        <div class="footer mt50">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="contact">CONTACT&nbsp;<span>联系我们</span></h3>
+                <ul class="contact-info">
+                  <li>联系电话：010-52468286</li>
+                  <li>手机：15010927730</li>
+                  <li>邮箱：info@xinxueshuo.cn</li>
+                  <li>地址：北京市西城区新风街2号天成科技大厦A座1006</li>
+                </ul>
+              </div>
+              <div class="col-md-4"></div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="footer-company">新学说文化传媒有限公司</h3>
+                <h3 class="footer-company company-en">NewSchool Insight</h3>
+              </div>
+              <div class="col-md-6">
+                <div class="copyright">
+                  <p>Copyright © 2018 xinxueshuo.cn All Rights Reserved 京ICP备 16031987号-1</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            searchBarFixed:false
+        }
+    },
+   mounted(){
+        window.addEventListener('scroll', this.handleScroll)
+   },
+   methods:{
+      handleScroll () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        var offsetTop = document.querySelector('#searchBar').offsetTop
+        // console.log(scrollTop)
+          if (scrollTop > offsetTop) {
+            this.searchBarFixed = true
+          } else {
+            this.searchBarFixed = false
+          }
+      }
+   }
+}
+</script>
+
+<style>
+    .searchBar{
+        transition: all .3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+    }
+    .plpr0{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .logoContainer{
+        padding: 20px 0;
+    }
+
+    .nav-bg{
+        background-color: #20528f;
+        z-index: 999;
+        position: relative;
+        width: 100%;
+    }
+    .navbar{
+        margin-bottom: 0;
+        background-color: #20528f;
+        border-color: #20528f;
+    }
+    .navbar-default .navbar-nav>li>a{
+        color: #fff;
+        transition: all .2s;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+        color: #fff;
+        background-color: #0e3361;
+    }
+    .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+        color: #fff;
+        background-color: #0e3361;
+    }
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+        color: #fff;
+        background-color: #0e3361;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #fff;
+        right: 15px;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+
+    .navbar-default .navbar-toggle:hover {
+        background-color: #fff;
+    }
+    .navbar-default .navbar-toggle:focus{
+         background-color: #0e3361;
+    }
+
+    .navbar-nav {
+        margin: 0 -15px;
+    }
+
+    /* 判断吸顶 */
+
+    .isFixed{
+        position:fixed;
+        top:0;
+        z-index:999;
+        width: 100%;
+    }
+
+    /* footer */
+    .footer{
+      padding: 20px 0;
+      background-color: #2c6daf;
+    }
+    .footer{
+      color: #FFF;
+    }
+    .footer .contact{
+      font-weight: 700;
+      color: #FFF;
+      font-size: 28px;
+      font-family: -webkit-pictograph,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .footer .contact>span{
+      font-weight: normal;
+      font-size: 14px;
+      font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+      letter-spacing: 1px;
+    }
+    .contact-info{
+      padding-left: 0;
+      list-style: none;
+    }
+    .contact-info>li{
+      line-height: 2;
+      color: #699bda;
+      font-family: Arial, Helvetica, sans-serif
+    }
+    .footer-bottom{
+      padding: 20px 0;
+      background-color: #2f2f2f;
+    }
+    .footer-company{
+      color: #969696;
+      letter-spacing: 1px;
+    }
+    .company-en{
+      font-size: 18px;
+    }
+    .copyright{
+      padding-top: 40px;
+      font-size: 13px;
+      color: #969696;
+    }
+    @media (max-width: 768px){
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+          color: #fff
+      }
+
+     .nav-bg{
+        background-color: #20528f;
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+    }
+    .navContainer{
+        padding-left: 15px;
+        padding-right: 1px;
+    }
+    .content{
+        padding-top: 52px;
+    }
+}
+</style>
