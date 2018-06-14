@@ -47,7 +47,7 @@
                     </div>
                     <div class="row pt50">
                         <!-- 两则新闻概要 -->
-                        <div class="col-md-6">
+                        <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index<2">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="news-content">
@@ -56,25 +56,9 @@
                                     </div>
                                 <div class="col-md-8">
                                     <div class="newsBox">
-                                        <h5 class="mt0 multiline"><a href="javascript:;" class="news-title">世界杯身价榜：法国居首德国第五</a></h5>
-                                        <p class="news-articel multiline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor accusantium esse repellendus minima soluta. Odit ab eum omnis facere? Corrupti eius, sapiente natus nemo eveniet pariatur perspiciatis sunt distinctio consequatursapiente natus nemo eveniet pariatur perspiciatis sunt distinctio consequatur.</p>
-                                        <span class="news-time">2018.06.13</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="news-content">
-                                        <img src="" alt="" width="100%" height="170px" class="news-img">
-                                    </div>
-                                    </div>
-                                <div class="col-md-8">
-                                    <div class="newsBox">
-                                        <h5 class="mt0 multiline"><a href="javascript:;" class="news-title">世界杯身价榜：法国居首德国第五</a></h5>
-                                        <p class="news-articel multiline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui fugiat enim laudantium expedita aliquam a ipsum voluptas ut mollitia et dolores consectetur ea placeat ad repudiandae inventore, quas sit dolore? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor accusantium esse repellendus minima soluta. Odit ab eum omnis facere? Corrupti eius, sapiente natus nemo eveniet pariatur perspiciatis sunt distinctio consequatur.</p>
-                                        <span class="news-time">2018.06.13</span>
+                                        <h5 class="mt0 multiline"><a href="javascript:;" class="news-title">{{news.title}}</a></h5>
+                                        <p class="news-articel multiline">{{news.content}}</p>
+                                        <span class="news-time">{{news.time}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -83,56 +67,23 @@
                     <div class="fourNews">
                       <div class="row mt30">
                           <!-- 四条新闻标题 -->
-                          <div class="col-md-6">
+                          <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index>=2&&index<7">
                               <div class="newsInfo">
                                   <div class="row">
                                     <div class="col-md-10">
-                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail">• 世界杯身价榜：法国居首德国第五?</a></p>
+                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail">{{"• "+news.title}}</a></p>
                                     </div>
                                     <div class="col-md-2">
-                                      <span class="newsInfo-time">2018.06.13</span>
-                                    </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="newsInfo">
-                                  <div class="row">
-                                    <div class="col-md-10">
-                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail">• Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?</a></p>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <span class="newsInfo-time">2018.06.13</span>
+                                      <span class="newsInfo-time">{{news.time}}</span>
                                     </div>
                                   </div>
                               </div>
                           </div>
                       </div>
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="newsInfo">
-                                  <div class="row">
-                                    <div class="col-md-10">
-                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail">• Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?</a></p>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <span class="newsInfo-time">2018.06.13</span>
-                                    </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="newsInfo">
-                                  <div class="row">
-                                    <div class="col-md-10">
-                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail">• Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?</a></p>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <span class="newsInfo-time">2018.06.13</span>
-                                    </div>
-                                  </div>
-                              </div>
-                          </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 text-right">
+                        <a href="javascript:;">更多&gt;&gt;</a>
                       </div>
                     </div>
                 </div>
@@ -160,50 +111,17 @@
                         <div class="col-md-5 col-md-offset-1">
                           <div class="othersActivities">
                             <div class="row">
-                              <div class="col-md-6 plpr0" v-for="(activities,index) in othersActivities" @mouseenter="active(index)" :key="index">
+                              <div class="col-md-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
                                 <a href="javascript:;">
                                   <div class="othersBox" :class="activities.className">
                                     <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">
-                                      <p>{{activities.title}}</p>
+                                      <p>{{activities.titleZH}}</p>
                                       <p>{{activities.time}}</p>
                                     </div>
                                   </div>
                                 </a>
                               </div>
-                              <!-- <div class="col-md-6 plpr0">
-                                <a href="javascript:;">
-                                  <div class="othersBox othersBox02">
-                                    <div class="othersBox-bg"></div>
-                                    <div class="othersBox-content">
-                                      <p>新荷学校大会</p>
-                                      <p>2018.06.05-2018.06.07</p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="col-md-6 plpr0">
-                                <a href="javascript:;">
-                                  <div class="othersBox othersBox03">
-                                    <div class="othersBox-bg"></div>
-                                    <div class="othersBox-content">
-                                      <p>新荷学校大会</p>
-                                      <p>2018.06.05-2018.06.07</p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="col-md-6 plpr0">
-                                <a href="javascript:;">
-                                  <div class="othersBox othersBox04">
-                                    <div class="othersBox-bg"></div>
-                                    <div class="othersBox-content">
-                                      <p>新荷学校大会</p>
-                                      <p>2018.06.05-2018.06.07</p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </div> -->
                             </div>
                           </div>
                         </div>
@@ -245,23 +163,59 @@
                         prevEl: '.swiper-button-prev',
                     }
                 },
+                // 最新动态
+                recentNews:[
+                  {
+                    title:"世界杯身价榜：法国居首德国第五",
+                    time:"2018.06.13",
+                    content:"Lorem ipsum dolor sit amet. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
+                  },
+                  {
+                    title:"习近平：创新是我们能否过坎的关键",
+                    time:"2018.06.13",
+                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
+                  },{
+                    title:"一镜到底绝密视频！10个故事 一个不一样的上合峰会",
+                    time:"2018.06.13",
+                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
+                  },
+                  {
+                    title:"探秘中国首个滨海发射场：长征五号为何选择这里？",
+                    time:"2018.06.13",
+                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
+                  },
+                  {
+                    title:"韩媒：朝韩决定重新开通东西海岸军事热线",
+                    time:"2018.06.13",
+                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
+                  },
+                  {
+                    title:"丁仲礼:全面理解中国共产党领导是中国社会主义的本质特征",
+                    time:"2018.06.13",
+                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
+                  }
+                ],
                 // 当前活动文章
                 currentSerialNum:0,
                 activitiesCurrent:[
-                    {   
+                    {
                         serialNum:0,
                         titleEN:"Standarization Unlocks the Promising Future",
                         titleZH:"新荷学校大会",
                         time:"2018.06.05-2018.06.07",
                         spot:"广州某某某饭店",
+                        bg:require('../assets/img/othersBox01.jpg'),
+                        className:"othersBox01",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
-                    }, 
+                    },
                     {
                         serialNum:1,
                         titleEN:"VIS Conference",
                         titleZH:"VIS研讨会",
                         time:"2018.06.13-2018.06.20",
                         spot:"北京某某某饭店",
+                        bg:require('../assets/img/othersBox02.jpg'),
+                        className:"othersBox02",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
                      {
@@ -270,6 +224,8 @@
                         titleZH:"HR人力资源研讨会",
                         time:"2018.06.05-2018.06.07",
                         spot:"北京某某某饭店",
+                        bg:require('../assets/img/othersBox03.jpg'),
+                        className:"othersBox03",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
                      {
@@ -278,34 +234,9 @@
                         titleZH:"敬请期待",
                         time:"2018.06.05-2018.06.07",
                         spot:"上海某某某饭店",
-                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
-                    }
-                ],
-                // 近期活动
-                othersActivities:[
-                    {
-                        title:"新荷学校大会",
-                        time:"2018.06.05-2018.06.07",
-                        bg:require('../assets/img/othersBox01.jpg'),
-                        className:"othersBox01"
-                    },
-                    {
-                        title:"VIS研讨会",
-                        time:"2018.06.05-2018.06.07",
-                        bg:require('../assets/img/othersBox02.jpg'),
-                        className:"othersBox02"
-                    },
-                    {
-                        title:"HR人力资源研讨会",
-                        time:"2018.06.05-2018.06.07",
-                        bg:require('../assets/img/othersBox03.jpg'),
-                        className:"othersBox03"
-                    },
-                    {
-                        title:"新荷学校大会",
-                        time:"2018.06.05-2018.06.07",
                         bg:require('../assets/img/othersBox04.jpg'),
-                        className:"othersBox04"
+                        className:"othersBox04",
+                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     }
                 ]
             }
@@ -313,7 +244,7 @@
         methods:{
             active:function(index){
                 this.currentSerialNum=index
-                console.log(currentSerialNum)
+                // console.log(currentSerialNum)
             }
         }
     }
