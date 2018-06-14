@@ -80,8 +80,43 @@
                   <li>地址：北京市西城区新风街2号天成科技大厦A座1006</li>
                 </ul>
               </div>
-              <div class="col-md-4"></div>
-              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <div class="row">
+                      <div class="col-md-4">
+                            <h6 class="aboutUs">● &nbsp;关于我们</h6>
+                            <ul class="aboutUs-info">
+                                <li><a href="javascript:;">› &nbsp;公司简介</a></li>
+                                <li><a href="javascript:;">› &nbsp;发展历程</a></li>
+                                <li><a href="javascript:;">› &nbsp;企业文化</a></li>
+                                <li><a href="javascript:;">› &nbsp;荣誉资质</a></li>
+                            </ul>
+                      </div>
+                      <div class="col-md-4">
+                           <h6 class="aboutUs">● &nbsp;业务范围</h6>
+                            <ul class="aboutUs-info">
+                                <li><a href="javascript:;">› &nbsp;公司简介</a></li>
+                                <li><a href="javascript:;">› &nbsp;发展历程</a></li>
+                                <li><a href="javascript:;">› &nbsp;企业文化</a></li>
+                                <li><a href="javascript:;">› &nbsp;荣誉资质</a></li>
+                            </ul>
+                      </div>
+                      <div class="col-md-4">
+                          <h6 class="aboutUs"><br/></h6>
+                            <ul class="aboutUs-info">
+                                <li><a href="javascript:;">› &nbsp;公司简介</a></li>
+                                <li><a href="javascript:;">› &nbsp;发展历程</a></li>
+                                <li><a href="javascript:;">› &nbsp;企业文化</a></li>
+                                <li><a href="javascript:;">› &nbsp;荣誉资质</a></li>
+                            </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 text-right noPr15">
+                  <div class="wechatBox text-left">
+                    <h6 class="aboutUs">● &nbsp;微信公众号</h6>
+                    <img src="../assets/img/wechat_QR.png" alt="" width="110" height="110">
+                  </div>
+              </div>
             </div>
           </div>
         </div>
@@ -90,7 +125,7 @@
             <div class="row">
               <div class="col-md-6">
                 <h3 class="footer-company">新学说文化传媒有限公司</h3>
-                <h3 class="footer-company company-en">NewSchool Insight</h3>
+                <h3 class="footer-company company-en">NewSchool Insight MEDIA</h3>
               </div>
               <div class="col-md-6">
                 <div class="copyright">
@@ -129,6 +164,9 @@ export default {
 </script>
 
 <style>
+    .noPr15{
+        padding-right: 0;
+    }
     .searchBar{
         transition: all .3s;
         box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
@@ -204,6 +242,10 @@ export default {
     .footer{
       color: #FFF;
     }
+    .footer>.container{
+        padding-left: 0;
+        padding-left: 0;
+    }
     .footer .contact{
       font-weight: 700;
       color: #FFF;
@@ -229,6 +271,10 @@ export default {
       padding: 20px 0;
       background-color: #2f2f2f;
     }
+    .footer-bottom>.container{
+        padding-left: 0;
+        padding-right:0;
+    }
     .footer-company{
       color: #969696;
       letter-spacing: 1px;
@@ -240,6 +286,24 @@ export default {
       padding-top: 40px;
       font-size: 13px;
       color: #969696;
+    }
+    .aboutUs{
+        font-weight: 700;
+        margin: 20px 0 10px 0;
+        color: #8fb8fb;
+    }
+   .aboutUs-info>li>a{
+        color: #699bda;
+    }
+    .aboutUs-info{
+        padding-left: 0;
+    }
+    .aboutUs-info>li{
+        list-style: none;
+        line-height:2.3;
+    }
+    .wechatBox{
+        display: inline-block;
     }
     @media (max-width: 768px){
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {
@@ -258,6 +322,11 @@ export default {
     }
     .content{
         padding-top: 52px;
+    }
+    .footer>.container,
+    .footer-bottom>.container{
+        padding-left: 15px;
+        padding-right:15px;
     }
 }
 </style>

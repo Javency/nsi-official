@@ -149,29 +149,29 @@
                     <div class="activitiesBox pt50">
                       <div class="row">
                         <div class="col-md-6">
-                          <div class="activities-current">
-                            <h1 class="activitiesTitle"><a href="javascript:;">Standarization Unlocks the Promising Future</a></h1>
-                            <h1 class="activities-zh"><a href="javascript:;">2018国际学校发展大会</a></h1>
-                            <p class="activities-info">2018.06.05-2018.06.07</p>
-                            <p class="activities-info bottomLine">北京某某某饭店</p>
-                            <p class="activities-article multiline">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam.</p>
-                          </div>
+                            <div class="activities-current animated fadeInLeft" v-for="currentEvent in activitiesCurrent" v-if="currentEvent.serialNum==currentSerialNum" :key="currentEvent.serialNum">
+                                <h1 class="activitiesTitle"><a href="javascript:;">{{currentEvent.titleEN}}</a></h1>
+                                <h1 class="activities-zh"><a href="javascript:;">{{currentEvent.titleZH}}</a></h1>
+                                <p class="activities-info">{{currentEvent.time}}</p>
+                                <p class="activities-info bottomLine">{{currentEvent.spot}}</p>
+                                <p class="activities-article multiline">{{currentEvent.content}}</p>
+                            </div>
                         </div>
                         <div class="col-md-5 col-md-offset-1">
                           <div class="othersActivities">
                             <div class="row">
-                              <div class="col-md-6 plpr0">
+                              <div class="col-md-6 plpr0" v-for="(activities,index) in othersActivities" @mouseenter="active(index)" :key="index">
                                 <a href="javascript:;">
-                                  <div class="othersBox othersBox01">
-                                    <div class="othersBox-bg"></div>
+                                  <div class="othersBox" :class="activities.className">
+                                    <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">
-                                      <p>新荷学校大会</p>
-                                      <p>2018.06.05-2018.06.07</p>
+                                      <p>{{activities.title}}</p>
+                                      <p>{{activities.time}}</p>
                                     </div>
                                   </div>
                                 </a>
                               </div>
-                              <div class="col-md-6 plpr0">
+                              <!-- <div class="col-md-6 plpr0">
                                 <a href="javascript:;">
                                   <div class="othersBox othersBox02">
                                     <div class="othersBox-bg"></div>
@@ -203,7 +203,7 @@
                                     </div>
                                   </div>
                                 </a>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
                         </div>
@@ -218,31 +218,103 @@
 <script>
     // require('swiper/dist/css/swiper.css')
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
+    var currentSerialNum=0;
     export default {
-    components: {
-        swiper,
-        swiperSlide
-    },
-    name: 'carrousel',
+        components: {
+            swiper,
+            swiperSlide
+        },
+        name: 'carrousel',
         data() {
-        return {
-            swiperOption: {
-                autoplay: {
-                    disableOnInteraction: false,
+            return {
+                // 轮播
+                swiperOption: {
+                    autoplay: {
+                        disableOnInteraction: false,
+                    },
+                    loop: true,
+                    spaceBetween: 30,
+                    effect: 'fade',
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }
                 },
-                loop: true,
-                spaceBetween: 30,
-                effect: 'fade',
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
+                // 当前活动文章
+                currentSerialNum:0,
+                activitiesCurrent:[
+                    {   
+                        serialNum:0,
+                        titleEN:"Standarization Unlocks the Promising Future",
+                        titleZH:"新荷学校大会",
+                        time:"2018.06.05-2018.06.07",
+                        spot:"广州某某某饭店",
+                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
+                    }, 
+                    {
+                        serialNum:1,
+                        titleEN:"VIS Conference",
+                        titleZH:"VIS研讨会",
+                        time:"2018.06.13-2018.06.20",
+                        spot:"北京某某某饭店",
+                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
+                    },
+                     {
+                        serialNum:2,
+                        titleEN:"HR Human Resources Conference",
+                        titleZH:"HR人力资源研讨会",
+                        time:"2018.06.05-2018.06.07",
+                        spot:"北京某某某饭店",
+                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
+                    },
+                     {
+                        serialNum:3,
+                        titleEN:"To Be Continue",
+                        titleZH:"敬请期待",
+                        time:"2018.06.05-2018.06.07",
+                        spot:"上海某某某饭店",
+                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
+                    }
+                ],
+                // 近期活动
+                othersActivities:[
+                    {
+                        title:"新荷学校大会",
+                        time:"2018.06.05-2018.06.07",
+                        bg:require('../assets/img/othersBox01.jpg'),
+                        className:"othersBox01"
+                    },
+                    {
+                        title:"VIS研讨会",
+                        time:"2018.06.05-2018.06.07",
+                        bg:require('../assets/img/othersBox02.jpg'),
+                        className:"othersBox02"
+                    },
+                    {
+                        title:"HR人力资源研讨会",
+                        time:"2018.06.05-2018.06.07",
+                        bg:require('../assets/img/othersBox03.jpg'),
+                        className:"othersBox03"
+                    },
+                    {
+                        title:"新荷学校大会",
+                        time:"2018.06.05-2018.06.07",
+                        bg:require('../assets/img/othersBox04.jpg'),
+                        className:"othersBox04"
+                    }
+                ]
             }
-        }
+        },
+        methods:{
+            active:function(index){
+                this.currentSerialNum=index
+                console.log(currentSerialNum)
+            }
         }
     }
 </script>
@@ -369,8 +441,8 @@
         font-weight: 700;
         font-size: 17px;
         color: #3a899e;
-        /* height: 36px; */
-        /* max-height: 36px; */
+        /* height: 38px;
+        max-height: 36px; */
         line-height: 1.5;
     }
     .news-articel{
@@ -394,6 +466,10 @@
     }
 
     /* 近期活动 */
+    .activities-current{
+        position: absolute;
+        width: 100%;
+    }
     .activitiesTitle{
       font-weight: 700;
       position: relative;
@@ -440,7 +516,22 @@
       height: 250px;
       background: #CCC;
       position: relative;
-      transition: all .5s;
+      transition: all 0.3s ease;
+      filter: grayscale(100%);
+      opacity: 0.88;
+      background-size: contain;
+    }
+    .othersBox01{
+        background: url("../assets/img/othersBox01.jpg") no-repeat;
+    }
+    .othersBox02{
+        background: url("../assets/img/othersBox02.jpg") no-repeat;
+    }
+    .othersBox03{
+        background: url("../assets/img/othersBox03.jpg") no-repeat;
+    }
+    .othersBox04{
+        background: url("../assets/img/othersBox04.jpg") no-repeat;
     }
     .othersBox-content{
       position: absolute;
@@ -454,20 +545,13 @@
     .othersBox-content>p:last-of-type{
       margin-bottom: 0;
     }
-    .othersBox-bg{
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    .othersBox:hover{
+      filter: grayscale(0);
+      opacity:1;
+    }
+    .othersBox:hover .othersBox-content{
       background-color: #222;
-      opacity: .8;
-      transition: all .5s;
-    }
-    .othersBox:hover .othersBox-bg{
-      opacity: 0;
-    }
-    .othersBox:hover  .othersBox-content{
-      background-color: #444;
-      opacity: .8;
+      opacity: .7;
     }
     .othersBox01:hover{
       transform: translate3d(-10px,-10px,0)
@@ -492,6 +576,9 @@
         .newestPlpr0{
             padding-left: 15px;
             padding-right: 15px;
+        }
+        .activities-current{
+            position: relative;
         }
     }
 </style>
