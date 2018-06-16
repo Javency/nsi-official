@@ -5,11 +5,11 @@
             <swiper :options="swiperOption" ref="mySwiper" class="swipercontainer">
                <!-- slides -->
                <swiper-slide class="bg">
-                   <div class="container bg-content"><img src="../assets/img/banner01.jpg" alt="" class="img-responsive"></div>
+                   <div class="container bg-content"><img src="../assets/img/index/banner01.jpg" alt="" class="img-responsive"></div>
                    <div class="bgblur bg01"></div>
                </swiper-slide>
                 <swiper-slide class="bg">
-                   <div class="container bg-content"><img src="../assets/img/banner02.jpg" alt="" class="img-responsive"></div>
+                   <div class="container bg-content"><img src="../assets/img/index/banner02.jpg" alt="" class="img-responsive"></div>
                    <div class="bgblur bg02"></div>
                </swiper-slide>
                <!-- <swiper-slide class="bg bg02"><div class="container"><img src="../assets/img/banner02.jpg" alt="" class="img-responsive"></div></swiper-slide>
@@ -204,7 +204,7 @@
                         titleZH:"新荷学校大会",
                         time:"2018.06.05-2018.06.07",
                         spot:"广州某某某饭店",
-                        bg:require('../assets/img/othersBox01.jpg'),
+                        bg:require('../assets/img/index/othersBox01.jpg'),
                         className:"othersBox01",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
@@ -214,7 +214,7 @@
                         titleZH:"VIS研讨会",
                         time:"2018.06.13-2018.06.20",
                         spot:"北京某某某饭店",
-                        bg:require('../assets/img/othersBox02.jpg'),
+                        bg:require('../assets/img/index/othersBox02.jpg'),
                         className:"othersBox02",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
@@ -224,7 +224,7 @@
                         titleZH:"HR人力资源研讨会",
                         time:"2018.06.05-2018.06.07",
                         spot:"北京某某某饭店",
-                        bg:require('../assets/img/othersBox03.jpg'),
+                        bg:require('../assets/img/index/othersBox03.jpg'),
                         className:"othersBox03",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
@@ -234,7 +234,7 @@
                         titleZH:"敬请期待",
                         time:"2018.06.05-2018.06.07",
                         spot:"上海某某某饭店",
-                        bg:require('../assets/img/othersBox04.jpg'),
+                        bg:require('../assets/img/index/othersBox04.jpg'),
                         className:"othersBox04",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     }
@@ -315,10 +315,10 @@
         padding-right: 0;
     }
     .bg01{
-        background: url("../assets/img/banner01.jpg");
+        background: url("../assets/img/index/banner01.jpg");
     }
     .bg02{
-        background: url("../assets/img/banner02.jpg");
+        background: url("../assets/img/index/banner02.jpg");
     }
 
     /* 悬浮框 */
@@ -453,16 +453,16 @@
       background-size: contain;
     }
     .othersBox01{
-        background: url("../assets/img/othersBox01.jpg") no-repeat;
+        background: url("../assets/img/index/othersBox01.jpg") no-repeat;
     }
     .othersBox02{
-        background: url("../assets/img/othersBox02.jpg") no-repeat;
+        background: url("../assets/img/index/othersBox02.jpg") no-repeat;
     }
     .othersBox03{
-        background: url("../assets/img/othersBox03.jpg") no-repeat;
+        background: url("../assets/img/index/othersBox03.jpg") no-repeat;
     }
     .othersBox04{
-        background: url("../assets/img/othersBox04.jpg") no-repeat;
+        background: url("../assets/img/index/othersBox04.jpg") no-repeat;
     }
     .othersBox-content{
       position: absolute;

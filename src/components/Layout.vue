@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="logoContainer">
-                                <a href="javascript:;"><img src="../assets/img/logo.png" alt="" width="220" height="45"></a>
+                                <a href="javascript:;"><img src="../assets/img/layout/logo.png" alt="" width="220" height="45"></a>
                             </div>
                         </div>
                     </div>
@@ -47,11 +47,11 @@
                                                     <li><a href="#">One more separated link</a></li> -->
                                                 </ul>
                                             </li>
-                                            <li><router-link :to="{path:'/page01'}">咨询中心</router-link></li>
+                                            <li><router-link :to="{path:'/page01'}">资讯中心</router-link></li>
                                             <li><a href="#">会议活动</a></li>
                                             <li><a href="#">新荷学校</a></li>
                                             <li><a href="#">研究院</a></li>
-                                            <li><a href="#">咨询服务</a></li>
+                                            <li><a href="#">资讯服务</a></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
                                 </div><!-- /.container-fluid -->
@@ -114,7 +114,7 @@
               <div class="col-md-4 text-right noPr15">
                   <div class="wechatBox text-left">
                     <h6 class="aboutUs">● &nbsp;微信公众号</h6>
-                    <img src="../assets/img/wechat_QR.png" alt="" width="110" height="110">
+                    <img src="../assets/img/layout/wechat_QR.png" alt="" width="110" height="110">
                   </div>
               </div>
             </div>
@@ -163,7 +163,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+    $official-color: #20528f;
+    $official-hoverColor:#0e3361;
+    $official-footerColor:#2c6daf;
+    $official-footerFontColor:#699bda;
+    $official-otherColor:#8fb8fb;
+
     .noPr15{
         padding-right: 0;
     }
@@ -180,15 +186,15 @@ export default {
     }
 
     .nav-bg{
-        background-color: #20528f;
+        background-color: $official-color;
         z-index: 999;
         position: relative;
         width: 100%;
     }
     .navbar{
         margin-bottom: 0;
-        background-color: #20528f;
-        border-color: #20528f;
+        background-color: $official-color;
+        border-color: $official-color;
     }
     .navbar-default .navbar-nav>li>a{
         color: #fff;
@@ -196,15 +202,15 @@ export default {
     }
     .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
         color: #fff;
-        background-color: #0e3361;
+        background-color: $official-hoverColor;
     }
     .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
         color: #fff;
-        background-color: #0e3361;
+        background-color: $official-hoverColor;
     }
     .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
         color: #fff;
-        background-color: #0e3361;
+        background-color: $official-hoverColor;
     }
     .navbar-default .navbar-toggle {
         border-color: #fff;
@@ -218,7 +224,7 @@ export default {
         background-color: #fff;
     }
     .navbar-default .navbar-toggle:focus{
-         background-color: #0e3361;
+         background-color: $official-hoverColor;
     }
 
     .navbar-nav {
@@ -237,7 +243,7 @@ export default {
     /* footer */
     .footer{
       padding: 20px 0;
-      background-color: #2c6daf;
+      background-color: $official-footerColor;
     }
     .footer{
       color: #FFF;
@@ -264,7 +270,7 @@ export default {
     }
     .contact-info>li{
       line-height: 2;
-      color: #699bda;
+      color: $official-footerFontColor;
       font-family: Arial, Helvetica, sans-serif
     }
     .footer-bottom{
@@ -290,10 +296,10 @@ export default {
     .aboutUs{
         font-weight: 700;
         margin: 20px 0 10px 0;
-        color: #8fb8fb;
+        color: $official-otherColor;
     }
    .aboutUs-info>li>a{
-        color: #699bda;
+        color: $official-footerFontColor;
     }
     .aboutUs-info{
         padding-left: 0;
@@ -311,7 +317,7 @@ export default {
       }
 
      .nav-bg{
-        background-color: #20528f;
+        background-color: $official-color;
         z-index: 999;
         position: fixed;
         width: 100%;
