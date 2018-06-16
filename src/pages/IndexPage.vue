@@ -12,27 +12,10 @@
                    <div class="container bg-content"><img src="../assets/img/index/banner02.jpg" alt="" class="img-responsive"></div>
                    <div class="bgblur bg02"></div>
                </swiper-slide>
-               <!-- <swiper-slide class="bg bg02"><div class="container"><img src="../assets/img/banner02.jpg" alt="" class="img-responsive"></div></swiper-slide>
-               <swiper-slide class="bg bg01"><div class="container"><img src="../assets/img/banner01.jpg" alt="" class="img-responsive"></div></swiper-slide>
-               <swiper-slide class="bg bg02"><div class="container"><img src="../assets/img/banner02.jpg" alt="" class="img-responsive"></div></swiper-slide>
-               <swiper-slide class="bg bg01"><div class="container"><img src="../assets/img/banner01.jpg" alt="" class="img-responsive"></div></swiper-slide>
-               <swiper-slide class="bg bg02"><div class="container"><img src="../assets/img/banner02.jpg" alt="" class="img-responsive"></div></swiper-slide> -->
-               <!-- Optional controls -->
                <div class="swiper-pagination"  slot="pagination"></div>
                <div class="swiper-button-prev" slot="button-prev"></div>
                <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
-            <!-- 悬浮框 -->
-            <!-- <div class="event">
-                <div class="container">
-                   <div class="event-box event-top">
-
-                   </div>
-                   <div class="event-box event-bottom">
-
-                   </div>
-                </div>
-            </div> -->
         </div>
         <div class="container-fulid">
             <div class="container newestPlpr0">
@@ -134,7 +117,6 @@
 </template>
 
 <script>
-    // require('swiper/dist/css/swiper.css')
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
     var currentSerialNum=0;
@@ -200,7 +182,7 @@
                 activitiesCurrent:[
                     {
                         serialNum:0,
-                        titleEN:"Standarization Unlocks the Promising Future",
+                        titleEN:"Louts School Coference",
                         titleZH:"新荷学校大会",
                         time:"2018.06.05-2018.06.07",
                         spot:"广州某某某饭店",

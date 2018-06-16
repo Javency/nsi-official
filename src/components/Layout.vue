@@ -62,8 +62,6 @@
             </div>
         </div>
         <div class="content">
-            <!-- <router-link :to="{path:'/'}">首页</router-link>
-            <router-link :to="{path:'/page01'}">第一页</router-link> -->
             <keep-alive>
                 <router-view></router-view>
             </keep-alive>
