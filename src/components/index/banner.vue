@@ -31,7 +31,9 @@ export default {
 .banner-com{
     .container{
       // position: relative;
-      box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
+        box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
+        border-radius: 4px;
+        overflow: hidden;
         .pr0{
           padding-right: 0;
         }
