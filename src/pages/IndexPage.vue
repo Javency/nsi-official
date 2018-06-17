@@ -1,22 +1,7 @@
 <template>
     <div>
-        <div class="bg">
-            <!-- banner -->
-            <swiper :options="swiperOption" ref="mySwiper" class="swipercontainer">
-               <!-- slides -->
-               <swiper-slide class="bg">
-                   <div class="container bg-content"><img src="../assets/img/index/banner01.jpg" alt="" class="img-responsive"></div>
-                   <div class="bgblur bg01"></div>
-               </swiper-slide>
-                <swiper-slide class="bg">
-                   <div class="container bg-content"><img src="../assets/img/index/banner02.jpg" alt="" class="img-responsive"></div>
-                   <div class="bgblur bg02"></div>
-               </swiper-slide>
-               <div class="swiper-pagination"  slot="pagination"></div>
-               <div class="swiper-button-prev" slot="button-prev"></div>
-               <div class="swiper-button-next" slot="button-next"></div>
-            </swiper>
-        </div>
+        <!-- banner -->
+        <Banner/>
         <div class="container-fulid">
             <div class="container newestPlpr0">
                 <!-- 最新动态 -->
@@ -66,7 +51,7 @@
                     </div>
                     <div class="row">
                       <div class="col-md-12 text-right">
-                        <a href="javascript:;">更多&gt;&gt;</a>
+                        <router-link :to="{path:'/page01'}">更多&gt;&gt;</router-link>
                       </div>
                     </div>
                 </div>
@@ -117,34 +102,16 @@
 </template>
 
 <script>
-    import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import Banner from '../components/index/banner.vue'
 
     var currentSerialNum=0;
     export default {
         components: {
-            swiper,
-            swiperSlide
+           Banner
         },
         name: 'carrousel',
         data() {
             return {
-                // 轮播
-                swiperOption: {
-                    autoplay: {
-                        disableOnInteraction: false,
-                    },
-                    loop: true,
-                    spaceBetween: 30,
-                    effect: 'fade',
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    }
-                },
                 // 最新动态
                 recentNews:[
                   {
@@ -247,6 +214,9 @@
     .mt0{
         margin-top: 0;
     }
+    .mt15{
+      margin-top: 15px;
+    }
     .mt30{
       margin-top:30px;
     }
@@ -260,63 +230,8 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
+
     /* banner */
-    .swiper-button-prev{
-        left: 30px;
-    }
-    .swiper-button-next{
-        right: 30px;
-    }
-    .swipercontainer{
-        position: relative;
-    }
-    .bg{
-        position: relative;
-    }
-    .bgblur{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 10;
-        background-size: 100%;
-        top: 0;
-        left: 0;
-        background-position: center;
-        background-size: cover;
-        -webkit-filter: blur(50px);
-        -moz-filter: blur(50px);
-        -o-filter: blur(50px);
-        -ms-filter: blur(50px);
-        filter: blur(50px);
-    }
-    .bg-content{
-        position: relative;
-        z-index: 100;
-        box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .bg01{
-        background: url("../assets/img/index/banner01.jpg");
-    }
-    .bg02{
-        background: url("../assets/img/index/banner02.jpg");
-    }
-
-    /* 悬浮框 */
-    .event-box{
-        width: 220px;
-        height: 220px;
-        background-color: #CCC;
-        position: absolute;
-        z-index: 1;
-        right: 200px;
-        top: 0;
-    }
-    .event-top{
-        top: 220px;
-    }
-
     /* 最新动态 */
     .index-title{
         position: relative;
@@ -479,10 +394,6 @@
       transform: translate3d(10px,10px,0)
     }
     @media(max-width: 789px){
-        .bg{
-            padding-left: 0;
-            padding-right: 0;
-        }
         .line{
             display: none;
         }

@@ -4,6 +4,9 @@ import Vue from 'vue'
 import Layout from './components/Layout.vue'
 import Index from './pages/IndexPage.vue'
 import router from './routers/router'
+// import VueAwesomeSwiper from 'vue-awesome-swiper';
+
+// Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false
 

@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="logoContainer">
-                                <a href="javascript:;"><img src="../assets/img/layout/logo.png" alt="" width="220" height="45"></a>
+                                <a href="javascript:;"><img src="../assets/img/layoutImg/logo.png" alt="" width="220" height="45"></a>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
               <div class="col-md-4 text-right noPr15">
                   <div class="wechatBox text-left">
                     <h6 class="aboutUs">● &nbsp;微信公众号</h6>
-                    <img src="../assets/img/layout/wechat_QR.png" alt="" width="110" height="110">
+                    <img src="../assets/img/layoutImg/wechat_QR.png" alt="" width="110" height="110">
                   </div>
               </div>
             </div>
