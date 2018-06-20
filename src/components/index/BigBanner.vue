@@ -56,8 +56,8 @@ export default {
       }
     },
     mounted(){
-       console.log("每次切换都会触发我");
-       this.swiper.slideTo(0,1000, false);
+    //    console.log("每次切换都会触发我");
+    //    this.swiper.slideTo(0,1000, false);
     }
 }
 </script>

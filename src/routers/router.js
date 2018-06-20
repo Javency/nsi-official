@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import IndexPage from '../pages/IndexPage.vue'
-import Page01 from '../pages/page01.vue'
+import InformationPage from '../pages/InformationPage.vue'
 
 Vue.use(Router)
 
@@ -10,8 +10,8 @@ const routes = [{
         component: IndexPage
     },
     {
-        path: "/page01",
-        component: Page01
+        path: "/InformationCenter",
+        component: InformationPage
     }
 ]
 

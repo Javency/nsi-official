@@ -47,7 +47,7 @@
                                                     <li><a href="#">One more separated link</a></li> -->
                                                 </ul>
                                             </li>
-                                            <li><router-link :to="{path:'/page01'}">资讯中心</router-link></li>
+                                            <li><router-link :to="{path:'/InformationCenter'}">资讯中心</router-link></li>
                                             <li><a href="#">会议活动</a></li>
                                             <li><a href="#">新荷学校</a></li>
                                             <li><a href="#">研究院</a></li>
@@ -167,7 +167,9 @@ export default {
     $official-footerColor:#2c6daf;
     $official-footerFontColor:#699bda;
     $official-otherColor:#8fb8fb;
-
+    .mt50{
+        margin-top: 50px;
+    }
     .noPr15{
         padding-right: 0;
     }
