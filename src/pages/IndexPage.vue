@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- banner -->
-        <Banner/>
+        <Banner class="mt30"/>
         <div class="container-fulid">
             <div class="container newestPlpr0">
                 <!-- 最新动态 -->

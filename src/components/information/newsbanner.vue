@@ -6,17 +6,21 @@
                     <div class="newsbanner">
                         <swiper :options="swiperOption" ref="mySwiperNews">
                             <!-- slides -->
-                            <swiper-slide v-for="(bannerInfos,index) in bannerInfo" :key="index">
+                            <swiper-slide v-for="(bannerInfos,item) in bannerInfo" :key="item">
                                 <img :src="bannerInfos.imgSrc" alt="" class="img-responsive">
                             </swiper-slide>
                             <div class="swiper-pagination"  slot="pagination"></div>
-                            <div class="swiper-button-prev" slot="button-prev"></div>
-                            <div class="swiper-button-next" slot="button-next"></div>
+                            <div class="swiper-button-prev" slot="button-prev">‹</div>
+                            <div class="swiper-button-next" slot="button-next">›</div>
                         </swiper>
+                        <div class="slide-bar">
+                          <!-- <p class="slidebar1">新闻头条</p> -->
+                          <p class="slidebar2"><span>新</span> 闻头条</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="newsInfo" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
+                    <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
                         <h3 class="newsInfo-title">{{bannerInfos.title}}</h3>
                         <p class="newsInfo-desc">{{bannerInfos.desc}}</p>
                         <a href="javascript" class="news-detail">阅读全文</a>
@@ -39,10 +43,11 @@ export default {
     },
     name: 'carrousel',
     data () {
+        const self=this
         return {
-            
+
         // 轮播
-        newsBannerIndex:0,
+        newsBannerIndex:'',
         swiperOption: {
             notNextTick: true,
             autoplay: {
@@ -61,22 +66,21 @@ export default {
                 prevEl: '.swiper-button-prev',
             },
             on:{
-               transitionEnd:function(swiper){
-                   newsBannerIndex=this.realIndex
-                   console.log(newsBannerIndex)
-                   return newsBannerIndex
+               transitionStart:function(swiper){
+                   self.newsBannerIndex=this.realIndex
+                  //  console.log(self.newsBannerIndex)
                 }
             }
         },
         bannerInfo:[
             {
                 imgSrc:require('../../assets/img/information/news01.jpg'),
-                title:"知乎世界杯“洗脑广告”，瞄准了一群怎样的新用户",
+                title:"知乎世界杯“洗脑广告”,瞄准了一群怎样的新用户",
                 desc:"“上知乎问知乎答知乎看知乎搜知乎刷知乎……”在广告的末尾，刘昊然语气确定地甩出一句“有问题，上知乎”。显然，知乎这则广告面对的，就是现在还不知道有知乎这个网站存在的人。"
             },
              {
                 imgSrc:require('../../assets/img/information/news02.jpg'),
-                title:"哈佛大学被指歧视亚裔，“学生公平入学”组织向法院提交新报告",
+                title:"哈佛大学被指歧视亚裔,“学生公平入学”组织向法院提交新报告",
                 desc:"“学生公平入学”(Students for Fair Admissions) 组织已于6月15日就哈佛大学在录取时歧视亚裔，给亚裔学生的主观分打分偏低一事向波士顿一家联邦法院提交新证据。而哈佛大学援引相同调查材料得出不同结论，辩称亚裔种族因素对录取结果的影响“就数据而言几乎为零”。哈佛大学表示该案或将于今年10月开庭。"
             }
         ]
@@ -88,7 +92,7 @@ export default {
       }
     },
     mounted(){
-        // console.log(this.swiper)
+
     }
 }
 </script>
@@ -99,6 +103,62 @@ export default {
         .newsbanner{
             overflow: hidden;
             border-radius: 2px;
+            transition: all .3s;
+            &:hover .swiper-button-prev,
+            &:hover .swiper-button-next{
+              opacity: .4;
+            }
+            .swiper-button-prev,
+            .swiper-button-next{
+              width:60px;
+              height: 60px;
+              line-height: 52px;
+              text-align: center;
+              border-radius: 50%;
+              color: #222;
+              background: #fff;
+              font-size: 50px;
+              opacity: 0;
+              transition: all .3s;
+              &:hover{
+                opacity: .8;
+              }
+            }
+            .swiper-pagination-bullet-active{
+              background: #FFF;
+            }
+            .slide-bar{
+                position: absolute;
+                left: -49px;
+                bottom: 0;
+                width: 24px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                flex-direction: column;
+                .slidebar1{
+                    font-size: 14px;
+                    color: #999999;
+                    letter-spacing: 0;
+                    line-height: 28px;
+                    margin-bottom: 30px;
+                    text-align: center;
+                }
+                .slidebar2{
+                    font-size: 24px;
+                    color: #999999;
+                    letter-spacing: 0;
+                    line-height: 28px;
+                    text-align: center;
+                    margin-bottom: 0;
+                    span{
+                      display: inline-block;
+                      color: $official-color;
+                      font-size: 45px;
+                      margin-bottom: 15px;
+                    }
+                }
+            }
         }
         // 新闻标题
         .newsInfo{
