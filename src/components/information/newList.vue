@@ -1,0 +1,201 @@
+<template>
+    <div class="newsList-com">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
+                    <div class="list-box">
+                        <div class="list-img-box">
+                            <a href="javascript:;" class="img-box"><img :src="list.imgSrc" alt="" height="270"></a>
+                        </div>
+                        <div class="list-content-box">
+                            <h3><a href="javascript:;">{{list.title}}</a></h3>
+                            <p>{{list.desc}}</p>
+                        </div>
+                        <div class="list-share-box">
+                            <p class="text-right">分享到：<span title="分享到微信" class="iconfont icon-weixin weiChat"></span><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt20">
+                <div class="col-md-12 text-center">
+                    <a href="javascript:;" class="loadMore">加载更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            newsList:[
+                {
+                imgSrc:require('../../assets/img/index/small001.jpg'),
+                title:"研究：课改过程中的教师身份认同困境",
+                desc:"一直以来，教师专业身份认同问题都是国内外学界研究的重要课题。伴随着本世纪初中国大陆教育改革的宏观背景脉络，在该领域更是出现了前所未有的困境与挑战。因此，黄显涵等人在《课程改革中教师挑战与困境：中国大陆教师的个案分析》一文中，利用教师困境维度（控制困境、课程困境、专业发展困境、评估困境）的框架体系，着手对中国大陆课程改革过程中，所体现出的教师专业身份认同困境进行实证研究。"
+            },{
+                imgSrc:require('../../assets/img/index/small002.jpg'),
+                title:"VIPKID完成5亿美元D+轮融资，估值超过200亿元",
+                desc:"6月21日，在线少儿英语品牌VIPKID确认完成5亿美元D+轮融资，由投资管理机构Coatue、腾讯公司、红杉资本中国基金、云锋基金共同领投。VIPKID创始人兼CEO米雯娟表示，此次融资将主要用于招聘北美外教、储备技术和产品人才以及全球业务布局三个方面。"
+            },{
+                imgSrc:require('../../assets/img/index/small003.jpg'),
+                title:"麻省理工毕业演讲：Facebook首席运营官告诫孩子，做乐观主义者拥抱不确定",
+                desc:"Facebook首席运营官雪莉·桑德伯格（Sheryl Sandberg）在2018麻省理工学院毕业典礼上，分享了自己对毕业生的寄语。这位福布斯上榜前50名“最有力量” 的商业女精英通过自己的经历和感悟，告诉毕业生们，这一刻起意味着从他们一生中最具规划性条理性的那部分人生毕业，面对未来的不确定因素，要勇敢面对，做清醒的乐观主义者。技术需要人来创建，用所学知识解决全球面临最关键的问题。发挥影响力，让技术成为世界上一种善的力量。"
+            },{
+                imgSrc:require('../../assets/img/index/small004.jpg'),
+                title:"知识付费两周年：行业“凉凉”，你的焦虑治好了吗？",
+                desc:"2016年年中井喷式爆发，历经两年红红火火的知识付费平台，如今迎来了“危急时刻”。"
+            }, {
+                imgSrc:require('../../assets/img/index/small001.jpg'),
+                title:"研究：课改过程中的教师身份认同困境",
+                desc:"一直以来，教师专业身份认同问题都是国内外学界研究的重要课题。伴随着本世纪初中国大陆教育改革的宏观背景脉络，在该领域更是出现了前所未有的困境与挑战。因此，黄显涵等人在《课程改革中教师挑战与困境：中国大陆教师的个案分析》一文中，利用教师困境维度（控制困境、课程困境、专业发展困境、评估困境）的框架体系，着手对中国大陆课程改革过程中，所体现出的教师专业身份认同困境进行实证研究。"
+            },{
+                imgSrc:require('../../assets/img/index/small002.jpg'),
+                title:"VIPKID完成5亿美元D+轮融资，估值超过200亿元",
+                desc:"6月21日，在线少儿英语品牌VIPKID确认完成5亿美元D+轮融资，由投资管理机构Coatue、腾讯公司、红杉资本中国基金、云锋基金共同领投。VIPKID创始人兼CEO米雯娟表示，此次融资将主要用于招聘北美外教、储备技术和产品人才以及全球业务布局三个方面。"
+            },{
+                imgSrc:require('../../assets/img/index/small003.jpg'),
+                title:"麻省理工毕业演讲：Facebook首席运营官告诫孩子，做乐观主义者拥抱不确定",
+                desc:"Facebook首席运营官雪莉·桑德伯格（Sheryl Sandberg）在2018麻省理工学院毕业典礼上，分享了自己对毕业生的寄语。这位福布斯上榜前50名“最有力量” 的商业女精英通过自己的经历和感悟，告诉毕业生们，这一刻起意味着从他们一生中最具规划性条理性的那部分人生毕业，面对未来的不确定因素，要勇敢面对，做清醒的乐观主义者。技术需要人来创建，用所学知识解决全球面临最关键的问题。发挥影响力，让技术成为世界上一种善的力量。"
+            },{
+                imgSrc:require('../../assets/img/index/small004.jpg'),
+                title:"知识付费两周年：行业“凉凉”，你的焦虑治好了吗？",
+                desc:"2016年年中井喷式爆发，历经两年红红火火的知识付费平台，如今迎来了“危急时刻”。"
+            }
+            ]
+        }
+    }
+}
+</script>
+
+<style lang="scss">
+    .mt20{
+        margin-top: 20px;
+    }
+    .newsList-com{
+        padding: 30px 0;
+        background: #fafafa;
+        margin-bottom: -50px;
+        img{
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 2px;
+        }
+        .list{
+            padding: 10px;
+            background-color: #fff;
+            -webkit-transition: all 0.3s ease 0s;
+            -ms-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            margin-bottom: 15px;
+            &:hover{
+                background-color: #fff;
+                box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.10);
+                border-radius: 2px;
+                z-index: 2
+            }
+            &:hover{
+                .list-share-box{
+                    opacity: 1;
+                }
+            }
+            .list-img-box{
+               .img-box{
+                    display: inline-block;
+                    -webkit-transition: all 0.5s ease 0s;
+                    -ms-transition: all 0.5s ease 0s;
+                    -o-transition: all 0.5s ease 0s;
+                    transition: all 0.5s ease 0s;
+                    &:hover{
+                        opacity: .8;
+                    }
+                }
+            }
+            .list-content-box{
+                padding: 15px 10px;
+                background: #FFF;
+                min-height: 242px;
+                h3{
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                    max-height: 80px;
+                    overflow: hidden;
+                    a{  
+                        display: inline-block;
+                        line-height: 1.4;
+                        font-size: 19px;
+                        font-weight: 600;
+                        color: #333333;
+                        letter-spacing: 0;
+                        overflow: hidden;
+                        -webkit-transition: all 0.3s ease 0s;
+                        -ms-transition: all 0.3s ease 0s;
+                        -o-transition: all 0.3s ease 0s;
+                        transition: all 0.3s ease 0s;
+                        font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
+                        &:hover{
+                            text-decoration: none;
+                            color: #44638a;
+                        }
+                    }
+                }
+                p{
+                    color: #999;
+                    line-height:1.5;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                    max-height: 102px;
+                }
+                
+            }
+            .list-share-box{
+                opacity: 0;
+                transition: all .3s;
+                p{
+                    color: #999;
+                    span{
+                        font-size: 18px;
+                        cursor: pointer;
+                        transition: all .3s;
+                        &:hover{
+                            opacity: .8;
+                        }
+                    }
+                    .weiChat{
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .loadMore{
+            display: inline-block;
+            border-radius: 20px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 40px;
+            color: #999;
+            border: 1px solid #e5e5e5;
+            -webkit-transition: all 0.5s ease 0s;
+            -ms-transition: all 0.5s ease 0s;
+            -o-transition: all 0.5s ease 0s;
+            transition: all 0.5s ease 0s;
+            background-image: linear-gradient(-180deg, rgb(226, 226, 226) 0%, #fff 100%);
+            &:hover{
+                text-decoration: none;
+                transform: scale(1.1);
+                color: #FFF;
+                border: #52A5F4;
+                background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+                box-shadow: 0 5px 30px #52A5F4
+            }
+        }
+    }
+</style>

@@ -199,6 +199,8 @@ export default {
     .navbar-default .navbar-nav>li>a{
         color: #fff;
         transition: all .2s;
+        font-size: 15px;
+        font-weight: 600;
     }
     .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
         color: #fff;
@@ -238,6 +240,7 @@ export default {
         top:0;
         z-index:999;
         width: 100%;
+        opacity: .9;
     }
 
     /* footer */
