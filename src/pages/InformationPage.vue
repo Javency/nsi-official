@@ -4,10 +4,10 @@
         <news-banner class="pt60"></news-banner>
         <!-- 新闻nav -->
         <ul class="news-nav mt50">
-          <li><router-link to=/InformationCenter/newestArticle>最新文章</router-link><i class="line"></i></li>
-          <li><router-link to=/InformationCenter/original>独家原创</router-link><i class="line"></i></li>
-          <li><router-link to="/InformationCenter/visitSchool">访校文章</router-link><i class="line"></i></li>
-          <li><router-link to="/InformationCenter/policy">政策解读</router-link><i class="line"></i></li>
+          <li><router-link to=/InformationCenter/newestArticle>最新文章</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/InformationCenter/original>独家原创</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/InformationCenter/visitSchool">访校文章</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/InformationCenter/policy">政策解读</router-link><i class="newsnavLine"></i></li>
         </ul>
         <!-- 新闻列表 -->
         <transition name="slide-fade">
@@ -64,7 +64,7 @@ export default {
           position: relative;
           margin: 0 40px;
           padding: 5px;
-          .line{
+          .newsnavLine{
             display: block;
             position: absolute;
             bottom: -10px;
@@ -79,7 +79,7 @@ export default {
             transition: all 0.3s ease 0s;
             transform: rotateY(90deg);
           }
-          &:hover .line
+          &:hover .newsnavLine
             {
               transform: rotateY(0);
             }
@@ -87,7 +87,7 @@ export default {
               text-decoration: none;
               font-weight: 600;
               color: #333;
-              ~.line{
+              ~.newsnavLine{
                 transform: rotateY(0);
               }
           }
