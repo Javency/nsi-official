@@ -11,7 +11,9 @@
         </ul>
         <!-- 新闻列表 -->
         <transition name="slide-fade">
-            <router-view></router-view>
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
         </transition>
     </div>
 </template>
