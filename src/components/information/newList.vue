@@ -171,6 +171,12 @@ export default {
                             opacity: .8;
                         }
                     }
+                    .weiChat:hover{
+                        color: #49aa00;
+                    }
+                    .weibo:hover{
+                        color: #ff001c;
+                    }
                     .weiChat{
                         margin-right: 10px;
                     }
