@@ -116,9 +116,9 @@ export default {
                 }
             }
             .list-content-box{
-                padding: 15px 10px;
+                padding: 15px 10px 0;
                 background: #FFF;
-                min-height: 242px;
+                min-height: 215px;
                 h3{
                     margin-top: 0;
                     margin-bottom: 15px;
@@ -160,6 +160,7 @@ export default {
                 transition: all .3s;
                 p{
                     color: #999;
+                    margin-bottom: 0;
                     span{
                         font-size: 18px;
                         cursor: pointer;
@@ -167,6 +168,12 @@ export default {
                         &:hover{
                             opacity: .8;
                         }
+                    }
+                    .weiChat:hover{
+                        color: #49aa00;
+                    }
+                    .weibo:hover{
+                        color: #ff001c;
                     }
                     .weiChat{
                         margin-right: 10px;
