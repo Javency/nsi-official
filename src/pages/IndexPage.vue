@@ -377,8 +377,8 @@
       opacity:1;
     }
     .othersBox:hover .othersBox-content{
-      background-color: #222;
-      opacity: .7;
+      background-color: rgba(0, 0, 0, .5);
+      /* opacity: .7; */
     }
     .othersBox01:hover{
       transform: translate3d(-10px,-10px,0)

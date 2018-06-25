@@ -1,18 +1,18 @@
 <template>
-    <div class="newsList-com">
+    <div class="newsList-com" v-loading="loading">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270"></a>
+                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"></a>
                         </div>
                         <div class="list-content-box">
                             <h3><a href="javascript:;" :title="list.title">{{list.title}}</a></h3>
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
-                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" src="../../assets/img/layoutImg/wechat_QR.png" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,8 @@ export default {
     data(){
         return{
             pageNum:1,
-            newsList:[]
+            newsList:[],
+            loading:true
         }
     },
     methods:{
@@ -44,7 +45,7 @@ export default {
             params.append('pageSize', 8);
             this.axios({
              method: 'post',
-             url: 'http://192.168.0.191:8080/nsi-1.0/manager/article/list.do',
+             url: 'http://192.168.0.191:8080/nsi-1.0/article/list.do',
              data: params
         }).then((res)=>{
             const msg=res.data.data.list
@@ -52,7 +53,12 @@ export default {
             for(let i=0;i<msg.length;i++){
                 this.newsList.push(msg[i])
             }
+            this.loading=false
         })
+        },
+        toDetail(id){
+            console.log(id)
+            this.$router.push({name:"detailNews",params:{id:id}})
         }
     },
     beforeMount(){
@@ -62,12 +68,13 @@ export default {
         params.append('pageSize', 8);
         this.axios({
              method: 'post',
-             url: 'http://192.168.0.191:8080/nsi-1.0/manager/article/list.do',
+             url: 'http://192.168.0.191:8080/nsi-1.0/article/list.do',
              data:params
         }).then((res)=>{
             const msg=res.data.data.list
             // console.log(msg)
             this.newsList=msg
+            this.loading=false
         })
     }
 }

@@ -6,6 +6,7 @@ import newestList from '../components/information/newList.vue'
 import original from '../components/information/original.vue'
 import visitschool from '../components/information/visitSchool.vue'
 import policy from '../components/information/policy.vue'
+import detailnews from '../components/information/newsDetail.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,10 @@ const routes = [{
                 component: policy
             }
         ]
+    }, {
+        path: "/InformationCenter/detailNews/:id",
+        name: "detailNews",
+        component: detailnews
     }
 ]
 
