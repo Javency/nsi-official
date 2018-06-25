@@ -1,6 +1,6 @@
 <template>
     <div class="newsDetail-com">
-        <h1>这是新闻详情页</h1>
+        <h1>{{detail.title}}</h1>
     </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
                 }
             }).then((res)=>{
                 console.log(res)
+                this.detail=res.data.data
             })
         }
     },

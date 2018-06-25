@@ -11,36 +11,34 @@ import detailnews from '../components/information/newsDetail.vue'
 Vue.use(Router)
 
 const routes = [{
-        path: "/",
-        component: IndexPage
-    },
-    {
-        path: "/InformationCenter",
-        redirect: "/InformationCenter/newestArticle",
-        component: InformationPage,
-        children: [{
-                path: "newestArticle",
-                component: newestList
-            },
-            {
-                path: "original",
-                component: original
-            },
-            {
-                path: "visitSchool",
-                component: visitschool
-            },
-            {
-                path: "policy",
-                component: policy
-            }
-        ]
-    }, {
-        path: "/InformationCenter/detailNews/:id",
-        name: "detailNews",
-        component: detailnews
-    }
-]
+    path: "/",
+    component: IndexPage
+}, {
+    path: "/InformationCenter",
+    redirect: "/InformationCenter/newestArticle",
+    component: InformationPage,
+    children: [{
+            path: "newestArticle",
+            component: newestList
+        },
+        {
+            path: "original",
+            component: original
+        },
+        {
+            path: "visitSchool",
+            component: visitschool
+        },
+        {
+            path: "policy",
+            component: policy
+        }
+    ]
+}, {
+    path: "/InformationCenter/detailNews/:id",
+    name: "detailNews",
+    component: detailnews
+}]
 
 const router = new Router({
     mode: "history",
