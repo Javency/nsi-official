@@ -59,7 +59,4 @@ export default {
 </script>
 
 <style lang="scss">
-    .slideAD-com{
-
-    }
 </style>

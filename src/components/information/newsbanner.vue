@@ -52,6 +52,7 @@ export default {
         swiperOption: {
             notNextTick: true,
             autoplay: {
+                delay:3000,
                 disableOnInteraction: false,
             },
             loop: true,
