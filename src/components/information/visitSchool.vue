@@ -156,7 +156,7 @@ export default {
 
             }
             .list-share-box{
-                opacity: 0;
+                opacity: 1;
                 transition: all .3s;
                 p{
                     color: #999;

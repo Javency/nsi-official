@@ -8,7 +8,7 @@
                             <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"></a>
                         </div>
                         <div class="list-content-box">
-                            <h3><a href="javascript:;" :title="list.title">{{list.title}}</a></h3>
+                            <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
@@ -166,7 +166,7 @@ export default {
 
             }
             .list-share-box{
-                opacity: 0;
+                opacity: 1;
                 transition: all .3s;
                 p{
                     color: #999;

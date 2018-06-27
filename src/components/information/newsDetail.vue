@@ -1,11 +1,38 @@
 <template>
     <div class="newsDetail-com">
-        <h1>{{detail.title}}</h1>
+        <div class="container-fluid pt50">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="newsDetail-title">{{detail.title}}</h1>
+                </div>
+            </div>
+            <div class="row news-content-box">
+                <div class="col-md-9 news-content">
+                    <div class="newsDetail-img">
+                        <img :src="detail.coverImage" alt="">
+                    </div>
+                    <div class="author">
+                        <p class="news-summary">{{detail.summary}}</p>
+                        <p class="news-info"><strong>本文编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
+                    </div>
+                    <div v-html="detail.articleContent"></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="slide-ad">
+                        <slide-ad/>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import slideAd from './slideAD'
 export default {
+    components:{
+        slideAd
+    },
     data(){
         return{
             listId:"",
@@ -50,6 +77,59 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    .newsDetail-com{
+        padding: 0 35px;
+        img{
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+        .pt50{
+            padding-top: 50px;
+        }
+        .newsDetail-title{
+            padding-bottom: 30px;
+            border-bottom: 1px solid #d5d5d5;
+            margin-bottom: 30px;
+        }
+        .news-content{
+            border-right:  1px solid #d5d5d5;
+            padding-right: 30px;
+            .newsDetail-img{
+                margin-bottom: 20px;
+            }
+            .news-summary{
+                font-size: 15px;
+                line-height: 1.25;
+                color: #6e6e6e
+            }
+            .news-info{
+                line-height: 1.1;
+                font-size: 16px;
+                padding: 15px 0 25px;
+                strong{
+                    font-weight: 700;
+                    padding-right: 15px;
+                }
+                .news-time{
+                    font-size: 14px;
+                    color: #aaa;
+                    padding-right: 0.5em;
+                    line-height: 1.3em;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .slide-ad{
+            p{
+                .ad{
+                    transition: all .3s;
+                }
+                &:hover .ad{
+                    opacity: .8
+                }
+            }
+        }
+    }
 </style>
