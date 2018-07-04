@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="indexPage-com">
         <!-- banner -->
         <Banner class="mt30"/>
         <div class="container-fulid">
@@ -230,7 +230,9 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
-
+    .indexPage-com{
+      padding-top: 52px;
+    }
     /* 最新动态 */
     .index-title{
         position: relative;

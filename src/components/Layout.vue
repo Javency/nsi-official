@@ -14,7 +14,8 @@
                 </div>
             </div>
             <!-- nav -->
-            <div class="nav-bg searchBar" :class="searchBarFixed==true?'isFixed':''" id="searchBar">
+            <!-- <div class="nav-bg searchBar" :class="searchBarFixed==true?'isFixed':''" id="searchBar"> -->
+            <div class="nav-bg searchBar isFixed" id="searchBar">
                 <div class="container plpr0 navContainer">
                     <div class="row">
                         <div class="col-md-12 plpr0">
@@ -149,12 +150,24 @@ export default {
    methods:{
       handleScroll () {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-        var offsetTop = document.querySelector('#searchBar').offsetTop
+        var searchTop = document.querySelector('#searchBar').offsetTop
         // console.log(scrollTop)
-          if (scrollTop > offsetTop) {
-            this.searchBarFixed = true
-          } else {
-            this.searchBarFixed = false
+          // if (scrollTop > offsetTop) {
+          //   this.searchBarFixed = true
+          // } else {
+          //   this.searchBarFixed = false
+          // }
+          if(scrollTop>0){
+            searchTop = 85 - Number(scrollTop);
+            document.querySelector('#searchBar').style.opacity="0.9"
+            if(searchTop<=0){
+              document.querySelector('#searchBar').style.top ='0px';
+            }else{
+              document.querySelector('#searchBar').style.top = searchTop+'px';
+            }
+          }else{
+            document.querySelector('#searchBar').style.opacity="1"
+            document.querySelector('#searchBar').style.top = '85px';
           }
       }
    }
@@ -174,7 +187,7 @@ export default {
         padding-right: 0;
     }
     .searchBar{
-        transition: all .3s;
+        transition: opacity .3s;
         box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
     }
     .plpr0{
@@ -238,10 +251,10 @@ export default {
 
     .isFixed{
         position:fixed;
-        top:0;
+        top:85px;
         z-index:9999;
         width: 100%;
-        opacity: .9;
+        // opacity: .9;
     }
 
     /* footer */

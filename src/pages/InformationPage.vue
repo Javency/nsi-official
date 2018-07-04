@@ -32,6 +32,7 @@ export default {
       overflow-x: hidden;
     }
     .infoCenter-com{
+      padding-top: 52px;
       .slide-fade{
           position: absolute;left:0;right: 0;
         }

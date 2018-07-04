@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="eventPage-com">
         <event-banner/>
         <event-list/>
     </div>
@@ -16,6 +16,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    .eventPage-com{
+      padding-top: 52px;
+    }
 </style>
