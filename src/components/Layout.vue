@@ -48,7 +48,7 @@
                                                 </ul>
                                             </li>
                                             <li><router-link :to="{path:'/InformationCenter'}">资讯中心</router-link></li>
-                                            <li><a href="#">会议活动</a></li>
+                                            <li><router-link :to="{path:'/event'}">会议活动</router-link></li>
                                             <li><a href="#">新荷学校</a></li>
                                             <li><a href="#">研究院</a></li>
                                             <li><a href="#">咨询服务</a></li>
@@ -199,8 +199,9 @@ export default {
     .navbar-default .navbar-nav>li>a{
         color: #fff;
         transition: all .2s;
-        font-size: 15px;
-        font-weight: 600;
+        font-size: 16px;
+        // font-weight: 600;
+        letter-spacing: 1px;
     }
     .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
         color: #fff;

@@ -2,11 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import IndexPage from '../pages/IndexPage.vue'
 import InformationPage from '../pages/InformationPage.vue'
+import eventPage from "../pages/eventPage.vue"
+
 import newestList from '../components/information/newList.vue'
 import original from '../components/information/original.vue'
 import visitschool from '../components/information/visitSchool.vue'
 import policy from '../components/information/policy.vue'
 import detailnews from '../components/information/newsDetail.vue'
+import eventDetail from '../components/event/eventDetail.vue'
 
 Vue.use(Router)
 
@@ -38,10 +41,17 @@ const routes = [{
     path: "/InformationCenter/detailNews/:id",
     name: "detailNews",
     component: detailnews
+}, {
+    path: "/event",
+    component: eventPage
+}, {
+    path: "/event/detail",
+    name: "eventDetail",
+    component: eventDetail
 }]
 
 const router = new Router({
-    mode: "history",
+    // mode: "history",
     routes
 })
 
