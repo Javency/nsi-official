@@ -51,7 +51,7 @@
                                             <li><a href="#">会议活动</a></li>
                                             <li><a href="#">新荷学校</a></li>
                                             <li><a href="#">研究院</a></li>
-                                            <li><a href="#">资讯服务</a></li>
+                                            <li><a href="#">咨询服务</a></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
                                 </div><!-- /.container-fluid -->

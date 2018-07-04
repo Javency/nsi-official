@@ -8,14 +8,14 @@
             </div>
             <div class="row news-content-box">
                 <div class="col-md-9 news-content">
-                    <div class="newsDetail-img">
+                    <!-- <div class="newsDetail-img">
                         <img :src="detail.coverImage" alt="">
-                    </div>
+                    </div> -->
                     <div class="author">
                         <p class="news-summary">{{detail.summary}}</p>
-                        <p class="news-info"><strong>本文编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
+                        <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
                     </div>
-                    <div v-html="detail.articleContent"></div>
+                    <div v-html="detail.articleContent" class="news-article-content"></div>
                 </div>
                 <div class="col-md-3">
                     <div class="slide-ad">
@@ -101,8 +101,9 @@ export default {
             }
             .news-summary{
                 font-size: 15px;
-                line-height: 1.25;
-                color: #6e6e6e
+                line-height: 1.75;
+                color: #6e6e6e;
+                text-indent: 32px;
             }
             .news-info{
                 line-height: 1.1;
@@ -118,6 +119,18 @@ export default {
                     padding-right: 0.5em;
                     line-height: 1.3em;
                     white-space: nowrap;
+                }
+            }
+            .news-article-content{
+                line-height: 30px;
+                color: #333333;
+                font-size: 16px;
+                margin-bottom: 46px;
+                letter-spacing: 0.5px;
+                p{
+                    margin-bottom: 20px;
+                    margin-top: 10px;
+                    text-indent: 35px;
                 }
             }
         }

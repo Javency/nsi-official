@@ -76,6 +76,9 @@ export default {
             this.newsList=msg
             this.loading=false
         })
+    },
+    beforeRouteUpdate (to, from, next) {
+        console.log("router更新前")
     }
 }
 </script>

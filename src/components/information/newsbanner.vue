@@ -24,7 +24,7 @@
                     <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
                         <h3><a href="javascript:;" class="newsInfo-title">{{bannerInfos.title}}</a></h3>
                         <p class="newsInfo-desc">{{bannerInfos.desc}}</p>
-                        <a href="javascript" class="news-detail">阅读全文</a>
+                        <a href="javascript:;" class="news-detail">阅读全文</a>
                     </div>
                 </div>
             </div>
