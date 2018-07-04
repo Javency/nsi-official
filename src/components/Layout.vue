@@ -159,8 +159,8 @@ export default {
           // }
           if(scrollTop>0){
             searchTop = 85 - Number(scrollTop);
-            document.querySelector('#searchBar').style.opacity="0.9"
             if(searchTop<=0){
+              document.querySelector('#searchBar').style.opacity="0.9"
               document.querySelector('#searchBar').style.top ='0px';
             }else{
               document.querySelector('#searchBar').style.top = searchTop+'px';
