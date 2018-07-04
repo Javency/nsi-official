@@ -80,6 +80,7 @@ export default {
 <style lang="scss">
     .newsDetail-com{
         padding: 0 35px;
+        padding-top: 52px;
         img{
             display: inline-block;
             max-width: 100%;

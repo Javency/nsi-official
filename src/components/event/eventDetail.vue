@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    .eventDetail-com{
+      padding-top: 52px;
+    }
 </style>
