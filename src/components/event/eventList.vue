@@ -46,6 +46,9 @@ export default {
     methods:{
         getDetail(){
             this.$router.push({name:"eventDetail"})
+        },
+        addMore(){
+            console.log("加载更多")
         }
     }
 }
@@ -54,6 +57,12 @@ export default {
 <style lang="scss">
     .eventList-com{
         // common
+         @mixin transitionAnimate{
+            -webkit-transition: all 0.3s ease 0s;
+            -ms-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+        }
         .pl0{
             padding-left: 0;
         }
@@ -96,10 +105,7 @@ export default {
             width: 100%;
             opacity: 1;
             border-radius: 2px;
-            -webkit-transition: all 0.3s ease 0s;
-            -ms-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
+            @include transitionAnimate;
             background: #FFF;
             position: relative;
             &:hover{
@@ -126,10 +132,7 @@ export default {
                     top: 0;
                     background: rgba(0, 0, 0, 0);
                     background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.05) 2%, rgba(0, 0, 0, 0.3) 100%);
-                    -webkit-transition: all 0.3s ease 0s;
-                    -ms-transition: all 0.3s ease 0s;
-                    -o-transition: all 0.3s ease 0s;
-                    transition: all 0.3s ease 0s;
+                    @include transitionAnimate;
                 }
             &:hover::before{
                     opacity: .2;
@@ -155,10 +158,7 @@ export default {
                     min-height: 34px;
                     max-height: 34px;
                     margin-bottom: 2px;
-                    -webkit-transition: all 0.3s ease 0s;
-                    -ms-transition: all 0.3s ease 0s;
-                    -o-transition: all 0.3s ease 0s;
-                    transition: all 0.3s ease 0s;
+                    @include transitionAnimate;
                     &:hover{
                         color: #44638a;
                         text-decoration: none;
@@ -174,10 +174,7 @@ export default {
             padding: 0 40px;
             color: #999;
             border: 1px solid #e5e5e5;
-            -webkit-transition: all 0.5s ease 0s;
-            -ms-transition: all 0.5s ease 0s;
-            -o-transition: all 0.5s ease 0s;
-            transition: all 0.5s ease 0s;
+            @include transitionAnimate;
             background-image: linear-gradient(-180deg, rgb(226, 226, 226) 0%, #fff 100%);
             &:hover{
                 text-decoration: none;

@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import IndexPage from '../pages/IndexPage.vue'
+import aboutusPage from '../pages/aboutusPage.vue'
 import InformationPage from '../pages/InformationPage.vue'
 import eventPage from "../pages/eventPage.vue"
+import researchPage from '../pages/researchPage.vue'
 
 import newestList from '../components/information/newList.vue'
 import original from '../components/information/original.vue'
@@ -10,6 +12,7 @@ import visitschool from '../components/information/visitSchool.vue'
 import policy from '../components/information/policy.vue'
 import detailnews from '../components/information/newsDetail.vue'
 import eventDetail from '../components/event/eventDetail.vue'
+import periodical from '../components/research/periodical.vue'
 
 Vue.use(Router)
 
@@ -48,6 +51,17 @@ const routes = [{
     path: "/event/detail",
     name: "eventDetail",
     component: eventDetail
+}, {
+    path: "/about",
+    component: aboutusPage
+}, {
+    path: "/research",
+    component: researchPage,
+    redirect: '/research/periodical',
+    children: [{
+        path: 'periodical',
+        component: periodical
+    }]
 }]
 
 const router = new Router({

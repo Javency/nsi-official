@@ -36,7 +36,7 @@
                                         <ul class="nav navbar-nav navbar-center">
                                             <li><router-link :to="{path:'/'}">首页</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们<span class="caret"></span></a>
+                                                <router-link :to="{path:'/about'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们<span class="caret"></span></router-link>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#">公司使命</a></li>
                                                     <li><a href="#">团队介绍</a></li>
@@ -51,7 +51,14 @@
                                             <li><router-link :to="{path:'/InformationCenter'}">资讯中心</router-link></li>
                                             <li><router-link :to="{path:'/event'}">会议活动</router-link></li>
                                             <li><a href="#">新荷学校</a></li>
-                                            <li><a href="#">研究院</a></li>
+                                            <li class="dropdown">
+                                                <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">研究院<span class="caret"></span></router-link>
+                                                <ul class="dropdown-menu">
+                                                    <li><router-link :to="{path:'/research/periodical'}">期刊&报告</router-link></li>
+                                                    <li><a href="#">PISOM</a></li>
+                                                    <li><a href="#">在线课堂</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="#">咨询服务</a></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
@@ -63,9 +70,9 @@
             </div>
         </div>
         <div class="content">
-            <keep-alive>
+            <!-- <keep-alive> -->
                 <router-view></router-view>
-            </keep-alive>
+            <!-- </keep-alive> -->
         </div>
         <div class="footer mt50">
           <div class="container">
