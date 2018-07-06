@@ -13,5 +13,6 @@ export default {
 <style lang="scss">
     .research-com{
         padding-top: 52px;
+        margin-bottom: -50px;
     }
 </style>

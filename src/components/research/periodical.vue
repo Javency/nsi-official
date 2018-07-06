@@ -12,9 +12,9 @@
             <div class="row">
                 <div class="col-md-3" v-for="(list,index) in internalReferList">
                     <div class="internalRefer-book">
-                            <a href="javascript:;" class="internalRefer-box" slot="reference">
+                            <a href="javascript:;" @click="toDownload(list.fileUrl)" class="internalRefer-box" slot="reference" :style="{'background-image':'url('+list.imageUrl+')'}">
                             </a>
-                        <h4 :title="list.bookName" class="bookName" @click="openTips">{{list.bookName}}</h4>
+                        <h4 :title="list.bookName" class="bookName" @click="openTips">{{list.fileName.split(".")[0]}}</h4>
                     </div>
                 </div>
             </div>
@@ -64,24 +64,10 @@
 export default {
     data(){
         return{
-            internalReferList:[
-                {
-                    bookName:"国际学校内参1",
-                    imgSrc:""
-                },
-                {
-                    bookName:"国际学校内参2",
-                    imgSrc:""
-                },
-                {
-                    bookName:"国际学校内参3",
-                    imgSrc:""
-                },
-                {
-                    bookName:"国际学校内参4",
-                    imgSrc:""
-                }
-            ],
+             pageNum:1,
+            // 内参
+            internalReferList:[],
+            // 报告
             reportList:[
                 {
                     bookName:"报告1",
@@ -118,19 +104,34 @@ export default {
                 type:'info',
                 duration:10000
             });
+        },
+        toDownload(url){
+            window.open(url)
         }
     },
     mounted(){
         this.openTips()
     },
-    // destroyed(){
-    //    Notification.close()
-    // }
+    beforeMount(){
+        const params = new URLSearchParams();
+        params.append('pageNum', this.pageNum,);
+        params.append('pageSize', 8);
+        this.axios({
+             method: 'post',
+             url: 'http://192.168.0.191:8080/nsi-1.0/manager/resource/list.do',
+             data:params
+        }).then((res)=>{
+            // console.log(res)
+            this.internalReferList=res.data.data.list
+            console.log(this.internalReferList)
+        })
+    }
 }
 </script>
 
 <style lang="scss">
     .periodical-com{
+        background-color: #fafafa;
         @mixin transitionAnimate{
             -webkit-transition: all 0.3s ease 0s;
             -ms-transition: all 0.3s ease 0s;
@@ -163,6 +164,7 @@ export default {
         .internalRefer-book{
             width: 100%;
             min-height: 345px;
+            margin-bottom: 30px;
             .bookName{
                 color: #a3a3a3;
                 font-size: 22px;
@@ -182,6 +184,7 @@ export default {
                 width: 100%;
                 min-height: 345px;
                 background-color: #e4e4e4;
+                background-size: 100%;
                 @include transitionAnimate;
                 &:hover{
                     box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.20);
