@@ -36,17 +36,13 @@
                                         <ul class="nav navbar-nav navbar-center">
                                             <li><router-link :to="{path:'/'}">首页</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
-                                                <router-link :to="{path:'/about'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们<span class="caret"></span></router-link>
-                                                <ul class="dropdown-menu">
+                                                <router-link :to="{path:'/about'}">关于我们</router-link>
+                                                <!-- <ul class="dropdown-menu">
                                                     <li><a href="#">公司使命</a></li>
                                                     <li><a href="#">团队介绍</a></li>
                                                     <li><a href="#">合作伙伴</a></li>
                                                     <li><a href="#">联系我们</a></li>
-                                                    <!-- <li role="separator" class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                    <li role="separator" class="divider"></li>
-                                                    <li><a href="#">One more separated link</a></li> -->
-                                                </ul>
+                                                </ul> -->
                                             </li>
                                             <li><router-link :to="{path:'/InformationCenter'}">资讯中心</router-link></li>
                                             <li><router-link :to="{path:'/event'}">会议活动</router-link></li>
