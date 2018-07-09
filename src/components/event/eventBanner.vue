@@ -5,16 +5,16 @@
             <swiper :options="swiperOption" ref="mySwiper" class="swipercontainer">
                 <!-- slides -->
                 <swiper-slide class="bg">
-                    <img src="../../assets/img/event/evenBanner01.png" alt="" class="img-responsive">
+                    <img src="../../assets/img/event/eventBanner03.png" alt="" class="img-responsive">
                 </swiper-slide>
                 <swiper-slide class="bg">
-                    <img src="../../assets/img/event/evenBanner02.jpg" alt="" class="img-responsive">
+                    <img src="../../assets/img/event/eventBanner02.png" alt="" class="img-responsive">
                 </swiper-slide>
                 <swiper-slide class="bg">
-                    <img src="../../assets/img/event/evenBanner03.jpg" alt="" class="img-responsive">
+                    <img src="../../assets/img/event/eventBanner01.png" alt="" class="img-responsive">
                 </swiper-slide>
                 <swiper-slide class="bg">
-                    <img src="../../assets/img/event/evenBanner04.png" alt="" class="img-responsive">
+                    <img src="../../assets/img/event/eventBanner04.png" alt="" class="img-responsive">
                 </swiper-slide>
                 <div class="swiper-pagination"  slot="pagination"></div>
                 <div class="swiper-button-prev" slot="button-prev">‹</div>
