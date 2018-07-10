@@ -12,6 +12,7 @@
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
+                            <span class="time">{{list.updateTime|formatDate}}</span>
                             <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
                         </div>
                     </div>
@@ -19,7 +20,7 @@
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
-                    <a href="javascript:;" class="loadMore" @click="addMore">加载更多</a>
+                    <a href="javascript:;" class="loadMore" @click="addMore">{{addMoreHtml}}</a>
                 </div>
             </div>
         </div>
@@ -32,14 +33,37 @@ export default {
         return{
             pageNum:1,
             newsList:[],
-            loading:true
+            loading:true,
+            addMoreHtml:"加载更多"
+        }
+    },
+    filters:{
+        formatDate(time,option){
+            time = Date.parse(time)
+            const d = new Date(time);
+            const now = Date.now();
+            const diff = (now - d) / 1000;
+
+            if (diff < 30) {
+                return '刚刚'
+            } else if (diff < 3600) { // less 1 hour
+                return Math.ceil(diff / 60) + '分钟前'
+            } else if (diff < 3600 * 24) {
+                return Math.ceil(diff / 3600) + '小时前'
+            } else if (diff < 3600 * 24 * 2) {
+                return '1天前'
+            }
+            if (option) {
+                return parseTime(time, option)
+            } else {
+                return d.getMonth() + 1 + '月' + d.getDate() + '日'
+            }
         }
     },
     methods:{
         addMore(){
-            // const _self=this
+            this.addMoreHtml="加载中..."
             this.pageNum++
-            // console.log(this.pageNum)
             const params = new URLSearchParams();
             params.append('pageNum', this.pageNum,);
             params.append('pageSize', 8);
@@ -49,11 +73,12 @@ export default {
              data: params
         }).then((res)=>{
             const msg=res.data.data.list
-            console.log(msg)
+            // console.log(msg)
             for(let i=0;i<msg.length;i++){
                 this.newsList.push(msg[i])
             }
             this.loading=false
+            this.addMoreHtml="加载更多"
         })
         },
         toDetail(id){
@@ -62,7 +87,6 @@ export default {
         }
     },
     beforeMount(){
-        // const _self=this
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
         params.append('pageSize', 8);
@@ -88,6 +112,12 @@ export default {
         margin-top: 20px;
     }
     .newsList-com{
+        @mixin transitionAnimate{
+            -webkit-transition: all 0.3s ease 0s;
+            -ms-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+        }
         padding: 30px 0;
         background: #fafafa;
         margin-bottom: -50px;
@@ -100,10 +130,7 @@ export default {
         .list{
             padding: 10px;
             background-color: #fff;
-            -webkit-transition: all 0.3s ease 0s;
-            -ms-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
+            @include transitionAnimate;
             margin-bottom: 15px;
             &:hover{
                 background-color: #fff;
@@ -119,12 +146,13 @@ export default {
             .list-img-box{
                .img-box{
                     display: inline-block;
-                    -webkit-transition: all 0.5s ease 0s;
-                    -ms-transition: all 0.5s ease 0s;
-                    -o-transition: all 0.5s ease 0s;
-                    transition: all 0.5s ease 0s;
+                    @include transitionAnimate;
                     &:hover{
                         opacity: .8;
+                    }
+                    img{
+                        min-height: 181px;
+                        background-color: #e4e4e4
                     }
                 }
             }
@@ -145,10 +173,7 @@ export default {
                         color: #333333;
                         letter-spacing: 0;
                         overflow: hidden;
-                        -webkit-transition: all 0.3s ease 0s;
-                        -ms-transition: all 0.3s ease 0s;
-                        -o-transition: all 0.3s ease 0s;
-                        transition: all 0.3s ease 0s;
+                        @include transitionAnimate;
                         font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
                         &:hover{
                             text-decoration: none;
@@ -171,6 +196,13 @@ export default {
             .list-share-box{
                 opacity: 1;
                 transition: all .3s;
+                position: relative;
+                .time{
+                    position: absolute;
+                    color: #7c7c7c;
+                    bottom: 2px;
+                    left: 10px;
+                }
                 p{
                     color: #999;
                     margin-bottom: 0;
@@ -201,19 +233,24 @@ export default {
             line-height: 40px;
             text-align: center;
             padding: 0 40px;
-            color: #999;
-            border: 1px solid #e5e5e5;
-            -webkit-transition: all 0.5s ease 0s;
-            -ms-transition: all 0.5s ease 0s;
-            -o-transition: all 0.5s ease 0s;
-            transition: all 0.5s ease 0s;
-            background-image: linear-gradient(-180deg, rgb(226, 226, 226) 0%, #fff 100%);
-            &:hover{
+            color: #FFF;
+            border: 1px solid #4790E5;
+            -webkit-transition: all 0.1s ease 0s;
+            -ms-transition: all 0.1s ease 0s;
+            -o-transition: all 0.1s ease 0s;
+            transition: all 0.1s ease 0s;
+            background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+            box-shadow: 0 5px 30px #ccc;
+            &:hover,
+            &:link{
                 text-decoration: none;
-                transform: scale(1.1);
+            }
+            &:active{
+                text-decoration: none;
+                transform: scale(0.9);
                 color: #FFF;
                 border: #52A5F4;
-                background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+                background-image: linear-gradient(-180deg, rgb(64, 135, 216) 0%, rgb(64, 131, 194) 100%);
                 box-shadow: 0 5px 30px #52A5F4
             }
         }

@@ -5,14 +5,15 @@
             <div class="row">
                 <div class="col-md-6 mb15" v-for="(list,index) in eventList">
                     <a class="event-list" href="javascript:;" @click="getDetail">
-                        <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}"></div>
-                        <h3 class="event-box-title">{{list.title}}</h3>
+                        <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
+                            <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                        </div>
                     </a>
                 </div>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
-                    <a href="javascript:;" class="loadMore" @click="addMore">加载更多</a>
+                    <a href="javascript:;" class="loadMore" @click="addMore">{{addMoreHtml}}</a>
                 </div>
             </div>
         </div>
@@ -23,6 +24,7 @@
 export default {
     data(){
         return{
+            addMoreHtml:"加载更多",
             eventList:[
                 {
                     title:"2018国际学校发展大会",
@@ -139,14 +141,16 @@ export default {
                 }
             }
             .event-box-title{
-                    // position: absolute;
-                    // padding-right: 50px;
-                    // left: 40px;
-                    // bottom: 50px;
+                    position: absolute;
+                    padding-right: 50px;
+                    left: 30px;
+                    bottom: 30px;
                     margin-top: 10px;
                     font-family: PingFangSC-Semibold;
                     font-size: 20px;
-                    color: #808080;
+                    color: #FFF;
+                    font-weight: 700;
+                    font-size: 28px;
                     letter-spacing: 0;
                     line-height: 34px;
                     overflow: hidden;
@@ -158,11 +162,8 @@ export default {
                     min-height: 34px;
                     max-height: 34px;
                     margin-bottom: 2px;
+                    text-shadow: 0 4px 8px rgba(7, 17, 27, 0.8);
                     @include transitionAnimate;
-                    &:hover{
-                        color: #44638a;
-                        text-decoration: none;
-                }
             }
         }
         .loadMore{
@@ -172,16 +173,24 @@ export default {
             line-height: 40px;
             text-align: center;
             padding: 0 40px;
-            color: #999;
-            border: 1px solid #e5e5e5;
-            @include transitionAnimate;
-            background-image: linear-gradient(-180deg, rgb(226, 226, 226) 0%, #fff 100%);
-            &:hover{
+            color: #FFF;
+            border: 1px solid #4790E5;
+            -webkit-transition: all 0.1s ease 0s;
+            -ms-transition: all 0.1s ease 0s;
+            -o-transition: all 0.1s ease 0s;
+            transition: all 0.1s ease 0s;
+            background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+            box-shadow: 0 5px 30px #ccc;
+            &:hover,
+            &:link{
                 text-decoration: none;
-                transform: scale(1.1);
+            }
+            &:active{
+                text-decoration: none;
+                transform: scale(0.9);
                 color: #FFF;
                 border: #52A5F4;
-                background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+                background-image: linear-gradient(-180deg, rgb(64, 135, 216) 0%, rgb(64, 131, 194) 100%);
                 box-shadow: 0 5px 30px #52A5F4
             }
         }

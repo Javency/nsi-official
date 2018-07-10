@@ -1,6 +1,6 @@
 <template>
     <div class="newsDetail-com">
-        <div class="container-fluid pt50">
+        <div class="container pt50">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="newsDetail-title">{{detail.title}}</h1>
@@ -79,7 +79,7 @@ export default {
 
 <style lang="scss">
     .newsDetail-com{
-        padding: 0 35px;
+        // padding: 0 35px;
         padding-top: 52px;
         img{
             display: inline-block;

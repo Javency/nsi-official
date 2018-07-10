@@ -46,7 +46,7 @@
                                             </li>
                                             <li><router-link :to="{path:'/InformationCenter'}">资讯中心</router-link></li>
                                             <li><router-link :to="{path:'/event'}">会议活动</router-link></li>
-                                            <li><a href="#">新荷学校</a></li>
+                                            <li><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">新荷学校</a></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">研究院<span class="caret"></span></router-link>
                                                 <ul class="dropdown-menu">
@@ -55,7 +55,7 @@
                                                     <li><a href="#">在线课堂</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#">咨询服务</a></li>
+                                            <li><router-link :to="{path:'/consulting'}">咨询服务</router-link></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
                                 </div><!-- /.container-fluid -->

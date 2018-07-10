@@ -5,6 +5,7 @@ import aboutusPage from '../pages/aboutusPage.vue'
 import InformationPage from '../pages/InformationPage.vue'
 import eventPage from "../pages/eventPage.vue"
 import researchPage from '../pages/researchPage.vue'
+import consultingPage from '../pages/consulting.vue'
 
 import newestList from '../components/information/newList.vue'
 import original from '../components/information/original.vue'
@@ -62,6 +63,9 @@ const routes = [{
         path: 'periodical',
         component: periodical
     }]
+}, {
+    path: "/consulting",
+    component: consultingPage,
 }]
 
 const router = new Router({

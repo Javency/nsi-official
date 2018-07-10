@@ -81,7 +81,7 @@
                             <div class="row">
                               <div class="col-md-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
                                 <a href="javascript:;">
-                                  <div class="othersBox" :class="activities.className">
+                                  <div class="othersBox" :class="'othersBox0'+(index+1)">
                                     <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">
                                       <p>{{activities.titleZH}}</p>
@@ -154,7 +154,7 @@
                         time:"2018.06.05-2018.06.07",
                         spot:"广州某某某饭店",
                         bg:require('../assets/img/index/othersBox01.jpg'),
-                        className:"othersBox01",
+                        // className:"othersBox01",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
                     {
@@ -164,7 +164,7 @@
                         time:"2018.06.13-2018.06.20",
                         spot:"北京某某某饭店",
                         bg:require('../assets/img/index/othersBox02.jpg'),
-                        className:"othersBox02",
+                        // className:"othersBox02",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
                      {
@@ -174,7 +174,7 @@
                         time:"2018.06.05-2018.06.07",
                         spot:"北京某某某饭店",
                         bg:require('../assets/img/index/othersBox03.jpg'),
-                        className:"othersBox03",
+                        // className:"othersBox03",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     },
                      {
@@ -184,7 +184,7 @@
                         time:"2018.06.05-2018.06.07",
                         spot:"上海某某某饭店",
                         bg:require('../assets/img/index/othersBox04.jpg'),
-                        className:"othersBox04",
+                        // className:"othersBox04",
                         content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
                     }
                 ]
