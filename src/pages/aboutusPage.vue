@@ -31,11 +31,11 @@
                             <h3>团队介绍</h3>
                         </div>
                         <p class="team-info">
-                            新学说 团队由众多位独特且富有才华的成员组成，致力于为数所国际学校提供全方位服务。
+                            新学说 团队由众多位独特且富有才华的成员组成，致力于为数所国际学校提供全方位服务。努力将研究成果转化为实际可操作方案，为国际学校提供各种咨询式服务，例如前期建校咨询，课程设计，市场策划。
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <img src="../assets/img/about/team-img.jpg" alt="" class="team-img" width="500">
+                        <img alt="" src="../assets/img/about/team-img.jpg" class="team-img" width="500">
                     </div>
                 </div>
             </div>
@@ -191,12 +191,13 @@ export default {
             }
             .team-img{
                 border-radius: 4px;
+                background-color: #666
             }
         }
         // 合作伙伴
         .nsi-cooperation{
             max-width: 900px;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
             .coo-info{
                 margin-top: 0;
             }
