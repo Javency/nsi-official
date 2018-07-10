@@ -89,7 +89,7 @@ export default {
     beforeMount(){
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
-        params.append('pageSize', 8);
+        params.append('pageSize', 16);
         this.axios({
              method: 'post',
              url: 'http://192.168.0.191:8080/nsi-1.0/article/list.do',
