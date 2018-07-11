@@ -16,7 +16,7 @@
                                     <el-dropdown @command="handleCommand">
                                         <span class="el-dropdown-link">
                                             <!-- <img v-for="(logo,index) in logos" :key="index" :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}<i class="el-icon-arrow-down el-icon--right"></i> -->
-                                            <img :src="logoActive" alt="" width="30">&nbsp;{{countryActive}}<i class="el-icon-arrow-down el-icon--right"></i>
+                                            <img class="activelogo" :src="logoActive" alt="" width="30">&nbsp;{{countryActive}}<i class="el-icon-arrow-down el-icon--right"></i>
                                         </span>
                                         <el-dropdown-menu slot="dropdown">
                                             <el-dropdown-item v-for="(logo,index) in logos" :key="index" :command="logo">
@@ -310,6 +310,11 @@ export default {
         top: 25px;
         a{
             color: #777;
+        }
+        .activelogo{
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28);
+            border-radius: 50%;
         }
     }
     .el-dropdown-menu{
