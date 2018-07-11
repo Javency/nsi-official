@@ -36,7 +36,7 @@ export default {
             this.listId = 20052;
             this.axios({
                 method:"get",
-                url: 'http://192.168.0.191:8080/nsi-1.0/article/detail.do',
+                url: '/article/detail.do',
                 params:{
                     articleId:this.listId
                 }

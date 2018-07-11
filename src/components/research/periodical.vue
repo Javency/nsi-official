@@ -118,12 +118,12 @@ export default {
         params.append('pageSize', 8);
         this.axios({
              method: 'post',
-             url: 'http://192.168.0.191:8080/nsi-1.0/manager/resource/list.do',
+             url: '/manager/resource/list.do',
              data:params
         }).then((res)=>{
             // console.log(res)
             this.internalReferList=res.data.data.list
-            console.log(this.internalReferList)
+            // console.log(this.internalReferList)
         })
     }
 }

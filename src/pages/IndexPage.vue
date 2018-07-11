@@ -68,12 +68,12 @@
                     <div class="activitiesBox pt50">
                       <div class="row">
                         <div class="col-md-6">
-                            <div class="activities-current animated fadeInLeft" v-for="currentEvent in activitiesCurrent" v-if="currentEvent.serialNum==currentSerialNum" :key="currentEvent.serialNum">
-                                <h1 class="activitiesTitle"><a href="javascript:;">{{currentEvent.titleEN}}</a></h1>
-                                <h1 class="activities-zh"><a href="javascript:;">{{currentEvent.titleZH}}</a></h1>
-                                <p class="activities-info">{{currentEvent.time}}</p>
-                                <p class="activities-info bottomLine">{{currentEvent.spot}}</p>
-                                <p class="activities-article multiline">{{currentEvent.content}}</p>
+                            <div class="activities-current animated fadeInLeft" v-for="currentEvent in activitiesCurrent" v-if="currentEvent.content06==currentSerialNum" :key="currentEvent.content06">
+                                <h1 class="activitiesTitle"><a href="javascript:;">{{currentEvent.content02}}</a></h1>
+                                <h1 class="activities-zh"><a href="javascript:;">{{currentEvent.content01}}</a></h1>
+                                <p class="activities-info">{{currentEvent.content03}}</p>
+                                <p class="activities-info bottomLine">{{currentEvent.content04}}</p>
+                                <p class="activities-article multiline">{{currentEvent.textcontent01}}</p>
                             </div>
                         </div>
                         <div class="col-md-5 col-md-offset-1">
@@ -84,8 +84,8 @@
                                   <div class="othersBox" :class="'othersBox0'+(index+1)">
                                     <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">
-                                      <p>{{activities.titleZH}}</p>
-                                      <p>{{activities.time}}</p>
+                                      <p>{{activities.content01}}</p>
+                                      <p>{{activities.content03}}</p>
                                     </div>
                                   </div>
                                 </a>
@@ -146,48 +146,7 @@
                 ],
                 // 当前活动文章
                 currentSerialNum:0,
-                activitiesCurrent:[
-                    {
-                        serialNum:0,
-                        titleEN:"Louts School Coference",
-                        titleZH:"新荷学校大会",
-                        time:"2018.06.05-2018.06.07",
-                        spot:"广州某某某饭店",
-                        bg:require('../assets/img/index/othersBox01.jpg'),
-                        // className:"othersBox01",
-                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
-                    },
-                    {
-                        serialNum:1,
-                        titleEN:"VIS Conference",
-                        titleZH:"VIS研讨会",
-                        time:"2018.06.13-2018.06.20",
-                        spot:"北京某某某饭店",
-                        bg:require('../assets/img/index/othersBox02.jpg'),
-                        // className:"othersBox02",
-                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
-                    },
-                     {
-                        serialNum:2,
-                        titleEN:"HR Human Resources Conference",
-                        titleZH:"HR人力资源研讨会",
-                        time:"2018.06.05-2018.06.07",
-                        spot:"北京某某某饭店",
-                        bg:require('../assets/img/index/othersBox03.jpg'),
-                        // className:"othersBox03",
-                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
-                    },
-                     {
-                        serialNum:3,
-                        titleEN:"To Be Continue",
-                        titleZH:"敬请期待",
-                        time:"2018.06.05-2018.06.07",
-                        spot:"上海某某某饭店",
-                        bg:require('../assets/img/index/othersBox04.jpg'),
-                        // className:"othersBox04",
-                        content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatibus cum animi eius expedita deleniti saepe assumenda voluptates mollitia, nesciunt praesentium, id sit? Odio assumenda perferendis eos unde nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis minus ut pariatur ab dolores omnis. Sed beatae odit provident consequatur fugiat eius id libero maiores omnis perferendis, perspiciatis numquam."
-                    }
-                ]
+                activitiesCurrent:[]
             }
         },
         methods:{
@@ -195,6 +154,18 @@
                 this.currentSerialNum=index
                 // console.log(currentSerialNum)
             }
+        },
+        mounted(){
+            const params = new URLSearchParams();
+            params.append('type',"官网首页活动");
+            this.axios({
+                method: 'post',
+                url:"http://192.168.0.159:8080/nsi-1.0/manager/official/list.do",
+                data:params
+            }).then((res)=>{
+                console.log(res)
+                this.activitiesCurrent=res.data.data
+            })
         }
     }
 </script>
@@ -346,7 +317,7 @@
       background: #CCC;
       position: relative;
       transition: all 0.3s ease;
-      filter: grayscale(100%);
+      filter: grayscale(50%);
       opacity: 0.88;
       background-size: contain;
     }

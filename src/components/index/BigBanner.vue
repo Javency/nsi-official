@@ -35,10 +35,12 @@ export default {
         swiperOption: {
             notNextTick: true,
             autoplay: {
+                delay:5000,
                 disableOnInteraction: false,
             },
             loop: true,
             // spaceBetween: 30,
+            speed:500,
             grabCursor : true,
             effect: 'fade',
             pagination: {

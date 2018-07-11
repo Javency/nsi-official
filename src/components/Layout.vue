@@ -8,6 +8,23 @@
                         <div class="col-md-12">
                             <div class="logoContainer">
                                 <a href="javascript:;"><img src="../assets/img/layoutImg/logo.png" alt="" width="220" height="45"></a>
+                                <div class="selectLang">
+                                    <!-- <a href="javascript:;"><img src="../assets/img/layoutImg/zh.png" alt="" width="30"></a> -->
+                                    <!-- <a href="javascript:;" v-for="(logo,index) in logos" v-if="logo.switchFlag==true"><img :src="logo.logoImg" alt="" width="30">
+                                        &nbsp;{{logo.country}}
+                                    </a> -->
+                                    <el-dropdown @command="handleCommand">
+                                        <span class="el-dropdown-link">
+                                            <!-- <img v-for="(logo,index) in logos" :key="index" :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}<i class="el-icon-arrow-down el-icon--right"></i> -->
+                                            <img :src="logoActive" alt="" width="30">&nbsp;{{countryActive}}<i class="el-icon-arrow-down el-icon--right"></i>
+                                        </span>
+                                        <el-dropdown-menu slot="dropdown">
+                                            <el-dropdown-item v-for="(logo,index) in logos" :key="index" :command="logo">
+                                                <img :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}
+                                            </el-dropdown-item>
+                                        </el-dropdown-menu>
+                                    </el-dropdown>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -34,9 +51,9 @@
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-center">
-                                            <li><router-link :to="{path:'/'}">首页</router-link><span class="sr-only">(current)</span></li>
+                                            <li><router-link :to="{path:'/'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
-                                                <router-link :to="{path:'/about'}">关于我们</router-link>
+                                                <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                                 <!-- <ul class="dropdown-menu">
                                                     <li><a href="#">公司使命</a></li>
                                                     <li><a href="#">团队介绍</a></li>
@@ -44,18 +61,18 @@
                                                     <li><a href="#">联系我们</a></li>
                                                 </ul> -->
                                             </li>
-                                            <li><router-link :to="{path:'/InformationCenter'}">资讯中心</router-link></li>
-                                            <li><router-link :to="{path:'/event'}">会议活动</router-link></li>
-                                            <li><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">新荷学校</a></li>
+                                            <li><router-link :to="{path:'/InformationCenter'}">{{$t('layoutNav.information')}}</router-link></li>
+                                            <li><router-link :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link></li>
+                                            <li><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.louts')}}</a></li>
                                             <li class="dropdown">
-                                                <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">研究院<span class="caret"></span></router-link>
+                                                <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.research')}}<span class="caret"></span></router-link>
                                                 <ul class="dropdown-menu">
-                                                    <li><router-link :to="{path:'/research/periodical'}">期刊&报告</router-link></li>
-                                                    <li><a href="#">PISOM</a></li>
-                                                    <li><a href="#">在线课堂</a></li>
+                                                    <li><router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link></li>
+                                                    <li><a href="#">{{$t('layoutNav.researchChild.pisom')}}</a></li>
+                                                    <li><a href="#">{{$t('layoutNav.researchChild.classOnline')}}</a></li>
                                                 </ul>
                                             </li>
-                                            <li><router-link :to="{path:'/consulting'}">咨询服务</router-link></li>
+                                            <li><router-link :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
                                 </div><!-- /.container-fluid -->
@@ -76,10 +93,10 @@
               <div class="col-md-4">
                 <h3 class="contact">CONTACT&nbsp;<span>联系我们</span></h3>
                 <ul class="contact-info">
-                  <li>联系电话：010-52468286</li>
-                  <li>手机：15010927730</li>
-                  <li>邮箱：info@xinxueshuo.cn</li>
-                  <li>地址：北京市西城区新风街2号天成科技大厦A座1006</li>
+                  <li>{{$t('layoutFooter.tel')}}</li>
+                  <li>{{$t('layoutFooter.email')}}</li>
+                  <li>{{$t('layoutFooter.phone')}}</li>
+                  <li>{{$t('layoutFooter.address')}}</li>
                 </ul>
               </div>
               <div class="col-md-4">
@@ -115,7 +132,7 @@
               </div>
               <div class="col-md-4 text-right noPr15">
                   <div class="wechatBox text-left">
-                    <h6 class="aboutUs">● &nbsp;微信公众号</h6>
+                    <h6 class="aboutUs">● &nbsp;{{this.$t('layoutFooter.weChat')}}</h6>
                     <img src="../assets/img/layoutImg/wechat_QR.png" alt="" width="110" height="110">
                   </div>
               </div>
@@ -144,7 +161,23 @@
 export default {
     data(){
         return{
-            searchBarFixed:false
+            searchBarFixed:false,
+            switchFlag:true,
+            logoActive:require("../assets/img/layoutImg/zh.png"),
+            countryActive:"中文",
+            logos:[{
+                lang:"zh",
+                logoImg:require("../assets/img/layoutImg/zh.png"),
+                country:"中文",
+                switchFlag:true
+            },{
+                lang:"en",
+                logoImg:require("../assets/img/layoutImg/en.png"),
+                country:"English",
+                switchFlag:false
+            }],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.louts'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
+            layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat')]
         }
     },
    mounted(){
@@ -172,7 +205,27 @@ export default {
             document.querySelector('#searchBar').style.opacity="1"
             document.querySelector('#searchBar').style.top = '85px';
           }
-      }
+      },
+      handleCommand(command) {
+        // this.$message('click on item ' + command);
+        // this.logos[0].logoImg=command.logoImg
+        // this.logos[0].country=command.country
+        switch(command.lang){
+            case "zh":
+                this.logoActive=this.logos[0].logoImg
+                this.countryActive=this.logos[0].country
+                break;
+            case "en":
+                this.logoActive=this.logos[1].logoImg
+                this.countryActive=this.logos[1].country
+                break;
+        }
+        this.$i18n.locale =command.lang
+        // console.log(command)
+      },
+    //   changeLang(index){
+    //       console.log(index)
+    //   }
    }
 }
 </script>
@@ -248,8 +301,20 @@ export default {
 
     .navbar-nav {
         margin: 0 -15px;
+        position: relative;
     }
-
+    /* 选择语言*/
+    .selectLang{
+        position: absolute;
+        right: 15px;
+        top: 25px;
+        a{
+            color: #777;
+        }
+    }
+    .el-dropdown-menu{
+        z-index: 10000 !important;
+    }
     /* 判断吸顶 */
 
     .isFixed{

@@ -65,21 +65,21 @@ export default {
             this.addMoreHtml="加载中..."
             this.pageNum++
             const params = new URLSearchParams();
-            params.append('pageNum', this.pageNum,);
+            params.append('pageNum', this.pageNum);
             params.append('pageSize', 8);
             this.axios({
              method: 'post',
-             url: 'http://192.168.0.191:8080/nsi-1.0/article/list.do',
+             url: '/article/list.do',
              data: params
-        }).then((res)=>{
-            const msg=res.data.data.list
-            // console.log(msg)
-            for(let i=0;i<msg.length;i++){
-                this.newsList.push(msg[i])
-            }
-            this.loading=false
-            this.addMoreHtml="加载更多"
-        })
+            }).then((res)=>{
+                const msg=res.data.data.list
+                // console.log(msg)
+                for(let i=0;i<msg.length;i++){
+                    this.newsList.push(msg[i])
+                }
+                this.loading=false
+                this.addMoreHtml="加载更多"
+            })
         },
         toDetail(id){
             console.log(id)
@@ -92,7 +92,7 @@ export default {
         params.append('pageSize', 16);
         this.axios({
              method: 'post',
-             url: 'http://192.168.0.191:8080/nsi-1.0/article/list.do',
+             url: '/article/list.do',
              data:params
         }).then((res)=>{
             const msg=res.data.data.list

@@ -1,0 +1,25 @@
+module.exports = {
+    //导航栏
+    layoutNav: {
+        index: "首页",
+        aboutus: "关于我们",
+        information: "资讯中心",
+        event: "会议活动",
+        louts: "新荷学校",
+        research: "研究院",
+        researchChild: {
+            magazine: "期刊&报告",
+            pisom: "PISOM",
+            classOnline: "在线课堂"
+        },
+        consult: "资讯服务"
+    },
+    // 底部
+    layoutFooter: {
+        tel: "联系电话：010-52468286",
+        email: "邮箱：info@xinxueshuo.cn",
+        phone: "手机：15010927730",
+        address: "地址：北京市西城区新风街2号天成科技大厦A座1006",
+        weChat: "微信公众号"
+    }
+}
