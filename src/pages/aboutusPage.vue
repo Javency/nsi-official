@@ -129,7 +129,7 @@ export default {
         .about-bg{
             width: 100%;
             height: 550px;
-            background-image: url("../assets/img/about/about.png");
+            background-image: url("../assets/img/about/about.jpg");
             background-size: 100%;
             background-position: center;
             position: relative;

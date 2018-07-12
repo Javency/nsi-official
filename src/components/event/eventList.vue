@@ -28,19 +28,19 @@ export default {
             eventList:[
                 {
                     title:"2018国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner01.png")
+                    imgSrc:require("../../assets/img/event/eventBanner01.jpg")
                 },
                 {
                     title:"2017国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner02.png")
+                    imgSrc:require("../../assets/img/event/eventBanner02.jpg")
                 },
                 {
                     title:"2016国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner03.png")
+                    imgSrc:require("../../assets/img/event/eventBanner03.jpg")
                 },
                 {
                     title:"2015国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner04.png")
+                    imgSrc:require("../../assets/img/event/eventBanner04.jpg")
                 }
             ]
         }

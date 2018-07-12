@@ -3,15 +3,15 @@
   <swiper :options="swiperOption" ref="mySwiper" class="swipercontainer">
       <!-- slides -->
       <swiper-slide class="bg">
-          <img src="../../assets/img/index/banner001.png" alt="" class="img-responsive">
+          <img src="../../assets/img/index/banner001.jpg" alt="" class="img-responsive">
           <!-- <div class="bgblur bg01"></div> -->
       </swiper-slide>
       <swiper-slide class="bg">
-          <img src="../../assets/img/index/banner002.png" alt="" class="img-responsive">
+          <img src="../../assets/img/index/banner002.jpg" alt="" class="img-responsive">
           <!-- <div class="bgblur bg02"></div> -->
       </swiper-slide>
       <swiper-slide class="bg">
-          <img src="../../assets/img/index/banner003.png" alt="" class="img-responsive">
+          <img src="../../assets/img/index/banner003.jpg" alt="" class="img-responsive">
           <!-- <div class="bgblur bg02"></div> -->
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
