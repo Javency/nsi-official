@@ -21,5 +21,10 @@ module.exports = {
         phone: "手机：15010927730",
         address: "地址：北京市西城区新风街2号天成科技大厦A座1006",
         weChat: "微信公众号"
+    },
+    // 关于我们
+    aboutus: {
+        mission: "我们的使命",
+        missionContent: "致力于中国国际学校行业研究，为多家学校提供详细的市场、运营、建设方案"
     }
 }

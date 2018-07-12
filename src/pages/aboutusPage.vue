@@ -4,8 +4,8 @@
             <div class="cover-bg">
                <div class="container">
                    <div class="content text-center">
-                       <h4>我们的使命</h4>
-                       <h3>致力于中国国际学校行业研究，为多家学校提供详细的市场、运营、建设方案</h3>
+                       <h4>{{$t('aboutus.mission')}}</h4>
+                       <h3>{{$t('aboutus.missionContent')}}</h3>
                    </div>
                </div>
             </div>
@@ -106,7 +106,11 @@
 
 <script>
 export default {
-
+    data(){
+        return{
+            aboutus:[this.$t('aboutus.mission'),this.$t('aboutus.missionContent')]
+        }
+    }
 }
 </script>
 
