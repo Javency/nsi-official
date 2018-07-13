@@ -12,7 +12,7 @@ module.exports = {
             pisom: "PISOM",
             classOnline: "在线课堂"
         },
-        consult: "资讯服务"
+        consult: "咨询服务"
     },
     // 底部
     layoutFooter: {
