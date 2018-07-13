@@ -9,31 +9,15 @@
                     <div class="col-md-12">
                         <img src="../assets/img/consulting/conInfo01.jpg" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
                     <div class="col-md-12">
                         <img src="../assets/img/consulting/conInfo02.jpg" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
                     <div class="col-md-12">
                         <img src="../assets/img/consulting/conInfo03.jpg" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
                     <div class="col-md-12">
                         <img src="../assets/img/consulting/conInfo04.jpg" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
                     <div class="col-md-12">
                         <img src="../assets/img/consulting/conInfo05.jpg" alt="">
                     </div>
