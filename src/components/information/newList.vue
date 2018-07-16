@@ -68,9 +68,9 @@ export default {
             params.append('pageNum', this.pageNum);
             params.append('pageSize', 8);
             this.axios({
-             method: 'post',
-             url: '/article/list.do',
-             data: params
+                method: 'post',
+                url: '/article/list.do',
+                data: params
             }).then((res)=>{
                 const msg=res.data.data.list
                 // console.log(msg)
@@ -99,6 +99,7 @@ export default {
             // console.log(msg)
             this.newsList=msg
             this.loading=false
+            this.pageNum=2
         })
     },
     beforeRouteUpdate (to, from, next) {

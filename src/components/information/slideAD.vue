@@ -45,7 +45,8 @@ export default {
     mounted() {
         this.axios({
             methods:"get",
-            url:"http://192.168.0.159:8080/nsi-1.0/article/getArticleAd.do",
+            // url:"http://192.168.0.159:8080/nsi-1.0/article/getArticleAd.do",
+            url:"/article/getArticleAd.do",
             params:{
                 articleId:1,
                 typeName:"文章页右侧广告位"

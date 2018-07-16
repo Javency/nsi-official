@@ -62,14 +62,28 @@
                                                 </ul> -->
                                             </li>
                                             <li><router-link :to="{path:'/InformationCenter'}">{{$t('layoutNav.information')}}</router-link></li>
-                                            <li><router-link :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link></li>
-                                            <li><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.louts')}}</a></li>
+                                            <li>
+                                                <!-- <router-link :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link> -->
+                                                <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="javascript:;" target="_">VIS国际学校发展大会</a></li>
+                                                    <li><a href="javascript:;" target="_">专题研讨会</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.louts')}}<span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a></li>
+                                                    <li><a href="https://jinshuju.net/f/L4Iz9D" target="_">上海新荷学校（9月）</a></li>
+                                                    <li><a href="https://jinshuju.net/f/L4Iz9D" target="_">北京新荷学校（10月）</a></li>
+                                                </ul>
+                                            </li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.research')}}<span class="caret"></span></router-link>
                                                 <ul class="dropdown-menu">
                                                     <li><router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link></li>
                                                     <li><a href="#">{{$t('layoutNav.researchChild.pisom')}}</a></li>
-                                                    <li><a href="#">{{$t('layoutNav.researchChild.classOnline')}}</a></li>
+                                                    <li><a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutNav.researchChild.classOnline')}}</a></li>
                                                 </ul>
                                             </li>
                                             <li><router-link :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link></li>

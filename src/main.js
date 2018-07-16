@@ -14,7 +14,12 @@ Vue.use(ElementUI);
 Vue.use(VueI18n)
 
 Vue.config.productionTip = false
-axios.defaults.baseURL = "http://192.168.0.191:8080/nsi-1.0"
+
+// 罗震
+// axios.defaults.baseURL = "http://192.168.0.191:8080/nsi-1.0"
+
+// 生产
+axios.defaults.baseURL = "http://data.xinxueshuo.cn/nsi-1.0"
 
 Vue.prototype.axios = axios;
 
