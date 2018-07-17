@@ -5,7 +5,7 @@ module.exports = {
         aboutus: "关于我们",
         information: "资讯中心",
         event: "会议活动",
-        louts: "新荷学校",
+        lotus: "新荷学校",
         research: "研究院",
         researchChild: {
             magazine: "期刊&报告",

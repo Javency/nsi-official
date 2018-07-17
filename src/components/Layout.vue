@@ -85,7 +85,7 @@
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
                                                         <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.louts')}}<span class="caret"></span></router-link> -->
-                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">新荷学校<span class="caret"></span></router-link></a>                                                    </span>
+                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link></a>                                                    </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
                                                             <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>

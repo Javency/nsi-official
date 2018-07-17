@@ -5,7 +5,7 @@ module.exports = {
         aboutus: "AboutUs",
         information: "Information Center",
         event: "Event",
-        louts: "LotusSchool",
+        lotus: "LotusSchool",
         research: "Research",
         researchChild: {
             magazine: "Magazine&Report",
