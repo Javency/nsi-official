@@ -16,6 +16,10 @@
                         <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
                     </div>
                     <div v-html="detail.articleContent" class="news-article-content"></div>
+                    <div class="statement">
+                        <p>1、本文系新学说原创文章，转载须经授权，违者将依法追究责任。</p>
+                        <p>2、新学说面向国际学校行业，传递行业资讯，深挖有价值内容，有料有态度，如果你想投稿或爆料，请联系小新：15010927730（微信同号）</p>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div class="slide-ad">
@@ -132,6 +136,11 @@ export default {
                     margin-bottom: 20px;
                     margin-top: 10px;
                     text-indent: 35px;
+                }
+            }
+            .statement{
+                p{
+                    color: #666;
                 }
             }
         }

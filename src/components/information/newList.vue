@@ -13,7 +13,12 @@
                         </div>
                         <div class="list-share-box">
                             <span class="time">{{list.updateTime|formatDate}}</span>
-                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                            <p class="text-right">分享到：
+                                <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
+                                    <img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt="">
+                                    <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span>
+                                </el-popover><span @click="shareWibo(list.articleUrl,list.title,list.coverImage)" title="分享到微博" class="iconfont icon-weibo2 weibo"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -84,6 +89,10 @@ export default {
         toDetail(id){
             console.log(id)
             this.$router.push({name:"detailNews",params:{id:id}})
+        },
+        shareWibo(url,title,picurl){
+            let sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
+            window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         }
     },
     beforeMount(){
@@ -160,10 +169,11 @@ export default {
             .list-content-box{
                 padding: 15px 10px 0;
                 background: #FFF;
-                min-height: 215px;
+                // min-height: 215px;
+                min-height: 190px;
                 h3{
                     margin-top: 0;
-                    margin-bottom: 15px;
+                    margin-bottom: 10px;
                     max-height: 80px;
                     overflow: hidden;
                     a{

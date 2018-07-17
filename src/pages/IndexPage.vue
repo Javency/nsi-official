@@ -161,10 +161,10 @@
             this.axios({
                 method: 'post',
                 // url:"http://192.168.0.159:8080/nsi-1.0/manager/official/list.do",
-                url:"/official/list.do",
+                url:"/manager/official/list.do",
                 data:params
             }).then((res)=>{
-                console.log(res)
+                // console.log(res)
                 this.activitiesCurrent=res.data.data
             })
         }

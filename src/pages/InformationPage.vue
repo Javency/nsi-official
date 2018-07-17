@@ -57,7 +57,7 @@ export default {
       .news-nav{
         padding-left: 0;
         list-style: none;
-        padding-top: 60px;
+        padding-top: 30px;
         padding-bottom: 20px;
         background: #fafafa;
         margin-bottom: 0;

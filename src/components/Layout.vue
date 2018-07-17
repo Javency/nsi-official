@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="layout-com">
         <div class="header">
             <!-- logo -->
             <div class="container-fluid">
@@ -13,7 +13,7 @@
                                     <!-- <a href="javascript:;" v-for="(logo,index) in logos" v-if="logo.switchFlag==true"><img :src="logo.logoImg" alt="" width="30">
                                         &nbsp;{{logo.country}}
                                     </a> -->
-                                    <el-dropdown @command="handleCommand">
+                                    <el-dropdown @command="handleCommand" placement="top">
                                         <span class="el-dropdown-link">
                                             <!-- <img v-for="(logo,index) in logos" :key="index" :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}<i class="el-icon-arrow-down el-icon--right"></i> -->
                                             <img class="activelogo" :src="logoActive" alt="" width="30">&nbsp;{{countryActive}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -54,37 +54,77 @@
                                             <li><router-link :to="{path:'/'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
-                                                <!-- <ul class="dropdown-menu">
-                                                    <li><a href="#">公司使命</a></li>
-                                                    <li><a href="#">团队介绍</a></li>
-                                                    <li><a href="#">合作伙伴</a></li>
-                                                    <li><a href="#">联系我们</a></li>
-                                                </ul> -->
                                             </li>
                                             <li><router-link :to="{path:'/InformationCenter'}">{{$t('layoutNav.information')}}</router-link></li>
-                                            <li>
-                                                <!-- <router-link :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link> -->
-                                                <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="javascript:;" target="_">VIS国际学校发展大会</a></li>
-                                                    <li><a href="javascript:;" target="_">专题研讨会</a></li>
-                                                </ul>
+                                            <li class="hasSubmenu">
+                                                <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
+                                                <el-dropdown placement="top">
+                                                    <span class="el-dropdown-link">
+                                                        <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link>
+                                                    </span>
+                                                    <el-dropdown-menu slot="dropdown">
+                                                        <el-dropdown-item>
+                                                            <a href="javascript:;" target="_">VIS国际学校发展大会</a>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <a href="javascript:;" target="_">专题研讨会</a>
+                                                        </el-dropdown-item>
+                                                    </el-dropdown-menu>
+                                                </el-dropdown>
                                             </li>
-                                            <li class="dropdown">
+                                            <!-- <li class="dropdown">
                                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.louts')}}<span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a></li>
                                                     <li><a href="https://jinshuju.net/f/L4Iz9D" target="_">上海新荷学校（9月）</a></li>
                                                     <li><a href="https://jinshuju.net/f/L4Iz9D" target="_">北京新荷学校（10月）</a></li>
                                                 </ul>
+                                            </li> -->
+                                            <li class="hasSubmenu">
+                                                <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
+                                                <el-dropdown placement="top">
+                                                    <span class="el-dropdown-link">
+                                                        <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.louts')}}<span class="caret"></span></router-link> -->
+                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">新荷学校<span class="caret"></span></router-link></a>                                                    </span>
+                                                    <el-dropdown-menu slot="dropdown">
+                                                        <el-dropdown-item>
+                                                            <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">上海新荷学校（9月）</a>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">北京新荷学校（10月）</a>
+                                                        </el-dropdown-item>
+                                                    </el-dropdown-menu>
+                                                </el-dropdown>
                                             </li>
-                                            <li class="dropdown">
+                                            <!-- <li class="dropdown">
                                                 <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.research')}}<span class="caret"></span></router-link>
                                                 <ul class="dropdown-menu">
                                                     <li><router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link></li>
                                                     <li><a href="#">{{$t('layoutNav.researchChild.pisom')}}</a></li>
                                                     <li><a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutNav.researchChild.classOnline')}}</a></li>
                                                 </ul>
+                                            </li> -->
+                                            <li class="hasSubmenu">
+                                                <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
+                                                <el-dropdown placement="top">
+                                                    <span class="el-dropdown-link">
+                                                        <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.research')}}<span class="caret"></span></router-link>
+                                                    </span>
+                                                    <el-dropdown-menu slot="dropdown">
+                                                        <el-dropdown-item>
+                                                            <router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <a href="#">{{$t('layoutNav.researchChild.pisom')}}</a>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutNav.researchChild.classOnline')}}</a>
+                                                        </el-dropdown-item>
+                                                    </el-dropdown-menu>
+                                                </el-dropdown>
                                             </li>
                                             <li><router-link :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link></li>
                                         </ul>
@@ -279,22 +319,24 @@ export default {
         background-color: $official-color;
         border-color: $official-color;
     }
-    .navbar-default .navbar-nav>li>a{
+    .navbar-default .navbar-nav li a{
         color: #fff;
         transition: all .2s;
         font-size: 16px;
         // font-weight: 600;
         letter-spacing: 1px;
+        height: 52px;
+        line-height: 26px;
     }
-    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    .navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:focus, .navbar-default .navbar-nav .active a:hover {
         color: #fff;
         background-color: $official-hoverColor;
     }
-    .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    .navbar-default .navbar-nav li a:focus, .navbar-default .navbar-nav li a:hover {
         color: #fff;
         background-color: $official-hoverColor;
     }
-    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    .navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:focus, .navbar-default .navbar-nav .open a:hover {
         color: #fff;
         background-color: $official-hoverColor;
     }
@@ -316,6 +358,19 @@ export default {
     .navbar-nav {
         margin: 0 -15px;
         position: relative;
+    }
+    .hasSubmenu a{
+        display: inline-block;
+        padding: 15px;
+    }
+    .hasSubmenu a:hover{
+        text-decoration: none !important;
+    }
+    .el-dropdown-menu a{
+        display: block;
+        text-decoration: none !important;
+        color: #004f94;
+        font-weight: 600;
     }
     /* 选择语言*/
     .selectLang{
