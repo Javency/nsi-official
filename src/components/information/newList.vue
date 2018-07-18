@@ -189,7 +189,7 @@ export default {
                         top: 10px;
                         left: 10px;
                         font-style: normal;
-                        padding: 3px 10px 1px;
+                        padding: 3px 10px 2px;
                         color: #FFF;
                         border-radius: 20px;
                         background-color: rgba(0, 0, 0, 0.5);

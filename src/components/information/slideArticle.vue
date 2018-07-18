@@ -3,7 +3,7 @@
         <h4>最新文章</h4>
         <ul>
             <li v-for="list in newsList">
-                <i>●</i>
+                <i>▶</i>
                 <a href="javascript:;" @click="toDetail(list.id)">{{list.title}}</a>
                 <div class="time">{{list.updateTime|formatDate}}
                     <div class="shareTo">分享至：
@@ -80,6 +80,10 @@ export default {
 
 <style lang="scss">
     .slideArticle-com{
+        i{
+          font-style: normal;
+          font-size: 12px;
+        }
         a:hover,a:link{
             text-decoration: none !important;
         }

@@ -16,12 +16,21 @@
                         <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
                     </div>
                     <div v-html="detail.articleContent" class="news-article-content"></div>
-                    <div class="cut-off-line text-center"><span class="cut-off-text">我是有底线的</span></div>
+                    <div class="cut-off-line text-center"><span class="cut-off-text">● END ●</span></div>
                     <div class="statement">
-                        <p v-if="detail.articleSourceTitle=='新学说'">1、本文系<a href="http://xinxueshuo.cn">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
-                        <p v-else>1、本文系<a href="http://xinxueshuo.cn">新学说</a>转载文章，来源 <a :href="detail.articleSourceAdress">{{detail.articleSourceTitle}}</a></p>
-                        <p>2、新学说面向国际学校行业，传递行业资讯，深挖有价值内容，有料有态度，如果你想投稿或爆料，<br/></p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 请联系小新：15010927730（微信同号）</p>
+                        <p class="nsi-statement" v-if="detail.articleSourceTitle=='新学说'">本文系<a href="http://xinxueshuo.cn">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
+                        <p class="nsi-statement" v-else>本文系<a href="http://xinxueshuo.cn"> 新学说 </a>转载文章，来源 <a :href="detail.articleSourceAdress">{{detail.articleSourceTitle}}</a></p>
+                        <div>
+                          <div class="row">
+                            <div class="col-md-2">
+                              <img src="../../assets/img/layoutImg/wechat_QR.png" alt="">
+                            </div>
+                            <div class="col-md-10 pl0 mt15">
+                              <p>新学说面向国际学校行业，传递行业资讯，深挖有价值内容，有料有态度，如果你想投稿或爆料，<br/></p>
+                              <p>请联系小新：15010927730（微信同号）</p>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -30,6 +39,9 @@
                     </div>
                     <div class="slide-article">
                         <slide-article/>
+                    </div>
+                    <div class="follow">
+                        <follow/>
                     </div>
                 </div>
             </div>
@@ -98,6 +110,12 @@ export default {
     .newsDetail-com{
         // padding: 0 35px;
         padding-top: 52px;
+        .pl0{
+          padding-left: 0;
+        }
+        .mt15{
+          margin-top: 15px;
+        }
         img{
             display: inline-block;
             max-width: 100%;
@@ -121,7 +139,9 @@ export default {
                 font-size: 15px;
                 line-height: 1.75;
                 color: #6e6e6e;
-                text-indent: 32px;
+                background-color: #fafafa;
+                padding: 20px 15px;
+                border-left: 5px solid #6e6e6e;
             }
             .news-info{
                 line-height: 1.1;
@@ -152,8 +172,13 @@ export default {
                 }
             }
             .statement{
-                p{
-                    color: #666;
+              background-color: #f9f9f9;
+              padding: 20px 15px;
+              color: #999;
+                .nsi-statement{
+                    border-bottom: 1px solid #eeeeee;
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
                 }
             }
         }
@@ -183,11 +208,11 @@ export default {
             content: "";
             position: absolute;
             width: 100%;
-            height: 2px;
-            border: 1px dashed #e2e2e2;
+            height: 1px;
+            border-bottom: 1px dashed #e2e2e2;
             top: 9px;
         }
-        
+
         // 分享
         .newsShare{
             position: fixed;
