@@ -3,7 +3,7 @@ module.exports = {
     layoutNav: {
         index: "Index",
         aboutus: "AboutUs",
-        information: "Information Center",
+        information: "News",
         event: "Event",
         lotus: "LotusSchool",
         research: "Research",

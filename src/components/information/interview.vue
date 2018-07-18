@@ -5,20 +5,15 @@
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a>
+                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"></a>
                         </div>
                         <div class="list-content-box">
-                            <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
+                            <h3><a href="javascript:;" :title="list.title">{{list.title}}</a></h3>
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
                             <span class="time">{{list.updateTime|formatDate}}</span>
-                            <p class="text-right">分享到：
-                                <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
-                                    <img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt="">
-                                    <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span>
-                                </el-popover><span @click="shareWibo(list.articleUrl,list.title,list.coverImage)" title="分享到微博" class="iconfont icon-weibo2 weibo"></span>
-                            </p>
+                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
                         </div>
                     </div>
                 </div>
@@ -37,9 +32,9 @@ export default {
     data(){
         return{
             pageNum:1,
-            newsList:[],
             loading:true,
-            addMoreHtml:"加载更多"
+            newsList:[],
+            addMoreHtml:"加载更多",
         }
     },
     filters:{
@@ -63,22 +58,6 @@ export default {
             } else {
                 return d.getMonth() + 1 + '月' + d.getDate() + '日'
             }
-        },
-        articleType(str){
-            switch(str){
-                case "独家原创":
-                    return str="原创"
-                    break;
-                case "访校文章":
-                    return str="访校"
-                    break;
-                case "政策解读":
-                    return str="政策"
-                    break;
-                default:
-                    return str="快讯"
-                    break;
-            }
         }
     },
     methods:{
@@ -93,23 +72,18 @@ export default {
                 url: '/article/list.do',
                 data: params
             }).then((res)=>{
-                const msg=res.data.data.list
-                // console.log(msg)
+                let msg=res.data.data.list
                 for(let i=0;i<msg.length;i++){
-                    this.newsList.push(msg[i])
+                    if(msg[i].articleCat==="访校文章"){
+                        this.newsList.push(msg[i])
+                    }
                 }
-                this.loading=false
                 this.addMoreHtml="加载更多"
             })
         },
         toDetail(id){
             console.log(id)
-            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
-            window.open(routeData.href, '_blank');
-        },
-        shareWibo(url,title,picurl){
-            let sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
-            window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
+            this.$router.push({name:"detailNews",params:{id:id}})
         }
     },
     beforeMount(){
@@ -121,15 +95,18 @@ export default {
              url: '/article/list.do',
              data:params
         }).then((res)=>{
-            const msg=res.data.data.list
-            // console.log(msg)
-            this.newsList=msg
+            let msg=res.data.data.list,
+                originalList=[]
+            for(let i=0;i<msg.length;i++){
+                if(msg[i].articleCat==="访校文章"){
+                    originalList.push(msg[i])
+                }
+            }
+            console.log(originalList)
+            this.newsList=originalList
             this.loading=false
             this.pageNum=2
         })
-    },
-    beforeRouteUpdate (to, from, next) {
-        console.log("router更新前")
     }
 }
 </script>
@@ -173,7 +150,6 @@ export default {
             .list-img-box{
                .img-box{
                     display: inline-block;
-                    position: relative;
                     @include transitionAnimate;
                     &:hover{
                         opacity: .8;
@@ -182,29 +158,15 @@ export default {
                         min-height: 181px;
                         background-color: #e4e4e4
                     }
-                    .articleType{
-                        position: absolute;
-                        display: block;
-                        width: 44px;
-                        top: 10px;
-                        left: 10px;
-                        font-style: normal;
-                        padding: 3px 10px 1px;
-                        color: #FFF;
-                        border-radius: 20px;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        font-size: 12px;
-                    }
                 }
             }
             .list-content-box{
                 padding: 15px 10px 0;
                 background: #FFF;
-                // min-height: 215px;
-                min-height: 190px;
+                min-height: 215px;
                 h3{
                     margin-top: 0;
-                    margin-bottom: 10px;
+                    margin-bottom: 15px;
                     max-height: 80px;
                     overflow: hidden;
                     a{

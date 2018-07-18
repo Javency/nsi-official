@@ -12,6 +12,8 @@ import original from '../components/information/original.vue'
 import visitschool from '../components/information/visitSchool.vue'
 import policy from '../components/information/policy.vue'
 import detailnews from '../components/information/newsDetail.vue'
+import interview from '../components/information/interview.vue'
+
 import eventDetail from '../components/event/eventDetail.vue'
 import periodical from '../components/research/periodical.vue'
 
@@ -21,8 +23,8 @@ const routes = [{
     path: "/",
     component: IndexPage
 }, {
-    path: "/InformationCenter",
-    redirect: "/InformationCenter/newestArticle",
+    path: "/news",
+    redirect: "/news/newestArticle",
     component: InformationPage,
     children: [{
             path: "newestArticle",
@@ -39,10 +41,14 @@ const routes = [{
         {
             path: "policy",
             component: policy
+        },
+        {
+            path: "interview",
+            component: interview
         }
     ]
 }, {
-    path: "/InformationCenter/detailNews/:id",
+    path: "/news/detailnews/:id",
     name: "detailNews",
     component: detailnews
 }, {

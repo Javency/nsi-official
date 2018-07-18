@@ -16,31 +16,43 @@
                         <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
                     </div>
                     <div v-html="detail.articleContent" class="news-article-content"></div>
+                    <div class="cut-off-line text-center"><span class="cut-off-text">我是有底线的</span></div>
                     <div class="statement">
-                        <p>1、本文系新学说原创文章，转载须经授权，违者将依法追究责任。</p>
-                        <p>2、新学说面向国际学校行业，传递行业资讯，深挖有价值内容，有料有态度，如果你想投稿或爆料，请联系小新：15010927730（微信同号）</p>
+                        <p v-if="detail.articleSourceTitle=='新学说'">1、本文系<a href="http://xinxueshuo.cn">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
+                        <p v-else>1、本文系<a href="http://xinxueshuo.cn">新学说</a>转载文章，来源 <a :href="detail.articleSourceAdress">{{detail.articleSourceTitle}}</a></p>
+                        <p>2、新学说面向国际学校行业，传递行业资讯，深挖有价值内容，有料有态度，如果你想投稿或爆料，<br/></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 请联系小新：15010927730（微信同号）</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="slide-ad">
                         <slide-ad/>
                     </div>
+                    <div class="slide-article">
+                        <slide-article/>
+                    </div>
                 </div>
             </div>
+            <shareBox :newsShareInfo="shareInfo" class="newsShare"/>
         </div>
     </div>
 </template>
 
 <script>
 import slideAd from './slideAD'
+import shareBox from '../common/share'
+import slideArticle from './slideArticle'
 export default {
     components:{
-        slideAd
+        slideAd,
+        shareBox,
+        slideArticle
     },
     data(){
         return{
             listId:"",
-            detail:{}
+            detail:{},
+            shareInfo:{}
         }
     },
     methods:{
@@ -53,8 +65,9 @@ export default {
                     articleId:this.listId
                 }
             }).then((res)=>{
-                console.log(res)
+                // console.log(res)
                 this.detail=res.data.data
+                this.shareInfo=res.data.data
             })
         }
     },
@@ -100,7 +113,7 @@ export default {
         }
         .news-content{
             border-right:  1px solid #d5d5d5;
-            padding-right: 30px;
+            // padding-right: 30px;
             .newsDetail-img{
                 margin-bottom: 20px;
             }
@@ -153,6 +166,34 @@ export default {
                     opacity: .8
                 }
             }
+        }
+        .cut-off-line{
+            padding:0 0 30px 0;
+            color: #aaa;
+            position: relative;
+        }
+        .cut-off-text{
+            background: #FFF;
+            position: relative;
+            z-index: 99;
+            padding: 0 10px;
+        }
+        .cut-off-line::before{
+            display: block;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border: 1px dashed #e2e2e2;
+            top: 9px;
+        }
+        
+        // 分享
+        .newsShare{
+            position: fixed;
+            // bottom: 400px;
+            bottom: 100px;
+            left: 80px;
         }
     }
 </style>

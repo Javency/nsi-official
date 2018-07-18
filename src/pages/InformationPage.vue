@@ -4,10 +4,11 @@
         <news-banner class="pt60"></news-banner>
         <!-- 新闻nav -->
         <ul class="news-nav mt50">
-          <li><router-link to=/InformationCenter/newestArticle>最新文章</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to=/InformationCenter/original>独家原创</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to="/InformationCenter/visitSchool">访校文章</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to="/InformationCenter/policy">政策解读</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/newestArticle>资讯全览</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/news/policy">政策解读</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/news/visitSchool">访校观察</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/original>行业分析</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/interview>人物访谈</router-link><i class="newsnavLine"></i></li>
         </ul>
         <!-- 新闻列表 -->
         <transition name="slide-fade">
