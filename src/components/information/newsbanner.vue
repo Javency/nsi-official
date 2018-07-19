@@ -67,17 +67,17 @@ export default {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-            observer:true,//修改swiper自己或子元素时，自动初始化swiper 
-            observeParents:false,//修改swiper的父元素时，自动初始化swiper 
+            observer:true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents:true,//修改swiper的父元素时，自动初始化swiper
             on:{
-               transitionStart:function(swiper){
+                transitionStart:function(swiper){
                    self.newsBannerIndex=this.realIndex
                   //  console.log(self.newsBannerIndex)
                 },
-                slideChangeEnd: function(swiper){ 
-                    this.update();
-                    this.startAutoplay();
-                    this.reLoop();
+                onSlideChangeEnd: function(swiper){
+                    swiper.update();
+                    // this.startAutoplay();
+                    // this.reLoop();
                 }
             }
         }
@@ -101,6 +101,9 @@ export default {
                 const msg=res.data.data.list
                 // console.log(msg)
                 this.bannerInfo=msg
+                this.$nextTick(()=>{
+                   console.log(swiper)
+                })
             })
         }
     },
@@ -118,7 +121,7 @@ export default {
     //         this.bannerInfo=msg
     //     })
     // },
-    beforeMount(){
+    mounted(){
         this.getBannerInfo()
     }
 }
