@@ -17,15 +17,15 @@
                         <!-- 两则新闻概要 -->
                         <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index<2">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="news-content">
-                                        <img src="" alt="" width="100%" height="200px" class="news-img">
+                                        <img :src="news.coverImage" alt="" width="100%" height="200px" class="news-img">
                                     </div>
-                                    </div>
-                                <div class="col-md-8">
+                                </div>
+                                <div class="col-md-6">
                                     <div class="newsBox">
-                                        <h5 class="mt0 multiline"><a href="javascript:;" class="news-title">{{news.title}}</a></h5>
-                                        <p class="news-articel multiline">{{news.content}}</p>
+                                        <h5 class="mt0 multiline"><a href="javascript:;" class="news-title" @click="toDetail(news.id)">{{news.title}}</a></h5>
+                                        <p class="news-articel multiline" :title="news.summary">{{news.summary}}</p>
                                         <span class="news-time">{{news.time}}</span>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                               <div class="newsInfo">
                                   <div class="row">
                                     <div class="col-md-10">
-                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail">{{"• "+news.title}}</a></p>
+                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail" @click="toDetail(news.id)">{{"• "+news.title}}</a></p>
                                     </div>
                                     <div class="col-md-2">
                                       <span class="newsInfo-time">{{news.time}}</span>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="row">
                       <div class="col-md-12 text-right">
-                        <router-link :to="{path:'/page01'}">更多&gt;&gt;</router-link>
+                        <router-link :to="{path:'/news'}">更多&gt;&gt;</router-link>
                       </div>
                     </div>
                 </div>
@@ -113,37 +113,7 @@
         data() {
             return {
                 // 最新动态
-                recentNews:[
-                  {
-                    title:"世界杯身价榜：法国居首德国第五",
-                    time:"2018.06.13",
-                    content:"Lorem ipsum dolor sit amet. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
-                  },
-                  {
-                    title:"习近平：创新是我们能否过坎的关键",
-                    time:"2018.06.13",
-                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
-                  },{
-                    title:"一镜到底绝密视频！10个故事 一个不一样的上合峰会",
-                    time:"2018.06.13",
-                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
-                  },
-                  {
-                    title:"探秘中国首个滨海发射场：长征五号为何选择这里？",
-                    time:"2018.06.13",
-                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
-                  },
-                  {
-                    title:"韩媒：朝韩决定重新开通东西海岸军事热线",
-                    time:"2018.06.13",
-                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
-                  },
-                  {
-                    title:"丁仲礼:全面理解中国共产党领导是中国社会主义的本质特征",
-                    time:"2018.06.13",
-                    content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloremque necessitatibus quis debitis quam, autem quas porro recusandae at quaerat alias rem nemo sequi itaque reprehenderit odit cumque iusto ratione?"
-                  }
-                ],
+                recentNews:[],
                 // 当前活动文章
                 currentSerialNum:0,
                 activitiesCurrent:[]
@@ -153,19 +123,37 @@
             active:function(index){
                 this.currentSerialNum=index
                 // console.log(currentSerialNum)
+            },
+            toDetail(id){
+                let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+                window.open(routeData.href, '_blank');
             }
         },
         mounted(){
-            const params = new URLSearchParams();
-            params.append('type',"官网首页活动");
+            // 近期活动
+            const eventList = new URLSearchParams();
+            eventList.append('type',"官网首页活动");
             this.axios({
                 method: 'post',
                 // url:"http://192.168.0.159:8080/nsi-1.0/manager/official/list.do",
                 url:"/manager/official/list.do",
-                data:params
+                data:eventList
             }).then((res)=>{
                 // console.log(res)
                 this.activitiesCurrent=res.data.data
+            })
+            // 最新动态
+            const newsList = new URLSearchParams();
+            newsList.append('pageNum', 1);
+            newsList.append('pageSize', 6);
+            this.axios({
+                method: 'post',
+                url: '/article/list.do',
+                data:newsList
+            }).then((res)=>{
+                const msg=res.data.data.list
+                // console.log(msg)
+                this.recentNews=msg
             })
         }
     }

@@ -66,17 +66,20 @@ export default {
         },
         articleType(str){
             switch(str){
-                case "独家原创":
-                    return str="原创"
+                case "行业分析":
+                    return str="分析"
                     break;
-                case "访校文章":
+                case "访校观察":
                     return str="访校"
                     break;
                 case "政策解读":
                     return str="政策"
                     break;
+                case "人物访谈":
+                    return str="人物"
+                    break;
                 default:
-                    return str="快讯"
+                    return str="资讯"
                     break;
             }
         }
@@ -103,7 +106,7 @@ export default {
             })
         },
         toDetail(id){
-            console.log(id)
+            // console.log(id)
             let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
             window.open(routeData.href, '_blank');
         },

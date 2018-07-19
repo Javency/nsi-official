@@ -40,9 +40,6 @@
                     <div class="slide-article">
                         <slide-article/>
                     </div>
-                    <div class="follow">
-                        <follow/>
-                    </div>
                 </div>
             </div>
             <shareBox :newsShareInfo="shareInfo" class="newsShare"/>
