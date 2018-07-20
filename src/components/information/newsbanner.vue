@@ -33,7 +33,6 @@
 
 <script>
 import 'swiper/dist/css/swiper.css'
-
 import Swiper from 'swiper'
 
 export default {
@@ -91,7 +90,7 @@ export default {
                 on:{
                     transitionStart:function(swiper){
                         self.newsBannerIndex=this.realIndex
-                        console.log(self.newsBannerIndex)
+                        // console.log(self.newsBannerIndex)
                     },
                 }
             })

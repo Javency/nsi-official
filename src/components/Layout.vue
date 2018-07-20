@@ -145,7 +145,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-                <h3 class="contact">CONTACT&nbsp;<span>联系我们</span></h3>
+                <h3 class="contact">联系我们&nbsp;<span>CONTACT</span></h3>
                 <ul class="contact-info">
                   <li>{{$t('layoutFooter.tel')}}</li>
                   <li>{{$t('layoutFooter.email')}}</li>
@@ -153,41 +153,59 @@
                   <li>{{$t('layoutFooter.address')}}</li>
                 </ul>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-8">
                   <div class="row">
-                      <div class="col-md-4">
-                            <h6 class="aboutUs">● &nbsp;关于我们</h6>
-                            <ul class="aboutUs-info">
-                                <li><a href="javascript:;">› &nbsp;公司简介</a></li>
-                                <li><a href="javascript:;">› &nbsp;发展历程</a></li>
-                                <li><a href="javascript:;">› &nbsp;企业文化</a></li>
-                                <li><a href="javascript:;">› &nbsp;荣誉资质</a></li>
-                            </ul>
-                      </div>
-                      <div class="col-md-4">
-                           <h6 class="aboutUs">● &nbsp;业务范围</h6>
-                            <ul class="aboutUs-info">
-                                <li><a href="javascript:;">› &nbsp;公司简介</a></li>
-                                <li><a href="javascript:;">› &nbsp;发展历程</a></li>
-                                <li><a href="javascript:;">› &nbsp;企业文化</a></li>
-                                <li><a href="javascript:;">› &nbsp;荣誉资质</a></li>
-                            </ul>
-                      </div>
-                      <div class="col-md-4">
-                          <h6 class="aboutUs"><br/></h6>
-                            <ul class="aboutUs-info">
-                                <li><a href="javascript:;">› &nbsp;公司简介</a></li>
-                                <li><a href="javascript:;">› &nbsp;发展历程</a></li>
-                                <li><a href="javascript:;">› &nbsp;企业文化</a></li>
-                                <li><a href="javascript:;">› &nbsp;荣誉资质</a></li>
-                            </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 text-right noPr15">
-                  <div class="wechatBox text-left">
-                    <h6 class="aboutUs">● &nbsp;{{this.$t('layoutFooter.weChat')}}</h6>
-                    <img src="../assets/img/layoutImg/wechat_QR.png" alt="" width="110" height="110">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4>友情链接</h4>
+                                    <div class="shareHref">
+                                        <a href="data.xinxueshuo.cn">四库全书</a>
+                                        <a href="class.xinxueshuo.cn">在线课堂</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="logoShare">
+                                        <!-- 推特 -->
+                                        <a href="javascript:;">
+                                            <img src="../assets/img/layoutImg/shareIcon/twitter.png" alt="" width="35">
+                                        </a>
+                                        <!-- 微博 -->
+                                         <a href="javascript:;">
+                                            <img src="../assets/img/layoutImg/shareIcon/weibo.png" alt="" width="35">
+                                        </a>
+                                        <!-- 知乎 -->
+                                        <a href="javascript:;">
+                                            <img src="../assets/img/layoutImg/shareIcon/zhihu.png" alt="" width="35">
+                                        </a>
+                                        <!-- 搜狐 -->
+                                        <a href="javascript:;">
+                                            <img src="../assets/img/layoutImg/shareIcon/souhu.png" alt="" width="35">
+                                        </a>
+                                        <!-- 头条 -->
+                                        <a href="javascript:;">
+                                            <img src="../assets/img/layoutImg/shareIcon/toutiao.png" alt="" width="35">
+                                        </a>
+                                        <!-- link -->
+                                        <a href="javascript:;">
+                                            <img src="../assets/img/layoutImg/shareIcon/linked.png" alt="" width="35">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-2 text-center noPr15">
+                            <div class="wechatBox">
+                                <h6 class="aboutUs">{{this.$t('layoutFooter.weChat')}}</h6>
+                                <img src="../assets/img/layoutImg/wechat_QR.png" alt="" width="110" height="110">
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-center noPr15">
+                            <div class="wechatBox">
+                                <h6 class="aboutUs">{{this.$t('layoutFooter.weChat')}}</h6>
+                                <img src="../assets/img/layoutImg/weidian.png" alt="" width="110" height="110">
+                            </div>
+                        </div>
                   </div>
               </div>
             </div>
@@ -469,6 +487,35 @@ export default {
     }
     .wechatBox{
         display: inline-block;
+    }
+    .shareHref{
+        margin-bottom: 15px;
+        a{
+            color: #8fb8fb;
+            margin-right:25px ;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #c1dcff;
+        }
+    }
+    .logoShare{
+        a{
+            display: inline-block;
+            color: #FFF;
+            background-color: #FFF;
+            margin-right:30px ;
+            margin-bottom: 13px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px #4a4a4a;
+            i{
+                font-size: 25px;
+            }
+        }
+         a:hover{
+            text-decoration: none;
+            color: #c1dcff;
+        }
     }
     @media (max-width: 768px){
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {
