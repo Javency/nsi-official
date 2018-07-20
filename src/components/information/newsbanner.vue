@@ -4,19 +4,18 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="newsbanner">
-                        <swiper :options="swiperOption" ref="mySwiperNews">
-                            <!-- slides -->
-                            <swiper-slide v-for="(bannerInfos,item) in bannerInfo" :key="item">
-                                <img :src="bannerInfos.coverImage" alt="" class="img-responsive">
-                                <div class="bg"></div>
-                            </swiper-slide>
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
+                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive">
+                                </div>
+                            </div>
                             <div class="swiper-pagination"  slot="pagination"></div>
                             <div class="swiper-button-prev" slot="button-prev">‹</div>
                             <div class="swiper-button-next" slot="button-next">›</div>
-                        </swiper>
-                        <div class="slide-bar">
-                          <!-- <p class="slidebar1">新闻头条</p> -->
-                          <p class="slidebar2"><span>新</span> 闻头条</p>
+                        </div>
+                         <div class="slide-bar">
+                            <p class="slidebar2"><span>新</span> 闻头条<h1></h1></p>
                         </div>
                     </div>
                 </div>
@@ -34,53 +33,14 @@
 
 <script>
 import 'swiper/dist/css/swiper.css'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
-// var newsBannerIndex=0
+import Swiper from 'swiper'
+
 export default {
-    components: {
-        swiper,
-        swiperSlide
-    },
-    name: 'carrousel',
     data () {
-        const self=this
         return {
-        // 轮播
-        newsBannerIndex:'',
-        bannerInfo:[],
-        swiperOption: {
-            notNextTick: true,
-            autoplay: {
-                delay:3000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            speed:600,
-            grabCursor : true,
-            // effect: 'fade',
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            observer:true,//修改swiper自己或子元素时，自动初始化swiper
-            observeParents:true,//修改swiper的父元素时，自动初始化swiper
-            on:{
-                transitionStart:function(swiper){
-                   self.newsBannerIndex=this.realIndex
-                  //  console.log(self.newsBannerIndex)
-                },
-                onSlideChangeEnd: function(swiper){
-                    swiper.update();
-                    // this.startAutoplay();
-                    // this.reLoop();
-                }
-            }
-        }
+        newsBannerIndex:0,
+        bannerInfo:[]
       }
     },
     methods:{
@@ -102,25 +62,41 @@ export default {
                 // console.log(msg)
                 this.bannerInfo=msg
                 this.$nextTick(()=>{
-                   console.log(swiper)
+                    this.swiperInit()
                 })
+            })
+        },
+        swiperInit(){
+            const self=this
+            new Swiper('.swiper-container', {
+                 notNextTick: true,
+                 autoplay: {
+                    delay:3000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                speed:600,
+                grabCursor : true,
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
+                on:{
+                    transitionStart:function(swiper){
+                        self.newsBannerIndex=this.realIndex
+                        console.log(self.newsBannerIndex)
+                    },
+                }
             })
         }
     },
-    // beforeMount(){
-    //     const newsBanner = new URLSearchParams();
-    //     newsBanner.append('pageNum', 1);
-    //     newsBanner.append('pageSize', 5);
-    //     this.axios({
-    //          method: 'post',
-    //          url: '/article/list.do',
-    //          data: newsBanner
-    //     }).then((res)=>{
-    //         const msg=res.data.data.list
-    //         // console.log(msg)
-    //         this.bannerInfo=msg
-    //     })
-    // },
     mounted(){
         this.getBannerInfo()
     }

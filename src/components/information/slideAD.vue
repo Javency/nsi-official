@@ -51,7 +51,7 @@ export default {
                 typeName:"文章页右侧广告位"
             }
         }).then((res)=>{
-            console.log(res)
+            // console.log(res)
             this.ADinfo=res.data.data
         })
     }
