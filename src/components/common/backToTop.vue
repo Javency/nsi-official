@@ -60,7 +60,7 @@ export default {
           height: 50px;
           text-align: center;
           line-height: 50px;
-          background-color: rgba(255, 255, 255, .6);
+          background-color: rgb(255, 255, 255);
           border-radius: 8px;
           color: rgb(201, 214, 222);
           box-shadow: rgba(15, 37, 64, 0.2) 0px 5px 15px 0px;
@@ -74,7 +74,7 @@ export default {
          text-decoration: none;
        }
        a:hover{
-        background-color: rgba(218, 217, 217,.3);
+        background-color: rgb(230, 230, 230);
         color: rgb(169, 177, 182);
        }
        .show{
