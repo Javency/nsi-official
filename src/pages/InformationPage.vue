@@ -16,14 +16,17 @@
                 <router-view></router-view>
             </keep-alive>
         </transition>
+        <back-top></back-top>
     </div>
 </template>
 
 <script>
 import NewsBanner from '../components/information/newsbanner'
+import backTop from '../components/common/backToTop'
 export default {
     components:{
-        NewsBanner
+        NewsBanner,
+        backTop
     }
 }
 </script>
@@ -76,7 +79,7 @@ export default {
             content: "";
             background: #333;
             width: 100%;
-            height: 2px;
+            height: 3px;
             -webkit-transition: all 1s ease 0s;
             -ms-transition: all 1s ease 0s;
             -o-transition: all 0.3s ease 0s;

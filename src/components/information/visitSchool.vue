@@ -125,6 +125,9 @@ export default {
         padding: 30px 0;
         background: #fafafa;
         margin-bottom: -50px;
+        .list-box{
+          background-color: #FFF;
+        }
         img{
             display: inline-block;
             max-width: 100%;
@@ -133,9 +136,9 @@ export default {
         }
         .list{
             padding: 10px;
-            background-color: #fff;
+            // background-color: #fff;
             @include transitionAnimate;
-            margin-bottom: 15px;
+            // margin-bottom: 15px;
             &:hover{
                 background-color: #fff;
                 box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.10);
@@ -150,6 +153,7 @@ export default {
             .list-img-box{
                .img-box{
                     display: inline-block;
+                    position: relative;
                     @include transitionAnimate;
                     &:hover{
                         opacity: .8;
@@ -158,15 +162,29 @@ export default {
                         min-height: 181px;
                         background-color: #e4e4e4
                     }
+                    .articleType{
+                        position: absolute;
+                        display: block;
+                        width: 44px;
+                        top: 10px;
+                        left: 10px;
+                        font-style: normal;
+                        padding: 3px 10px 2px;
+                        color: #FFF;
+                        border-radius: 20px;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        font-size: 12px;
+                    }
                 }
             }
             .list-content-box{
                 padding: 15px 10px 0;
                 background: #FFF;
-                min-height: 215px;
+                // min-height: 215px;
+                min-height: 190px;
                 h3{
                     margin-top: 0;
-                    margin-bottom: 15px;
+                    margin-bottom: 10px;
                     max-height: 80px;
                     overflow: hidden;
                     a{
@@ -177,6 +195,10 @@ export default {
                         color: #333333;
                         letter-spacing: 0;
                         overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
                         @include transitionAnimate;
                         font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
                         &:hover{
@@ -201,10 +223,12 @@ export default {
                 opacity: 1;
                 transition: all .3s;
                 position: relative;
+                padding-right: 10px;
+                padding-bottom: 10px;
                 .time{
                     position: absolute;
                     color: #7c7c7c;
-                    bottom: 2px;
+                    bottom: 12px;
                     left: 10px;
                 }
                 p{

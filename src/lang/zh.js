@@ -20,7 +20,8 @@ module.exports = {
         email: "邮箱：info@xinxueshuo.cn",
         phone: "手机：15010927730",
         address: "地址：北京市西城区新风街2号天成科技大厦A座1006",
-        weChat: "微信公众号"
+        weChat: "微信公众号",
+        weibo: "官方微店"
     },
     // 关于我们
     aboutus: {

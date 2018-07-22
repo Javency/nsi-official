@@ -44,6 +44,7 @@
             </div>
             <shareBox :newsShareInfo="shareInfo" class="newsShare"/>
         </div>
+        <back-top></back-top>
     </div>
 </template>
 
@@ -51,11 +52,13 @@
 import slideAd from './slideAD'
 import shareBox from '../common/share'
 import slideArticle from './slideArticle'
+import backTop from '../common/backToTop'
 export default {
     components:{
         slideAd,
         shareBox,
-        slideArticle
+        slideArticle,
+        backTop
     },
     data(){
         return{

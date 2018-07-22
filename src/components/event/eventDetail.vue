@@ -1,6 +1,6 @@
 <template>
     <div class="eventDetail-com">
-        <div class="container-fluid pt50">
+        <div class="container pt50">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="newsDetail-title text-center">{{detail.title}}</h1>

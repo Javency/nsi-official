@@ -151,6 +151,9 @@ export default {
         padding: 30px 0;
         background: #fafafa;
         margin-bottom: -50px;
+        .list-box{
+          background-color: #FFF;
+        }
         img{
             display: inline-block;
             max-width: 100%;
@@ -159,9 +162,9 @@ export default {
         }
         .list{
             padding: 10px;
-            background-color: #fff;
+            // background-color: #fff;
             @include transitionAnimate;
-            margin-bottom: 15px;
+            // margin-bottom: 15px;
             &:hover{
                 background-color: #fff;
                 box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.10);
@@ -218,6 +221,10 @@ export default {
                         color: #333333;
                         letter-spacing: 0;
                         overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
                         @include transitionAnimate;
                         font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
                         &:hover{
@@ -242,10 +249,12 @@ export default {
                 opacity: 1;
                 transition: all .3s;
                 position: relative;
+                padding-right: 10px;
+                padding-bottom: 10px;
                 .time{
                     position: absolute;
                     color: #7c7c7c;
-                    bottom: 2px;
+                    bottom: 12px;
                     left: 10px;
                 }
                 p{

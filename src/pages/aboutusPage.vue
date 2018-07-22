@@ -47,20 +47,15 @@
                         <h3>合作伙伴</h3>
                     </div>
                     <div class="col-md-6">
-                        <h3 class="coo-info"><small>新学说自创办以来，为数百个家喻户晓的品牌提供了深度定制的推广策略，始终专注于高质量的内容传播和创新的广告服务。</small></h3>
+                        <h3 class="coo-info"><small>新学说自创办以来，为数百个家喻户晓的品牌提供了深度定制的推广策略，始终专注于高质量的内容传播和创新的宣传服务。</small></h3>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row coo-logo">
                     <div class="col-md-2">
-                        <a href="http://www.casio.com.cn/index.html?from=skqs" target="_" title="卡西欧（中国）贸易有限公司">
-                            <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100181/100181-logo.jpg" alt="" width="180">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="http://www.ourschoolbus.com.cn" target="_" title="起点校车">
-                            <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100043/100043-logo.jpg" alt="" width="120">
+                        <a href="http://www.brightscholar.com" target="_" title="博实乐教育集团">
+                            <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100099/100099-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                     <div class="col-md-2">
@@ -69,18 +64,23 @@
                         </a>
                     </div>
                     <div class="col-md-2">
+                        <a href="http://www.ourschoolbus.com.cn" target="_" title="起点校车">
+                            <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100043/100043-logo.jpg" alt="" width="120">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="http://www.casio.com.cn/index.html?from=skqs" target="_" title="卡西欧（中国）贸易有限公司">
+                            <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100181/100181-logo.jpg" alt="" width="180">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
                         <a href="javascript:;" title="北京市君诚国际双语学校">
-                            <img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100742/100742-logo.jpg" alt="" width="120">
+                            <img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100742/100742-logo.jpg" alt="" width="100">
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="http://www.chinahtedu.com" target="_" title="北京汉通文化有限责任公司">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100163/100163-logo.jpg" alt="" width="120">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="http://www.brightscholar.com" target="_" title="博实乐教育集团">
-                            <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100099/100099-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                 </div>

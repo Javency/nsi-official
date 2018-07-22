@@ -115,13 +115,13 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link>
-                                                        </el-dropdown-item>
-                                                        <el-dropdown-item>
                                                             <a href="#">{{$t('layoutNav.researchChild.pisom')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutNav.researchChild.classOnline')}}</a>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -138,7 +138,9 @@
         </div>
         <div class="content">
             <!-- <keep-alive> -->
+              <!-- <transition name="slide-fade"> -->
                 <router-view></router-view>
+              <!-- </transition> -->
             <!-- </keep-alive> -->
         </div>
         <div class="footer mt50">
@@ -158,10 +160,10 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4>友情链接</h4>
+                                    <h4 class="blogroll">友情链接</h4>
                                     <div class="shareHref">
-                                        <a href="data.xinxueshuo.cn">四库全书</a>
-                                        <a href="class.xinxueshuo.cn">在线课堂</a>
+                                        <a href="http://data.xinxueshuo.cn" target="_">四库全书</a>
+                                        <a href="http://class.xinxueshuo.cn" target="_">在线课堂</a>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -194,15 +196,15 @@
                                 </div>
                             </div>
                         </div>
-                         <div class="col-md-2 text-center noPr15">
+                         <div class="col-md-2 col-md-offset-1 text-center noPr15">
                             <div class="wechatBox">
                                 <h6 class="aboutUs">{{this.$t('layoutFooter.weChat')}}</h6>
                                 <img src="../assets/img/layoutImg/wechat_QR.png" alt="" width="110" height="110">
                             </div>
                         </div>
                         <div class="col-md-2 text-center noPr15">
-                            <div class="wechatBox">
-                                <h6 class="aboutUs">{{this.$t('layoutFooter.weChat')}}</h6>
+                            <div class="wechatBox weiboBox">
+                                <h6 class="aboutUs">{{this.$t('layoutFooter.weibo')}}</h6>
                                 <img src="../assets/img/layoutImg/weidian.png" alt="" width="110" height="110">
                             </div>
                         </div>
@@ -214,11 +216,11 @@
         <div class="footer-bottom">
           <div class="container">
             <div class="row">
-              <div class="col-md-6">
-                <h3 class="footer-company">新学说文化传媒有限公司</h3>
-                <h3 class="footer-company company-en">NewSchool Insight MEDIA</h3>
+              <div class="col-md-12 text-center">
+                <span class="footer-company">新学说文化传媒有限公司</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="footer-company company-en">NEWSCHOOL INSIGHT MEDIA</span>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-12 text-center">
                 <div class="copyright">
                   <p>Copyright © 2018 xinxueshuo.cn All Rights Reserved 京ICP备 16031987号-1</p>
                 </div>
@@ -249,7 +251,7 @@ export default {
                 switchFlag:false
             }],
             layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.louts'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
-            layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat')]
+            layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo')]
         }
     },
    mounted(){
@@ -308,6 +310,18 @@ export default {
     $official-footerColor:#2c6daf;
     $official-footerFontColor:#699bda;
     $official-otherColor:#8fb8fb;
+    .layout-com{
+      .slide-fade-enter-active {
+        transition: all .5s ease;
+      }
+      .slide-fade-leave-active {
+        transition: all .1s cubic-bezier(2.0, 0.5, 0.8, 1.0);
+      }
+      .slide-fade-enter, .slide-fade-leave-to
+      {
+        opacity: 0;
+      }
+    }
     .mt50{
         margin-top: 50px;
     }
@@ -381,7 +395,8 @@ export default {
         display: inline-block;
         padding: 15px;
     }
-    .hasSubmenu a:hover{
+    .hasSubmenu a:hover,
+    .hasSubmenu a:link{
         text-decoration: none !important;
     }
     .el-dropdown-menu a{
@@ -430,9 +445,9 @@ export default {
         padding-left: 0;
     }
     .footer .contact{
-      font-weight: 700;
+      // font-weight: 700;
       color: #FFF;
-      font-size: 28px;
+      font-size: 18px;
       font-family: -webkit-pictograph,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .footer .contact>span{
@@ -459,16 +474,21 @@ export default {
         padding-right:0;
     }
     .footer-company{
+      font-size: 20px;
       color: #969696;
       letter-spacing: 1px;
+      // margin-right: 30px;
     }
     .company-en{
       font-size: 18px;
     }
     .copyright{
-      padding-top: 40px;
+      padding-top: 15px;
       font-size: 13px;
       color: #969696;
+      p{
+        margin-bottom: 0;
+      }
     }
     .aboutUs{
         font-weight: 700;
@@ -487,12 +507,26 @@ export default {
     }
     .wechatBox{
         display: inline-block;
+        padding-left: 40px;
+        h6{
+        margin-bottom: 15px;
+      }
+    }
+    .weiboBox{
+      padding-left: 90px;
+      h6{
+        margin-bottom: 15px;
+      }
+    }
+    .blogroll{
+      margin-top: 25px;
+      margin-bottom: 25px;
     }
     .shareHref{
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         a{
             color: #8fb8fb;
-            margin-right:25px ;
+            margin-right:25px;
         }
         a:hover{
             text-decoration: none;
@@ -504,7 +538,7 @@ export default {
             display: inline-block;
             color: #FFF;
             background-color: #FFF;
-            margin-right:30px ;
+            margin-right:22px ;
             margin-bottom: 13px;
             border-radius: 10px;
             box-shadow: 2px 2px 2px #4a4a4a;

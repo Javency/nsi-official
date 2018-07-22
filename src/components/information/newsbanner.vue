@@ -7,7 +7,7 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
-                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive">
+                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.id)">
                                 </div>
                             </div>
                             <div class="swiper-pagination"  slot="pagination"></div>
