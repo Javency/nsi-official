@@ -15,8 +15,8 @@
           <!-- <div class="bgblur bg02"></div> -->
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-button-prev" slot="button-prev">‹</div>
+      <div class="swiper-button-next" slot="button-next">›</div>
   </swiper>
 </template>
 
@@ -68,13 +68,38 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     /* banner */
     .swiper-button-prev{
         left: 30px;
     }
     .swiper-button-next{
         right: 30px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        width:60px;
+        height: 60px;
+        line-height: 52px;
+        text-align: center;
+        border-radius: 50%;
+        color: #222;
+        background: #fff;
+        font-size: 50px;
+        opacity: .4;
+        transition: all .3s;
+        &:hover{
+        opacity: .7;
+        }
+        @media (max-width: 768px) {
+            width: 40px;
+            height: 40px;
+            line-height: 35px;
+            font-size: 30px;
+        }
+    }
+    .swiper-pagination-bullet-active{
+        background: #FFF;
     }
     /* .swipercontainer{
         position: relative;
@@ -101,11 +126,5 @@ export default {
         box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
         padding-left: 0;
         padding-right: 0;
-    }
-    .bg01{
-        background: url("../../assets/img/index/banner01.jpg");
-    }
-    .bg02{
-        background: url("../../assets/img/index/banner02.jpg");
     }
 </style>

@@ -9,13 +9,13 @@
                     <!-- title -->
                     <div class="index-title">
                         <span class="line left-line"></span>
-                        <h3 class="text-center">最新动态</h3>
+                        <h3 class="text-center mb0_768">最新动态</h3>
                         <h3 class="text-center mt0"><small>Recent Developments</small></h3>
                         <span class="line right-line"></span>
                     </div>
                     <div class="row pt50">
                         <!-- 两则新闻概要 -->
-                        <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index<2">
+                        <div class="col-md-6 col-xs-6" v-for="(news,index) in recentNews" :key="index" v-if="index<2">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="news-content">
@@ -49,6 +49,8 @@
                           </div>
                       </div>
                     </div>
+                    <!-- 四则新闻移动端 -->
+                    <news-info-m :showFourNews="recentNews" class="showInMobile"></news-info-m>
                     <div class="row">
                       <div class="col-md-12 text-right">
                         <router-link :to="{path:'/news'}">更多&gt;&gt;</router-link>
@@ -60,7 +62,7 @@
                    <!-- title -->
                     <div class="index-title">
                       <span class="line left-line"></span>
-                      <h3 class="text-center">近期活动</h3>
+                      <h3 class="text-center mb0_768">近期活动</h3>
                       <h3 class="text-center mt0"><small>Recent Activities</small></h3>
                       <span class="line right-line"></span>
                     </div>
@@ -79,7 +81,7 @@
                         <div class="col-md-5 col-md-offset-1">
                           <div class="othersActivities">
                             <div class="row">
-                              <div class="col-md-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
+                              <div class="col-md-6 col-xs-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
                                 <a href="javascript:;">
                                   <div class="othersBox" :class="'othersBox0'+(index+1)">
                                     <!-- <div class="othersBox-bg"></div> -->
@@ -95,6 +97,8 @@
                         </div>
                       </div>
                     </div>
+                    <!-- 近期活动_移动端显示 -->
+                    <recent-event class="showInMobile" :eventInfo="activitiesCurrent"></recent-event>
                 </div>
             </div>
         </div>
@@ -103,11 +107,14 @@
 
 <script>
     import Banner from '../components/index/banner.vue'
-
+    import newsInfoM from '../components/index/newsInfo-M.vue'
+    import recentEvent from '../components/index/recentEvent-M.vue'
     var currentSerialNum=0;
     export default {
         components: {
-           Banner
+           Banner,
+           newsInfoM,
+           recentEvent
         },
         name: 'carrousel',
         data() {
@@ -159,14 +166,28 @@
     }
 </script>
 
-<style>
+<style lang="scss">
     /* common */
+    .showInMobile{
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .showInMobile{
+            display: block;
+        }
+        .activitiesBox{
+            display: none;
+        }
+    }
     .others{
       padding-left: 0;
       padding-right: 0;
     }
     .pt50{
         padding-top: 50px;
+        @media (max-width: 768px) {
+            padding-top: 15px;
+        }
     }
     .pl0{
         padding-left: 0;
@@ -192,6 +213,12 @@
     }
     .indexPage-com{
       padding-top: 52px;
+      @media (max-width: 768px) {
+        padding-top: 0;
+        .mb0_768{
+            margin-bottom: 0;
+        }
+      }
     }
     /* 最新动态 */
     .index-title{
@@ -214,7 +241,26 @@
     .right-line{
         right: 50px;
     }
-
+    .news-content{
+        @media (max-width: 768px) {
+            border-radius: 2px;
+            overflow: hidden;
+            // margin-bottom: 10px;
+        }
+    }
+    .newsBox{
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fafafa;
+            box-shadow: 0 5px 10px #cacaca;
+        }
+    }
+    .fourNews{
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
     .newestPlpr0{
         padding-left: 0;
         padding-right: 0;
@@ -225,6 +271,9 @@
         width: 100%;
         height: 170px;
         background-color: #ccc;
+        @media (max-width: 768px) {
+            height: 120px;
+        }
     }
     .news-title{
         font-weight: 700;
@@ -239,6 +288,11 @@
         color: #93999F;
         min-height: 97px;
         max-height: 97px;
+        @media (max-width: 768px) {
+            -webkit-line-clamp:3;
+            min-height: 58px;
+            max-height: 58px;
+        }
     }
     .news-time{
         color: #727475;
@@ -263,6 +317,10 @@
       font-weight: 700;
       position: relative;
       line-height: 1.5;
+      @media (max-width: 768px) {
+          margin-top: 0;
+          font-size: 25px;
+      }
     }
     .activitiesTitle::before{
       display: block;
@@ -280,6 +338,9 @@
       line-height: 1.5;
       font-size: 32px;
       letter-spacing: 1px;
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
     }
     .activities-zh>a,.activitiesTitle>a{
       color: #222;

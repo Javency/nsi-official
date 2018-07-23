@@ -8,7 +8,8 @@ module.exports = {
         lotus: "LotusSchool",
         research: "Research",
         researchChild: {
-            magazine: "Magazine&Report",
+            magazine: "Magazine",
+            report: "Report",
             pisom: "PISOM",
             classOnline: "Class Online"
         },

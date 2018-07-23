@@ -117,13 +117,14 @@ export default {
             }
             .swiper-button-prev,
             .swiper-button-next{
-              width:60px;
-              height: 60px;
+              width:60px !important;
+              height: 60px !important;
               line-height: 52px;
               text-align: center;
               border-radius: 50%;
               color: #222;
-              background: #fff;
+              background-image: none !important;
+              background: #fff !important;
               font-size: 50px;
               opacity: 0;
               transition: all .3s;
@@ -132,7 +133,7 @@ export default {
               }
             }
             .swiper-pagination-bullet-active{
-              background: #FFF;
+              background: #FFF !important;
             }
             .slide-bar{
                 position: absolute;

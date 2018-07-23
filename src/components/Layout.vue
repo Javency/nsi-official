@@ -64,7 +64,7 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="javascript:;" target="_">VIS国际学校发展大会</a>
+                                                            <a href="javascript:;" target="_"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;VIS国际学校发展大会</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <a href="javascript:;" target="_">专题研讨会</a>
@@ -118,10 +118,13 @@
                                                             <a href="#">{{$t('layoutNav.researchChild.pisom')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutNav.researchChild.classOnline')}}</a>
+                                                            <a href="http://class.xinxueshuo.cn" target="_"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                            <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-baogao fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.report')}}</router-link>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -168,41 +171,41 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="logoShare">
-                                        <!-- 推特 -->
-                                        <a href="javascript:;">
-                                            <img src="../assets/img/layoutImg/shareIcon/twitter.png" alt="" width="35">
-                                        </a>
                                         <!-- 微博 -->
-                                         <a href="javascript:;">
+                                         <a href="https://weibo.com/u/5786464903?refer_flag=1001030101_&is_hot=1" target="_">
                                             <img src="../assets/img/layoutImg/shareIcon/weibo.png" alt="" width="35">
                                         </a>
                                         <!-- 知乎 -->
-                                        <a href="javascript:;">
+                                        <a href="https://www.zhihu.com/org/xin-xue-shuo-chuan-mei-74/activities" target="_">
                                             <img src="../assets/img/layoutImg/shareIcon/zhihu.png" alt="" width="35">
                                         </a>
                                         <!-- 搜狐 -->
-                                        <a href="javascript:;">
+                                        <a href="http://mp.sohu.com/profile?xpt=cHBhZzc3MzAzZjExYTE3ZUBzb2h1LmNvbQ==&_f=index_pagemp_2" target="_">
                                             <img src="../assets/img/layoutImg/shareIcon/souhu.png" alt="" width="35">
                                         </a>
                                         <!-- 头条 -->
-                                        <a href="javascript:;">
+                                        <a href="https://www.toutiao.com/c/user/6030021946/#mid=6033071476" target="_">
                                             <img src="../assets/img/layoutImg/shareIcon/toutiao.png" alt="" width="35">
                                         </a>
                                         <!-- link -->
-                                        <a href="javascript:;">
+                                        <a href="https://www.linkedin.com/in/newschool-insight-b96319139" target="_">
                                             <img src="../assets/img/layoutImg/shareIcon/linked.png" alt="" width="35">
+                                        </a>
+                                        <!-- 推特 -->
+                                        <a href="https://mobile.twitter.com/nsi_media;" target="_">
+                                            <img src="../assets/img/layoutImg/shareIcon/twitter.png" alt="" width="35">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                         <div class="col-md-2 col-md-offset-1 text-center noPr15">
+                         <div class="col-md-2 col-xs-2 col-md-offset-1 text-center noPr15">
                             <div class="wechatBox">
                                 <h6 class="aboutUs">{{this.$t('layoutFooter.weChat')}}</h6>
                                 <img src="../assets/img/layoutImg/wechat_QR.png" alt="" width="110" height="110">
                             </div>
                         </div>
-                        <div class="col-md-2 text-center noPr15">
+                        <div class="col-md-2 col-xs-2 col-xs-offset-1 text-center noPr15">
                             <div class="wechatBox weiboBox">
                                 <h6 class="aboutUs">{{this.$t('layoutFooter.weibo')}}</h6>
                                 <img src="../assets/img/layoutImg/weidian.png" alt="" width="110" height="110">
@@ -250,7 +253,7 @@ export default {
                 country:"English",
                 switchFlag:false
             }],
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.louts'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.louts'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
             layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo')]
         }
     },
@@ -310,6 +313,9 @@ export default {
     $official-footerColor:#2c6daf;
     $official-footerFontColor:#699bda;
     $official-otherColor:#8fb8fb;
+    .fontLogo{
+        font-size: 20px !important;
+    }
     .layout-com{
       .slide-fade-enter-active {
         transition: all .5s ease;
@@ -468,6 +474,9 @@ export default {
     .footer-bottom{
       padding: 20px 0;
       background-color: #2f2f2f;
+      @media (max-width:768px) {
+          margin-top: 30px;
+      }
     }
     .footer-bottom>.container{
         padding-left: 0;
@@ -521,9 +530,15 @@ export default {
     .blogroll{
       margin-top: 25px;
       margin-bottom: 25px;
+      @media (max-width: 768px) {
+          margin: 10px 0 10px 0;
+      }
     }
     .shareHref{
         margin-bottom: 30px;
+        @media (max-width:768px) {
+            margin-bottom: 10px;
+        }
         a{
             color: #8fb8fb;
             margin-right:25px;
@@ -542,6 +557,9 @@ export default {
             margin-bottom: 13px;
             border-radius: 10px;
             box-shadow: 2px 2px 2px #4a4a4a;
+            @media (max-width: 768px) {
+                margin-right: 15px;
+            }
             i{
                 font-size: 25px;
             }
@@ -573,6 +591,15 @@ export default {
     .footer-bottom>.container{
         padding-left: 15px;
         padding-right:15px;
+    }
+    .footer{
+        display: none;
+    }
+    .footer-company{
+        font-size: 13px;
+    }
+    .copyright{
+        font-size: 12px;
     }
 }
 </style>

@@ -8,7 +8,8 @@ module.exports = {
         lotus: "新荷学校",
         research: "研究院",
         researchChild: {
-            magazine: "期刊&报告",
+            magazine: "期刊",
+            report: "报告",
             pisom: "PISOM",
             classOnline: "在线课堂"
         },
