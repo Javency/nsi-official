@@ -5,14 +5,14 @@
             <h4>这是标题这是标题这是标题这是标题这是标题</h4>
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quae at laborum ipsam, quos ratione adipisci accusamus harum dolor illum cumque tenetur minima distinctio fuga molestias dolore fugiat dolorum numquam.</span>
         </div> -->
-        <div class="newsInfoBox" v-for="(news,index) in showFourNews" :key="index" v-if="index>=2&&index<7">
+        <div class="newsInfoBox" v-for="(news,index) in showFourNews" :key="index" v-if="index<5">
             <div class="row">
                 <div class="col-xs-5">
                     <img :src="news.coverImage" alt="" class="img-responsive" @click="toDetail(news.id)">
                 </div>
                 <div class="col-xs-7 pl0 newsIntro">
                     <h5 @click="toDetail(news.id)">{{news.title}}</h5>
-                    <p class="newsInfoBox-time" >{{news.createTime|formatDate}}</p>
+                    <p class="newsInfoBox-time" >{{news.summary}}</p>
                 </div>
             </div>
         </div>
@@ -64,19 +64,23 @@ export default {
             padding-left: 0;
         }
         .newsInfoBox{
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgb(238, 238, 238);
             h5{
-                font-weight: 600;
+                font-weight: 400;
                 font-size: 16px;
-                line-height: 1.5 !important;
+                line-height: 1.3 !important;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
-                min-height: 48px;
-                max-height: 48px;
-                // margin-bottom: 0;
+                min-height: 43px;
+                max-height: 43px;
+                margin-top: 0;
+                margin-bottom: 5px;
+                color: #07111B;
             }
             img{
                 border-radius: 2px;
@@ -86,8 +90,15 @@ export default {
                 .newsInfoBox-time{
                     margin-bottom: 0;
                     padding-bottom: 8px;
-                    border-bottom: 1px solid #ddd;
-                    color: #666;
+                    // border-bottom: 1px solid #ddd;
+                    color: #93999F;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    min-height: 40px;
+                    max-height: 40px;
                 }
             }
         }

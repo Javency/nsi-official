@@ -1,7 +1,8 @@
 <template>
     <div class="indexPage-com">
         <!-- banner -->
-        <Banner class="mt30"/>
+        <Banner class="mt30 bannerPC"/>
+        <banner-m class="showInMobile bannerM"/>
         <div class="container-fulid">
             <div class="container newestPlpr0">
                 <!-- 最新动态 -->
@@ -13,7 +14,7 @@
                         <h3 class="text-center mt0"><small>Recent Developments</small></h3>
                         <span class="line right-line"></span>
                     </div>
-                    <div class="row pt50">
+                    <div class="row pt50 twoNews">
                         <!-- 两则新闻概要 -->
                         <div class="col-md-6 col-xs-6" v-for="(news,index) in recentNews" :key="index" v-if="index<2">
                             <div class="row">
@@ -49,8 +50,8 @@
                           </div>
                       </div>
                     </div>
-                    <!-- 四则新闻移动端 -->
-                    <news-info-m :showFourNews="recentNews" class="showInMobile"></news-info-m>
+                    <!-- 新闻移动端 -->
+                    <news-info-m :showFourNews="recentNews" class="showInMobile mt20"></news-info-m>
                     <div class="row">
                       <div class="col-md-12 text-right">
                         <router-link :to="{path:'/news'}">更多&gt;&gt;</router-link>
@@ -109,12 +110,14 @@
     import Banner from '../components/index/banner.vue'
     import newsInfoM from '../components/index/newsInfo-M.vue'
     import recentEvent from '../components/index/recentEvent-M.vue'
+    import bannerM from '../components/index/banner-M.vue'
     var currentSerialNum=0;
     export default {
         components: {
            Banner,
            newsInfoM,
-           recentEvent
+           recentEvent,
+           bannerM
         },
         name: 'carrousel',
         data() {
@@ -198,6 +201,9 @@
     .mt15{
       margin-top: 15px;
     }
+    .mt20{
+      margin-top: 20px;
+    }
     .mt30{
       margin-top:30px;
     }
@@ -219,6 +225,15 @@
             margin-bottom: 0;
         }
       }
+      // bannerPC&M
+      .bannerPC{
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+      .bannerM{
+          margin-top: 30px;
+        }
     }
     /* 最新动态 */
     .index-title{
@@ -256,6 +271,7 @@
             box-shadow: 0 5px 10px #cacaca;
         }
     }
+    .twoNews,
     .fourNews{
         @media (max-width: 768px) {
             display: none;

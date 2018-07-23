@@ -5,9 +5,9 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 noPl15">
                             <div class="logoContainer">
-                                <a href="javascript:;"><img src="../assets/img/layoutImg/logo.png" alt="" width="220" height="45"></a>
+                                <a href="javascript:;"><img src="../assets/img/layoutImg/logo.png" alt="" width="220" height="45" class="logo"></a>
                                 <div class="selectLang">
                                     <!-- <a href="javascript:;"><img src="../assets/img/layoutImg/zh.png" alt="" width="30"></a> -->
                                     <!-- <a href="javascript:;" v-for="(logo,index) in logos" v-if="logo.switchFlag==true"><img :src="logo.logoImg" alt="" width="30">
@@ -570,6 +570,12 @@ export default {
         }
     }
     @media (max-width: 768px){
+    .noPl15{
+      padding-left: 0;
+      .logo{
+        width: 200px;
+      }
+    }
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {
           color: #fff
       }

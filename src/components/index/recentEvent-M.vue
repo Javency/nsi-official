@@ -60,6 +60,7 @@ export default {
                     margin-bottom: 0;
                     padding-bottom: 5px;
                     border-bottom: 2px solid #f8f8f8;
+                    font-size: 16px;
                 }
                 .time{
                     margin-top: 5px;
