@@ -223,6 +223,7 @@
         padding-top: 0;
         .mb0_768{
             margin-bottom: 0;
+            font-size: 21px;
         }
       }
       // bannerPC&M
@@ -232,7 +233,8 @@
         }
       }
       .bannerM{
-          margin-top: 30px;
+          margin-top: 20px;
+          padding: 0 10px;
         }
     }
     /* 最新动态 */

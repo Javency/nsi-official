@@ -8,7 +8,7 @@
             </swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
         </swiper> -->
-        <div class="swiper-container">
+        <div class="swiper-container" id="swiperAd">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="(adInfos,item) in ADinfo" :key="item">
                     <a :href="adInfos.clickurl" target="_">
@@ -33,7 +33,7 @@ export default {
     },
     methods:{
         adSwiperInit(){
-            new Swiper('.swiper-container',{
+            new Swiper('#swiperAd',{
                 notNextTick: true,
                 autoplay: {
                     delay:3000,

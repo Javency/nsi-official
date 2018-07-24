@@ -31,9 +31,10 @@
                 </div>
             </div>
             <!-- nav -->
-            <!-- <div class="nav-bg searchBar" :class="searchBarFixed==true?'isFixed':''" id="searchBar"> -->
-            <div class="nav-bg searchBar isFixed" id="searchBar">
-                <div class="container plpr0 navContainer">
+
+            <!-- PC端导航 -->
+            <div class="nav-bg searchBar isFixed navPC" id="searchBar">
+                <div class="container plpr0 navContainer ">
                     <div class="row">
                         <div class="col-md-12 plpr0">
                             <nav class="navbar navbar-default">
@@ -85,7 +86,8 @@
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
                                                         <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.louts')}}<span class="caret"></span></router-link> -->
-                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link></a>                                                    </span>
+                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link></a>
+                                                    </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
                                                             <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>
@@ -138,6 +140,8 @@
                     </div>
                 </div>
             </div>
+            <!-- 移动端导航 -->
+            <nav-m class="showInMobile"></nav-m>
         </div>
         <div class="content">
             <!-- <keep-alive> -->
@@ -235,7 +239,11 @@
 </template>
 
 <script>
+import navM from '../components/common/nav-M'
 export default {
+    components:{
+        navM
+    },
     data(){
         return{
             searchBarFixed:false,
@@ -344,6 +352,9 @@ export default {
     }
     .logoContainer{
         padding: 20px 0;
+        @media (max-width: 768px) {
+            padding: 8px 0;
+        }
     }
 
     .nav-bg{
@@ -416,6 +427,9 @@ export default {
         position: absolute;
         right: 15px;
         top: 25px;
+        @media (max-width:768px) {
+            top: 15px;
+        }
         a{
             color: #777;
         }
@@ -570,6 +584,16 @@ export default {
         }
     }
     @media (max-width: 768px){
+    // PC导航隐藏
+    .navPC{
+        display: none !important;
+    }
+    .showInMobile{
+        display: none;
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
     .noPl15{
       padding-left: 0;
       .logo{
@@ -592,6 +616,9 @@ export default {
     }
     .content{
         padding-top: 52px;
+        @media (max-width:768px) {
+            padding-top: 10px;
+        }
     }
     .footer>.container,
     .footer-bottom>.container{

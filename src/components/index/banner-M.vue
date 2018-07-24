@@ -1,6 +1,6 @@
 <template>
   <div class="banner-M-com">
-      <el-carousel :interval="4000" type="card" height="130px">
+      <el-carousel :interval="4000" arrow="always" height="160px">
         <el-carousel-item>
           <img src="../../assets/img/index/small001.jpg" alt="" class="img-responsive">
         </el-carousel-item>

@@ -37,6 +37,9 @@ export default {
     }
     .infoCenter-com{
       padding-top: 52px;
+      @media (max-width: 768px) {
+          padding-top: 0;
+      }
       .slide-fade{
           position: absolute;left:0;right: 0;
         }
@@ -54,6 +57,9 @@ export default {
         }
         .pt60{
             padding-top: 60px;
+            @media (max-width: 768px) {
+                padding-top: 20px;
+            }
         }
         .mt50{
             margin-top: 50px;

@@ -15,7 +15,7 @@
                             <div class="swiper-button-next" slot="button-next">›</div>
                         </div>
                          <div class="slide-bar">
-                            <p class="slidebar2"><span>新</span> 闻头条<h1></h1></p>
+                            <p class="slidebar2"><span>新</span> 闻头条</p>
                         </div>
                     </div>
                 </div>
@@ -130,6 +130,13 @@ export default {
               transition: all .3s;
               &:hover{
                 opacity: .9;
+              }
+              @media (max-width: 768px) {
+                  width: 40px !important;
+                  height: 40px !important;
+                  line-height: 35px;
+                  font-size: 40px;
+                  outline: none;
               }
             }
             .swiper-pagination-bullet-active{
