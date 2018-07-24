@@ -6,6 +6,7 @@ import InformationPage from '../pages/InformationPage.vue'
 import eventPage from "../pages/eventPage.vue"
 import researchPage from '../pages/researchPage.vue'
 import consultingPage from '../pages/consulting.vue'
+import lotusPage from '../pages/lotusPage.vue'
 
 import newestList from '../components/information/newList.vue'
 import original from '../components/information/original.vue'
@@ -72,6 +73,9 @@ const routes = [{
 }, {
     path: "/consulting",
     component: consultingPage,
+}, {
+    path: "/lotus",
+    component: lotusPage
 }]
 
 const router = new Router({

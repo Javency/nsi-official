@@ -1,7 +1,7 @@
 module.exports = {
     //导航栏
     layoutNav: {
-        index: "首页",
+        index: "首  页",
         aboutus: "关于我们",
         information: "资讯中心",
         event: "会议活动",

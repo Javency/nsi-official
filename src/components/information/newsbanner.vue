@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="newsbanner">
-                        <div class="swiper-container">
+                        <div class="swiper-container" id="newsbanner">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
                                     <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.id)">
@@ -67,7 +67,7 @@ export default {
         },
         swiperInit(){
             const self=this
-            new Swiper('.swiper-container', {
+            new Swiper('#newsbanner', {
                  notNextTick: true,
                  autoplay: {
                     delay:3000,
