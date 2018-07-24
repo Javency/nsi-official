@@ -26,16 +26,12 @@ export default {
         swiperOption: {
             // notNextTick: true,
             autoplay: {
+                delay:4000,
                 disableOnInteraction: false,
             },
             loop: true,
-            // spaceBetween: 30,
-            speed:1500,
-            effect : 'flip',
-            flip: {
-                slideShadows : true,
-                limitRotation : true,
-            }
+            speed:500,
+            effect : 'fade'
         },
       }
     },

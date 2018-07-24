@@ -5,21 +5,27 @@
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"></a>
+                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a>
                         </div>
                         <div class="list-content-box">
                             <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
-                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                            <span class="time">{{list.updateTime|formatDate}}</span>
+                            <p class="text-right">分享到：
+                                <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
+                                    <img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt="">
+                                    <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span>
+                                </el-popover><span @click="shareWibo(list.articleUrl,list.title,list.coverImage)" title="分享到微博" class="iconfont icon-weibo2 weibo"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
-                    <a href="javascript:;" class="loadMore" @click="addMore">加载更多</a>
+                    <a href="javascript:;" class="loadMore" @click="addMore">{{addMoreHtml}}</a>
                 </div>
             </div>
         </div>
@@ -32,50 +38,101 @@ export default {
         return{
             pageNum:1,
             newsList:[],
-            loading:true
+            loading:true,
+            addMoreHtml:"加载更多"
+        }
+    },
+    filters:{
+        formatDate(time,option){
+            time = Date.parse(time)
+            const d = new Date(time);
+            const now = Date.now();
+            const diff = (now - d) / 1000;
+
+            if (diff < 30) {
+                return '刚刚'
+            } else if (diff < 3600) { // less 1 hour
+                return Math.ceil(diff / 60) + '分钟前'
+            } else if (diff < 3600 * 24) {
+                return Math.ceil(diff / 3600) + '小时前'
+            } else if (diff < 3600 * 24 * 2) {
+                return '1天前'
+            }
+            if (option) {
+                return parseTime(time, option)
+            } else {
+                return d.getMonth() + 1 + '月' + d.getDate() + '日'
+            }
+        },
+        articleType(str){
+            switch(str){
+                case "行业分析":
+                    return str="分析"
+                    break;
+                case "访校观察":
+                    return str="访校"
+                    break;
+                case "政策解读":
+                    return str="政策"
+                    break;
+                case "人物访谈":
+                    return str="人物"
+                    break;
+                default:
+                    return str="资讯"
+                    break;
+            }
         }
     },
     methods:{
         addMore(){
-            // const _self=this
+            this.addMoreHtml="加载中..."
             this.pageNum++
-            // console.log(this.pageNum)
             const params = new URLSearchParams();
-            params.append('pageNum', this.pageNum,);
+            params.append('pageNum', this.pageNum);
             params.append('pageSize', 8);
             this.axios({
-             method: 'post',
-             url: 'http://192.168.0.191:8080/nsi-1.0/article/list.do',
-             data: params
-        }).then((res)=>{
-            const msg=res.data.data.list
-            console.log(msg)
-            for(let i=0;i<msg.length;i++){
-                this.newsList.push(msg[i])
-            }
-            this.loading=false
-        })
+                method: 'post',
+                url: '/article/list.do',
+                data: params
+            }).then((res)=>{
+                const msg=res.data.data.list
+                // console.log(msg)
+                for(let i=0;i<msg.length;i++){
+                    this.newsList.push(msg[i])
+                }
+                this.loading=false
+                this.addMoreHtml="加载更多"
+            })
         },
         toDetail(id){
-            console.log(id)
-            this.$router.push({name:"detailNews",params:{id:id}})
+            // console.log(id)
+            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            window.open(routeData.href, '_blank');
+        },
+        shareWibo(url,title,picurl){
+            let sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
+            window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         }
     },
     beforeMount(){
-        // const _self=this
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
-        params.append('pageSize', 8);
+        params.append('pageSize', 16);
         this.axios({
              method: 'post',
-             url: 'http://192.168.0.191:8080/nsi-1.0/article/list.do',
+             url: '/article/list.do',
              data:params
         }).then((res)=>{
             const msg=res.data.data.list
             // console.log(msg)
             this.newsList=msg
             this.loading=false
+            this.pageNum=2
         })
+    },
+    beforeRouteUpdate (to, from, next) {
+        console.log("router更新前")
     }
 }
 </script>
@@ -85,9 +142,18 @@ export default {
         margin-top: 20px;
     }
     .newsList-com{
+        @mixin transitionAnimate{
+            -webkit-transition: all 0.3s ease 0s;
+            -ms-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+        }
         padding: 30px 0;
         background: #fafafa;
         margin-bottom: -50px;
+        .list-box{
+          background-color: #FFF;
+        }
         img{
             display: inline-block;
             max-width: 100%;
@@ -96,12 +162,9 @@ export default {
         }
         .list{
             padding: 10px;
-            background-color: #fff;
-            -webkit-transition: all 0.3s ease 0s;
-            -ms-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-            margin-bottom: 15px;
+            // background-color: #fff;
+            @include transitionAnimate;
+            // margin-bottom: 15px;
             &:hover{
                 background-color: #fff;
                 box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.10);
@@ -116,22 +179,38 @@ export default {
             .list-img-box{
                .img-box{
                     display: inline-block;
-                    -webkit-transition: all 0.5s ease 0s;
-                    -ms-transition: all 0.5s ease 0s;
-                    -o-transition: all 0.5s ease 0s;
-                    transition: all 0.5s ease 0s;
+                    position: relative;
+                    @include transitionAnimate;
                     &:hover{
                         opacity: .8;
+                    }
+                    img{
+                        min-height: 181px;
+                        background-color: #e4e4e4
+                    }
+                    .articleType{
+                        position: absolute;
+                        display: block;
+                        width: 44px;
+                        top: 10px;
+                        left: 10px;
+                        font-style: normal;
+                        padding: 3px 10px 2px;
+                        color: #FFF;
+                        border-radius: 20px;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        font-size: 12px;
                     }
                 }
             }
             .list-content-box{
                 padding: 15px 10px 0;
                 background: #FFF;
-                min-height: 215px;
+                // min-height: 215px;
+                min-height: 190px;
                 h3{
                     margin-top: 0;
-                    margin-bottom: 15px;
+                    margin-bottom: 10px;
                     max-height: 80px;
                     overflow: hidden;
                     a{
@@ -142,10 +221,11 @@ export default {
                         color: #333333;
                         letter-spacing: 0;
                         overflow: hidden;
-                        -webkit-transition: all 0.3s ease 0s;
-                        -ms-transition: all 0.3s ease 0s;
-                        -o-transition: all 0.3s ease 0s;
-                        transition: all 0.3s ease 0s;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        @include transitionAnimate;
                         font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
                         &:hover{
                             text-decoration: none;
@@ -168,6 +248,15 @@ export default {
             .list-share-box{
                 opacity: 1;
                 transition: all .3s;
+                position: relative;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                .time{
+                    position: absolute;
+                    color: #7c7c7c;
+                    bottom: 12px;
+                    left: 10px;
+                }
                 p{
                     color: #999;
                     margin-bottom: 0;
@@ -198,19 +287,24 @@ export default {
             line-height: 40px;
             text-align: center;
             padding: 0 40px;
-            color: #999;
-            border: 1px solid #e5e5e5;
-            -webkit-transition: all 0.5s ease 0s;
-            -ms-transition: all 0.5s ease 0s;
-            -o-transition: all 0.5s ease 0s;
-            transition: all 0.5s ease 0s;
-            background-image: linear-gradient(-180deg, rgb(226, 226, 226) 0%, #fff 100%);
-            &:hover{
+            color: #FFF;
+            border: 1px solid #4790E5;
+            -webkit-transition: all 0.1s ease 0s;
+            -ms-transition: all 0.1s ease 0s;
+            -o-transition: all 0.1s ease 0s;
+            transition: all 0.1s ease 0s;
+            background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+            box-shadow: 0 5px 30px #ccc;
+            &:hover,
+            &:link{
                 text-decoration: none;
-                transform: scale(1.1);
+            }
+            &:active{
+                text-decoration: none;
+                transform: scale(0.9);
                 color: #FFF;
                 border: #52A5F4;
-                background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+                background-image: linear-gradient(-180deg, rgb(64, 135, 216) 0%, rgb(64, 131, 194) 100%);
                 box-shadow: 0 5px 30px #52A5F4
             }
         }

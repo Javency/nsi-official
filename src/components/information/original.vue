@@ -1,25 +1,26 @@
 <template>
-    <div class="newsList-com">
+    <div class="newsList-com" v-loading="loading">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.imgSrc" alt="" height="270"></a>
+                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"></a>
                         </div>
                         <div class="list-content-box">
                             <h3><a href="javascript:;" :title="list.title">{{list.title}}</a></h3>
-                            <p :title="list.desc">{{list.desc}}</p>
+                            <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
-                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" src="../../assets/img/layoutImg/wechat_QR.png" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                            <span class="time">{{list.updateTime|formatDate}}</span>
+                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
-                    <a href="javascript:;" class="loadMore">加载更多</a>
+                    <a href="javascript:;" class="loadMore" @click="addMore">{{addMoreHtml}}</a>
                 </div>
             </div>
         </div>
@@ -30,42 +31,82 @@
 export default {
     data(){
         return{
-            newsList:[
-                {
-                imgSrc:require('../../assets/img/index/small004.jpg'),
-                title:"研究：课改过程中的教师身份认同困境",
-                desc:"一直以来，教师专业身份认同问题都是国内外学界研究的重要课题。伴随着本世纪初中国大陆教育改革的宏观背景脉络，在该领域更是出现了前所未有的困境与挑战。因此，黄显涵等人在《课程改革中教师挑战与困境：中国大陆教师的个案分析》一文中，利用教师困境维度（控制困境、课程困境、专业发展困境、评估困境）的框架体系，着手对中国大陆课程改革过程中，所体现出的教师专业身份认同困境进行实证研究。"
-            },{
-                imgSrc:require('../../assets/img/index/small003.jpg'),
-                title:"VIPKID完成5亿美元D+轮融资，估值超过200亿元",
-                desc:"6月21日，在线少儿英语品牌VIPKID确认完成5亿美元D+轮融资，由投资管理机构Coatue、腾讯公司、红杉资本中国基金、云锋基金共同领投。VIPKID创始人兼CEO米雯娟表示，此次融资将主要用于招聘北美外教、储备技术和产品人才以及全球业务布局三个方面。"
-            },{
-                imgSrc:require('../../assets/img/index/small004.jpg'),
-                title:"知识付费两周年：行业“凉凉”，你的焦虑治好了吗？",
-                desc:"2016年年中井喷式爆发，历经两年红红火火的知识付费平台，如今迎来了“危急时刻”。"
-            },{
-                imgSrc:require('../../assets/img/index/small002.jpg'),
-                title:"麻省理工毕业演讲：Facebook首席运营官告诫孩子，做乐观主义者拥抱不确定",
-                desc:"Facebook首席运营官雪莉·桑德伯格（Sheryl Sandberg）在2018麻省理工学院毕业典礼上，分享了自己对毕业生的寄语。这位福布斯上榜前50名“最有力量” 的商业女精英通过自己的经历和感悟，告诉毕业生们，这一刻起意味着从他们一生中最具规划性条理性的那部分人生毕业，面对未来的不确定因素，要勇敢面对，做清醒的乐观主义者。技术需要人来创建，用所学知识解决全球面临最关键的问题。发挥影响力，让技术成为世界上一种善的力量。"
-            },{
-                imgSrc:require('../../assets/img/index/small001.jpg'),
-                title:"知识付费两周年：行业“凉凉”，你的焦虑治好了吗？",
-                desc:"2016年年中井喷式爆发，历经两年红红火火的知识付费平台，如今迎来了“危急时刻”。"
-            }, {
-                imgSrc:require('../../assets/img/index/small001.jpg'),
-                title:"研究：课改过程中的教师身份认同困境",
-                desc:"一直以来，教师专业身份认同问题都是国内外学界研究的重要课题。伴随着本世纪初中国大陆教育改革的宏观背景脉络，在该领域更是出现了前所未有的困境与挑战。因此，黄显涵等人在《课程改革中教师挑战与困境：中国大陆教师的个案分析》一文中，利用教师困境维度（控制困境、课程困境、专业发展困境、评估困境）的框架体系，着手对中国大陆课程改革过程中，所体现出的教师专业身份认同困境进行实证研究。"
-            },{
-                imgSrc:require('../../assets/img/index/small002.jpg'),
-                title:"VIPKID完成5亿美元D+轮融资，估值超过200亿元",
-                desc:"6月21日，在线少儿英语品牌VIPKID确认完成5亿美元D+轮融资，由投资管理机构Coatue、腾讯公司、红杉资本中国基金、云锋基金共同领投。VIPKID创始人兼CEO米雯娟表示，此次融资将主要用于招聘北美外教、储备技术和产品人才以及全球业务布局三个方面。"
-            },{
-                imgSrc:require('../../assets/img/index/small003.jpg'),
-                title:"麻省理工毕业演讲：Facebook首席运营官告诫孩子，做乐观主义者拥抱不确定",
-                desc:"Facebook首席运营官雪莉·桑德伯格（Sheryl Sandberg）在2018麻省理工学院毕业典礼上，分享了自己对毕业生的寄语。这位福布斯上榜前50名“最有力量” 的商业女精英通过自己的经历和感悟，告诉毕业生们，这一刻起意味着从他们一生中最具规划性条理性的那部分人生毕业，面对未来的不确定因素，要勇敢面对，做清醒的乐观主义者。技术需要人来创建，用所学知识解决全球面临最关键的问题。发挥影响力，让技术成为世界上一种善的力量。"
-            }
-            ]
+            pageNum:1,
+            loading:true,
+            newsList:[],
+            addMoreHtml:"加载更多",
         }
+    },
+    filters:{
+        formatDate(time,option){
+            time = Date.parse(time)
+            const d = new Date(time);
+            const now = Date.now();
+            const diff = (now - d) / 1000;
+
+            if (diff < 30) {
+                return '刚刚'
+            } else if (diff < 3600) { // less 1 hour
+                return Math.ceil(diff / 60) + '分钟前'
+            } else if (diff < 3600 * 24) {
+                return Math.ceil(diff / 3600) + '小时前'
+            } else if (diff < 3600 * 24 * 2) {
+                return '1天前'
+            }
+            if (option) {
+                return parseTime(time, option)
+            } else {
+                return d.getMonth() + 1 + '月' + d.getDate() + '日'
+            }
+        }
+    },
+    methods:{
+        addMore(){
+            this.addMoreHtml="加载中..."
+            this.pageNum++
+            const params = new URLSearchParams();
+            params.append('pageNum', this.pageNum);
+            params.append('pageSize', 8);
+            this.axios({
+                method: 'post',
+                url: '/article/list.do',
+                data: params
+            }).then((res)=>{
+                let msg=res.data.data.list
+                for(let i=0;i<msg.length;i++){
+                    if(msg[i].articleCat==="独家原创"){
+                        this.newsList.push(msg[i])
+                    }
+                }
+                this.addMoreHtml="加载更多"
+            })
+        },
+        toDetail(id){
+            console.log(id)
+            this.$router.push({name:"detailNews",params:{id:id}})
+        }
+    },
+    beforeMount(){
+        const params = new URLSearchParams();
+        params.append('pageNum', this.pageNum,);
+        params.append('pageSize', 16);
+        this.axios({
+             method: 'post',
+             url: '/article/list.do',
+             data:params
+        }).then((res)=>{
+            let msg=res.data.data.list,
+                originalList=[]
+            for(let i=0;i<msg.length;i++){
+                if(msg[i].articleCat==="独家原创"){
+                    originalList.push(msg[i])
+                }
+            }
+            console.log(originalList)
+            this.newsList=originalList
+            this.loading=false
+            this.pageNum=2
+        })
     }
 }
 </script>
@@ -75,9 +116,18 @@ export default {
         margin-top: 20px;
     }
     .newsList-com{
+        @mixin transitionAnimate{
+            -webkit-transition: all 0.3s ease 0s;
+            -ms-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+        }
         padding: 30px 0;
         background: #fafafa;
         margin-bottom: -50px;
+        .list-box{
+          background-color: #FFF;
+        }
         img{
             display: inline-block;
             max-width: 100%;
@@ -86,12 +136,9 @@ export default {
         }
         .list{
             padding: 10px;
-            background-color: #fff;
-            -webkit-transition: all 0.3s ease 0s;
-            -ms-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-            margin-bottom: 15px;
+            // background-color: #fff;
+            @include transitionAnimate;
+            // margin-bottom: 15px;
             &:hover{
                 background-color: #fff;
                 box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.10);
@@ -106,22 +153,38 @@ export default {
             .list-img-box{
                .img-box{
                     display: inline-block;
-                    -webkit-transition: all 0.5s ease 0s;
-                    -ms-transition: all 0.5s ease 0s;
-                    -o-transition: all 0.5s ease 0s;
-                    transition: all 0.5s ease 0s;
+                    position: relative;
+                    @include transitionAnimate;
                     &:hover{
                         opacity: .8;
+                    }
+                    img{
+                        min-height: 181px;
+                        background-color: #e4e4e4
+                    }
+                    .articleType{
+                        position: absolute;
+                        display: block;
+                        width: 44px;
+                        top: 10px;
+                        left: 10px;
+                        font-style: normal;
+                        padding: 3px 10px 2px;
+                        color: #FFF;
+                        border-radius: 20px;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        font-size: 12px;
                     }
                 }
             }
             .list-content-box{
                 padding: 15px 10px 0;
                 background: #FFF;
-                min-height: 215px;
+                // min-height: 215px;
+                min-height: 190px;
                 h3{
                     margin-top: 0;
-                    margin-bottom: 15px;
+                    margin-bottom: 10px;
                     max-height: 80px;
                     overflow: hidden;
                     a{
@@ -132,10 +195,11 @@ export default {
                         color: #333333;
                         letter-spacing: 0;
                         overflow: hidden;
-                        -webkit-transition: all 0.3s ease 0s;
-                        -ms-transition: all 0.3s ease 0s;
-                        -o-transition: all 0.3s ease 0s;
-                        transition: all 0.3s ease 0s;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        @include transitionAnimate;
                         font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
                         &:hover{
                             text-decoration: none;
@@ -158,6 +222,15 @@ export default {
             .list-share-box{
                 opacity: 1;
                 transition: all .3s;
+                position: relative;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                .time{
+                    position: absolute;
+                    color: #7c7c7c;
+                    bottom: 12px;
+                    left: 10px;
+                }
                 p{
                     color: #999;
                     margin-bottom: 0;
@@ -188,19 +261,24 @@ export default {
             line-height: 40px;
             text-align: center;
             padding: 0 40px;
-            color: #999;
-            border: 1px solid #e5e5e5;
-            -webkit-transition: all 0.5s ease 0s;
-            -ms-transition: all 0.5s ease 0s;
-            -o-transition: all 0.5s ease 0s;
-            transition: all 0.5s ease 0s;
-            background-image: linear-gradient(-180deg, rgb(226, 226, 226) 0%, #fff 100%);
-            &:hover{
+            color: #FFF;
+            border: 1px solid #4790E5;
+            -webkit-transition: all 0.1s ease 0s;
+            -ms-transition: all 0.1s ease 0s;
+            -o-transition: all 0.1s ease 0s;
+            transition: all 0.1s ease 0s;
+            background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+            box-shadow: 0 5px 30px #ccc;
+            &:hover,
+            &:link{
                 text-decoration: none;
-                transform: scale(1.1);
+            }
+            &:active{
+                text-decoration: none;
+                transform: scale(0.9);
                 color: #FFF;
                 border: #52A5F4;
-                background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
+                background-image: linear-gradient(-180deg, rgb(64, 135, 216) 0%, rgb(64, 131, 194) 100%);
                 box-shadow: 0 5px 30px #52A5F4
             }
         }
