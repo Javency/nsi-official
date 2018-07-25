@@ -13,7 +13,7 @@
                                     <!-- <a href="javascript:;" v-for="(logo,index) in logos" v-if="logo.switchFlag==true"><img :src="logo.logoImg" alt="" width="30">
                                         &nbsp;{{logo.country}}
                                     </a> -->
-                                    <el-dropdown @command="handleCommand" placement="top">
+                                    <el-dropdown @command="handleCommand" placement="top" trigger="click">
                                         <span class="el-dropdown-link">
                                             <!-- <img v-for="(logo,index) in logos" :key="index" :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}<i class="el-icon-arrow-down el-icon--right"></i> -->
                                             <img class="activelogo" :src="logoActive" alt="" width="30">&nbsp;{{countryActive}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -437,6 +437,8 @@ export default {
             border: none;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28);
             border-radius: 50%;
+            position: relative;
+            top: -1px;
         }
     }
     .el-dropdown-menu{
@@ -617,7 +619,7 @@ export default {
     .content{
         padding-top: 52px;
         @media (max-width:768px) {
-            padding-top: 10px;
+            padding-top: 0;
         }
     }
     .footer>.container,

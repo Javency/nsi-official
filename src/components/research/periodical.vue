@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3" v-for="(list,index) in internalReferList">
+                <div class="col-md-3 col-xs-6" v-for="(list,index) in internalReferList">
                     <div class="internalRefer-book">
                             <a href="javascript:;" @click="toDownload(list.fileUrl)" class="internalRefer-box" slot="reference" :style="{'background-image':'url('+list.imageUrl+')'}">
                             </a>
@@ -27,7 +27,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-3" v-for="(list,index) in internalReferList">
+                <div class="col-md-3 col-xs-6" v-for="(list,index) in internalReferList">
                     <div class="internalRefer-book">
                         <a href="javascript:;" class="internalRefer-box">
 
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3" v-for="(report,index) in reportList">
+                <div class="col-md-3 col-xs-6" v-for="(report,index) in reportList">
                     <div class="internalRefer-book">
                         <a href="javascript:;" class="internalRefer-box">
 
@@ -140,6 +140,9 @@ export default {
         }
         .internal{
             padding: 50px 0 20px;
+            @media (max-width: 768px) {
+                padding: 10px 0 20px;
+            }
             .title{
                 display: inline-block;
                 font-family: PingFangSC-Semibold;
@@ -150,6 +153,11 @@ export default {
                 height: 50px;
                 position: relative;
                 margin-bottom: 40px;
+                @media (max-width: 768px) {
+                    font-size: 30px;
+                    margin-bottom: 15px;
+                    margin-top: 10px;
+                }
                 .year{
                     position: absolute;
                     right: -12px;
@@ -165,6 +173,9 @@ export default {
             width: 100%;
             min-height: 345px;
             margin-bottom: 30px;
+            @media (max-width: 768px) {
+                min-height: 232px;
+            }
             .bookName{
                 color: #a3a3a3;
                 font-size: 22px;
@@ -183,8 +194,11 @@ export default {
                 display: inline-block;
                 width: 100%;
                 min-height: 345px;
+                @media (max-width: 768px) {
+                    min-height: 232px;
+                }
                 background-color: #e4e4e4;
-                background-size: 100%;
+                background-size: 100% 100%;
                 @include transitionAnimate;
                 &:hover{
                     box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.20);

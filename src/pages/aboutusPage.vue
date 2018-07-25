@@ -34,8 +34,8 @@
                             新学说 团队由众多位独特且富有才华的成员组成，致力于为数所国际学校提供全方位服务。努力将研究成果转化为实际可操作方案，为国际学校提供各种咨询式服务，例如前期建校咨询，课程设计，市场策划。
                         </p>
                     </div>
-                    <div class="col-md-6">
-                        <img alt="" src="../assets/img/about/team-img.jpg" class="team-img" width="500">
+                    <div class="col-md-6 text-center">
+                        <img alt="" src="../assets/img/about/team-img.jpg" class="team-img img-responsive" width="500">
                     </div>
                 </div>
             </div>
@@ -53,32 +53,32 @@
             </div>
             <div class="container">
                 <div class="row coo-logo">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-xs-6">
                         <a href="http://www.brightscholar.com" target="_" title="博实乐教育集团">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100099/100099-logo.jpg" alt="" width="120">
                         </a>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-xs-6">
                         <a href="http://www.schoolis.cn" target="_" title="校宝智慧校园">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100046/100046-logo.jpg" alt="" width="120">
                         </a>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-xs-6">
                         <a href="http://www.ourschoolbus.com.cn" target="_" title="起点校车">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100043/100043-logo.jpg" alt="" width="120">
                         </a>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-xs-6">
                         <a href="http://www.casio.com.cn/index.html?from=skqs" target="_" title="卡西欧（中国）贸易有限公司">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100181/100181-logo.jpg" alt="" width="180">
                         </a>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-xs-6">
                         <a href="javascript:;" title="北京市君诚国际双语学校">
                             <img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100742/100742-logo.jpg" alt="" width="100">
                         </a>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-xs-6">
                         <a href="http://www.chinahtedu.com" target="_" title="北京汉通文化有限责任公司">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100163/100163-logo.jpg" alt="" width="120">
                         </a>
@@ -116,15 +116,27 @@ export default {
 
 <style lang="scss">
     .aboutus-com{
+        .img-responsive{
+            display: inline-block;
+        }
         padding-top: 52px;
         margin-bottom: -50px;
+        @media (max-width:768px) {
+            padding-top: 0;
+        }
         .bgfa{
             background-color: #FAFAFA;
             padding: 80px 0;
+            @media (max-width: 768px) {
+                padding: 30px 0;
+            }
         }
         .bgff{
             background-color: #FFF;
             padding: 80px 0;
+            @media (max-width: 768px) {
+                padding: 30px 0;
+            }
         }
         .about-bg{
             width: 100%;
@@ -133,6 +145,10 @@ export default {
             background-size: 100%;
             background-position: center;
             position: relative;
+            @media (max-width: 768px) {
+                height: 260px;
+                background-size: 100% 100%;
+            }
             .cover-bg{
                 position: absolute;
                 width: 100%;
@@ -160,7 +176,10 @@ export default {
                        margin-top: 10px;
                        font-size: 32px;
                        font-weight: 700;
-                       line-height: 1.5
+                       line-height: 1.5;
+                       @media (max-width: 768px) {
+                           font-size: 20px !important;
+                       }
                    }
                 }
             }
@@ -175,6 +194,11 @@ export default {
                 max-width: 900px;
                 margin-left: auto;
                 margin-right: auto;
+                @media (max-width: 768px) {
+                    font-size: 22px;
+                    // margin-bottom: 0;
+                    margin-top: 10px;
+                }
                 small{
                     font-size: 16px;
                 }

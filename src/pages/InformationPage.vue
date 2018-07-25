@@ -1,7 +1,7 @@
 <template>
     <div class="infoCenter-com">
         <!-- 头条新闻 -->
-        <news-banner class="pt60"></news-banner>
+        <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
         <ul class="news-nav mt50">
           <li><router-link to=/news/newestArticle>资讯全览</router-link><i class="newsnavLine"></i></li>
@@ -10,6 +10,7 @@
           <li><router-link to=/news/original>行业分析</router-link><i class="newsnavLine"></i></li>
           <li><router-link to=/news/interview>人物访谈</router-link><i class="newsnavLine"></i></li>
         </ul>
+        <news-nav-m class="showInMobile visible-xs visible-sm"></news-nav-m>
         <!-- 新闻列表 -->
         <transition name="slide-fade">
             <keep-alive>
@@ -23,10 +24,12 @@
 <script>
 import NewsBanner from '../components/information/newsbanner'
 import backTop from '../components/common/backToTop'
+import newsNavM from '../components/information/newsNav-M'
 export default {
     components:{
         NewsBanner,
-        backTop
+        backTop,
+        newsNavM
     }
 }
 </script>
@@ -36,6 +39,12 @@ export default {
       overflow-x: hidden;
     }
     .infoCenter-com{
+      .showInMobile{
+        display: none;
+        @media (max-width: 768px) {
+          display: block
+        }
+      }
       padding-top: 52px;
       @media (max-width: 768px) {
           padding-top: 0;
@@ -72,6 +81,10 @@ export default {
         background: #fafafa;
         margin-bottom: 0;
         text-align: center;
+        @media (max-width: 769px) {
+          margin-top: 10px;
+          display: none;
+        }
         li{
           display: inline-block;
           position: relative;

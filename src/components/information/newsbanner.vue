@@ -195,18 +195,31 @@ export default {
                     text-decoration: none;
                     color: #44638a;
                 }
+                @media (max-width: 768px) {
+                    font-size: 22px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    min-height: 48px;
+                    max-height: 48px;
+                }
             }
             .newsInfo-desc{
                 font-size: 14px;
                 margin-top: 30px;
                 color: #999999;
                 line-height: 2;
-                 overflow: hidden;
+                overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-line-clamp: 6;
                 -webkit-box-orient: vertical;
                 max-height: 168px;
+                @media (max-width: 768px) {
+                    display: none;
+                }
             }
             .news-detail{
                 color: #666;

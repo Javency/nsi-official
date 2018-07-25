@@ -19,5 +19,8 @@ export default {
 <style lang="scss">
     .eventPage-com{
       padding-top: 52px;
+      @media (max-width: 768px) {
+          padding-top: 0;
+      }
     }
 </style>

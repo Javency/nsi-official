@@ -36,6 +36,9 @@ export default {
 <style lang="scss">
     .consulting-com{
         padding-top: 52px;
+        @media (max-width: 768px) {
+            padding-top: 0;
+        }
         img{
             display: inline-block;
             max-width: 100%;
@@ -43,6 +46,9 @@ export default {
         }
         .content{
             padding-top: 100px;
+            @media (max-width: 768px) {
+                padding-top: 30px;
+            }
         }
     }
 </style>

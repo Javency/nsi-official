@@ -14,7 +14,7 @@
                         <div class="list-share-box">
                             <span class="time">{{list.updateTime|formatDate}}</span>
                             <p class="text-right">分享到：
-                                <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
+                                <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="click" content="微信二维码">
                                     <img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt="">
                                     <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span>
                                 </el-popover><span @click="shareWibo(list.articleUrl,list.title,list.coverImage)" title="分享到微博" class="iconfont icon-weibo2 weibo"></span>

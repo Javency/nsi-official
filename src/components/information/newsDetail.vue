@@ -118,7 +118,7 @@ export default {
         }
         img{
             display: inline-block;
-            max-width: 100%;
+            max-width: 100% !important;
             height: auto;
         }
         .pt50{
@@ -168,7 +168,7 @@ export default {
                 p{
                     margin-bottom: 20px;
                     margin-top: 10px;
-                    text-indent: 35px;
+                    // text-indent: 35px;
                 }
             }
             .statement{
