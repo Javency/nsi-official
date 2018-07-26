@@ -2,10 +2,10 @@ module.exports = {
     //导航栏
     layoutNav: {
         index: "Index",
-        aboutus: "AboutUs",
+        aboutus: "About",
         information: "News",
         event: "Event",
-        lotus: "LotusSchool",
+        lotus: "Lotus",
         research: "Research",
         researchChild: {
             magazine: "Magazine",
@@ -13,7 +13,7 @@ module.exports = {
             pisom: "PISOM",
             classOnline: "Class Online"
         },
-        consult: "Consultation Service"
+        consult: "Service"
     },
     // 底部
     layoutFooter: {

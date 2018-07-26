@@ -37,6 +37,8 @@ export default {
             -o-transition: all 0.3s ease 0s;
             transition: all 0.3s ease 0s;
         }
+        position: relative;
+        z-index: 999;
         .share{
             margin-bottom: 15px;
             width: 40px;

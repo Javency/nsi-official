@@ -201,6 +201,7 @@ export default {
                 }
                 small{
                     font-size: 16px;
+                    line-height: 2
                 }
             }
         }

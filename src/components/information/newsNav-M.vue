@@ -70,7 +70,7 @@ export default {
         // padding-top: 15px;
         // border-top: 3px solid $official-color;
         padding-top: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 0;
         margin-top: 20px;
         border-bottom: 1px solid #ddd;
         // background: #fafafa;

@@ -261,7 +261,7 @@ export default {
                 country:"English",
                 switchFlag:false
             }],
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.louts'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.lotus'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
             layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo')]
         }
     },
@@ -272,12 +272,6 @@ export default {
       handleScroll () {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
         var searchTop = document.querySelector('#searchBar').offsetTop
-        // console.log(scrollTop)
-          // if (scrollTop > offsetTop) {
-          //   this.searchBarFixed = true
-          // } else {
-          //   this.searchBarFixed = false
-          // }
           if(scrollTop>0){
             searchTop = 85 - Number(scrollTop);
             if(searchTop<=0){
@@ -292,9 +286,6 @@ export default {
           }
       },
       handleCommand(command) {
-        // this.$message('click on item ' + command);
-        // this.logos[0].logoImg=command.logoImg
-        // this.logos[0].country=command.country
         switch(command.lang){
             case "zh":
                 this.logoActive=this.logos[0].logoImg
@@ -308,9 +299,6 @@ export default {
         this.$i18n.locale =command.lang
         // console.log(command)
       },
-    //   changeLang(index){
-    //       console.log(index)
-    //   }
    }
 }
 </script>
@@ -353,7 +341,7 @@ export default {
     .logoContainer{
         padding: 20px 0;
         @media (max-width: 768px) {
-            padding: 8px 0;
+            padding: 8px 0 0;
         }
     }
 
@@ -428,7 +416,7 @@ export default {
         right: 15px;
         top: 25px;
         @media (max-width:768px) {
-            top: 15px;
+            top: 10px;
         }
         a{
             color: #777;
@@ -600,6 +588,10 @@ export default {
       padding-left: 0;
       .logo{
         width: 200px;
+        @media (max-width: 768px) {
+            height: 35px;
+            width: 135px;
+        }
       }
     }
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {

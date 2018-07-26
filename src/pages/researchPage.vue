@@ -1,12 +1,16 @@
 <template>
     <div class="research-com">
+        <research-sub-m class="showInMobile"/>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+import researchSubM from '../components/research/researchSub-M'
 export default {
-
+    components:{
+        researchSubM
+    }
 }
 </script>
 
@@ -17,5 +21,11 @@ export default {
             padding-top: 0;
         }
         margin-bottom: -50px;
+        .showInMobile{
+            display: none;
+            @media (max-width:768px) {
+                display: block;
+            }
+        }
     }
 </style>

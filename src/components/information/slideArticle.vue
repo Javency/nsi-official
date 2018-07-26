@@ -3,7 +3,7 @@
         <h4>最新文章</h4>
         <ul>
             <li v-for="list in newsList">
-                <i>▶</i>
+                <i class="iconfont icon-arrfill_u-copy"></i>
                 <a href="javascript:;" @click="toDetail(list.id)">{{list.title}}</a>
                 <div class="time">{{list.updateTime|formatDate}}
                     <div class="shareTo">分享至：
@@ -82,7 +82,6 @@ export default {
     .slideArticle-com{
         i{
           font-style: normal;
-          font-size: 12px;
         }
         a:hover,a:link{
             text-decoration: none !important;
@@ -96,8 +95,10 @@ export default {
         color: #3d464d;
         h4{
             margin: 25px 0 10px;
+            padding-top: 20px;
             font-weight: 600;
             font-size: 14px;
+            border-top: 2px solid #366df0;
         }
         ul,li{
             margin: 0;
@@ -114,6 +115,8 @@ export default {
                 position: absolute;
                 left: 10px;
                 color: #366df0;
+                font-weight: 800;
+                font-size: 15px;
             }
             a{
                 color: #3d464d;

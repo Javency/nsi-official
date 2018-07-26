@@ -70,40 +70,42 @@ export default {
 
 <style lang="scss">
     /* banner */
-    .swiper-button-prev{
-        left: 30px;
-    }
-    .swiper-button-next{
-        right: 30px;
-    }
-    .swiper-button-prev,
-    .swiper-button-next{
-        width:60px;
-        height: 60px;
-        line-height: 52px;
-        text-align: center;
-        border-radius: 50%;
-        color: #222;
-        background: #fff;
-        font-size: 50px;
-        opacity: .4;
-        transition: all .3s;
-        &:hover{
-        opacity: .7;
+    .swipercontainer{
+        .swiper-button-prev{
+            left: 30px;
         }
-        @media (max-width: 768px) {
-            width: 40px;
-            height: 40px;
-            line-height: 35px;
-            font-size: 30px;
+        .swiper-button-next{
+            right: 30px;
         }
+        .swiper-button-prev,
+        .swiper-button-next{
+            width:60px;
+            height: 60px;
+            line-height: 52px;
+            text-align: center;
+            border-radius: 50%;
+            color: #222;
+            background: #fff;
+            font-size: 50px;
+            opacity: .4;
+            transition: all .3s;
+            &:hover{
+            opacity: .7;
+            }
+            @media (max-width: 768px) {
+                width: 40px;
+                height: 40px;
+                line-height: 35px;
+                font-size: 30px;
+            }
+        }
+        .swiper-pagination-bullet-active{
+            background: #FFF;
+        }
+        /* .swipercontainer{
+            position: relative;
+        } */
     }
-    .swiper-pagination-bullet-active{
-        background: #FFF;
-    }
-    /* .swipercontainer{
-        position: relative;
-    } */
     .bgblur{
         position: absolute;
         width: 100%;

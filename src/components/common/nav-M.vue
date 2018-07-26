@@ -1,7 +1,7 @@
 <template>
     <div class="nav-m-com">
         <div class="container-fluid pr30">
-            <div class="swiper-container swiperM" id="swiperM">
+            <div class="swiper-container swiperM" id="swiperM" ref="swiperM">
                 <div class="swiper-wrapper newsWrapper" ref="newsWrapper">
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/'}" exact>{{$t('layoutNav.index')}}</router-link>
@@ -14,60 +14,12 @@
                     </div>
                     <div class="swiper-slide navSlide">
                          <router-link tag="i" :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link>
-                        <!-- <el-dropdown placement="top" trigger="click">
-                            <span class="el-dropdown-link">
-                                <router-link tag="i" :to="{path:'/event'}">{{$t('layoutNav.event')}}<span class="caret"></span></router-link>
-                            </span>
-                            <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item>
-                                    <a href="javascript:;" target="_"><img src="../../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;VIS国际学校发展大会</a>
-                                </el-dropdown-item>
-                                <el-dropdown-item>
-                                    <a href="javascript:;" target="_">专题研讨会</a>
-                                </el-dropdown-item>
-                            </el-dropdown-menu>
-                        </el-dropdown> -->
                     </div>
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/lotus'}">{{$t('layoutNav.lotus')}}</router-link>
-                        <!-- <el-dropdown placement="top" trigger="click">
-                            <span class="el-dropdown-link">
-                                 <router-link tag="i" :to="{path:'/lotus'}">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link>
-                            </span>
-                            <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item>
-                                    <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>
-                                </el-dropdown-item>
-                                <el-dropdown-item>
-                                    <a href="https://jinshuju.net/f/L4Iz9D" target="_">上海新荷学校（9月）</a>
-                                </el-dropdown-item>
-                                <el-dropdown-item>
-                                    <a href="https://jinshuju.net/f/L4Iz9D" target="_">北京新荷学校（10月）</a>
-                                </el-dropdown-item>
-                            </el-dropdown-menu>
-                        </el-dropdown> -->
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" :to="{path:'/research'}" >{{$t('layoutNav.research')}}</router-link>
-                        <!-- <el-dropdown placement="top" trigger="click">
-                            <span class="el-dropdown-link">
-                                <router-link tag="i" :to="{path:'/research'}" >{{$t('layoutNav.research')}}</router-link>
-                            </span>
-                            <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item>
-                                    <a href="#">{{$t('layoutNav.researchChild.pisom')}}</a>
-                                </el-dropdown-item>
-                                <el-dropdown-item>
-                                    <a href="http://class.xinxueshuo.cn" target="_"><img src="../../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
-                                </el-dropdown-item>
-                                <el-dropdown-item>
-                                    <router-link tag="i" :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.magazine')}}</router-link>
-                                </el-dropdown-item>
-                                <el-dropdown-item>
-                                    <router-link tag="i" :to="{path:'/research/periodical'}"><span class="iconfont icon-baogao fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.report')}}</router-link>
-                                </el-dropdown-item>
-                            </el-dropdown-menu>
-                        </el-dropdown> -->
+                        <router-link tag="i" :to="{path:'/research'}">{{$t('layoutNav.research')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link>
@@ -78,17 +30,19 @@
         <div id="more" @click="toTranslate()" ref="more">
             <a href="javascript:;" class="iconfont icon-hao more"></a>
         </div>
-        <div class="morePanel animated fadeIn" v-show="openMore">
-            <ul>
-                <li>首页</li>
-                <li>关于我们</li>
-                <li>资讯中心</li>
-                <li>会议活动</li>
-                <li>新荷学校</li>
-                <li>研究院</li>
-                <li>咨询服务</li>
-            </ul>
-        </div>
+        <transition name="fade">
+            <div class="morePanel" v-show="openMore">
+                <ul>
+                    <router-link :to="{path:'/'}" tag="li" exact @click.native="hidePanel(0)">{{$t('layoutNav.index')}}</router-link>
+                    <router-link :to="{path:'/about'}" tag="li" @click.native="hidePanel(1)">{{$t('layoutNav.aboutus')}}</router-link>
+                    <router-link :to="{path:'/news'}" tag="li" @click.native="hidePanel(2)">{{$t('layoutNav.information')}}</router-link>
+                    <router-link :to="{path:'/event'}" tag="li" @click.native="hidePanel(3)">{{$t('layoutNav.event')}}</router-link>
+                    <router-link :to="{path:'/lotus'}" tag="li" @click.native="hidePanel(4)">{{$t('layoutNav.lotus')}}</router-link>
+                    <router-link :to="{path:'/research'}" tag="li" @click.native="hidePanel(5)">{{$t('layoutNav.research')}}</router-link>
+                    <router-link :to="{path:'/consulting'}" tag="li" @click.native="hidePanel(6)">{{$t('layoutNav.consult')}}</router-link>
+                </ul>
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -99,7 +53,7 @@ export default {
         return{
             activeNav:0,
             openMore:false,
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.louts'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.lotus'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
         }
     },
     methods:{
@@ -124,8 +78,8 @@ export default {
                     },
                     tap:function(){
                         _this.activeNav=this.realIndex
-                    }
-                }
+                    },
+                },
             })
         },
         toTranslate(){
@@ -134,6 +88,17 @@ export default {
         },
         handleScroll(){
             this.openMore=false;
+            this.openMore?this.$refs.more.style.transform="rotate(-45deg)":this.$refs.more.style.transform="rotate(0)"
+        },
+        hidePanel(i){
+            this.openMore=false;
+            this.openMore?this.$refs.more.style.transform="rotate(-45deg)":this.$refs.more.style.transform="rotate(0)"
+            this.swiper.slideTo(i)
+        }
+    },
+    computed: {
+        swiper () {
+            return this.$refs.swiperM.swiper
         }
     },
     mounted(){
@@ -151,11 +116,17 @@ export default {
           -o-transition: all 0.3s ease 0s;
           transition: all 0.3s ease 0s;
       }
+        $official-color: #20528f;
       .pr30{
           padding-right: 30px;
       }
+       .fade-enter-active, .fade-leave-active {
+          transition: opacity .3s
+        }
+        .fade-enter, .fade-leave-active {
+          opacity: 0
+        }
         position: relative;
-        $official-color: #20528f;
         // padding-top: 15px;
         // border-top: 3px solid $official-color;
         padding: 10px 0 5px 0;
@@ -169,6 +140,7 @@ export default {
                 font-size: 16px;
                 margin-top: 5px;
                 outline: none !important;
+                color: #666;
             }
             .router-link-active{
                 font-size: 20px !important;
@@ -200,14 +172,14 @@ export default {
             // border-top: 1px solid #ddd;
             background-color: #FFF;
             position: relative;
-            z-index: 99;
+            z-index: 9999;
             top: 6px;
-            -webkit-animation-duration: .5s;
-            animation-duration:.5s;
+            -webkit-animation-duration: .3s;
+            animation-duration:.3s;
             ul{
                 width: 100%;
-                padding: 15px 0 2px 31px;
-                background-color: rgba($color: #ffffff, $alpha: .8);
+                padding: 25px 0 0px 31px;
+                background-color: rgba($color: #ffffff, $alpha: .9);
                 margin: 0;
                 display: flex;
                 flex-wrap: wrap;
@@ -215,18 +187,23 @@ export default {
                 align-items:flex-start;
                 justify-content: flex-start;
                 position: fixed;
-                box-shadow: 0 4px 8px 0 rgba(7, 17, 27, .1);
+                box-shadow: 0 4px 8px 0 rgba(7, 17, 27, .2);
                 li{
                     list-style: none;
                     width: 80px;
                     text-align: center;
                     height: 30px;
                     line-height: 30px;
-                    color: #333333;
+                    color: #0d0d0d;
                     border-radius: 2px;
-                    margin-bottom: 20px;
+                    margin-bottom: 30px;
                     margin-right: 10px;
                     background-color: #f1f1f1;
+                    &.router-link-active{
+                        border: 1px solid $official-color;
+                        background-color: #FFF;
+                        color: $official-color;
+                    }
                 }
             }
         }

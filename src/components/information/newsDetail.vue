@@ -1,6 +1,6 @@
 <template>
     <div class="newsDetail-com">
-        <div class="container pt50">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="newsDetail-title">{{detail.title}}</h1>
@@ -22,10 +22,10 @@
                         <p class="nsi-statement" v-else>本文系<a href="http://xinxueshuo.cn"> 新学说 </a>转载文章，来源 <a :href="detail.articleSourceAdress">{{detail.articleSourceTitle}}</a></p>
                         <div>
                           <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-xs-4 text-center">
                               <img src="../../assets/img/layoutImg/wechat_QR.png" alt="">
                             </div>
-                            <div class="col-md-10 pl0 mt15">
+                            <div class="col-md-10 col-xs-8 pl0 mt15 connection">
                               <p>新学说面向国际学校行业，传递行业资讯，深挖有价值内容，有料有态度，如果你想投稿或爆料，<br/></p>
                               <p>请联系小新：15010927730（微信同号）</p>
                             </div>
@@ -80,11 +80,15 @@ export default {
                 // console.log(res)
                 this.detail=res.data.data
                 this.shareInfo=res.data.data
+                document.title=this.detail.title
             })
         }
     },
     created(){
         this.fetchDate();
+    },
+    destroyed(){
+        document.title="新学说 | 国际学校多边服务平台"
     },
     // mounted(){
     //     this.listId = this.$route.params.id;
@@ -110,6 +114,9 @@ export default {
     .newsDetail-com{
         // padding: 0 35px;
         padding-top: 52px;
+        @media (max-width: 768px) {
+            padding-top: 0;
+        }
         .pl0{
           padding-left: 0;
         }
@@ -123,11 +130,20 @@ export default {
         }
         .pt50{
             padding-top: 50px;
+            @media (max-width: 768px) {
+                padding-top: 0;
+            }
         }
         .newsDetail-title{
             padding-bottom: 30px;
             border-bottom: 1px solid #d5d5d5;
             margin-bottom: 30px;
+            @media (max-width: 768px) {
+                font-size: 25px;
+                font-weight: 700;
+                line-height: 1.5;
+                color: #444;
+            }
         }
         .news-content{
             border-right:  1px solid #d5d5d5;
@@ -183,6 +199,9 @@ export default {
             }
         }
         .slide-ad{
+            @media (max-width: 768px) {
+                margin-top: 15px;
+            }
             p{
                 .ad{
                     transition: all .3s;
@@ -213,12 +232,21 @@ export default {
             top: 9px;
         }
 
+        .connection{
+            @media (max-width: 768px) {
+                margin-top: 0;
+            }
+        }
+
         // 分享
         .newsShare{
             position: fixed;
             // bottom: 400px;
             bottom: 100px;
             left: 80px;
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
     }
 </style>
