@@ -7,7 +7,7 @@
                         <router-link :to="{path:'/research/periodical'}"><img width="75" class="classLogo pisom" src="../../assets/img/layoutImg/pisom.png" alt=""><br/>PISOM</router-link>
                     </div>
                     <div class="swiper-slide text-center">
-                        <a href="'http://class/xinxueshuo.cn'" target="'_'"><img width="25" class="classLogo" src="../../assets/img/layoutImg/classLogo.png" alt=""><br/>在线课堂</a>
+                        <a href="http://class.xinxueshuo.cn" target="'_'"><img width="25" class="classLogo" src="../../assets/img/layoutImg/classLogo.png" alt=""><br/>在线课堂</a>
                     </div>
                     <div class="swiper-slide text-center">
                         <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span><br/>期刊</router-link>
