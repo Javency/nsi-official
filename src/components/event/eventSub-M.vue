@@ -28,7 +28,7 @@ export default {
                 freeModeMomentumBounce:false,
                 slidesPerView : 2,
                 slideToClickedSlide: true,
-                resistanceRatio:0.7,
+                resistanceRatio:0.4,
             })
         }
     },
