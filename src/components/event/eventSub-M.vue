@@ -7,7 +7,7 @@
                         <router-link :to="{path:'/event'}"><img width="35" src="../../assets/img/layoutImg/vis2018.png" alt=""><br/>VIS国际学校发展大会</router-link>
                     </div>
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/event'}"><img width="35" src="../../assets/img/layoutImg/vis2018.png" alt=""><br/>专题研讨会</router-link>
+                        <router-link :to="{path:'/event'}"><span class="iconfont icon-zhuanti fontlogo"></span><br/>专题研讨会</router-link>
                     </div>
                 </div>
             </div>
@@ -50,6 +50,10 @@ export default {
                     text-decoration: none;
                 }
             }
+        }
+        .fontlogo{
+            font-weight: 600;
+            font-size: 25px;
         }
     }
 </style>

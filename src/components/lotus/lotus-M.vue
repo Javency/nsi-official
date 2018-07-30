@@ -4,7 +4,8 @@
             <div class="swiper-container eventSwiper" id="eventSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/lotus'}" exact>广州新荷学校</router-link>
+                        <!-- <router-link :to="{path:'/lotus'}" exact>广州新荷学校</router-link> -->
+                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>
                     </div>
                     <div class="swiper-slide text-center">
                         <router-link :to="{path:'/lotus'}">上海新荷学校（9月）</router-link>

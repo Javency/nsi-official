@@ -8,6 +8,10 @@
                         <div class="col-md-12 noPl15">
                             <div class="logoContainer">
                                 <a href="javascript:;"><img src="../assets/img/layoutImg/logo.png" alt="" width="220" height="45" class="logo"></a>
+                                <!-- <div class="otherPorduct">
+                                    <a href="http://data.xinxueshuo.cn">国际学校在线四库全书</a>
+                                    <a href="http://class.xinxueshuo.cn">新学说国际教育研究院-在线课堂</a>
+                                </div> -->
                                 <div class="selectLang">
                                     <!-- <a href="javascript:;"><img src="../assets/img/layoutImg/zh.png" alt="" width="30"></a> -->
                                     <!-- <a href="javascript:;" v-for="(logo,index) in logos" v-if="logo.switchFlag==true"><img :src="logo.logoImg" alt="" width="30">
@@ -68,7 +72,7 @@
                                                             <a href="javascript:;" target="_"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;VIS国际学校发展大会</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="javascript:;" target="_">专题研讨会</a>
+                                                            <a href="javascript:;" target="_">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>专题研讨会</a>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -169,8 +173,8 @@
                                 <div class="col-md-12">
                                     <h4 class="blogroll">友情链接</h4>
                                     <div class="shareHref">
-                                        <a href="http://data.xinxueshuo.cn" target="_">四库全书</a>
-                                        <a href="http://class.xinxueshuo.cn" target="_">在线课堂</a>
+                                        <a href="http://data.xinxueshuo.cn" target="_">国际学校四库全书</a>
+                                        <a href="http://class.xinxueshuo.cn" target="_">新学说国际教育研究院-在线课堂</a>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -323,6 +327,26 @@ export default {
       {
         opacity: 0;
       }
+      .otherPorduct{
+          position: absolute;
+          right: 150px;
+          top: 30px;
+          a{
+              color: #808080;
+              margin-right: 10px;
+              &:hover{
+                  color: $official-color;
+                  text-decoration: none;
+              }
+          }
+          @media (max-width: 768px) {
+              display: none;
+          }
+      }
+    }
+    .logoFont{
+        font-size: 25px;
+        margin-right: 10px;
     }
     .mt50{
         margin-top: 50px;
@@ -526,7 +550,7 @@ export default {
       }
     }
     .weiboBox{
-      padding-left: 90px;
+      padding-left: 20px;
       h6{
         margin-bottom: 15px;
       }

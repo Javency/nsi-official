@@ -3,7 +3,7 @@
         <div class="container">
             <h2 class="title">热门活动<span class="hot">HOT</span></h2>
             <div class="row">
-                <div class="col-md-6 mb15" v-for="(list,index) in eventList">
+                <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
                     <a class="event-list" href="javascript:;" @click="getDetail">
                         <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
                             <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
@@ -124,6 +124,9 @@ export default {
                 background-size: cover;
                 background-position: center;
                 border-radius: 2px;
+                @media (max-width: 768px) {
+                    height: 150px;
+                }
             &::before{
                     display: block;
                     content: "";
@@ -135,6 +138,9 @@ export default {
                     background: rgba(0, 0, 0, 0);
                     background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.05) 2%, rgba(0, 0, 0, 0.3) 100%);
                     @include transitionAnimate;
+                    @media (max-width: 768px) {
+                    height: 150px;
+                }
                 }
             &:hover::before{
                     opacity: .2;
@@ -142,15 +148,14 @@ export default {
             }
             .event-box-title{
                     position: absolute;
-                    padding-right: 50px;
-                    left: 30px;
-                    bottom: 30px;
+                    // padding-right: 50px;
+                    left: 15px;
+                    bottom: 15px;
                     margin-top: 10px;
                     font-family: PingFangSC-Semibold;
-                    font-size: 20px;
                     color: #FFF;
                     font-weight: 700;
-                    font-size: 28px;
+                    font-size: 25px;
                     letter-spacing: 0;
                     line-height: 34px;
                     overflow: hidden;
@@ -164,6 +169,12 @@ export default {
                     margin-bottom: 2px;
                     text-shadow: 0 4px 8px rgba(7, 17, 27, 0.8);
                     @include transitionAnimate;
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                        padding-right: 15px;
+                        left: 15px;
+                        bottom: 15px;
+                    }
             }
         }
         .loadMore{

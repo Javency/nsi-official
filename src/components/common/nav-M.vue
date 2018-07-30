@@ -194,7 +194,7 @@ export default {
                     text-align: center;
                     height: 30px;
                     line-height: 30px;
-                    color: #0d0d0d;
+                    color: #6e6e6e;
                     border-radius: 2px;
                     margin-bottom: 30px;
                     margin-right: 10px;

@@ -22,6 +22,7 @@
                         </div>
                     </div>
                 </div>
+                <news-list-m class="col-md-12 showInMobile" :loadNews="newsList"></news-list-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -33,7 +34,11 @@
 </template>
 
 <script>
+import newsListM from './newsList-M'
 export default {
+    components:{
+        newsListM
+    },
     data(){
         return{
             pageNum:1,
@@ -139,4 +144,17 @@ export default {
 
 <style lang="scss">
   @import '../../assets/style/news/common.scss';
+  .newsList-com{
+      .list{
+          @media (max-width: 768px) {
+              display: none;
+          }
+      }
+      .showInMobile{
+          display: none;
+          @media (max-width: 768px) {
+              display: block;
+          }
+      }
+  }
 </style>

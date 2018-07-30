@@ -111,6 +111,9 @@ export default {
             border-radius: 2px;
             transition: all .3s;
             box-shadow: 0 12px 24px 0 rgba(7, 17, 27, 0.4);
+            @media (max-width: 768px) {
+                box-shadow: none;
+            }
             &:hover .swiper-button-prev,
             &:hover .swiper-button-next{
               opacity: .4;
