@@ -347,6 +347,8 @@ export default {
     .logoFont{
         font-size: 25px;
         margin-right: 10px;
+        position: relative;
+        top: 4px;
     }
     .mt50{
         margin-top: 50px;

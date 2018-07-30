@@ -28,6 +28,9 @@
         padding: 10px;
         // background-color: #fff;
         @include transitionAnimate;
+        @media (max-width: 768px) {
+            display: none;
+        }
         // margin-bottom: 15px;
         &:hover {
             background-color: #fff;

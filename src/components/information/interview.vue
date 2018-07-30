@@ -17,6 +17,7 @@
                         </div>
                     </div>
                 </div>
+                <inter-view-m class="showInMobile col-md-12" :loadNews="newsList"></inter-view-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -28,7 +29,11 @@
 </template>
 
 <script>
+import interViewM from './interview-M'
 export default {
+    components:{
+      interViewM
+    },
     data(){
         return{
             pageNum:1,
@@ -74,7 +79,7 @@ export default {
             }).then((res)=>{
                 let msg=res.data.data.list
                 for(let i=0;i<msg.length;i++){
-                    if(msg[i].articleCat==="访校文章"){
+                    if(msg[i].articleCat==="人物访谈"){
                         this.newsList.push(msg[i])
                     }
                 }
@@ -98,7 +103,7 @@ export default {
             let msg=res.data.data.list,
                 originalList=[]
             for(let i=0;i<msg.length;i++){
-                if(msg[i].articleCat==="访校文章"){
+                if(msg[i].articleCat==="人物访谈"){
                     originalList.push(msg[i])
                 }
             }

@@ -17,6 +17,7 @@
                         </div>
                     </div>
                 </div>
+                <visit-school-m class="showInMobile col-md-12" :loadNews="newsList"></visit-school-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -28,7 +29,11 @@
 </template>
 
 <script>
+import visitSchoolM from './visitSchool-M'
 export default {
+    components:{
+      visitSchoolM
+    },
     data(){
         return{
             pageNum:1,

@@ -17,6 +17,7 @@
                         </div>
                     </div>
                 </div>
+                <original-m class="showInMobile col-md-12" :loadNews="newsList"></original-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -28,7 +29,11 @@
 </template>
 
 <script>
+import originalM from './original-M'
 export default {
+    components:{
+      originalM
+    },
     data(){
         return{
             pageNum:1,

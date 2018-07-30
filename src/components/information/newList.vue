@@ -135,26 +135,10 @@ export default {
             this.loading=false
             this.pageNum=2
         })
-    },
-    beforeRouteUpdate (to, from, next) {
-        console.log("router更新前")
     }
 }
 </script>
 
 <style lang="scss">
   @import '../../assets/style/news/common.scss';
-  .newsList-com{
-      .list{
-          @media (max-width: 768px) {
-              display: none;
-          }
-      }
-      .showInMobile{
-          display: none;
-          @media (max-width: 768px) {
-              display: block;
-          }
-      }
-  }
 </style>
