@@ -1,73 +1,71 @@
 <template>
     <div class="eventBanner-com">
         <!-- banner -->
-        <!-- <div class="container"> -->
-            <swiper :options="swiperOption" ref="mySwiper" class="swipercontainer">
-                <!-- slides -->
-                <swiper-slide class="bg">
-                    <img src="../../assets/img/event/eventBanner03.jpg" alt="" class="img-responsive">
-                </swiper-slide>
-                <swiper-slide class="bg">
-                    <img src="../../assets/img/event/eventBanner02.jpg" alt="" class="img-responsive">
-                </swiper-slide>
-                <swiper-slide class="bg">
-                    <img src="../../assets/img/event/eventBanner01.jpg" alt="" class="img-responsive">
-                </swiper-slide>
-                <swiper-slide class="bg">
-                    <img src="../../assets/img/event/eventBanner04.jpg" alt="" class="img-responsive">
-                </swiper-slide>
-                <div class="swiper-pagination"  slot="pagination"></div>
-                <div class="swiper-button-prev" slot="button-prev">‹</div>
-                <div class="swiper-button-next" slot="button-next">›</div>
-            </swiper>
-        <!-- </div> -->
+        <div class="swiper-container" id="eventBanner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
+                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive">
+                </div>
+            </div>
+            <div class="swiper-pagination"  slot="pagination"></div>
+            <div class="swiper-button-prev" slot="button-prev">‹</div>
+            <div class="swiper-button-next" slot="button-next">›</div>
+        </div>
     </div>
 </template>
 
 <script>
 import 'swiper/dist/css/swiper.css'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import Swiper from 'swiper'
 export default {
-    components: {
-        swiper,
-        swiperSlide
-    },
-    name: 'carrousel',
     data () {
       return {
-        // 轮播
-        swiperOption: {
-            notNextTick: true,
-            autoplay: {
-                delay:5000,
-                disableOnInteraction: false,
-            },
-            speed:1000,
-            loop: true,
-            // spaceBetween: 30,
-            grabCursor : true,
-            effect: 'coverflow',
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }
-        },
+          bannerInfo:[]
       }
     },
-    computed:{
-      swiper(){
-        // var swiper01=this.$refs.mySwiper.swiper;
-        // return swiper01
-        return this.$refs.mySwiper.swiper;
-      }
+    methods:{
+        getBannerInfo(){
+            this.axios({
+                method: 'get',
+                url: '/manager/official/list.do',
+                params:{
+                    type:"官网会议活动"
+                }
+            }).then((res)=>{
+                const msg=res.data.data
+                // console.log(msg)
+                this.bannerInfo=msg
+                this.$nextTick(()=>{
+                    this.swiperInit()
+                })
+            })
+        },
+        swiperInit(){
+            const self=this
+            new Swiper('#indexBigBanner', {
+                 notNextTick: true,
+                 autoplay: {
+                    delay:3000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                effect : 'fade',
+                speed:600,
+                grabCursor : true,
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+        }
     },
     mounted(){
-    //    console.log("每次切换都会触发我");
-    //    this.swiper.slideTo(0,1000, false);
+        this.getBannerInfo()
     }
 }
 </script>

@@ -120,7 +120,7 @@ export default {
             .event-box{
                 position: relative;
                 width: 100%;
-                height: 300px;
+                height: 185px;
                 background-size: cover;
                 background-position: center;
                 border-radius: 2px;
@@ -131,7 +131,7 @@ export default {
                     display: block;
                     content: "";
                     width: 100%;
-                    height: 300px;
+                    height: 100%;
                     position: absolute;
                     left: 0;
                     top: 0;
@@ -145,6 +145,9 @@ export default {
             &:hover::before{
                     opacity: .2;
                 }
+            &:hover .event-box-title{
+                opacity:1;
+            }
             }
             .event-box-title{
                     position: absolute;
@@ -168,8 +171,10 @@ export default {
                     max-height: 34px;
                     margin-bottom: 2px;
                     text-shadow: 0 4px 8px rgba(7, 17, 27, 0.8);
+                    opacity: 0;
                     @include transitionAnimate;
                     @media (max-width: 768px) {
+                        opacity:1;
                         font-size: 16px;
                         padding-right: 15px;
                         left: 15px;

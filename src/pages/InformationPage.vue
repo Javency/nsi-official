@@ -10,7 +10,7 @@
           <li><router-link to=/news/original>行业分析</router-link><i class="newsnavLine"></i></li>
           <li><router-link to=/news/interview>人物访谈</router-link><i class="newsnavLine"></i></li>
         </ul>
-        <news-nav-m class="showInMobile visible-xs visible-sm"></news-nav-m>
+        <news-nav-m class="showInMobile"></news-nav-m>
         <!-- 新闻列表 -->
         <transition name="slide-fade">
             <keep-alive>
@@ -35,9 +35,9 @@ export default {
 </script>
 
 <style lang="scss">
-    body{
-      overflow-x: hidden;
-    }
+    // body{
+    //   overflow-x: hidden;
+    // }
     .infoCenter-com{
       .showInMobile{
         display: none;
