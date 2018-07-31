@@ -2,7 +2,7 @@
     <div class="newsDetail-com">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mt15">
                     <h1 class="newsDetail-title">{{detail.title}}</h1>
                 </div>
             </div>
