@@ -599,16 +599,16 @@ export default {
             color: #c1dcff;
         }
     }
+    .showInMobile{
+        display: none ;
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
     @media (max-width: 768px){
     // PC导航隐藏
     .navPC{
         display: none !important;
-    }
-    .showInMobile{
-        display: none;
-        @media (max-width: 768px) {
-            display: block;
-        }
     }
     .noPl15{
       padding-left: 0;
