@@ -5,7 +5,7 @@
             <li v-for="list in newsList">
                 <i class="iconfont icon-arrfill_u-copy"></i>
                 <a href="javascript:;" @click="toDetail(list.id)">{{list.title}}</a>
-                <div class="time">{{list.updateTime|formatDate}}
+                <div class="time">{{list.createTime|formatDate}}
                     <div class="shareTo">分享至：
                         <el-popover placement="bottom-end" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
                             <img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt="">

@@ -17,6 +17,7 @@ import interview from '../components/information/interview.vue'
 
 import eventDetail from '../components/event/eventDetail.vue'
 import periodical from '../components/research/periodical.vue'
+import report from '../components/research/report.vue'
 
 Vue.use(Router)
 
@@ -69,6 +70,9 @@ const routes = [{
     children: [{
         path: 'periodical',
         component: periodical
+    }, {
+        path: 'report',
+        component: report
     }]
 }, {
     path: "/consulting",

@@ -1,7 +1,9 @@
 <template>
     <div class="research-com">
         <research-sub-m class="showInMobile"/>
-        <router-view></router-view>
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
     </div>
 </template>
 
@@ -19,6 +21,7 @@ export default {
         padding-top: 52px;
         @media (max-width: 768px) {
             padding-top: 0;
+            padding-bottom: 30px;
         }
         margin-bottom: -50px;
         .showInMobile{

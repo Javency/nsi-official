@@ -13,7 +13,7 @@
                         <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span><br/>期刊</router-link>
                     </div>
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-baogao fontLogo"></span><br/>报告</router-link>
+                        <router-link :to="{path:'/research/report'}"><span class="iconfont icon-baogao fontLogo"></span><br/>报告</router-link>
                     </div>
                 </div>
             </div>

@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <shareBox :newsShareInfo="shareInfo" class="newsShare"/>
+            <share-box :newsShareInfo="shareInfo" class="newsShare"/>
         </div>
         <back-top></back-top>
     </div>

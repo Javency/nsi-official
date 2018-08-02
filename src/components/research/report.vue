@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="internal">
                         <!-- <h1 class="title">内参<span class="year">2017</span></h1> -->
-                        <h1 class="title">内参</h1>
+                        <h1 class="title">报告</h1>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@ export default {
         return{
              pageNum:1,
             // 内参
-            internalReferList:[] 
+            internalReferList:[]
         } 
     },
     methods:{
