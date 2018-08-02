@@ -1,78 +1,111 @@
 <template>
   <!-- banner -->
-  <swiper :options="swiperOption" ref="mySwiper" class="swipercontainer">
-      <!-- slides -->
-      <swiper-slide class="bg">
-          <img src="../../assets/img/index/banner001.jpg" alt="" class="img-responsive">
-          <!-- <div class="bgblur bg01"></div> -->
-      </swiper-slide>
-      <swiper-slide class="bg">
-          <img src="../../assets/img/index/banner002.jpg" alt="" class="img-responsive">
-          <!-- <div class="bgblur bg02"></div> -->
-      </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
-  </swiper>
+  <div class="swiper-container" id="indexBigBanner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item" v-if="item<4">
+                <img :src="bannerInfos.content01" alt="" class="img-responsive">
+            </div>
+        </div>
+        <div class="swiper-pagination"  slot="pagination"></div>
+        <div class="swiper-button-prev" slot="button-prev">‹</div>
+        <div class="swiper-button-next" slot="button-next">›</div>
+  </div>
 </template>
 
 <script>
 import 'swiper/dist/css/swiper.css'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import Swiper from 'swiper'
 export default {
-    components: {
-        swiper,
-        swiperSlide
-    },
-    name: 'carrousel',
     data () {
       return {
-        // 轮播
-        swiperOption: {
-            notNextTick: true,
-            autoplay: {
-                disableOnInteraction: false,
-            },
-            loop: true,
-            // spaceBetween: 30,
-            grabCursor : true,
-            effect: 'fade',
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }
-        },
+          bannerInfo:[]
       }
     },
-    computed:{
-      swiper(){
-        // var swiper01=this.$refs.mySwiper.swiper;
-        // return swiper01
-        return this.$refs.mySwiper.swiper;
-      }
+    methods:{
+        getBannerInfo(){
+            this.axios({
+                method: 'get',
+                url: '/manager/official/list.do',
+                params:{
+                    type:"官网首页banner"
+                }
+            }).then((res)=>{
+                const msg=res.data.data
+                // console.log(msg)
+                this.bannerInfo=msg
+                this.$nextTick(()=>{
+                    this.swiperInit()
+                })
+            })
+        },
+        swiperInit(){
+            const self=this
+            new Swiper('#indexBigBanner', {
+                 notNextTick: true,
+                 autoplay: {
+                    delay:3000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                effect : 'fade',
+                speed:600,
+                grabCursor : true,
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+        }
     },
     mounted(){
-       console.log("每次切换都会触发我");
-       this.swiper.slideTo(0,1000, false);
+        this.getBannerInfo()
     }
 }
 </script>
 
-<style>
+<style lang="scss">
     /* banner */
-    .swiper-button-prev{
-        left: 30px;
+    #indexBigBanner{
+        .swiper-button-prev{
+            left: 30px;
+        }
+        .swiper-button-next{
+            right: 30px;
+        }
+        .swiper-button-prev,
+        .swiper-button-next{
+            width:60px;
+            height: 60px;
+            line-height: 52px;
+            text-align: center;
+            border-radius: 50%;
+            color: #222;
+            background: #fff;
+            font-size: 50px;
+            opacity: .4;
+            transition: all .3s;
+            &:hover{
+            opacity: .7;
+            }
+            @media (max-width: 768px) {
+                width: 40px;
+                height: 40px;
+                line-height: 35px;
+                font-size: 30px;
+            }
+        }
+        .swiper-pagination-bullet-active{
+            background: #FFF;
+        }
+        /* .swipercontainer{
+            position: relative;
+        } */
     }
-    .swiper-button-next{
-        right: 30px;
-    }
-    /* .swipercontainer{
-        position: relative;
-    } */
     .bgblur{
         position: absolute;
         width: 100%;
@@ -95,11 +128,5 @@ export default {
         box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
         padding-left: 0;
         padding-right: 0;
-    }
-    .bg01{
-        background: url("../../assets/img/index/banner01.jpg");
-    }
-    .bg02{
-        background: url("../../assets/img/index/banner02.jpg");
     }
 </style>

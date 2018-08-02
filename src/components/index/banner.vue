@@ -6,8 +6,8 @@
                   <big-banner/>
               </div>
               <div class="col-md-3 pl0 pr0">
-                <small-banner-top/>
-                <small-banner-bottom/>
+                <small-banner-top class="bannerTop"/>
+                <small-banner-bottom class="bannerBottom"/>
               </div>
           </div>
       </div>
@@ -29,9 +29,17 @@ export default {
 
 <style lang="scss">
 .banner-com{
+  @media (max-width: 768px) {
+    margin-top: 0;
+    .bannerTop,
+    .bannerBottom{
+      display: none
+    }
+  }
     .container{
       // position: relative;
-      box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
+        box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
+        overflow: hidden;
         .pr0{
           padding-right: 0;
         }

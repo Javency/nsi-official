@@ -1,54 +1,57 @@
 <template>
   <!-- banner -->
-  <swiper :options="swiperOption" ref="mySwiper" class="swipercontainer">
-      <!-- slides -->
-      <swiper-slide class="bg">
-          <a href="javascript:;"><img src="../../assets/img/index/small003.jpg" alt="" class="img-responsive"></a>
-      </swiper-slide>
-      <swiper-slide class="bg">
-          <a href="javascript:;"><img src="../../assets/img/index/small004.jpg" alt="" class="img-responsive"></a>
-      </swiper-slide>
-  </swiper>
+  <div class="swiper-container" id="indexBannerBottom">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item" v-if="item>=9">
+                <img :src="bannerInfos.content01" alt="" class="img-responsive">
+            </div>
+        </div>
+  </div>
 </template>
 
 <script>
 import 'swiper/dist/css/swiper.css'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import Swiper from 'swiper'
 export default {
-    components: {
-        swiper,
-        swiperSlide
-    },
-    name: 'carrousel',
     data () {
       return {
-        // 轮播
-        swiperOption: {
-            // notNextTick: true,
-            autoplay: {
-                disableOnInteraction: false,
-            },
-            loop: true,
-            // spaceBetween: 10,
-            speed:2000,
-            effect : 'flip',
-            flip: {
-                slideShadows : true,
-                limitRotation : true,
-            }
-        },
+          bannerInfo:[]
       }
     },
-    computed:{
-      swiper(){
-        // var swiper01=this.$refs.mySwiper.swiper;
-        // return swiper01
-        return this.$refs.mySwiper.swiper;
-      }
+    methods:{
+        getBannerInfo(){
+            this.axios({
+                method: 'get',
+                url: '/manager/official/list.do',
+                params:{
+                    type:"官网首页banner"
+                }
+            }).then((res)=>{
+                const msg=res.data.data
+                // console.log(msg)
+                this.bannerInfo=msg
+                this.$nextTick(()=>{
+                    this.swiperInit()
+                })
+            })
+        },
+        swiperInit(){
+            const self=this
+            new Swiper('#indexBannerBottom', {
+                 notNextTick: true,
+                 autoplay: {
+                    delay:3000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                effect : 'fade',
+                speed:600,
+                grabCursor : true,
+            })
+        }
     },
     mounted(){
-       console.log("每次切换都会触发我");
-       this.swiper.slideTo(0,1000, false);
+        this.getBannerInfo()
     }
 }
 </script>
