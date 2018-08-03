@@ -19,6 +19,13 @@ import eventDetail from '../components/event/eventDetail.vue'
 import periodical from '../components/research/periodical.vue'
 import report from '../components/research/report.vue'
 
+import consultOne from '../components/consulting/consultOne.vue'
+import consultTwo from '../components/consulting/consultTwo.vue'
+import consultThree from '../components/consulting/consultThree.vue'
+import consultFour from '../components/consulting/consultFour.vue'
+import consultFive from '../components/consulting/consultFive.vue'
+import consultMob from '../components/consulting/consultMob.vue'
+
 Vue.use(Router)
 
 const routes = [{
@@ -77,6 +84,26 @@ const routes = [{
 }, {
     path: "/consulting",
     component: consultingPage,
+    redirect: '/consulting/consultOne',
+    children: [{
+        path: '/consulting/consultMob',
+        component: consultMob
+    }, {
+        path: '/consulting/consultOne',
+        component: consultOne
+    }, {
+        path: '/consulting/consultTwo',
+        component: consultTwo
+    }, {
+        path: '/consulting/consultThree',
+        component: consultThree
+    }, {
+        path: '/consulting/consultFour',
+        component: consultFour
+    }, {
+        path: '/consulting/consultFive',
+        component: consultFive
+    }]
 }, {
     path: "/lotus",
     component: lotusPage
