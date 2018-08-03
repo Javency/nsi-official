@@ -139,7 +139,8 @@ export default {
                 width: 100%;
                 min-height: 345px;
                 @media (max-width: 768px) {
-                    min-height: 232px;
+                    min-height: 250px;
+                    box-shadow: 0 5px 10px #ccc;
                 }
                 background-color: #e4e4e4;
                 background-size: 100% 100%;

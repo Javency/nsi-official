@@ -23,30 +23,6 @@
                 </div>
                 <img src="../assets/img/consulting/pcConsult2.jpg" alt="">
             </div>
-            <!-- <div class="banner">
-                <img src="../assets/img/consulting/banner.jpg" alt="">
-            </div>
-            <div class="content text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <img src="../assets/img/consulting/conInfo01.jpg" alt="">
-                        </div>
-                        <div class="col-md-12">
-                            <img src="../assets/img/consulting/conInfo02.jpg" alt="">
-                        </div>
-                        <div class="col-md-12">
-                            <img src="../assets/img/consulting/conInfo03.jpg" alt="">
-                        </div>
-                        <div class="col-md-12">
-                            <img src="../assets/img/consulting/conInfo04.jpg" alt="">
-                        </div>
-                        <div class="col-md-12">
-                            <img src="../assets/img/consulting/conInfo05.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
         <consultMob v-show="mobHtml"></consultMob>
     </div>
@@ -76,7 +52,7 @@ export default {
     .consulting-com{
         @media (max-width: 768px) {
             padding-top: 0;
-            dispaly:none;
+            display:none;
         }
         img{
             display: inline-block;
@@ -93,7 +69,7 @@ export default {
     .consultList{
         span{
             display: inline-block;
-            padding:10px 0 0px 0;
+            padding:0;
         }
         .consultListActive{
             color:rgb(255, 208, 75);

@@ -3,7 +3,7 @@
         <div class="consulting_mob">
             <div class="eventSub-m-com">
                 <div class="container-fluid">
-                    <div class="swiper-container eventSwiper consultList" id="researchSwiper">
+                    <div class="swiper-container eventSwiper consultList" id="researchSwiper" style="padding:10px 0">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide text-center">
                                 <router-link tag="span" active-class="consultListActive" :to="{path:'/consulting/consultOne'}">咨询</router-link>
@@ -82,7 +82,7 @@ export default {
     .consultList{
         span{
             display: inline-block;
-            padding:10px 0 0px 0;
+            padding:0;
         }
         .consultListActive{
             color:rgb(255, 208, 75);

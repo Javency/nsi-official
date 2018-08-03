@@ -4,7 +4,7 @@
             <div class="swiper-container eventSwiper" id="researchSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/research/periodical'}"><img width="75" class="classLogo pisom" src="../../assets/img/layoutImg/pisom.png" alt=""><br/>PISOM</router-link>
+                        <router-link :to="{path:'/research/pisom'}"><img width="75" class="classLogo pisom" src="../../assets/img/layoutImg/pisom.png" alt=""><br/>PISOM</router-link>
                     </div>
                     <div class="swiper-slide text-center">
                         <a href="http://class.xinxueshuo.cn" target="'_'"><img width="25" class="classLogo" src="../../assets/img/layoutImg/classLogo.png" alt=""><br/>在线课堂</a>
@@ -57,7 +57,7 @@ export default {
                 }
                 span{
                     font-weight: 700;
-                    color: $official-color;
+                    color: #444;
                     font-size: 25px !important;
                 }
             }
@@ -69,6 +69,9 @@ export default {
                 margin-top: 8px;
                 margin-bottom: 5px;
             }
+        }
+        .router-link-active{
+            color: #ffd04b !important;
         }
     }
 </style>

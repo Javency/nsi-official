@@ -20,7 +20,12 @@ import Swiper from 'swiper'
 export default {
     data () {
       return {
-          bannerInfo:[]
+          bannerInfo:[{
+              coverImage:require('../../assets/img/event/eventBanner01.jpg')
+          },
+          {
+              coverImage:require('../../assets/img/event/eventBanner03.jpg')
+          }]
       }
     },
     methods:{
@@ -34,7 +39,7 @@ export default {
             }).then((res)=>{
                 const msg=res.data.data
                 // console.log(msg)
-                this.bannerInfo=msg
+                // this.bannerInfo=msg
                 this.$nextTick(()=>{
                     this.swiperInit()
                 })
@@ -42,7 +47,7 @@ export default {
         },
         swiperInit(){
             const self=this
-            new Swiper('#indexBigBanner', {
+            new Swiper('#eventBanner', {
                  notNextTick: true,
                  autoplay: {
                     delay:3000,
@@ -65,7 +70,8 @@ export default {
         }
     },
     mounted(){
-        this.getBannerInfo()
+        // this.getBannerInfo()
+        this.swiperInit()
     }
 }
 </script>

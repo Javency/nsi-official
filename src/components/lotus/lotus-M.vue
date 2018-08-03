@@ -8,10 +8,12 @@
                         <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>
                     </div>
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/lotus'}">上海新荷学校（9月）</router-link>
+                        <!-- <router-link :to="{path:'/lotus/shanghai'}">上海新荷学校（9月）</router-link> -->
+                        <a href="https://jinshuju.net/f/L4Iz9D" target="_">上海新荷学校（9月）</a>
                     </div>
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/lotus'}">北京新荷学校（10月）</router-link>
+                        <!-- <router-link :to="{path:'/lotus/beijing'}">北京新荷学校（10月）</router-link> -->
+                        <a href="https://jinshuju.net/f/L4Iz9D" target="_">北京新荷学校（10月）</a>
                     </div>
                 </div>
             </div>

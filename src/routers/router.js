@@ -26,6 +26,8 @@ import consultFour from '../components/consulting/consultFour.vue'
 import consultFive from '../components/consulting/consultFive.vue'
 import consultMob from '../components/consulting/consultMob.vue'
 
+import notFondPage from '../components/common/notFondPage.vue'
+
 Vue.use(Router)
 
 const routes = [{
@@ -64,6 +66,9 @@ const routes = [{
     path: "/event",
     component: eventPage
 }, {
+    path: '/event/subject',
+    component: notFondPage
+}, {
     path: "/event/detail",
     name: "eventDetail",
     component: eventDetail
@@ -80,6 +85,9 @@ const routes = [{
     }, {
         path: 'report',
         component: report
+    }, {
+        path: 'pisom',
+        component: notFondPage
     }]
 }, {
     path: "/consulting",
@@ -107,6 +115,12 @@ const routes = [{
 }, {
     path: "/lotus",
     component: lotusPage
+}, {
+    path: "/lotus/shanghai",
+    component: notFondPage
+}, {
+    path: "/lotus/beijing",
+    component: notFondPage
 }]
 
 const router = new Router({

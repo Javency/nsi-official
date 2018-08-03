@@ -37,10 +37,6 @@ export default {
                 {
                     title:"2016国际学校发展大会",
                     imgSrc:require("../../assets/img/event/eventBanner03.jpg")
-                },
-                {
-                    title:"2015国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner04.jpg")
                 }
             ]
         }
@@ -80,6 +76,9 @@ export default {
         background: #fafafa;
         margin-bottom: -50px;
         padding: 50px 0;
+        @media (max-width: 768px) {
+            padding: 0 0 50px;
+        }
         .title{
             display: inline-block;
             font-family: PingFangSC-Semibold;
@@ -90,6 +89,10 @@ export default {
             height: 50px;
             position: relative;
             margin-bottom: 40px;
+            @media (max-width: 768px) {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
             .hot{
                 position: absolute;
                 right:-12px;
@@ -98,6 +101,9 @@ export default {
                 color: #e4e4e4;
                 letter-spacing: 0;
                 line-height: 20px;
+                @media (max-width: 768px) {
+                    top: 40px;
+                }
             }
         }
         .event-list{
