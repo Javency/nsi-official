@@ -54,7 +54,7 @@
                     <news-info-m :showFourNews="recentNews" class="showInMobile mt20"></news-info-m>
                     <div class="row">
                       <div class="col-md-12 text-right">
-                        <router-link :to="{path:'/news'}">更多&gt;&gt;</router-link>
+                        <router-link :to="{path:'/news'}">查看更多&gt;&gt;</router-link>
                       </div>
                     </div>
                 </div>
@@ -137,6 +137,26 @@
             toDetail(id){
                 let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
                 window.open(routeData.href, '_blank');
+            },
+            // 微信分享
+            wxInit(){
+                this.axios({
+                    method:"get",
+                    url:'/Admin_api?whereFrom=WeChatShare',
+                    params:{
+                        URL:"http://oos.xinxueshuo.cn/index.html#/news/detailnews/20066"
+                    }
+                }).then((res)=>{
+                    console.log(res.data)
+                    // wx.config({
+                    //     debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    //     appId: '', // 必填，公众号的唯一标识
+                    //     timestamp: , // 必填，生成签名的时间戳
+                    //     nonceStr: '', // 必填，生成签名的随机串
+                    //     signature: '',// 必填，签名，见附录1
+                    //     jsApiList: [] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                    // })
+                })
             }
         },
         mounted(){
@@ -165,6 +185,8 @@
                 // console.log(msg)
                 this.recentNews=msg
             })
+            // 微信分享
+            // this.wxInit()
         }
     }
 </script>
@@ -222,6 +244,7 @@
       @media (max-width: 768px) {
         padding-top: 0;
         .mb0_768{
+            margin-top: 0;
             margin-bottom: 0;
             font-size: 21px;
         }
@@ -233,8 +256,8 @@
         }
       }
       .bannerM{
-          margin-top: 20px;
-          padding: 0 10px;
+          margin-top: 0;
+          padding: 0;
         }
     }
     /* 最新动态 */

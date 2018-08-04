@@ -69,10 +69,10 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;VIS国际学校发展大会</a>
+                                                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;{{$t('layoutNav.eventChild.vis')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/event/subject'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>专题研讨会</router-link>
+                                                            <router-link :to="{path:'/event/subject'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>{{$t('layoutNav.eventChild.subject')}}</router-link>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -94,13 +94,13 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>
+                                                            <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotusChild.gunagzhou')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">上海新荷学校（9月）</a>
+                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.shanghai')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">北京新荷学校（10月）</a>
+                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.beijing')}}</a>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -158,7 +158,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-                <h3 class="contact">联系我们&nbsp;<span>CONTACT</span></h3>
+                <h3 class="contact">联系我们&nbsp;<span>Contact</span></h3>
                 <ul class="contact-info">
                   <li>{{$t('layoutFooter.tel')}}</li>
                   <li>{{$t('layoutFooter.email')}}</li>
@@ -171,10 +171,10 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="blogroll">友情链接</h4>
+                                    <h4 class="blogroll">友情链接 <span>Blogroll</span></h4>
                                     <div class="shareHref">
-                                        <a href="http://data.xinxueshuo.cn" target="_">国际学校四库全书</a>
-                                        <a href="http://class.xinxueshuo.cn" target="_">新学说国际教育研究院-在线课堂</a>
+                                        <a href="http://data.xinxueshuo.cn" target="_">{{$t('layoutFooter.database')}}</a>
+                                        <a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutFooter.classOnline')}}</a>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -265,8 +265,8 @@ export default {
                 country:"English",
                 switchFlag:false
             }],
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.lotus'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
-            layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo')]
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),this.$t('layoutNav.lotus'),this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.consult')],
+            layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo'),this.$t('layoutFooter.database'),this.$t('layoutFooter.classOnline')]
         }
     },
    mounted(){
@@ -484,12 +484,12 @@ export default {
       // font-weight: 700;
       color: #FFF;
       font-size: 18px;
-      font-family: -webkit-pictograph,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    //   font-family: -webkit-pictograph,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .footer .contact>span{
       font-weight: normal;
       font-size: 14px;
-      font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+    //   font-family: "微软雅黑",Arial, Helvetica, sans-serif;
       letter-spacing: 1px;
     }
     .contact-info{
@@ -499,7 +499,7 @@ export default {
     .contact-info>li{
       line-height: 2;
       color: $official-footerFontColor;
-      font-family: Arial, Helvetica, sans-serif
+    //   font-family: Arial, Helvetica, sans-serif
     }
     .footer-bottom{
       padding: 20px 0;
@@ -560,6 +560,10 @@ export default {
     .blogroll{
       margin-top: 25px;
       margin-bottom: 25px;
+      span{
+          font-size: 14px;
+          letter-spacing: 1px;
+      }
       @media (max-width: 768px) {
           margin: 10px 0 10px 0;
       }

@@ -2,7 +2,7 @@
     <div class="newsbanner-com">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 newsPic">
                     <div class="newsbanner">
                         <div class="swiper-container" id="newsbanner">
                             <div class="swiper-wrapper">
@@ -15,7 +15,7 @@
                             <div class="swiper-button-next" slot="button-next">›</div>
                         </div>
                          <div class="slide-bar">
-                            <p class="slidebar2"><span>新</span> 闻头条</p>
+                            <p class="slidebar2"><span class="bigWord">{{$t('news.newsOne')}}</span><br/><span>{{$t('news.newsTwo')}}</span><br/><span>{{$t('news.newsThree')}}</span><br/><span>{{$t('news.newsFour')}}</span></p>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,8 @@ export default {
     data () {
         return {
         newsBannerIndex:0,
-        bannerInfo:[]
+        bannerInfo:[],
+        news:[this.$t('news.newsOne'),this.$t('news.newsTwo'),this.$t('news.newsThree'),this.$t('news.newsFour'),this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews')]
       }
     },
     methods:{
@@ -106,6 +107,12 @@ export default {
      $official-color: #20528f;
      $newsBanner-bg:linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
     .newsbanner-com{
+        .newsPic{
+            @media (max-width: 768px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
         .newsbanner{
             overflow: hidden;
             border-radius: 2px;
@@ -169,7 +176,7 @@ export default {
                     line-height: 28px;
                     text-align: center;
                     margin-bottom: 0;
-                    span{
+                    span.bigWord{
                       display: inline-block;
                       color: $official-color;
                       font-size: 45px;

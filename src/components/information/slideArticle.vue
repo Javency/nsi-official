@@ -134,6 +134,9 @@ export default {
             margin: 5px 0 0;
             font-size: 13px;
             position: relative;
+            @media (max-width: 768px) {
+                display: none;
+            }
             .shareTo{
                 position: absolute;
                 right: 0;

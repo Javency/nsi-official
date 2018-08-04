@@ -3,7 +3,7 @@
   <div class="swiper-container" id="indexBigBanner">
         <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item" v-if="item<4">
-                <img :src="bannerInfos.content01" alt="" class="img-responsive">
+                <img :src="bannerInfos.content01" alt="" class="img-responsive" @click="linkTo(bannerInfos.content02)">
             </div>
         </div>
         <div class="swiper-pagination"  slot="pagination"></div>
@@ -60,6 +60,9 @@ export default {
                     prevEl: '.swiper-button-prev',
                 },
             })
+        },
+        linkTo(href){
+            window.open(href,"_")
         }
     },
     mounted(){

@@ -4,19 +4,19 @@
             <div class="swiper-container swiperM" id="newsSwiperM">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/news/newestArticle>资讯全览</router-link>
+                        <router-link tag="i" to=/news/newestArticle>{{$t('news.overviewNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to="/news/policy">政策解读</router-link>
+                        <router-link tag="i" to="/news/policy">{{$t('news.policyNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to="/news/visitSchool">访校观察</router-link>
+                        <router-link tag="i" to="/news/visitSchool">{{$t('news.schoolNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/news/original>行业分析</router-link>
+                        <router-link tag="i" to=/news/original>{{$t('news.tmtNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/news/interview>人物访谈</router-link>
+                        <router-link tag="i" to=/news/interview>{{$t('news.personNews')}}</router-link>
                     </div>
                 </div>
             </div>
@@ -30,6 +30,7 @@ export default {
     data(){
         return{
             activeNav:0,
+             news:[this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews')]
         }
     },
     methods:{

@@ -43,10 +43,10 @@ export default {
         const h = this.$createElement;
         this.$notify({
                 title: '温馨提示',
-                message: h('i', { style: 'color: teal'}, '点击书面即可下载'),
+                message: h('i', { style: 'color: #20528f'}, '点击书面即可下载'),
                 offset: 150,
                 type:'info',
-                duration:5000
+                duration:3000
             });
         },
         toDownload(url){

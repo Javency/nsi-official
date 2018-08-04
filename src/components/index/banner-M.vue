@@ -1,6 +1,6 @@
 <template>
   <div class="banner-M-com">
-      <el-carousel :interval="4000" arrow="always" height="160px">
+      <el-carousel :interval="4000" arrow="always" height="175px">
         <el-carousel-item v-for="(list,index) in bannerList" :key="index" v-if="index<4">
           <img :src="list.content03" alt="" class="img-responsive">
         </el-carousel-item>
