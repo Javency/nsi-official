@@ -43,10 +43,10 @@ export default {
         const h = this.$createElement;
         this.$notify({
                 title: '温馨提示',
-                message: h('i', { style: 'color: teal'}, '点击书面即可下载期刊&报告电子版'),
+                message: h('i', { style: 'color: teal'}, '点击书面即可下载'),
                 offset: 150,
                 type:'info',
-                duration:10000
+                duration:5000
             });
         },
         toDownload(url){
