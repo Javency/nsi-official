@@ -38,12 +38,12 @@ export default {
                 },
                 {
                    title:"2017VIS国际学校发展大会",
-                   imgSrc:"http://inews.gtimg.com/newsapp_ls/0/2350364328/0",
+                   imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity002.jpg",
                    url:"http://edu.qq.com/cross/20171215/P27Rp8V4.html"
                 },
                 {
                    title:"2017VIS国际学校投融资分会",
-                   imgSrc:"http://inews.gtimg.com/newsapp_ls/0/1570701479/0",
+                   imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity001.jpg",
                    url:"http://edu.qq.com/cross/20170519/D36Tp6V3.html"
                 },
                 {
