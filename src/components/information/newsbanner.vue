@@ -11,8 +11,8 @@
                                 </div>
                             </div>
                             <div class="swiper-pagination"  slot="pagination"></div>
-                            <div class="swiper-button-prev" slot="button-prev">‹</div>
-                            <div class="swiper-button-next" slot="button-next">›</div>
+                            <div class="swiper-button-prev" slot="button-prev"><span class="iconfont icon-arrow-left"></span></div>
+                            <div class="swiper-button-next" slot="button-next"><span class="iconfont icon-youjiantou"></span></div>
                         </div>
                          <div class="slide-bar">
                             <p class="slidebar2"><span class="bigWord">{{$t('news.newsOne')}}</span><br/><span>{{$t('news.newsTwo')}}</span><br/><span>{{$t('news.newsThree')}}</span><br/><span>{{$t('news.newsFour')}}</span></p>
@@ -144,9 +144,10 @@ export default {
               @media (max-width: 768px) {
                   width: 40px !important;
                   height: 40px !important;
-                  line-height: 35px;
+                  line-height: 25px;
                   font-size: 40px;
                   outline: none;
+                  opacity: .8;
               }
             }
             .swiper-pagination-bullet-active{
