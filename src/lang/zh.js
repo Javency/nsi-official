@@ -19,7 +19,7 @@ module.exports = {
         researchChild: {
             magazine: "国际学校内参",
             report: "新学说期刊&报告",
-            pisom: "PISOM必盛研修班",
+            pisom: "必盛研修班",
             classOnline: "新学说国际教育研究院"
         },
         researchChild_Mob: {

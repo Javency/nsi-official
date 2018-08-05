@@ -8,23 +8,14 @@
                         <div class="col-md-12 noPl15">
                             <div class="logoContainer">
                                 <a href="javascript:;"><img src="../assets/img/layoutImg/logo.png" alt="" width="220" height="45" class="logo"></a>
-                                <!-- <div class="otherPorduct">
-                                    <a href="http://data.xinxueshuo.cn">国际学校在线四库全书</a>
-                                    <a href="http://class.xinxueshuo.cn">新学说国际教育研究院-在线课堂</a>
-                                </div> -->
                                 <div class="selectLang">
-                                    <!-- <a href="javascript:;"><img src="../assets/img/layoutImg/zh.png" alt="" width="30"></a> -->
-                                    <!-- <a href="javascript:;" v-for="(logo,index) in logos" v-if="logo.switchFlag==true"><img :src="logo.logoImg" alt="" width="30">
-                                        &nbsp;{{logo.country}}
-                                    </a> -->
                                     <el-dropdown @command="handleCommand" placement="top" trigger="click">
                                         <span class="el-dropdown-link">
-                                            <!-- <img v-for="(logo,index) in logos" :key="index" :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}<i class="el-icon-arrow-down el-icon--right"></i> -->
-                                            <img class="activelogo" :src="logoActive" alt="" width="30">&nbsp;{{countryActive}}<i class="el-icon-arrow-down el-icon--right"></i>
+                                          <img class="activelogo" :src="logoActive" alt="" width="30">&nbsp;{{countryActive}}<i class="el-icon-arrow-down el-icon--right"></i>
                                         </span>
                                         <el-dropdown-menu slot="dropdown">
                                             <el-dropdown-item v-for="(logo,index) in logos" :key="index" :command="logo">
-                                                <img :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}
+                                              <img :src="logo.logoImg" alt="" width="30">&nbsp;{{logo.country}}
                                             </el-dropdown-item>
                                         </el-dropdown-menu>
                                     </el-dropdown>
@@ -77,19 +68,9 @@
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
                                             </li>
-                                            <!-- <li class="dropdown">
-                                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.louts')}}<span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a></li>
-                                                    <li><a href="https://jinshuju.net/f/L4Iz9D" target="_">上海新荷学校（9月）</a></li>
-                                                    <li><a href="https://jinshuju.net/f/L4Iz9D" target="_">北京新荷学校（10月）</a></li>
-                                                </ul>
-                                            </li> -->
                                             <li class="hasSubmenu">
-                                                <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
-                                                        <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.louts')}}<span class="caret"></span></router-link> -->
                                                         <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link></a>
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
@@ -105,23 +86,14 @@
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
                                             </li>
-                                            <!-- <li class="dropdown">
-                                                <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.research')}}<span class="caret"></span></router-link>
-                                                <ul class="dropdown-menu">
-                                                    <li><router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link></li>
-                                                    <li><a href="#">{{$t('layoutNav.researchChild.pisom')}}</a></li>
-                                                    <li><a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutNav.researchChild.classOnline')}}</a></li>
-                                                </ul>
-                                            </li> -->
                                             <li class="hasSubmenu">
-                                                <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
                                                         <router-link :to="{path:'/research'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.research')}}<span class="caret"></span></router-link>
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/pisom'}">{{$t('layoutNav.researchChild.pisom')}}</router-link>
+                                                            <router-link :to="{path:'/research/pisom'}"><img src="../assets/img/layoutImg/pisom.png" alt="" width="70">&nbsp;{{$t('layoutNav.researchChild.pisom')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <a href="http://class.xinxueshuo.cn" target="_"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
