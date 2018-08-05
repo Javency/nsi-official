@@ -92,7 +92,7 @@ export default {
         .swiper-button-next{
             width:60px;
             height: 60px;
-            line-height: 52px;
+            line-height: 40px;
             text-align: center;
             border-radius: 50%;
             color: #222;

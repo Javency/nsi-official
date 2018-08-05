@@ -7,8 +7,8 @@
             </div>
         </div>
         <div class="swiper-pagination"  slot="pagination"></div>
-        <div class="swiper-button-prev" slot="button-prev">‹</div>
-        <div class="swiper-button-next" slot="button-next">›</div>
+        <div class="swiper-button-prev" slot="button-prev"><span class="iconfont icon-arrow-left"></span></div>
+        <div class="swiper-button-next" slot="button-next"><span class="iconfont icon-youjiantou"></span></div>
   </div>
 </template>
 
@@ -84,7 +84,7 @@ export default {
         .swiper-button-next{
             width:60px;
             height: 60px;
-            line-height: 52px;
+            line-height: 40px;
             text-align: center;
             border-radius: 50%;
             color: #222;
