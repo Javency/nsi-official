@@ -147,7 +147,7 @@ export default {
                   line-height: 25px;
                   font-size: 40px;
                   outline: none;
-                  opacity: .8;
+                  opacity: .8 !important;
               }
             }
             .swiper-pagination-bullet-active{
