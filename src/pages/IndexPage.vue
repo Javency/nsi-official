@@ -11,7 +11,7 @@
                     <div class="index-title">
                         <span class="line left-line"></span>
                         <h3 class="text-center mb0_768">最新动态</h3>
-                        <h3 class="text-center mt0"><small>Recent Developments</small></h3>
+                        <h3 class="text-center mt0"><small>What’s New</small></h3>
                         <span class="line right-line"></span>
                     </div>
                     <div class="row pt50 twoNews">

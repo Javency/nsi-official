@@ -65,7 +65,7 @@ export default {
                 freeModeMomentumRatio : 5,
                 freeModeMomentum:true,
                 freeModeMomentumBounce:false,
-                // width:95,
+                // width:100,
                 slidesPerView : 4,
                 slideToClickedSlide: true,
                 // centeredSlides: true,

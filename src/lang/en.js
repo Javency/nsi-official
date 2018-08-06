@@ -1,26 +1,26 @@
 module.exports = {
     //导航栏
     layoutNav: {
-        index: "Index",
-        aboutus: "About",
+        index: "Home",
+        aboutus: "About Us",
         information: "News",
-        event: "Event",
+        event: "Events",
         eventChild: {
             vis: "Vision of International School Conference",
             subject: "Symposium"
         },
         lotus: "Lotus",
         lotusChild: {
-            gunagzhou: "the Lotus Schools of GuangZhou",
-            shanghai: "the Lotus Schools of ShangHai(Sep.)",
-            beijing: "the Lotus Schools of BeiJing(Oct.)"
+            gunagzhou: "the Lotus Schools of Guangzhou",
+            shanghai: "the Lotus Schools of Shanghai(Sep.)",
+            beijing: "the Lotus Schools of Beijing(Oct.)"
         },
         research: "Research",
         researchChild: {
             magazine: "International School Insider",
-            report: "Magazine and Report of NSI",
+            report: "Magazine and Report",
             pisom: "Studies of PISOM",
-            classOnline: "Internationnal Education Academy of NSI"
+            classOnline: "International Education Academy of NSI"
         },
         researchChild_Mob: {
             magazine: "International School Insider",
@@ -32,10 +32,10 @@ module.exports = {
     },
     // 底部
     layoutFooter: {
-        tel: "Telphone：010-52468286",
+        tel: "Telephone：010-52468286",
         email: "Email：info@xinxueshuo.cn",
         phone: "Phone：15010927730",
-        address: "Address：北京市西城区新风街2号天成科技大厦A座1006",
+        address: "Address：A#1006, Tiancheng Technology Building, Xinfeng Street #2, Xicheng District, Beijing",
         weChat: "WeChat Account",
         weibo: "Store Account",
         database: "International School DataBase",
