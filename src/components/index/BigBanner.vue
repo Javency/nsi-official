@@ -93,13 +93,14 @@ export default {
             opacity: .4;
             transition: all .3s;
             &:hover{
-            opacity: .7;
+              opacity: .8;
             }
             @media (max-width: 768px) {
                 width: 40px;
                 height: 40px;
                 line-height: 35px;
                 font-size: 30px;
+                opacity: .7;
             }
         }
         .swiper-pagination-bullet-active{
