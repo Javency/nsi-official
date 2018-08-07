@@ -4,7 +4,7 @@
             <connectUs></connectUs>
             <div>
                 <img src="../assets/img/consulting/pcConsult.jpg" alt="">
-                <div class="item" style="width:1070px;margin:30px auto;">
+                <!-- <div class="item" style="width:1070px;margin:30px auto;">
                     <el-row :gutter="20">
                       <el-col :span="8" v-for="(o, index) in 6" :key="o" style="margin-bottom:20px;">
                         <el-card :body-style="{ padding: '0px' }">
@@ -20,7 +20,7 @@
                         </el-card>
                       </el-col>
                     </el-row>
-                </div>
+                </div> -->
                 <img src="../assets/img/consulting/pcConsult2.jpg" alt="">
             </div>
         </div>

@@ -107,7 +107,7 @@ const routes = [{
         component: consultThree
     }, {
         path: '/consulting/consultFour',
-        component: consultFour
+        component: notFondPage
     }, {
         path: '/consulting/consultFive',
         component: consultFive
