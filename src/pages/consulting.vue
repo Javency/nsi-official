@@ -31,10 +31,17 @@
 <script>
 import connectUs from '../components/consulting/connectUs.vue'
 import consultMob from '../components/consulting/consultMob.vue'
+import wxShareInit from '../assets/js/weChatShare.js'
 export default {
     data() {
         return {
             mobHtml:false,
+            wxShareInfo:{
+                title:"新学说 | 国际学校整体解决方案专家",
+                imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                href:window.location.href,
+                desc:"新学说咨询运用专业能力结合行业知识、专家建议、实地调研、数据分析、解决客户痛点"
+            }
         }
     },
     components: {
@@ -44,6 +51,23 @@ export default {
         if(window.innerWidth<769){
             this.mobHtml=true
         }
+    },
+    methods:{
+      wxInit(){
+          this.axios({
+                  method:"get",
+                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
+                  params:{
+                      URL: window.location.href
+                  }
+              }).then((res)=>{
+                  wxShareInit.wxConfig(res)
+                  wxShareInit.wxReady(this.wxShareInfo)
+              })
+        }
+    },
+    mounted(){
+      this.wxInit()
     }
 }
 </script>

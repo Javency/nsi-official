@@ -103,11 +103,35 @@
 </template>
 
 <script>
+import wxShareInit from '../assets/js/weChatShare.js'
 export default {
     data(){
         return{
-            aboutus:[this.$t('aboutus.mission'),this.$t('aboutus.missionContent'),this.$t('aboutus.aboutNSI'),this.$t('aboutus.aboutNSIContent'),this.$t('aboutus.team'),this.$t('aboutus.teamContent'),this.$t('aboutus.partner'),this.$t('aboutus.partnerContent'),this.$t('aboutus.connectUs'),this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address')]
+            aboutus:[this.$t('aboutus.mission'),this.$t('aboutus.missionContent'),this.$t('aboutus.aboutNSI'),this.$t('aboutus.aboutNSIContent'),this.$t('aboutus.team'),this.$t('aboutus.teamContent'),this.$t('aboutus.partner'),this.$t('aboutus.partnerContent'),this.$t('aboutus.connectUs'),this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address')],
+            wxShareInfo:{
+                  title:"新学说 | 国际学校多边服务平台",
+                  imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                  href:window.location.href,
+                  desc:"新学说由国际学校行业专家共同打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台。"
+              }
         }
+    },
+    methods:{
+        wxInit(){
+          this.axios({
+                  method:"get",
+                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
+                  params:{
+                      URL: window.location.href
+                  }
+              }).then((res)=>{
+                  wxShareInit.wxConfig(res)
+                  wxShareInit.wxReady(this.wxShareInfo)
+              })
+        }
+    },
+    mounted(){
+      this.wxInit()
     }
 }
 </script>
