@@ -82,10 +82,23 @@ export default {
                 this.shareInfo=res.data.data
                 document.title=this.detail.title
             })
+        },
+        // 文章访问统计
+        statistics(){
+            this.axios({
+                method:"get",
+                url:"/manager/article/getStatistics.do",
+                params:{
+                    articleId:this.listId
+                }
+            })
         }
     },
     created(){
         this.fetchDate();
+    },
+    mounted(){
+        setTimeout(this.statistics,10000)
     },
     destroyed(){
         document.title="新学说 | 国际学校多边服务平台"

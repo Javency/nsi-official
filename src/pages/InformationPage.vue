@@ -4,11 +4,11 @@
         <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
         <ul class="news-nav mt50">
-          <li><router-link to=/news/newestArticle>资讯全览</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to="/news/policy">政策解读</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to="/news/visitSchool">访校观察</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to=/news/original>行业分析</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to=/news/interview>人物访谈</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/newestArticle>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/news/policy">{{$t('news.policyNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/news/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/original>{{$t('news.tmtNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/interview>{{$t('news.personNews')}}</router-link><i class="newsnavLine"></i></li>
         </ul>
         <news-nav-m class="showInMobile"></news-nav-m>
         <!-- 新闻列表 -->
@@ -30,6 +30,11 @@ export default {
         NewsBanner,
         backTop,
         newsNavM
+    },
+    data(){
+      return{
+        news:[this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews')]
+      }
     }
 }
 </script>
@@ -53,7 +58,7 @@ export default {
           position: absolute;left:0;right: 0;
         }
         .slide-fade-enter-active {
-          transition: all 1.2s ease;
+          transition: all .5s ease;
         }
         .slide-fade-leave-active {
           transition: all .1s cubic-bezier(2.0, 0.5, 0.8, 1.0);
@@ -67,7 +72,7 @@ export default {
         .pt60{
             padding-top: 60px;
             @media (max-width: 768px) {
-                padding-top: 20px;
+                padding-top: 0;
             }
         }
         .mt50{

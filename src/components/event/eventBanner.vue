@@ -8,8 +8,8 @@
                 </div>
             </div>
             <div class="swiper-pagination"  slot="pagination"></div>
-            <div class="swiper-button-prev" slot="button-prev">‹</div>
-            <div class="swiper-button-next" slot="button-next">›</div>
+            <div class="swiper-button-prev" slot="button-prev"><span class="iconfont icon-arrow-left"></span></div>
+            <div class="swiper-button-next" slot="button-next"><span class="iconfont icon-youjiantou"></span></div>
         </div>
     </div>
 </template>
@@ -20,7 +20,12 @@ import Swiper from 'swiper'
 export default {
     data () {
       return {
-          bannerInfo:[]
+          bannerInfo:[{
+              coverImage:require('../../assets/img/event/eventBanner01.jpg')
+          },
+          {
+              coverImage:require('../../assets/img/event/eventBanner03.jpg')
+          }]
       }
     },
     methods:{
@@ -34,7 +39,7 @@ export default {
             }).then((res)=>{
                 const msg=res.data.data
                 // console.log(msg)
-                this.bannerInfo=msg
+                // this.bannerInfo=msg
                 this.$nextTick(()=>{
                     this.swiperInit()
                 })
@@ -42,7 +47,7 @@ export default {
         },
         swiperInit(){
             const self=this
-            new Swiper('#indexBigBanner', {
+            new Swiper('#eventBanner', {
                  notNextTick: true,
                  autoplay: {
                     delay:3000,
@@ -65,7 +70,8 @@ export default {
         }
     },
     mounted(){
-        this.getBannerInfo()
+        // this.getBannerInfo()
+        this.swiperInit()
     }
 }
 </script>
@@ -86,7 +92,7 @@ export default {
         .swiper-button-next{
             width:60px;
             height: 60px;
-            line-height: 52px;
+            line-height: 40px;
             text-align: center;
             border-radius: 50%;
             color: #222;
@@ -97,12 +103,26 @@ export default {
             &:hover{
             opacity: .9;
             }
+            @media (max-width: 768px) {
+                width: 40px !important;
+                height: 40px !important;
+                line-height: 25px;
+                font-size: 40px;
+                outline: none;
+                opacity: .8;
+            }
         }
         .swiper-button-prev{
             left: 50px;
+            @media (max-width: 768px) {
+              left: 20px;
+            }
         }
         .swiper-button-next{
             right: 50px;
+            @media (max-width: 768px) {
+              right: 20px;
+            }
         }
         .swiper-pagination-bullet-active{
             background: #FFF;

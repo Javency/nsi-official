@@ -1,14 +1,20 @@
 <template>
   <div class="banner-M-com">
-      <el-carousel :interval="4000" arrow="always" height="160px">
-        <el-carousel-item v-for="(list,index) in bannerList" :key="index" v-if="index<4">
-          <img :src="list.content03" alt="" class="img-responsive">
-        </el-carousel-item>
-    </el-carousel>
+      <div class="swiper-container" id="indexBannerM">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(bannerInfos,item) in bannerList" :key="item" v-if="item<4">
+                  <img :src="bannerInfos.content03" alt="" class="img-responsive">
+              </div>
+          </div>
+          <div class="swiper-pagination"  slot="pagination"></div>
+          <div class="swiper-button-prev" slot="button-prev"><span class="iconfont icon-arrow-left"></span></div>
+          <div class="swiper-button-next" slot="button-next"><span class="iconfont icon-youjiantou"></span></div>
+      </div>
   </div>
 </template>
 
 <script>
+import Swiper from 'swiper'
 export default {
   data(){
     return{
@@ -16,26 +22,79 @@ export default {
     }
   },
   methods:{
-    loadBanner(){
-      // const type = new URLSearchParams();
-      // type.append('type','官网首页banner');
-      this.axios({
-        type:"get",
-        url:"/manager/official/list.do",
-        params:{
-              'type':'官网首页banner'
+      getBannerInfo(){
+          this.axios({
+              type:"get",
+              url:"/manager/official/list.do",
+              params:{
+                    'type':'官网首页banner'
+                  }
+          }).then((res)=>{
+              this.bannerList=res.data.data
+              this.$nextTick(()=>{
+                  this.swiperInit()
+              })
+          })
+        },
+      swiperInit(){
+        const self=this
+        new Swiper('#indexBannerM', {
+              notNextTick: true,
+              autoplay: {
+                delay:3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            speed:600,
+            grabCursor : true,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            observer:true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents:true,//修改swiper的父元素时，自动初始化swiper
+            on:{
+                transitionStart:function(swiper){
+                    self.newsBannerIndex=this.realIndex
+                    // console.log(self.newsBannerIndex)
+                },
             }
-      }).then((res)=>{
-        // console.log(res.data.data)
-        this.bannerList=res.data.data
-      })
+        })
     }
   },
   mounted(){
-    this.loadBanner()
+    this.getBannerInfo()
   }
 }
 </script>
 
 <style lang="scss">
+    .banner-M-com{
+        .swiper-button-prev,
+        .swiper-button-next{
+          width:40px !important;
+          height: 40px !important;
+          line-height: 31px;
+          text-align: center;
+          border-radius: 50%;
+          color: #222;
+          background-image: none !important;
+          background: #fff !important;
+          font-size: 30px;
+          opacity: .7;
+          transition: all .3s;
+          outline: none;
+          &:hover{
+            opacity: .9;
+          }
+    }
+    .swiper-pagination-bullet-active{
+      background: #FFF !important;
+    }
+  }
 </style>

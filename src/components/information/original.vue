@@ -79,7 +79,7 @@ export default {
             }).then((res)=>{
                 let msg=res.data.data.list
                 for(let i=0;i<msg.length;i++){
-                    if(msg[i].articleCat==="独家原创"){
+                    if(msg[i].articleCat==="行业分析"){
                         this.newsList.push(msg[i])
                     }
                 }
@@ -103,7 +103,7 @@ export default {
             let msg=res.data.data.list,
                 originalList=[]
             for(let i=0;i<msg.length;i++){
-                if(msg[i].articleCat==="独家原创"){
+                if(msg[i].articleCat==="行业分析"){
                     originalList.push(msg[i])
                 }
             }

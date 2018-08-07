@@ -43,10 +43,10 @@ export default {
         const h = this.$createElement;
         this.$notify({
                 title: '温馨提示',
-                message: h('i', { style: 'color: teal'}, '点击书面即可下载期刊&报告电子版'),
+                message: h('i', { style: 'color: #20528f'}, '点击书面即可下载'),
                 offset: 150,
                 type:'info',
-                duration:10000
+                duration:3000
             });
         },
         toDownload(url){
@@ -139,7 +139,8 @@ export default {
                 width: 100%;
                 min-height: 345px;
                 @media (max-width: 768px) {
-                    min-height: 232px;
+                    min-height: 250px;
+                    box-shadow: 0 5px 10px #ccc;
                 }
                 background-color: #e4e4e4;
                 background-size: 100% 100%;

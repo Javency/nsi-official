@@ -4,10 +4,11 @@
             <div class="swiper-container eventSwiper" id="eventSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/event'}"><img width="35" src="../../assets/img/layoutImg/vis2018.png" alt=""><br/>VIS国际学校发展大会</router-link>
+                        <!-- <router-link :to="{path:'/event'}"><img width="35" src="../../assets/img/layoutImg/vis2018.png" alt=""><br/>VIS国际学校发展大会</router-link> -->
+                        <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_"><img width="35" src="../../assets/img/layoutImg/vis2018.png" alt=""><br/>{{$t('layoutNav.eventChild.vis')}}</a>
                     </div>
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/event'}"><span class="iconfont icon-zhuanti fontlogo"></span><br/>专题研讨会</router-link>
+                        <router-link :to="{path:'/event/subject'}"><span class="iconfont icon-zhuanti fontlogo"></span><br/>{{$t('layoutNav.eventChild.subject')}}</router-link>
                     </div>
                 </div>
             </div>
@@ -18,6 +19,11 @@
 <script>
 import Swiper from 'swiper'
 export default {
+    data(){
+        return{
+            layoutNav:[this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject')]
+        }
+    },
     methods:{
         eventSubInit(){
             var eventSwiper=new Swiper("#eventSwiper",{

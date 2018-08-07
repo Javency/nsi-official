@@ -4,7 +4,7 @@
             <h2 class="title">热门活动<span class="hot">HOT</span></h2>
             <div class="row">
                 <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
-                    <a class="event-list" href="javascript:;" @click="getDetail">
+                    <a class="event-list" :href="list.url" target="_">
                         <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
                             <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
                         </div>
@@ -27,20 +27,34 @@ export default {
             addMoreHtml:"加载更多",
             eventList:[
                 {
-                    title:"2018国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner01.jpg")
+                    title:"新荷 ● 中国国际学校节",
+                    imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
+                    url:"http://www.xinxueshuo.cn/index.php?s=/home/article/detail/id/373.html"
                 },
                 {
-                    title:"2017国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner02.jpg")
+                    title:"2018VIS国际学校发展大会",
+                    imgSrc:require("../../assets/img/event/eventBanner03.jpg"),
+                    url:"http://www.xinxueshuo.cn/index.php?s=/home/article/detail/id/473.html"
                 },
                 {
-                    title:"2016国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner03.jpg")
+                   title:"2017VIS国际学校发展大会",
+                   imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity002.jpg",
+                   url:"http://edu.qq.com/cross/20171215/P27Rp8V4.html"
                 },
                 {
-                    title:"2015国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner04.jpg")
+                   title:"2017VIS国际学校投融资分会",
+                   imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity001.jpg",
+                   url:"http://edu.qq.com/cross/20170519/D36Tp6V3.html"
+                },
+                {
+                   title:"2016VIS国际学校发展大会",
+                   imgSrc:"http://img1.gtimg.com/18/1854/185463/18546304_980x1200_0.jpg",
+                   url:"http://edu.qq.com/p/topic/20161221027199/"
+                },
+                {
+                   title:"2015VIS国际学校发展大会",
+                   imgSrc:"http://img1.gtimg.com/edu/pics/hv1/85/77/1990/129419470.jpg",
+                   url:"http://edu.qq.com/p/topic/20151209029457/index.html"
                 }
             ]
         }
@@ -80,6 +94,9 @@ export default {
         background: #fafafa;
         margin-bottom: -50px;
         padding: 50px 0;
+        @media (max-width: 768px) {
+            padding: 0 0 50px;
+        }
         .title{
             display: inline-block;
             font-family: PingFangSC-Semibold;
@@ -90,6 +107,10 @@ export default {
             height: 50px;
             position: relative;
             margin-bottom: 40px;
+            @media (max-width: 768px) {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
             .hot{
                 position: absolute;
                 right:-12px;
@@ -98,6 +119,9 @@ export default {
                 color: #e4e4e4;
                 letter-spacing: 0;
                 line-height: 20px;
+                @media (max-width: 768px) {
+                    top: 40px;
+                }
             }
         }
         .event-list{

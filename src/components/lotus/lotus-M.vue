@@ -5,13 +5,15 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
                         <!-- <router-link :to="{path:'/lotus'}" exact>广州新荷学校</router-link> -->
-                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">广州新荷学校</a>
+                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotusChild.gunagzhou')}}</a>
                     </div>
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/lotus'}">上海新荷学校（9月）</router-link>
+                        <!-- <router-link :to="{path:'/lotus/shanghai'}">上海新荷学校（9月）</router-link> -->
+                        <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.shanghai')}}</a>
                     </div>
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/lotus'}">北京新荷学校（10月）</router-link>
+                        <!-- <router-link :to="{path:'/lotus/beijing'}">北京新荷学校（10月）</router-link> -->
+                        <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.beijing')}}</a>
                     </div>
                 </div>
             </div>
@@ -22,6 +24,11 @@
 <script>
 import Swiper from 'swiper'
 export default {
+    data(){
+        return{
+            layoutNav:[this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing')]
+        }
+    },
     methods:{
         eventSubInit(){
             var eventSwiper=new Swiper("#eventSwiper",{

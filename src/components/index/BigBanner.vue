@@ -3,12 +3,12 @@
   <div class="swiper-container" id="indexBigBanner">
         <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item" v-if="item<4">
-                <img :src="bannerInfos.content01" alt="" class="img-responsive">
+                <img :src="bannerInfos.content01" alt="" class="img-responsive" @click="linkTo(bannerInfos.content02)">
             </div>
         </div>
         <div class="swiper-pagination"  slot="pagination"></div>
-        <div class="swiper-button-prev" slot="button-prev">‹</div>
-        <div class="swiper-button-next" slot="button-next">›</div>
+        <div class="swiper-button-prev" slot="button-prev"><span class="iconfont icon-arrow-left"></span></div>
+        <div class="swiper-button-next" slot="button-next"><span class="iconfont icon-youjiantou"></span></div>
   </div>
 </template>
 
@@ -60,6 +60,9 @@ export default {
                     prevEl: '.swiper-button-prev',
                 },
             })
+        },
+        linkTo(href){
+            window.open(href,"_")
         }
     },
     mounted(){
@@ -81,7 +84,7 @@ export default {
         .swiper-button-next{
             width:60px;
             height: 60px;
-            line-height: 52px;
+            line-height: 40px;
             text-align: center;
             border-radius: 50%;
             color: #222;
@@ -90,13 +93,14 @@ export default {
             opacity: .4;
             transition: all .3s;
             &:hover{
-            opacity: .7;
+              opacity: .8;
             }
             @media (max-width: 768px) {
                 width: 40px;
                 height: 40px;
                 line-height: 35px;
                 font-size: 30px;
+                opacity: .7;
             }
         }
         .swiper-pagination-bullet-active{

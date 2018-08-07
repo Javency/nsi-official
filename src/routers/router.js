@@ -19,6 +19,15 @@ import eventDetail from '../components/event/eventDetail.vue'
 import periodical from '../components/research/periodical.vue'
 import report from '../components/research/report.vue'
 
+import consultOne from '../components/consulting/consultOne.vue'
+import consultTwo from '../components/consulting/consultTwo.vue'
+import consultThree from '../components/consulting/consultThree.vue'
+import consultFour from '../components/consulting/consultFour.vue'
+import consultFive from '../components/consulting/consultFive.vue'
+import consultMob from '../components/consulting/consultMob.vue'
+
+import notFondPage from '../components/common/notFondPage.vue'
+
 Vue.use(Router)
 
 const routes = [{
@@ -57,6 +66,9 @@ const routes = [{
     path: "/event",
     component: eventPage
 }, {
+    path: '/event/subject',
+    component: notFondPage
+}, {
     path: "/event/detail",
     name: "eventDetail",
     component: eventDetail
@@ -73,13 +85,42 @@ const routes = [{
     }, {
         path: 'report',
         component: report
+    }, {
+        path: 'pisom',
+        component: notFondPage
     }]
 }, {
     path: "/consulting",
     component: consultingPage,
+    redirect: '/consulting/consultOne',
+    children: [{
+        path: '/consulting/consultMob',
+        component: consultMob
+    }, {
+        path: '/consulting/consultOne',
+        component: consultOne
+    }, {
+        path: '/consulting/consultTwo',
+        component: consultTwo
+    }, {
+        path: '/consulting/consultThree',
+        component: consultThree
+    }, {
+        path: '/consulting/consultFour',
+        component: notFondPage
+    }, {
+        path: '/consulting/consultFive',
+        component: consultFive
+    }]
 }, {
     path: "/lotus",
     component: lotusPage
+}, {
+    path: "/lotus/shanghai",
+    component: notFondPage
+}, {
+    path: "/lotus/beijing",
+    component: notFondPage
 }]
 
 const router = new Router({
