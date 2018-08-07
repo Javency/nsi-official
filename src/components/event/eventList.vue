@@ -4,7 +4,7 @@
             <h2 class="title">热门活动<span class="hot">HOT</span></h2>
             <div class="row">
                 <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
-                    <a class="event-list" :href="list.url" target="_">
+                    <a class="event-list" :href="list.url" target="_blank">
                         <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
                             <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
                         </div>

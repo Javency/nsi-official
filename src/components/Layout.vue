@@ -60,7 +60,7 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;{{$t('layoutNav.eventChild.vis')}}</a>
+                                                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_blank"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;{{$t('layoutNav.eventChild.vis')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <router-link :to="{path:'/event/subject'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>{{$t('layoutNav.eventChild.subject')}}</router-link>
@@ -71,17 +71,17 @@
                                             <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
-                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link></a>
+                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link></a>
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotusChild.gunagzhou')}}</a>
+                                                            <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotusChild.gunagzhou')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.shanghai')}}</a>
+                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_blank">{{$t('layoutNav.lotusChild.shanghai')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.beijing')}}</a>
+                                                            <a href="https://jinshuju.net/f/L4Iz9D" target="_blank">{{$t('layoutNav.lotusChild.beijing')}}</a>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -96,7 +96,7 @@
                                                             <router-link :to="{path:'/research/pisom'}"><img src="../assets/img/layoutImg/pisom.png" alt="" width="70">&nbsp;{{$t('layoutNav.researchChild.pisom')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="http://class.xinxueshuo.cn" target="_"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
+                                                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.magazine')}}</router-link>
@@ -145,34 +145,34 @@
                                 <div class="col-md-12">
                                     <h4 class="blogroll">友情链接 <span>Blogroll</span></h4>
                                     <div class="shareHref">
-                                        <a href="http://data.xinxueshuo.cn" target="_">{{$t('layoutFooter.database')}}</a>
-                                        <a href="http://class.xinxueshuo.cn" target="_">{{$t('layoutFooter.classOnline')}}</a>
+                                        <a href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a>
+                                        <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.classOnline')}}</a>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="logoShare">
                                         <!-- 微博 -->
-                                         <a href="https://weibo.com/u/5786464903?refer_flag=1001030101_&is_hot=1" target="_">
+                                         <a href="https://weibo.com/u/5786464903?refer_flag=1001030101_&is_hot=1" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/weibo.png" alt="" width="35">
                                         </a>
                                         <!-- 知乎 -->
-                                        <a href="https://www.zhihu.com/org/xin-xue-shuo-chuan-mei-74/activities" target="_">
+                                        <a href="https://www.zhihu.com/org/xin-xue-shuo-chuan-mei-74/activities" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/zhihu.png" alt="" width="35">
                                         </a>
                                         <!-- 搜狐 -->
-                                        <a href="http://mp.sohu.com/profile?xpt=cHBhZzc3MzAzZjExYTE3ZUBzb2h1LmNvbQ==&_f=index_pagemp_2" target="_">
+                                        <a href="http://mp.sohu.com/profile?xpt=cHBhZzc3MzAzZjExYTE3ZUBzb2h1LmNvbQ==&_f=index_pagemp_2" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/souhu.png" alt="" width="35">
                                         </a>
                                         <!-- 头条 -->
-                                        <a href="https://www.toutiao.com/c/user/6030021946/#mid=6033071476" target="_">
+                                        <a href="https://www.toutiao.com/c/user/6030021946/#mid=6033071476" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/toutiao.png" alt="" width="35">
                                         </a>
                                         <!-- link -->
-                                        <a href="https://www.linkedin.com/in/newschool-insight-b96319139" target="_">
+                                        <a href="https://www.linkedin.com/in/newschool-insight-b96319139" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/linked.png" alt="" width="35">
                                         </a>
                                         <!-- 推特 -->
-                                        <a href="https://mobile.twitter.com/nsi_media;" target="_">
+                                        <a href="https://mobile.twitter.com/nsi_media;" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/twitter.png" alt="" width="35">
                                         </a>
                                     </div>

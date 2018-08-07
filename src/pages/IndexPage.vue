@@ -72,8 +72,8 @@
                       <div class="row">
                         <div class="col-md-6">
                             <div class="activities-current animated fadeInLeft" v-for="currentEvent in activitiesCurrent" v-if="currentEvent.content06==currentSerialNum" :key="currentEvent.content06">
-                                <h1 class="activitiesTitle"><a href="javascript:;">{{currentEvent.content02}}</a></h1>
-                                <h1 class="activities-zh"><a href="javascript:;">{{currentEvent.content01}}</a></h1>
+                                <h1 class="activitiesTitle"><a :href="currentEvent.content07" target="_blank">{{currentEvent.content02}}</a></h1>
+                                <h1 class="activities-zh"><a :href="currentEvent.content07" target="_blank">{{currentEvent.content01}}</a></h1>
                                 <p class="activities-info">{{currentEvent.content03}}</p>
                                 <p class="activities-info bottomLine">{{currentEvent.content04}}</p>
                                 <p class="activities-article multiline">{{currentEvent.textcontent01}}</p>
@@ -83,7 +83,7 @@
                           <div class="othersActivities">
                             <div class="row">
                               <div class="col-md-6 col-xs-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
-                                <a href="javascript:;">
+                                <a :href="activities.content07" target="_blank">
                                   <div class="othersBox" :class="'othersBox0'+(index+1)">
                                     <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">

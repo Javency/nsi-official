@@ -52,22 +52,22 @@
             <div class="container">
                 <div class="row coo-logo">
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.brightscholar.com" target="_" title="博实乐教育集团">
+                        <a href="http://www.brightscholar.com" target="_blank" title="博实乐教育集团">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100099/100099-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.schoolis.cn" target="_" title="校宝智慧校园">
+                        <a href="http://www.schoolis.cn" target="_blank" title="校宝智慧校园">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100046/100046-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.ourschoolbus.com.cn" target="_" title="起点校车">
+                        <a href="http://www.ourschoolbus.com.cn" target="_blank" title="起点校车">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100043/100043-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.casio.com.cn/index.html?from=skqs" target="_" title="卡西欧（中国）贸易有限公司">
+                        <a href="http://www.casio.com.cn/index.html?from=skqs" target="_blank" title="卡西欧（中国）贸易有限公司">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100181/100181-logo.jpg" alt="" width="180">
                         </a>
                     </div>
@@ -77,7 +77,7 @@
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.chinahtedu.com" target="_" title="北京汉通文化有限责任公司">
+                        <a href="http://www.chinahtedu.com" target="_blank" title="北京汉通文化有限责任公司">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100163/100163-logo.jpg" alt="" width="120">
                         </a>
                     </div>
