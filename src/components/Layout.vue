@@ -93,10 +93,10 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/pisom'}"><img src="../assets/img/layoutImg/pisom.png" alt="" width="70">&nbsp;{{$t('layoutNav.researchChild.pisom')}}</router-link>
+                                                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
+                                                            <router-link :to="{path:'/research/pisom'}"><img src="../assets/img/layoutImg/pisom.png" alt="" width="70">&nbsp;{{$t('layoutNav.researchChild.pisom')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.magazine')}}</router-link>
@@ -151,14 +151,6 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="logoShare">
-                                        <!-- 微博 -->
-                                         <a href="https://weibo.com/u/5786464903?refer_flag=1001030101_&is_hot=1" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/weibo.png" alt="" width="35">
-                                        </a>
-                                        <!-- 知乎 -->
-                                        <a href="https://www.zhihu.com/org/xin-xue-shuo-chuan-mei-74/activities" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/zhihu.png" alt="" width="35">
-                                        </a>
                                         <!-- 搜狐 -->
                                         <a href="http://mp.sohu.com/profile?xpt=cHBhZzc3MzAzZjExYTE3ZUBzb2h1LmNvbQ==&_f=index_pagemp_2" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/souhu.png" alt="" width="35">
@@ -166,6 +158,14 @@
                                         <!-- 头条 -->
                                         <a href="https://www.toutiao.com/c/user/6030021946/#mid=6033071476" target="_blank">
                                             <img src="../assets/img/layoutImg/shareIcon/toutiao.png" alt="" width="35">
+                                        </a>
+                                        <!-- 微博 -->
+                                         <a href="https://weibo.com/u/5786464903?refer_flag=1001030101_&is_hot=1" target="_blank">
+                                            <img src="../assets/img/layoutImg/shareIcon/weibo.png" alt="" width="35">
+                                        </a>
+                                        <!-- 知乎 -->
+                                        <a href="https://www.zhihu.com/org/xin-xue-shuo-chuan-mei-74/activities" target="_blank">
+                                            <img src="../assets/img/layoutImg/shareIcon/zhihu.png" alt="" width="35">
                                         </a>
                                         <!-- link -->
                                         <a href="https://www.linkedin.com/in/newschool-insight-b96319139" target="_blank">

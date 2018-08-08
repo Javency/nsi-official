@@ -33,12 +33,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="slide-ad">
-                        <slide-ad/>
-                    </div>
-                    <div class="slide-article">
-                        <slide-article/>
+                <div class="col-md-3 por">
+                    <div class="slideItem">
+                        <div class="slide-ad">
+                            <slide-ad/>
+                        </div>
+                        <div class="slide-article">
+                            <slide-article/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,6 +55,7 @@ import slideAd from './slideAD'
 import shareBox from '../common/share'
 import slideArticle from './slideArticle'
 import backTop from '../common/backToTop'
+import wxShareInit from '../../assets/js/weChatShare.js'
 export default {
     components:{
         slideAd,
@@ -64,7 +67,13 @@ export default {
         return{
             listId:"",
             detail:{},
-            shareInfo:{}
+            shareInfo:{},
+            wxShareInfo:{
+                  title:"",
+                  imgUrl:"",
+                  href:window.location.href,
+                  desc:""
+              }
         }
     },
     methods:{
@@ -78,9 +87,14 @@ export default {
                 }
             }).then((res)=>{
                 // console.log(res)
+                var shareInfo=res.data.data
                 this.detail=res.data.data
                 this.shareInfo=res.data.data
                 document.title=this.detail.title
+                // 微信分享
+                this.wxShareInfo.title=shareInfo.title
+                this.wxShareInfo.imgUrl=shareInfo.coverImage
+                this.wxShareInfo.desc=shareInfo.summary
             })
         },
         // 文章访问统计
@@ -92,6 +106,19 @@ export default {
                     articleId:this.listId
                 }
             })
+        },
+        // 微信分享
+        wxInit(){
+          this.axios({
+                  method:"get",
+                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
+                  params:{
+                      URL: window.location.href
+                  }
+              }).then((res)=>{
+                  wxShareInit.wxConfig(res)
+                  wxShareInit.wxReady(this.wxShareInfo)
+              })
         }
     },
     created(){
@@ -99,24 +126,11 @@ export default {
     },
     mounted(){
         setTimeout(this.statistics,10000)
+        setTimeout(this.wxInit,500)
     },
     destroyed(){
         document.title="新学说 | 国际学校多边服务平台"
     },
-    // mounted(){
-    //     this.listId = this.$route.params.id;
-    //     alert(this.listId)
-    //     // const params = new URLSearchParams();
-    //     this.axios({
-    //         method:"get",
-    //         url: 'http://192.168.0.191:8080/nsi-1.0/article/detail.do',
-    //         params:{
-    //             articleId:this.listId
-    //             }
-    //     }).then((res)=>{
-    //         console.log(res)
-    //     })
-    // },
     watch:{
         "$route": "fetchDate"
     }
@@ -127,6 +141,9 @@ export default {
     .newsDetail-com{
         // padding: 0 35px;
         padding-top: 52px;
+        .por{
+           position: relative; 
+        }
         @media (max-width: 768px) {
             padding-top: 0;
         }

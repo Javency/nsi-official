@@ -17,16 +17,16 @@ module.exports = {
         },
         research: "Research",
         researchChild: {
-            magazine: "International School Insider",
+            magazine: "Magazine",
             report: "Magazine and Report",
-            pisom: "Studies of PISOM",
-            classOnline: "International Education Academy of NSI"
+            pisom: "Talents Training",
+            classOnline: "International Education Academy"
         },
         researchChild_Mob: {
-            magazine: "International School Insider",
-            report: "Magazine and Report of NSI",
-            pisom: "Studies of PISOM",
-            classOnline: "Academy of NSI"
+            magazine: "Magazine",
+            report: "Research Report",
+            pisom: "Talents Training",
+            classOnline: "Education Academy"
         },
         consult: "Service"
     },

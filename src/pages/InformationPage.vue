@@ -64,9 +64,9 @@ export default {
 </script>
 
 <style lang="scss">
-    // body{
-    //   overflow-x: hidden;
-    // }
+    body{
+      overflow-x: hidden;
+    }
     .infoCenter-com{
       .showInMobile{
         display: none;
