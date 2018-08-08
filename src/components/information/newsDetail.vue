@@ -124,9 +124,11 @@ export default {
     created(){
         this.fetchDate();
     },
-    mounted(){
+    beforeMount(){
         setTimeout(this.statistics,10000)
-        setTimeout(this.wxInit,500)
+        if(wxShareInit.isWeixinBrowser()){
+            setTimeout(this.wxInit,500)
+        }
     },
     destroyed(){
         document.title="新学说 | 国际学校多边服务平台"

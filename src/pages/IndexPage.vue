@@ -10,7 +10,7 @@
                     <!-- title -->
                     <div class="index-title">
                         <span class="line left-line"></span>
-                        <h3 class="text-center mb0_768">最新动态</h3>
+                        <h3 class="text-center mb0_768">行业动态</h3>
                         <h3 class="text-center mt0"><small>What’s New</small></h3>
                         <span class="line right-line"></span>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="fourNews">
                       <div class="row mt30">
                           <!-- 四条新闻标题 -->
-                          <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index>=2&&index<7">
+                          <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index>=2&&index<9">
                               <div class="newsInfo">
                                   <div class="row">
                                     <div class="col-md-10">
@@ -53,8 +53,8 @@
                     <!-- 新闻移动端 -->
                     <news-info-m :showFourNews="recentNews" class="showInMobile mt20"></news-info-m>
                     <div class="row">
-                      <div class="col-md-12 text-right">
-                        <router-link :to="{path:'/news'}">查看更多&gt;&gt;</router-link>
+                      <div class="col-md-12 text-center">
+                        <router-link :to="{path:'/news'}" class="learnMore">查看更多</router-link>
                       </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                     title:"新学说 | 国际学校多边服务平台",
                     imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                     href:window.location.href,
-                    desc:"新学说由国际学校行业专家共同打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台。"
+                    desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
                 }
             }
         },
@@ -159,6 +159,11 @@
               })
           }
         },
+        beforeMount(){
+            if(wxShareInit.isWeixinBrowser()){
+                setTimeout(this.wxInit,500)
+            }
+        },
         mounted(){
             // 近期活动
             const eventList = new URLSearchParams();
@@ -175,7 +180,7 @@
             // 最新动态
             const newsList = new URLSearchParams();
             newsList.append('pageNum', 1);
-            newsList.append('pageSize', 6);
+            newsList.append('pageSize', 8);
             this.axios({
                 method: 'post',
                 url: '/article/list.do',
@@ -185,8 +190,6 @@
                 // console.log(msg)
                 this.recentNews=msg
             })
-            // 微信分享
-            this.wxInit()
         }
     }
 </script>
@@ -241,6 +244,12 @@
     }
     .indexPage-com{
       padding-top: 52px;
+      @mixin transitionAnimate{
+          -webkit-transition: all 0.3s ease 0s;
+          -ms-transition: all 0.3s ease 0s;
+          -o-transition: all 0.3s ease 0s;
+          transition: all 0.3s ease 0s;
+      }
       @media (max-width: 768px) {
         padding-top: 0;
         .mb0_768{
@@ -259,6 +268,21 @@
           margin-top: 0;
           padding: 0;
         }
+    .learnMore{
+        display: inline-block;
+        color: #777;
+        padding: 4px 18px;
+        border-radius: 20px;
+        border: 1px solid #eee;
+        background-color: #eee;
+        margin-top: 30px;
+        @include transitionAnimate();
+        &:hover{
+            background: #dadada;
+            text-decoration: none;
+            color: #333;
+        }
+    }
     }
     /* 最新动态 */
     .index-title{

@@ -66,8 +66,10 @@ export default {
               })
         }
     },
-    mounted(){
-      this.wxInit()
+    beforeMount(){
+        if(wxShareInit.isWeixinBrowser()){
+            setTimeout(this.wxInit,500)
+        }
     }
 }
 </script>

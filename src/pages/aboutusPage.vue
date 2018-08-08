@@ -112,7 +112,7 @@ export default {
                   title:"新学说 | 国际学校多边服务平台",
                   imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                   href:window.location.href,
-                  desc:"新学说由国际学校行业专家共同打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台。"
+                  desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
               }
         }
     },
@@ -130,8 +130,10 @@ export default {
               })
         }
     },
-    mounted(){
-      this.wxInit()
+    beforeMount(){
+        if(wxShareInit.isWeixinBrowser()){
+            setTimeout(this.wxInit,500)
+        }
     }
 }
 </script>

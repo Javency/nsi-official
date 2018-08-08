@@ -1,6 +1,15 @@
 import wx from 'weixin-js-sdk'
 
 let wxShareInit = {
+    // 判断是否为微信浏览器
+    isWeixinBrowser() {
+        var agent = navigator.userAgent.toLowerCase();
+        if (agent.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    },
     // 微信配置config
     wxConfig(res) {
         let data = JSON.parse(res.data.split('(')[1].split(')')[0])

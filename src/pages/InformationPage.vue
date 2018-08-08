@@ -36,10 +36,10 @@ export default {
       return{
         news:[this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews')],
         wxShareInfo:{
-                title:"新学说 | 资讯中心",
+                title:"新学说 | 新闻中心",
                 imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                 href:window.location.href,
-                desc:"新学说咨询运用专业能力结合行业知识、专家建议、实地调研、数据分析、解决客户痛点"
+                desc:"国际学校多边服务平台 | 行业动态 ● 深度报道 ● 行业咨询"
             }
       }
     },
@@ -57,8 +57,10 @@ export default {
               })
         }
     },
-    mounted(){
-      this.wxInit()
+    beforeMount(){
+        if(wxShareInit.isWeixinBrowser()){
+            setTimeout(this.wxInit,500)
+        }
     }
 }
 </script>

@@ -3,7 +3,7 @@
       <div class="swiper-container" id="indexBannerM">
           <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(bannerInfos,item) in bannerList" :key="item" v-if="item<4">
-                  <img :src="bannerInfos.content03" alt="" class="img-responsive">
+                  <img :src="bannerInfos.content03" alt="" class="img-responsive" @click="toDetail(bannerInfos.content02)">
               </div>
           </div>
           <div class="swiper-pagination"  slot="pagination"></div>
@@ -65,6 +65,9 @@ export default {
                 },
             }
         })
+    },
+    toDetail(url){
+        window.open(url,"_blank")
     }
   },
   mounted(){
