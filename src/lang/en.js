@@ -63,7 +63,8 @@ module.exports = {
         policyNews: "Policy",
         schoolNews: "School",
         tmtNews: "Analyze",
-        personNews: "Personage"
+        personNews: "Personage",
+        oldNews: "Histroy"
     },
     // 咨询服务
     service: {

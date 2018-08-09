@@ -12,14 +12,13 @@
                         <img :src="detail.coverImage" alt="">
                     </div> -->
                     <div class="author">
-                        <p class="news-summary">{{detail.summary}}</p>
-                        <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
+                        <p class="news-summary">{{detail.createTime|timestampToTime}}</p>
                     </div>
-                    <div v-html="detail.articleContent" class="news-article-content"></div>
+                    <div v-html="detail.content" class="news-article-content"></div>
                     <div class="cut-off-line text-center"><span class="cut-off-text">● END ●</span></div>
                     <div class="statement">
-                        <p class="nsi-statement" v-if="detail.articleSourceTitle=='新学说'">本文系<a href="http://www.xinxueshuo.cn" target="_blank">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
-                        <p class="nsi-statement" v-else>本文系<a href="http://www.xinxueshuo.cn" target="_blank"> 新学说 </a>转载文章，来源 <a :href="detail.articleSourceAdress" target="_blank">{{detail.articleSourceTitle}}</a></p>
+                        <!-- <p class="nsi-statement" v-if="detail.articleSourceTitle=='新学说'">本文系<a href="http://www.xinxueshuo.cn" target="_blank">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
+                        <p class="nsi-statement" v-else>本文系<a href="http://www.xinxueshuo.cn" target="_blank"> 新学说 </a>转载文章，来源 <a :href="detail.articleSourceAdress" target="_blank">{{detail.articleSourceTitle}}</a></p> -->
                         <div>
                           <div class="row">
                             <div class="col-md-2 col-xs-4 text-center">
@@ -44,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <share-box :newsShareInfo="shareInfo" class="newsShare"/>
+            <!-- <share-box :newsShareInfo="shareInfo" class="newsShare"/> -->
         </div>
         <back-top></back-top>
     </div>
@@ -76,14 +75,26 @@ export default {
               }
         }
     },
+    filters:{
+        timestampToTime(timestamp) {
+            var date = new Date(timestamp * 1000),//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+                Y = date.getFullYear() + '-',
+                M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-',
+                D = date.getDate() + ' ',
+                h = date.getHours() + ':',
+                m = date.getMinutes() + ':',
+                s = date.getSeconds()
+            return Y+M+D;
+        }
+    },
     methods:{
          fetchDate(){
             this.listId = this.$route.params.id;
             this.axios({
                 method:"get",
-                url: '/article/detail.do',
+                url: 'http://192.168.0.46:8080/nsi-1.0/previousArticles/detail.do',
                 params:{
-                    articleId:this.listId
+                    oldArticleId:this.listId
                 }
             }).then((res)=>{
                 // console.log(res)

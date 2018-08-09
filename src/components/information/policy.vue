@@ -12,7 +12,7 @@
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
-                            <span class="time">{{list.updateTime|formatDate}}</span>
+                            <span class="time">{{list.createTime|formatDate}}</span>
                             <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
                         </div>
                     </div>
@@ -87,8 +87,8 @@ export default {
             })
         },
         toDetail(id){
-            // console.log(id)
-            this.$router.push({name:"detailNews",params:{id:id}})
+            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            window.open(routeData.href, '_blank');
         }
     },
     beforeMount(){

@@ -63,7 +63,8 @@ module.exports = {
         policyNews: "政策解读",
         schoolNews: "访校观察",
         tmtNews: "行业分析",
-        personNews: "人物访谈"
+        personNews: "人物访谈",
+        oldNews: "历史文章"
     },
     // 咨询服务
     service: {

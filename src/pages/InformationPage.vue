@@ -9,6 +9,7 @@
           <li><router-link to="/news/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to=/news/original>{{$t('news.tmtNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to=/news/interview>{{$t('news.personNews')}}</router-link><i class="newsnavLine"></i></li>
+          <!-- <li><router-link to=/news/histroy>{{$t('news.oldNews')}}</router-link><i class="newsnavLine"></i></li> -->
         </ul>
         <news-nav-m class="showInMobile"></news-nav-m>
         <!-- 新闻列表 -->
@@ -34,7 +35,7 @@ export default {
     },
     data(){
       return{
-        news:[this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews')],
+        news:[this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews'),this.$t('news.oldNews')],
         wxShareInfo:{
                 title:"新学说 | 新闻中心",
                 imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",

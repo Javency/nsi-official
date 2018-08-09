@@ -1,23 +1,23 @@
 <template>
-    <div class="newsList-com" v-loading="loading">
+    <div class="newsList-com histroy" v-loading="loading">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"></a>
+                            <a href="javascript:;" class="img-box"><img :src="'http://www.xinxueshuo.cn/old_article'+list.path" alt="" @click="toDetail(list.id)"></a>
                         </div>
                         <div class="list-content-box">
-                            <h3><a href="javascript:;" :title="list.title">{{list.title}}</a></h3>
+                            <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
-                            <span class="time">{{list.createTime|formatDate}}</span>
+                            <span class="time">{{list.createTime|timestampToTime}}</span>
                             <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
                         </div>
                     </div>
                 </div>
-                <original-m class="showInMobile col-md-12" :loadNews="newsList"></original-m>
+                <inter-view-m class="showInMobile col-md-12" :loadNews="newsList"></inter-view-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import originalM from './original-M'
+import interViewM from './interview-M'
 export default {
     components:{
-      originalM
+      interViewM
     },
     data(){
         return{
@@ -43,26 +43,15 @@ export default {
         }
     },
     filters:{
-        formatDate(time,option){
-            time = Date.parse(time)
-            const d = new Date(time);
-            const now = Date.now();
-            const diff = (now - d) / 1000;
-
-            if (diff < 30) {
-                return '刚刚'
-            } else if (diff < 3600) { // less 1 hour
-                return Math.ceil(diff / 60) + '分钟前'
-            } else if (diff < 3600 * 24) {
-                return Math.ceil(diff / 3600) + '小时前'
-            } else if (diff < 3600 * 24 * 2) {
-                return '1天前'
-            }
-            if (option) {
-                return parseTime(time, option)
-            } else {
-                return d.getMonth() + 1 + '月' + d.getDate() + '日'
-            }
+        timestampToTime(timestamp) {
+            var date = new Date(timestamp * 1000),//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+                Y = date.getFullYear() + '-',
+                M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-',
+                D = date.getDate() + ' ',
+                h = date.getHours() + ':',
+                m = date.getMinutes() + ':',
+                s = date.getSeconds()
+            return Y+M+D;
         }
     },
     methods:{
@@ -74,48 +63,60 @@ export default {
             params.append('pageSize', 8);
             this.axios({
                 method: 'post',
-                url: '/article/list.do',
+                url: 'http://192.168.0.46:8080/nsi-1.0/previousArticles/list.do',
                 data: params
             }).then((res)=>{
                 let msg=res.data.data.list
                 for(let i=0;i<msg.length;i++){
-                    if(msg[i].articleCat==="行业分析"){
-                        this.newsList.push(msg[i])
-                    }
+                    this.newsList.push(msg[i])
                 }
                 this.addMoreHtml="加载更多"
             })
         },
         toDetail(id){
-            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            let routeData =this.$router.resolve({name:"historydetail",params:{id:id}})
             window.open(routeData.href, '_blank');
         }
     },
     beforeMount(){
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
-        params.append('pageSize', 16);
+        params.append('pageSize', 8);
         this.axios({
              method: 'post',
-             url: '/article/list.do',
+             url: 'http://192.168.0.46:8080/nsi-1.0/previousArticles/list.do',
              data:params
         }).then((res)=>{
-            let msg=res.data.data.list,
-                originalList=[]
-            for(let i=0;i<msg.length;i++){
-                if(msg[i].articleCat==="行业分析"){
-                    originalList.push(msg[i])
-                }
-            }
-            console.log(originalList)
-            this.newsList=originalList
+            let msg=res.data.data.list
+            this.newsList=msg
             this.loading=false
-            this.pageNum=2
+            // this.pageNum=1
         })
     }
 }
 </script>
 
 <style lang="scss">
-    @import '../../assets/style/news/common.scss';
+   @import '../../assets/style/news/common.scss';
+   .histroy{
+       .list-img-box{
+           text-align: center;
+           .img-box{
+               width: 100%;
+               img{
+                    width: 100%;
+                    height: 181px;
+                }
+           }
+       }
+       .list-content-box{
+           min-height: 100px !important;
+           h3{
+               max-height: 75px !important;
+               a{
+                   -webkit-line-clamp: 3 !important;
+               }
+           }
+       }
+   }
 </style>

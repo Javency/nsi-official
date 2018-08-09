@@ -26,8 +26,9 @@
             </div>
         </div>
         <div class="consulting_mob">
-            <router-view></router-view>
-            
+            <!-- <keep-alive> -->
+                <router-view></router-view>
+            <!-- </keep-alive> -->
         </div>
     </div>
 </template>
