@@ -2,20 +2,20 @@
     <div class="nsiProduct-com">
         <div class="container productContainer">
             <div class="row">
-                <div class="col-md-3 pl0 pr0">
+                <div class="col-md-3 col-xs-6 pl0 pr0">
                     <div class="productBox">
                         <div class="product-logo text-center">
-                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html" target="_blank"><img src="../../assets/img/layoutImg/vis2018.png" width="70" alt=""></a>
+                            <a href="http://data.xinxueshuo.cn" target="_blank" class="databaseLogo"><span class="iconfont icon-shu"></span></a>
                         </div>
                         <div class="product-name text-center">
-                            <p><a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html" target="_blank" class="name">新学说四库全书&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
+                            <p><a href="http://data.xinxueshuo.cn" target="_blank" class="name">新学说四库全书&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
                         </div>
                         <!-- <div class="bg">
                             <a href="http://class.xinxueshuo.cn">新学说四库全书</a>
                         </div> -->
                     </div>
                 </div>
-                <div class="col-md-3 pl0 pr0">
+                <div class="col-md-3 col-xs-6 pl0 pr0">
                     <div class="productBox">
                         <div class="product-logo text-center">
                             <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../../assets/img/layoutImg/classLogo.png" width="58" alt=""></a>
@@ -28,7 +28,7 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="col-md-3 pl0 pr0">
+                <div class="col-md-3 col-xs-6 pl0 pr0">
                     <div class="productBox">
                         <div class="product-logo text-center">
                             <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html" target="_blank"><img src="../../assets/img/layoutImg/vis2018.png" width="70" alt=""></a>
@@ -41,7 +41,7 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="col-md-3 pl0 pr0">
+                <div class="col-md-3 col-xs-6 pl0 pr0">
                     <div class="productBox">
                         <div class="product-logo text-center">
                             <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank"><img src="../../assets/img/layoutImg/lotus.png" width="80" alt=""></a>
@@ -91,6 +91,14 @@ export default {
             position: relative;
             padding: 20px 15px;
             @include transitionAnimate();
+            .databaseLogo{
+                span{
+                    font-size: 50px;
+                }
+                &:hover{
+                    text-decoration: none;
+                }
+            }
             &:hover{
                 background-color: #fff;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28);

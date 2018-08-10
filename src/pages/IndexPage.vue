@@ -4,10 +4,10 @@
         <Banner class="mt30 bannerPC"/>
         <banner-m class="showInMobile bannerM"/>
         <div class="container-fulid">
-            <nsi-product></nsi-product>
+            <nsi-product class="hideInmobile"></nsi-product>
             <div class="container newestPlpr0">
                 <!-- 最新动态 -->
-                <div class="newest">
+                <div class="newest indexNews">
                     <!-- title -->
                     <div class="index-title">
                         <span class="line left-line"></span>
@@ -202,6 +202,11 @@
     .showInMobile{
         display: none;
     }
+    .hideInmobile{
+        @media (max-width:768px) {
+            display: none;
+        }
+    }
     @media (max-width: 768px) {
         .showInMobile{
             display: block;
@@ -286,6 +291,11 @@
             color: #333;
         }
     }
+    }
+    .indexNews{
+        @media (max-width: 768px) {
+            padding-top: 50px !important;
+        }
     }
     /* 最新动态 */
     .index-title{
