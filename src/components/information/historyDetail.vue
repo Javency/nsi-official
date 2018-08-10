@@ -92,7 +92,7 @@ export default {
             this.listId = this.$route.params.id;
             this.axios({
                 method:"get",
-                url: 'http://192.168.0.46:8080/nsi-1.0/previousArticles/detail.do',
+                url: '/previousArticles/detail.do',
                 params:{
                     oldArticleId:this.listId
                 }

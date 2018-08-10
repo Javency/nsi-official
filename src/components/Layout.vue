@@ -143,10 +143,12 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="blogroll">友情链接 <span>Blogroll</span></h4>
+                                    <h4 class="blogroll">友情链接 <span>Frendly Link</span></h4>
                                     <div class="shareHref">
-                                        <a href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a>
-                                        <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.classOnline')}}</a>
+                                        <a href="http://data.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/database.png" alt=""></a>
+                                        <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/class.png" alt=""></a>
+                                        <!-- <a href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a>
+                                        <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.classOnline')}}</a> -->
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -547,7 +549,7 @@ export default {
         }
         a{
             color: #8fb8fb;
-            margin-right:25px;
+            margin-right:5px;
         }
         a:hover{
             text-decoration: none;

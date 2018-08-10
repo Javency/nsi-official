@@ -4,9 +4,10 @@
         <Banner class="mt30 bannerPC"/>
         <banner-m class="showInMobile bannerM"/>
         <div class="container-fulid">
+            <nsi-product></nsi-product>
             <div class="container newestPlpr0">
                 <!-- 最新动态 -->
-                <div class="newest pt50">
+                <div class="newest">
                     <!-- title -->
                     <div class="index-title">
                         <span class="line left-line"></span>
@@ -112,13 +113,15 @@
     import recentEvent from '../components/index/recentEvent-M.vue'
     import bannerM from '../components/index/banner-M.vue'
     import wxShareInit from '../assets/js/weChatShare.js'
+    import nsiProduct from '../components/index/nsiProduct.vue'
     var currentSerialNum=0;
     export default {
         components: {
            Banner,
            newsInfoM,
            recentEvent,
-           bannerM
+           bannerM,
+           nsiProduct
         },
         name: 'carrousel',
         data() {
@@ -130,7 +133,7 @@
                 activitiesCurrent:[],
                 wxShareInfo:{
                     title:"新学说 | 国际学校多边服务平台",
-                    imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                    imgUrl:"https://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                     href:window.location.href,
                     desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
                 }

@@ -29,7 +29,7 @@ export default {
                 {
                     title:"新荷 ● 中国国际学校节",
                     imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
-                    url:"http://www.xinxueshuo.cn/index.php?s=/home/article/detail/id/373.html"
+                    url:"http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html"
                 },
                 {
                     title:"2018VIS国际学校发展大会",
@@ -48,12 +48,12 @@ export default {
                 },
                 {
                    title:"2016VIS国际学校发展大会",
-                   imgSrc:"http://img1.gtimg.com/18/1854/185463/18546304_980x1200_0.jpg",
+                   imgSrc:"https://img1.gtimg.com/18/1854/185463/18546304_980x1200_0.jpg",
                    url:"http://edu.qq.com/p/topic/20161221027199/"
                 },
                 {
                    title:"2015VIS国际学校发展大会",
-                   imgSrc:"http://img1.gtimg.com/edu/pics/hv1/85/77/1990/129419470.jpg",
+                   imgSrc:"https://img1.gtimg.com/edu/pics/hv1/85/77/1990/129419470.jpg",
                    url:"http://edu.qq.com/p/topic/20151209029457/index.html"
                 }
             ]

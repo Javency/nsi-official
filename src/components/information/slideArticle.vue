@@ -63,7 +63,7 @@ export default {
         },
         addUrl(url) {
             // alert(url)
-            this.weixinQRcode = 'http://qr.liantu.com/api.php?text=' + url
+            this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
         },
     },
     beforeMount(){

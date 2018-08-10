@@ -3,7 +3,7 @@
         <div class="shareBox">
             <div class="share weixin">
                 <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
-                    <img width="150" :src="'http://qr.liantu.com/api.php?text='+newsShareInfo.articleUrl" alt="">
+                    <img width="150" :src="'https://www.kuaizhan.com/common/encode-png?large=true&data='+newsShareInfo.articleUrl" alt="">
                     <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span>
                 </el-popover>
             </div>
@@ -22,7 +22,7 @@ export default {
     },
     methods:{
         shareWibo(url,title,picurl){
-            let sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
+            let sharesinastring='https://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
             window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         }
     }

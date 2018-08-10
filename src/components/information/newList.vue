@@ -122,7 +122,7 @@ export default {
             window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         },
         addUrl(url) {
-            this.weixinQRcode = 'http://qr.liantu.com/api.php?text=' + url
+            this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
         },
     },
     beforeMount(){

@@ -37,7 +37,7 @@ export default {
             mobHtml:false,
             wxShareInfo:{
                 title:"新学说 | 国际学校整体解决方案专家",
-                imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                imgUrl:"https://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                 href:window.location.href,
                 desc:"新学说咨询运用专业能力结合行业知识、专家建议、实地调研、数据分析、解决客户痛点"
             },
