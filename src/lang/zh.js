@@ -18,13 +18,13 @@ module.exports = {
         research: "研究院",
         researchChild: {
             magazine: "国际学校内参",
-            report: "新学说期刊&报告",
+            report: "研究报告",
             pisom: "必盛研修班",
             classOnline: "新学说国际教育研究院"
         },
         researchChild_Mob: {
             magazine: "国际学校内参",
-            report: "期刊&报告",
+            report: "研究报告",
             pisom: "必盛研修班",
             classOnline: "国际教育研究院"
         },
@@ -63,7 +63,8 @@ module.exports = {
         policyNews: "政策解读",
         schoolNews: "访校观察",
         tmtNews: "行业分析",
-        personNews: "人物访谈"
+        personNews: "人物访谈",
+        oldNews: "历史文章"
     },
     // 咨询服务
     service: {

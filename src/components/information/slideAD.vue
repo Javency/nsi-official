@@ -3,7 +3,7 @@
         <div class="swiper-container" id="swiperAd">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="(adInfos,item) in ADinfo" :key="item">
-                    <a :href="adInfos.clickurl" target="_">
+                    <a :href="adInfos.clickurl" target="_blank">
                         <img :src="adInfos.imgurl" alt="" class="img-responsive">
                     </a>
                 </div>

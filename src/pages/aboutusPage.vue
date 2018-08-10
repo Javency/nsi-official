@@ -52,22 +52,22 @@
             <div class="container">
                 <div class="row coo-logo">
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.brightscholar.com" target="_" title="博实乐教育集团">
+                        <a href="http://www.brightscholar.com" target="_blank" title="博实乐教育集团">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100099/100099-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.schoolis.cn" target="_" title="校宝智慧校园">
+                        <a href="http://www.schoolis.cn" target="_blank" title="校宝智慧校园">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100046/100046-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.ourschoolbus.com.cn" target="_" title="起点校车">
+                        <a href="http://www.ourschoolbus.com.cn" target="_blank" title="起点校车">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100043/100043-logo.jpg" alt="" width="120">
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.casio.com.cn/index.html?from=skqs" target="_" title="卡西欧（中国）贸易有限公司">
+                        <a href="http://www.casio.com.cn/index.html?from=skqs" target="_blank" title="卡西欧（中国）贸易有限公司">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100181/100181-logo.jpg" alt="" width="180">
                         </a>
                     </div>
@@ -77,7 +77,7 @@
                         </a>
                     </div>
                     <div class="col-md-2 col-xs-6">
-                        <a href="http://www.chinahtedu.com" target="_" title="北京汉通文化有限责任公司">
+                        <a href="http://www.chinahtedu.com" target="_blank" title="北京汉通文化有限责任公司">
                             <img src="http://data.xinxueshuo.cn/upImage/upInstitutionImg/100163/100163-logo.jpg" alt="" width="120">
                         </a>
                     </div>
@@ -103,10 +103,36 @@
 </template>
 
 <script>
+import wxShareInit from '../assets/js/weChatShare.js'
 export default {
     data(){
         return{
-            aboutus:[this.$t('aboutus.mission'),this.$t('aboutus.missionContent'),this.$t('aboutus.aboutNSI'),this.$t('aboutus.aboutNSIContent'),this.$t('aboutus.team'),this.$t('aboutus.teamContent'),this.$t('aboutus.partner'),this.$t('aboutus.partnerContent'),this.$t('aboutus.connectUs'),this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address')]
+            aboutus:[this.$t('aboutus.mission'),this.$t('aboutus.missionContent'),this.$t('aboutus.aboutNSI'),this.$t('aboutus.aboutNSIContent'),this.$t('aboutus.team'),this.$t('aboutus.teamContent'),this.$t('aboutus.partner'),this.$t('aboutus.partnerContent'),this.$t('aboutus.connectUs'),this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address')],
+            wxShareInfo:{
+                  title:"新学说 | 国际学校多边服务平台",
+                  imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                  href:window.location.href,
+                  desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
+              }
+        }
+    },
+    methods:{
+        wxInit(){
+          this.axios({
+                  method:"get",
+                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
+                  params:{
+                      URL: window.location.href
+                  }
+              }).then((res)=>{
+                  wxShareInit.wxConfig(res)
+                  wxShareInit.wxReady(this.wxShareInfo)
+              })
+        }
+    },
+    beforeMount(){
+        if(wxShareInit.isWeixinBrowser()){
+            setTimeout(this.wxInit,500)
         }
     }
 }

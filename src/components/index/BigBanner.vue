@@ -62,7 +62,7 @@ export default {
             })
         },
         linkTo(href){
-            window.open(href,"_")
+            window.open(href,"_blank")
         }
     },
     mounted(){

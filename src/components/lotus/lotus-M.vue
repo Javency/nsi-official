@@ -5,15 +5,15 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
                         <!-- <router-link :to="{path:'/lotus'}" exact>广州新荷学校</router-link> -->
-                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_">{{$t('layoutNav.lotusChild.gunagzhou')}}</a>
+                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotusChild.gunagzhou')}}</a>
                     </div>
                     <div class="swiper-slide text-center">
                         <!-- <router-link :to="{path:'/lotus/shanghai'}">上海新荷学校（9月）</router-link> -->
-                        <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.shanghai')}}</a>
+                        <a href="https://jinshuju.net/f/L4Iz9D" target="_blank">{{$t('layoutNav.lotusChild.shanghai')}}</a>
                     </div>
                     <div class="swiper-slide text-center">
                         <!-- <router-link :to="{path:'/lotus/beijing'}">北京新荷学校（10月）</router-link> -->
-                        <a href="https://jinshuju.net/f/L4Iz9D" target="_">{{$t('layoutNav.lotusChild.beijing')}}</a>
+                        <a href="https://jinshuju.net/f/L4Iz9D" target="_blank">{{$t('layoutNav.lotusChild.beijing')}}</a>
                     </div>
                 </div>
             </div>

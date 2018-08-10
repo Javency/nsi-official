@@ -14,6 +14,8 @@ import visitschool from '../components/information/visitSchool.vue'
 import policy from '../components/information/policy.vue'
 import detailnews from '../components/information/newsDetail.vue'
 import interview from '../components/information/interview.vue'
+import historyNews from '../components/information/histroy.vue'
+import historydetail from '../components/information/historyDetail.vue'
 
 import eventDetail from '../components/event/eventDetail.vue'
 import periodical from '../components/research/periodical.vue'
@@ -31,97 +33,108 @@ import notFondPage from '../components/common/notFondPage.vue'
 Vue.use(Router)
 
 const routes = [{
-    path: "/",
-    component: IndexPage
-}, {
-    path: "/news",
-    redirect: "/news/newestArticle",
-    component: InformationPage,
-    children: [{
-            path: "newestArticle",
-            component: newestList
-        },
-        {
-            path: "original",
-            component: original
-        },
-        {
-            path: "visitSchool",
-            component: visitschool
-        },
-        {
-            path: "policy",
-            component: policy
-        },
-        {
-            path: "interview",
-            component: interview
-        }
-    ]
-}, {
-    path: "/news/detailnews/:id",
-    name: "detailNews",
-    component: detailnews
-}, {
-    path: "/event",
-    component: eventPage
-}, {
-    path: '/event/subject',
-    component: notFondPage
-}, {
-    path: "/event/detail",
-    name: "eventDetail",
-    component: eventDetail
-}, {
-    path: "/about",
-    component: aboutusPage
-}, {
-    path: "/research",
-    component: researchPage,
-    redirect: '/research/periodical',
-    children: [{
-        path: 'periodical',
-        component: periodical
+        path: "/",
+        component: IndexPage
     }, {
-        path: 'report',
-        component: report
+        path: "/news",
+        redirect: "/news/newestArticle",
+        component: InformationPage,
+        children: [{
+                path: "newestArticle",
+                component: newestList
+            },
+            {
+                path: "original",
+                component: original
+            },
+            {
+                path: "visitSchool",
+                component: visitschool
+            },
+            {
+                path: "policy",
+                component: policy
+            },
+            {
+                path: "interview",
+                component: interview
+            },
+            {
+                path: "histroy",
+                component: historyNews
+            }
+        ]
     }, {
-        path: 'pisom',
-        component: notFondPage
-    }]
-}, {
-    path: "/consulting",
-    component: consultingPage,
-    redirect: '/consulting/consultOne',
-    children: [{
-        path: '/consulting/consultMob',
-        component: consultMob
+        path: "/news/detailnews/:id",
+        name: "detailNews",
+        component: detailnews
+    },
+    {
+        path: "/news/historydetail/:id",
+        name: "historydetail",
+        component: historydetail
+    },
+    {
+        path: "/event",
+        component: eventPage
     }, {
-        path: '/consulting/consultOne',
-        component: consultOne
-    }, {
-        path: '/consulting/consultTwo',
-        component: consultTwo
-    }, {
-        path: '/consulting/consultThree',
-        component: consultThree
-    }, {
-        path: '/consulting/consultFour',
+        path: '/event/subject',
         component: notFondPage
     }, {
-        path: '/consulting/consultFive',
-        component: consultFive
-    }]
-}, {
-    path: "/lotus",
-    component: lotusPage
-}, {
-    path: "/lotus/shanghai",
-    component: notFondPage
-}, {
-    path: "/lotus/beijing",
-    component: notFondPage
-}]
+        path: "/event/detail",
+        name: "eventDetail",
+        component: eventDetail
+    }, {
+        path: "/about",
+        component: aboutusPage
+    }, {
+        path: "/research",
+        component: researchPage,
+        redirect: '/research/periodical',
+        children: [{
+            path: 'periodical',
+            component: periodical
+        }, {
+            path: 'report',
+            component: report
+        }, {
+            path: 'pisom',
+            component: notFondPage
+        }]
+    }, {
+        path: "/consulting",
+        component: consultingPage,
+        redirect: '/consulting/consultOne',
+        children: [{
+            path: '/consulting/consultMob',
+            component: consultMob
+        }, {
+            path: '/consulting/consultOne',
+            component: consultOne
+        }, {
+            path: '/consulting/consultTwo',
+            component: consultTwo
+        }, {
+            path: '/consulting/consultThree',
+            component: consultThree
+        }, {
+            path: '/consulting/consultFour',
+            component: consultFour
+        }, {
+            path: '/consulting/consultFive',
+            component: consultFive
+        }]
+    }, {
+        path: "/lotus",
+        component: lotusPage
+    }, {
+        path: "/lotus/shanghai",
+        component: notFondPage
+    }, {
+        path: "/lotus/beijing",
+        component: notFondPage
+    }
+]
 
 const router = new Router({
     // mode: "history",

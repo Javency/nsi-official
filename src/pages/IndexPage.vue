@@ -10,7 +10,7 @@
                     <!-- title -->
                     <div class="index-title">
                         <span class="line left-line"></span>
-                        <h3 class="text-center mb0_768">最新动态</h3>
+                        <h3 class="text-center mb0_768">行业动态</h3>
                         <h3 class="text-center mt0"><small>What’s New</small></h3>
                         <span class="line right-line"></span>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="fourNews">
                       <div class="row mt30">
                           <!-- 四条新闻标题 -->
-                          <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index>=2&&index<7">
+                          <div class="col-md-6" v-for="(news,index) in recentNews" :key="index" v-if="index>=2&&index<9">
                               <div class="newsInfo">
                                   <div class="row">
                                     <div class="col-md-10">
@@ -53,8 +53,8 @@
                     <!-- 新闻移动端 -->
                     <news-info-m :showFourNews="recentNews" class="showInMobile mt20"></news-info-m>
                     <div class="row">
-                      <div class="col-md-12 text-right">
-                        <router-link :to="{path:'/news'}">查看更多&gt;&gt;</router-link>
+                      <div class="col-md-12 text-center">
+                        <router-link :to="{path:'/news'}" class="learnMore">查看更多</router-link>
                       </div>
                     </div>
                 </div>
@@ -72,8 +72,8 @@
                       <div class="row">
                         <div class="col-md-6">
                             <div class="activities-current animated fadeInLeft" v-for="currentEvent in activitiesCurrent" v-if="currentEvent.content06==currentSerialNum" :key="currentEvent.content06">
-                                <h1 class="activitiesTitle"><a href="javascript:;">{{currentEvent.content02}}</a></h1>
-                                <h1 class="activities-zh"><a href="javascript:;">{{currentEvent.content01}}</a></h1>
+                                <h1 class="activitiesTitle"><a :href="currentEvent.content07" target="_blank">{{currentEvent.content02}}</a></h1>
+                                <h1 class="activities-zh"><a :href="currentEvent.content07" target="_blank">{{currentEvent.content01}}</a></h1>
                                 <p class="activities-info">{{currentEvent.content03}}</p>
                                 <p class="activities-info bottomLine">{{currentEvent.content04}}</p>
                                 <p class="activities-article multiline">{{currentEvent.textcontent01}}</p>
@@ -83,7 +83,7 @@
                           <div class="othersActivities">
                             <div class="row">
                               <div class="col-md-6 col-xs-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
-                                <a href="javascript:;">
+                                <a :href="activities.content07" target="_blank">
                                   <div class="othersBox" :class="'othersBox0'+(index+1)">
                                     <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">
@@ -111,6 +111,7 @@
     import newsInfoM from '../components/index/newsInfo-M.vue'
     import recentEvent from '../components/index/recentEvent-M.vue'
     import bannerM from '../components/index/banner-M.vue'
+    import wxShareInit from '../assets/js/weChatShare.js'
     var currentSerialNum=0;
     export default {
         components: {
@@ -126,7 +127,13 @@
                 recentNews:[],
                 // 当前活动文章
                 currentSerialNum:0,
-                activitiesCurrent:[]
+                activitiesCurrent:[],
+                wxShareInfo:{
+                    title:"新学说 | 国际学校多边服务平台",
+                    imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                    href:window.location.href,
+                    desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
+                }
             }
         },
         methods:{
@@ -140,23 +147,21 @@
             },
             // 微信分享
             wxInit(){
-                this.axios({
-                    method:"get",
-                    url:'/Admin_api?whereFrom=WeChatShare',
-                    params:{
-                        URL:"http://oos.xinxueshuo.cn/index.html#/news/detailnews/20066"
-                    }
-                }).then((res)=>{
-                    console.log(res.data)
-                    // wx.config({
-                    //     debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-                    //     appId: '', // 必填，公众号的唯一标识
-                    //     timestamp: , // 必填，生成签名的时间戳
-                    //     nonceStr: '', // 必填，生成签名的随机串
-                    //     signature: '',// 必填，签名，见附录1
-                    //     jsApiList: [] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-                    // })
-                })
+              this.axios({
+                  method:"get",
+                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
+                  params:{
+                      URL: window.location.href
+                  }
+              }).then((res)=>{
+                  wxShareInit.wxConfig(res)
+                  wxShareInit.wxReady(this.wxShareInfo)
+              })
+          }
+        },
+        beforeMount(){
+            if(wxShareInit.isWeixinBrowser()){
+                setTimeout(this.wxInit,500)
             }
         },
         mounted(){
@@ -175,7 +180,7 @@
             // 最新动态
             const newsList = new URLSearchParams();
             newsList.append('pageNum', 1);
-            newsList.append('pageSize', 6);
+            newsList.append('pageSize', 8);
             this.axios({
                 method: 'post',
                 url: '/article/list.do',
@@ -185,8 +190,6 @@
                 // console.log(msg)
                 this.recentNews=msg
             })
-            // 微信分享
-            // this.wxInit()
         }
     }
 </script>
@@ -241,6 +244,12 @@
     }
     .indexPage-com{
       padding-top: 52px;
+      @mixin transitionAnimate{
+          -webkit-transition: all 0.3s ease 0s;
+          -ms-transition: all 0.3s ease 0s;
+          -o-transition: all 0.3s ease 0s;
+          transition: all 0.3s ease 0s;
+      }
       @media (max-width: 768px) {
         padding-top: 0;
         .mb0_768{
@@ -259,6 +268,21 @@
           margin-top: 0;
           padding: 0;
         }
+    .learnMore{
+        display: inline-block;
+        color: #777;
+        padding: 4px 18px;
+        border-radius: 20px;
+        border: 1px solid #eee;
+        background-color: #eee;
+        margin-top: 30px;
+        @include transitionAnimate();
+        &:hover{
+            background: #dadada;
+            text-decoration: none;
+            color: #333;
+        }
+    }
     }
     /* 最新动态 */
     .index-title{

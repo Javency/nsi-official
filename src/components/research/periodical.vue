@@ -76,6 +76,7 @@ export default {
 <style lang="scss">
     .periodical-com{
         background-color: #fafafa;
+        padding-bottom: 30px;
         @mixin transitionAnimate{
             -webkit-transition: all 0.3s ease 0s;
             -ms-transition: all 0.3s ease 0s;

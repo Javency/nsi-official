@@ -6,13 +6,14 @@
                     <div class="list-box">
                         <div class="list-img-box">
                             <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a>
+                            <!-- <a :href="list.articleUrl" class="img-box" target="_blank"><img :src="list.coverImage" alt="" height="270" ><i class="articleType">{{list.articleCat|articleType}}</i></a> -->
                         </div>
                         <div class="list-content-box">
                             <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
-                            <span class="time">{{list.updateTime|formatDate}}</span>
+                            <span class="time">{{list.createTime|formatDate}}</span>
                             <p class="text-right">分享到：
                                 <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
                                     <img width="150" :src="weixinQRcode" alt="">
