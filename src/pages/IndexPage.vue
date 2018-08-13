@@ -85,7 +85,7 @@
                             <div class="row">
                               <div class="col-md-6 col-xs-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
                                 <a :href="activities.content07" target="_blank">
-                                  <div class="othersBox" :class="'othersBox0'+(index+1)">
+                                  <div class="othersBox" :class="'othersBox0'+(index+1)" :style="{'background-image':'url('+activities.content05+')'}">
                                     <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">
                                       <p>{{activities.content01}}</p>

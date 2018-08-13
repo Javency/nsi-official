@@ -13,7 +13,7 @@
                     </div> -->
                     <div class="author">
                         <p class="news-summary">{{detail.summary}}</p>
-                        <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
+                        <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.createTime}}</span></p>
                     </div>
                     <div v-html="detail.articleContent" class="news-article-content"></div>
                     <div class="cut-off-line text-center"><span class="cut-off-text">● END ●</span></div>
