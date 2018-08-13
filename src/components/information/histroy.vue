@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <inter-view-m class="showInMobile col-md-12" :loadNews="newsList"></inter-view-m>
+                <histroy-m class="showInMobile col-md-12" :loadNews="newsList"></histroy-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import interViewM from './interview-M'
+import histroyM from './history-M'
 export default {
     components:{
-      interViewM
+      histroyM
     },
     data(){
         return{
@@ -99,6 +99,12 @@ export default {
 <style lang="scss">
    @import '../../assets/style/news/common.scss';
    .histroy{
+       .showInMobile{
+           display: none;
+           @media (max-width: 768px) {
+               display: block;
+           }
+       }
        .list-img-box{
            text-align: center;
            .img-box{

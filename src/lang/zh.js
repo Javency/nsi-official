@@ -57,8 +57,8 @@ module.exports = {
     news: {
         newsOne: "新",
         newsTwo: "闻",
-        newsThree: "中",
-        newsFour: "心",
+        newsThree: "头",
+        newsFour: "条",
         overviewNews: "资讯全览",
         policyNews: "政策解读",
         schoolNews: "访校观察",

@@ -13,7 +13,12 @@
                         </div>
                         <div class="list-share-box">
                             <span class="time">{{list.createTime|formatDate}}</span>
-                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'https://www.kuaizhan.com/common/encode-png?large=true&data='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                            <p class="text-right">分享到：
+                                <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码">
+                                    <img width="150" :src="weixinQRcode" alt="">
+                                    <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat" @mouseenter="addUrl(list.articleUrl)"></span>
+                                </el-popover><span @click="shareWibo(list.articleUrl,list.title,list.coverImage)" title="分享到微博" class="iconfont icon-weibo2 weibo"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -40,6 +45,7 @@ export default {
             loading:true,
             newsList:[],
             addMoreHtml:"加载更多",
+            weixinQRcode: ""
         }
     },
     filters:{
@@ -89,6 +95,13 @@ export default {
         toDetail(id){
             let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
             window.open(routeData.href, '_blank');
+        },
+        shareWibo(url,title,picurl){
+            let sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
+            window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
+        },
+        addUrl(url) {
+            this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
         }
     },
     beforeMount(){
@@ -107,7 +120,7 @@ export default {
                     originalList.push(msg[i])
                 }
             }
-            console.log(originalList)
+            // console.log(originalList)
             this.newsList=originalList
             this.loading=false
             this.pageNum=2

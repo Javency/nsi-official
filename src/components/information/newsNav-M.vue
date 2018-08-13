@@ -18,6 +18,9 @@
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" to=/news/interview>{{$t('news.personNews')}}</router-link>
                     </div>
+                    <div class="swiper-slide navSlide">
+                        <router-link tag="i" to=/news/histroy>{{$t('news.oldNews')}}</router-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,7 +33,7 @@ export default {
     data(){
         return{
             activeNav:0,
-             news:[this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews')]
+             news:[this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews'),this.$t('news.oldNews')]
         }
     },
     methods:{
