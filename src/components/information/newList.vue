@@ -5,8 +5,8 @@
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a>
-                            <!-- <a :href="list.articleUrl" class="img-box" target="_blank"><img :src="list.coverImage" alt="" height="270" ><i class="articleType">{{list.articleCat|articleType}}</i></a> -->
+                            <!-- <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a> -->
+                            <a :href="list.articleUrl" class="img-box" target="_blank"><img :src="list.coverImage" alt="" height="270" ><i class="articleType">{{list.articleCat|articleType}}</i></a>
                         </div>
                         <div class="list-content-box">
                             <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
@@ -122,7 +122,9 @@ export default {
             window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         },
         addUrl(url) {
-            this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
+            let _url=url.split('https')[1]
+            let currentUrl='http'+_url
+            this.weixinQRcode = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + currentUrl
         },
     },
     beforeMount(){
