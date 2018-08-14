@@ -101,13 +101,17 @@ export default {
             window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         },
         addUrl(url) {
-            this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
+            // this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
+            let _url=url.split('https')[1]
+            let currentUrl='http'+_url
+            this.weixinQRcode = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + currentUrl
         }
     },
     beforeMount(){
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
         params.append('pageSize', 16);
+        params.append('articleCat',"访校观察")
         this.axios({
              method: 'post',
              url: '/article/list.do',
