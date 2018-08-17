@@ -18,8 +18,10 @@ import historyNews from '../components/information/histroy.vue'
 import historydetail from '../components/information/historyDetail.vue'
 
 import eventDetail from '../components/event/eventDetail.vue'
+import eventApply from '../components/event/eventApply.vue'
 import periodical from '../components/research/periodical.vue'
 import report from '../components/research/report.vue'
+import researchApply from '../components/research/researchApply.vue'
 
 import consultOne from '../components/consulting/consultOne.vue'
 import consultTwo from '../components/consulting/consultTwo.vue'
@@ -81,6 +83,9 @@ const routes = [{
         path: '/event/subject',
         component: notFondPage
     }, {
+        path: '/event/apply',
+        component: eventApply
+    }, {
         path: "/event/detail",
         name: "eventDetail",
         component: eventDetail
@@ -100,6 +105,9 @@ const routes = [{
         }, {
             path: 'pisom',
             component: notFondPage
+        }, {
+            path: 'apply',
+            component: researchApply
         }]
     }, {
         path: "/consulting",

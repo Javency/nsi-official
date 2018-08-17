@@ -7,7 +7,8 @@ module.exports = {
         event: "会议活动",
         eventChild: {
             vis: "VIS国际学校发展大会",
-            subject: "专题研讨会"
+            subject: "专题研讨会",
+            apply: "参会报名"
         },
         lotus: "新荷学校",
         lotusChild: {
@@ -20,13 +21,15 @@ module.exports = {
             magazine: "国际学校内参",
             report: "研究报告",
             pisom: "必盛研修班",
-            classOnline: "新学说国际教育研究院"
+            classOnline: "新学说国际教育研究院",
+            apply: "课程报名"
         },
         researchChild_Mob: {
             magazine: "国际学校内参",
             report: "研究报告",
             pisom: "必盛研修班",
-            classOnline: "国际教育研究院"
+            classOnline: "国际教育研究院",
+            apply: "参会报名"
         },
         consult: "咨询服务"
     },

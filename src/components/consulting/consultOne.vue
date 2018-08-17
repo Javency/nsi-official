@@ -1,6 +1,6 @@
 <template>
     <div class="consuleMain">
-        <div class="banner">
+        <div class="banner text-center">
             <img src="../../assets/img/consulting/banner_M.jpg" alt="">
         </div>  
         <div class="item">

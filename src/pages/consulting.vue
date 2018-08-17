@@ -2,7 +2,7 @@
     <div>
         <div class="consulting-com">
             <connectUs></connectUs>
-            <div>
+            <div class="text-center">
                 <img src="../assets/img/consulting/pcConsult.jpg" alt="">
                 <div class="item" style="width:1070px;margin:30px auto;">
                     <el-row :gutter="20">

@@ -7,7 +7,8 @@ module.exports = {
         event: "Events",
         eventChild: {
             vis: "Vision of International School Conference",
-            subject: "Symposium"
+            subject: "Symposium",
+            apply: "Convention Apply"
         },
         lotus: "Lotus",
         lotusChild: {
@@ -20,13 +21,15 @@ module.exports = {
             magazine: "Magazine",
             report: "Magazine and Report",
             pisom: "Talents Training",
-            classOnline: "International Education Academy"
+            classOnline: "International Education Academy",
+            apply: "Class Apply",
         },
         researchChild_Mob: {
             magazine: "Magazine",
             report: "Research Report",
             pisom: "Talents Training",
-            classOnline: "Education Academy"
+            classOnline: "Education Academy",
+            apply: "Convention Apply"
         },
         consult: "Service"
     },
