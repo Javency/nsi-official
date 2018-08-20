@@ -6,7 +6,7 @@
                 <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
                     <a class="event-list" :href="list.url" target="_blank">
                         <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
-                            <!-- <h3 class="event-box-title" :title="list.title">{{list.title}}</h3> -->
+                            <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
                         </div>
                     </a>
                 </div>
@@ -27,9 +27,19 @@ export default {
             addMoreHtml:"加载更多",
             eventList:[
                 {
-                    // title:"新荷 ● 中国国际学校节",
+                    title:"",
                     imgSrc:require("../../assets/img/research/mac.jpg"),
                     url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/courseDesc/macM.html"
+                },
+                 {
+                    title:"",
+                    imgSrc:require("../../assets/img/research/zhanlue.jpg"),
+                    url:"https://jinshuju.net/f/UbcHrR"
+                },
+                {
+                    title:"校长班",
+                    imgSrc:require("../../assets/img/research/headteacher.jpg"),
+                    url:"https://jinshuju.net/f/UbcHrR"
                 },
             ]
         }

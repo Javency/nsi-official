@@ -51,7 +51,7 @@
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
-                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}</router-link></li>
+                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
@@ -65,9 +65,9 @@
                                                         <el-dropdown-item>
                                                             <router-link :to="{path:'/event/subject'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>{{$t('layoutNav.eventChild.subject')}}</router-link>
                                                         </el-dropdown-item>
-                                                        <!-- <el-dropdown-item>
-                                                            <router-link :to="{path:'/event/apply'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>{{$t('layoutNav.eventChild.apply')}}</router-link>
-                                                        </el-dropdown-item> -->
+                                                        <el-dropdown-item>
+                                                            <router-link :to="{path:'/event/apply'}">&nbsp;<span class="iconfont icon-baoming logoFont"></span>{{$t('layoutNav.eventChild.apply')}}</router-link>
+                                                        </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
                                             </li>
@@ -96,19 +96,19 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
-                                                        </el-dropdown-item>
-                                                        <el-dropdown-item>
                                                             <router-link :to="{path:'/research/pisom'}"><img src="../assets/img/layoutImg/pisom.png" alt="" width="70">&nbsp;{{$t('layoutNav.researchChild.pisom')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/report'}"><span class="iconfont icon-baogao fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.report')}}</router-link>
+                                                            <router-link :to="{path:'/research/report'}"><span class="iconfont icon-baogao fontLogo"></span>{{$t('layoutNav.researchChild.report')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/apply'}"><span class="iconfont icon-baoming fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.apply')}}</router-link>
+                                                            <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <router-link :to="{path:'/research/apply'}"><span class="iconfont icon-baoming fontLogo"></span>{{$t('layoutNav.researchChild.apply')}}</router-link>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -294,7 +294,10 @@ export default {
     $official-footerFontColor:#699bda;
     $official-otherColor:#8fb8fb;
     .fontLogo{
-        font-size: 20px !important;
+        font-size: 25px !important;
+        position: relative;
+        top: 5px;
+        margin-right: 10px;
     }
     .layout-com{
       .slide-fade-enter-active {
@@ -322,6 +325,15 @@ export default {
           @media (max-width: 768px) {
               display: none;
           }
+      }
+      .theNew{
+            position: absolute;
+            top: -1px;
+            color: #fff;
+            font-size: 16px;
+            right: -10px;
+            text-shadow: 0 5px 10px #050935;
+            z-index: 999;
       }
     }
     .logoFont{

@@ -18,19 +18,6 @@
                 <div class="col-md-3 col-xs-6 pl0 pr0">
                     <div class="productBox">
                         <div class="product-logo text-center">
-                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../../assets/img/layoutImg/classLogo.png" width="58" alt=""></a>
-                        </div>
-                        <div class="product-name text-center">
-                            <p><a href="http://class.xinxueshuo.cn" target="_blank" class="name">新学说在线课堂&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
-                        </div>
-                        <!-- <div class="bg">
-                            <a href="http://class.xinxueshuo.cn">新学说在线课堂</a>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-md-3 col-xs-6 pl0 pr0">
-                    <div class="productBox">
-                        <div class="product-logo text-center">
                             <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html" target="_blank"><img src="../../assets/img/layoutImg/vis2018.png" width="65" alt=""></a>
                         </div>
                         <div class="product-name text-center">
@@ -38,6 +25,19 @@
                         </div>
                         <!-- <div class="bg">
                             <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html">VIS2018国际学校发展大会</a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 pl0 pr0">
+                    <div class="productBox">
+                        <div class="product-logo text-center">
+                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../../assets/img/layoutImg/classLogo.png" width="58" alt=""></a>
+                        </div>
+                        <div class="product-name text-center">
+                            <p><a href="http://class.xinxueshuo.cn" target="_blank" class="name">新学说在线课堂&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
+                        </div>
+                        <!-- <div class="bg">
+                            <a href="http://class.xinxueshuo.cn">新学说在线课堂</a>
                         </div> -->
                     </div>
                 </div>

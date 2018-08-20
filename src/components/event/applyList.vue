@@ -6,7 +6,7 @@
                 <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
                     <a class="event-list" :href="list.url" target="_blank">
                         <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
-                            <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                            <!-- <h3 class="event-box-title" :title="list.title">{{list.title}}</h3> -->
                         </div>
                     </a>
                 </div>
@@ -29,33 +29,33 @@ export default {
                 {
                     title:"新荷 ● 中国国际学校节",
                     imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
-                    url:"http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html"
+                    url:"https://jinshuju.net/f/L4Iz9D"
                 },
                 {
                     title:"2018VIS国际学校发展大会",
                     imgSrc:require("../../assets/img/event/eventBanner03.jpg"),
-                    url:"http://www.xinxueshuo.cn/index.php?s=/home/article/detail/id/473.html"
+                    url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/visM.html"
                 },
-                {
-                   title:"2017VIS国际学校发展大会",
-                   imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity002.jpg",
-                   url:"http://edu.qq.com/cross/20171215/P27Rp8V4.html"
-                },
-                {
-                   title:"2017VIS国际学校投融资分会",
-                   imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity001.jpg",
-                   url:"http://edu.qq.com/cross/20170519/D36Tp6V3.html"
-                },
-                {
-                   title:"2016VIS国际学校发展大会",
-                   imgSrc:"https://img1.gtimg.com/18/1854/185463/18546304_980x1200_0.jpg",
-                   url:"http://edu.qq.com/p/topic/20161221027199/"
-                },
-                {
-                   title:"2015VIS国际学校发展大会",
-                   imgSrc:"https://img1.gtimg.com/edu/pics/hv1/85/77/1990/129419470.jpg",
-                   url:"http://edu.qq.com/p/topic/20151209029457/index.html"
-                }
+                // {
+                //    title:"2017VIS国际学校发展大会",
+                //    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity002.jpg",
+                //    url:"http://edu.qq.com/cross/20171215/P27Rp8V4.html"
+                // },
+                // {
+                //    title:"2017VIS国际学校投融资分会",
+                //    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity001.jpg",
+                //    url:"http://edu.qq.com/cross/20170519/D36Tp6V3.html"
+                // },
+                // {
+                //    title:"2016VIS国际学校发展大会",
+                //    imgSrc:"https://img1.gtimg.com/18/1854/185463/18546304_980x1200_0.jpg",
+                //    url:"http://edu.qq.com/p/topic/20161221027199/"
+                // },
+                // {
+                //    title:"2015VIS国际学校发展大会",
+                //    imgSrc:"https://img1.gtimg.com/edu/pics/hv1/85/77/1990/129419470.jpg",
+                //    url:"http://edu.qq.com/p/topic/20151209029457/index.html"
+                // }
             ]
         }
     },
