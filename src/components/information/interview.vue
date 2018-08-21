@@ -12,11 +12,17 @@
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
-                            <span class="time">{{list.updateTime|formatDate}}</span>
-                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                            <span class="time">{{list.createTime|formatDate}}</span>
+                            <p class="text-right">分享到：
+                                <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码">
+                                    <img width="150" :src="weixinQRcode" alt="">
+                                    <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat" @mouseenter="addUrl(list.articleUrl)"></span>
+                                </el-popover><span @click="shareWibo(list.articleUrl,list.title,list.coverImage)" title="分享到微博" class="iconfont icon-weibo2 weibo"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
+                <inter-view-m class="showInMobile col-md-12" :loadNews="newsList"></inter-view-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -28,13 +34,18 @@
 </template>
 
 <script>
+import interViewM from './interview-M'
 export default {
+    components:{
+      interViewM
+    },
     data(){
         return{
             pageNum:1,
             loading:true,
             newsList:[],
             addMoreHtml:"加载更多",
+            weixinQRcode: ""
         }
     },
     filters:{
@@ -74,7 +85,7 @@ export default {
             }).then((res)=>{
                 let msg=res.data.data.list
                 for(let i=0;i<msg.length;i++){
-                    if(msg[i].articleCat==="访校文章"){
+                    if(msg[i].articleCat==="人物访谈"){
                         this.newsList.push(msg[i])
                     }
                 }
@@ -82,14 +93,25 @@ export default {
             })
         },
         toDetail(id){
-            console.log(id)
-            this.$router.push({name:"detailNews",params:{id:id}})
+            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            window.open(routeData.href, '_blank');
+        },
+        shareWibo(url,title,picurl){
+            let sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
+            window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
+        },
+        addUrl(url) {
+            // this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
+            let _url=url.split('https')[1]
+            let currentUrl='http'+_url
+            this.weixinQRcode = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + currentUrl
         }
     },
     beforeMount(){
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
         params.append('pageSize', 16);
+        params.append('articleCat',"人物访谈")
         this.axios({
              method: 'post',
              url: '/article/list.do',
@@ -98,11 +120,11 @@ export default {
             let msg=res.data.data.list,
                 originalList=[]
             for(let i=0;i<msg.length;i++){
-                if(msg[i].articleCat==="访校文章"){
+                if(msg[i].articleCat==="人物访谈"){
                     originalList.push(msg[i])
                 }
             }
-            console.log(originalList)
+            // console.log(originalList)
             this.newsList=originalList
             this.loading=false
             this.pageNum=2
@@ -112,175 +134,5 @@ export default {
 </script>
 
 <style lang="scss">
-    .mt20{
-        margin-top: 20px;
-    }
-    .newsList-com{
-        @mixin transitionAnimate{
-            -webkit-transition: all 0.3s ease 0s;
-            -ms-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-        }
-        padding: 30px 0;
-        background: #fafafa;
-        margin-bottom: -50px;
-        .list-box{
-          background-color: #FFF;
-        }
-        img{
-            display: inline-block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 2px;
-        }
-        .list{
-            padding: 10px;
-            // background-color: #fff;
-            @include transitionAnimate;
-            // margin-bottom: 15px;
-            &:hover{
-                background-color: #fff;
-                box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.10);
-                border-radius: 2px;
-                z-index: 2
-            }
-            &:hover{
-                .list-share-box{
-                    opacity: 1;
-                }
-            }
-            .list-img-box{
-               .img-box{
-                    display: inline-block;
-                    position: relative;
-                    @include transitionAnimate;
-                    &:hover{
-                        opacity: .8;
-                    }
-                    img{
-                        min-height: 181px;
-                        background-color: #e4e4e4
-                    }
-                    .articleType{
-                        position: absolute;
-                        display: block;
-                        width: 44px;
-                        top: 10px;
-                        left: 10px;
-                        font-style: normal;
-                        padding: 3px 10px 2px;
-                        color: #FFF;
-                        border-radius: 20px;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        font-size: 12px;
-                    }
-                }
-            }
-            .list-content-box{
-                padding: 15px 10px 0;
-                background: #FFF;
-                // min-height: 215px;
-                min-height: 190px;
-                h3{
-                    margin-top: 0;
-                    margin-bottom: 10px;
-                    max-height: 80px;
-                    overflow: hidden;
-                    a{
-                        display: inline-block;
-                        line-height: 1.4;
-                        font-size: 19px;
-                        font-weight: 600;
-                        color: #333333;
-                        letter-spacing: 0;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
-                        @include transitionAnimate;
-                        font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
-                        &:hover{
-                            text-decoration: none;
-                            color: #44638a;
-                        }
-                    }
-                }
-                p{
-                    color: #999;
-                    line-height:1.5;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 5;
-                    -webkit-box-orient: vertical;
-                    max-height: 102px;
-                }
-
-            }
-            .list-share-box{
-                opacity: 1;
-                transition: all .3s;
-                position: relative;
-                padding-right: 10px;
-                padding-bottom: 10px;
-                .time{
-                    position: absolute;
-                    color: #7c7c7c;
-                    bottom: 12px;
-                    left: 10px;
-                }
-                p{
-                    color: #999;
-                    margin-bottom: 0;
-                    span{
-                        font-size: 18px;
-                        cursor: pointer;
-                        transition: all .3s;
-                        &:hover{
-                            opacity: .8;
-                        }
-                    }
-                    .weiChat:hover{
-                        color: #49aa00;
-                    }
-                    .weibo:hover{
-                        color: #ff001c;
-                    }
-                    .weiChat{
-                        margin-right: 10px;
-                    }
-                }
-            }
-        }
-        .loadMore{
-            display: inline-block;
-            border-radius: 20px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            padding: 0 40px;
-            color: #FFF;
-            border: 1px solid #4790E5;
-            -webkit-transition: all 0.1s ease 0s;
-            -ms-transition: all 0.1s ease 0s;
-            -o-transition: all 0.1s ease 0s;
-            transition: all 0.1s ease 0s;
-            background-image: linear-gradient(-180deg, #4790E5 0%, #52A5F4 100%);
-            box-shadow: 0 5px 30px #ccc;
-            &:hover,
-            &:link{
-                text-decoration: none;
-            }
-            &:active{
-                text-decoration: none;
-                transform: scale(0.9);
-                color: #FFF;
-                border: #52A5F4;
-                background-image: linear-gradient(-180deg, rgb(64, 135, 216) 0%, rgb(64, 131, 194) 100%);
-                box-shadow: 0 5px 30px #52A5F4
-            }
-        }
-    }
+   @import '../../assets/style/news/common.scss';
 </style>

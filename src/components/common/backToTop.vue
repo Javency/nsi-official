@@ -45,6 +45,7 @@ export default {
 
 <style lang="scss">
     .backtotop-com{
+      z-index: 9999;
       @mixin transitionAnimate{
           -webkit-transition: all 0.3s ease 0s;
           -ms-transition: all 0.3s ease 0s;

@@ -5,54 +5,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="internal">
-                        <h1 class="title">内参<span class="year">2017</span></h1>
+                        <!-- <h1 class="title">内参<span class="year">2017</span></h1> -->
+                        <h1 class="title">内参</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3" v-for="(list,index) in internalReferList">
+                <div class="col-md-3 col-xs-6" v-for="(list,index) in internalReferList">
                     <div class="internalRefer-book">
                             <a href="javascript:;" @click="toDownload(list.fileUrl)" class="internalRefer-box" slot="reference" :style="{'background-image':'url('+list.imageUrl+')'}">
                             </a>
                         <h4 :title="list.bookName" class="bookName" @click="openTips">{{list.fileName.split(".")[0]}}</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="internal">
-                        <h1 class="title">内参<span class="year">2016</span></h1>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-3" v-for="(list,index) in internalReferList">
-                    <div class="internalRefer-book">
-                        <a href="javascript:;" class="internalRefer-box">
-
-                        </a>
-                        <h4 :title="list.bookName" class="bookName">{{list.bookName}}</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 报告 -->
-         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="internal">
-                        <h1 class="title">报告<span class="year">2017</span></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3" v-for="(report,index) in reportList">
-                    <div class="internalRefer-book">
-                        <a href="javascript:;" class="internalRefer-box">
-
-                        </a>
-                        <h4 :title="report.bookName" class="bookName">{{report.bookName}}</h4>
                     </div>
                 </div>
             </div>
@@ -66,26 +29,7 @@ export default {
         return{
              pageNum:1,
             // 内参
-            internalReferList:[],
-            // 报告
-            reportList:[
-                {
-                    bookName:"报告1",
-                    imgSrc:""
-                },
-                {
-                    bookName:"报告2",
-                    imgSrc:""
-                },
-                {
-                    bookName:"报告3",
-                    imgSrc:""
-                },
-                {
-                    bookName:"报告4",
-                    imgSrc:""
-                }
-            ]
+            internalReferList:[] 
         } 
     },
     methods:{
@@ -99,10 +43,10 @@ export default {
         const h = this.$createElement;
         this.$notify({
                 title: '温馨提示',
-                message: h('i', { style: 'color: teal'}, '点击书面即可下载期刊&报告电子版'),
+                message: h('i', { style: 'color: #20528f'}, '点击书面即可下载'),
                 offset: 150,
                 type:'info',
-                duration:10000
+                duration:3000
             });
         },
         toDownload(url){
@@ -132,6 +76,7 @@ export default {
 <style lang="scss">
     .periodical-com{
         background-color: #fafafa;
+        padding-bottom: 30px;
         @mixin transitionAnimate{
             -webkit-transition: all 0.3s ease 0s;
             -ms-transition: all 0.3s ease 0s;
@@ -140,6 +85,9 @@ export default {
         }
         .internal{
             padding: 50px 0 20px;
+            @media (max-width: 768px) {
+                padding: 10px 0 5px;
+            }
             .title{
                 display: inline-block;
                 font-family: PingFangSC-Semibold;
@@ -150,6 +98,11 @@ export default {
                 height: 50px;
                 position: relative;
                 margin-bottom: 40px;
+                @media (max-width: 768px) {
+                    font-size: 30px;
+                    margin-bottom: 15px;
+                    margin-top: 10px;
+                }
                 .year{
                     position: absolute;
                     right: -12px;
@@ -165,6 +118,9 @@ export default {
             width: 100%;
             min-height: 345px;
             margin-bottom: 30px;
+            @media (max-width: 768px) {
+                min-height: 232px;
+            }
             .bookName{
                 color: #a3a3a3;
                 font-size: 22px;
@@ -183,8 +139,12 @@ export default {
                 display: inline-block;
                 width: 100%;
                 min-height: 345px;
+                @media (max-width: 768px) {
+                    min-height: 250px;
+                    box-shadow: 0 5px 10px #ccc;
+                }
                 background-color: #e4e4e4;
-                background-size: 100%;
+                background-size: 100% 100%;
                 @include transitionAnimate;
                 &:hover{
                     box-shadow: 0 15px 15px 0 rgba(15, 37, 64, 0.20);

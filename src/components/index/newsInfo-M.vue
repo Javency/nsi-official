@@ -76,8 +76,8 @@ export default {
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
-                min-height: 43px;
-                max-height: 43px;
+                min-height: 40px;
+                max-height: 40px;
                 margin-top: 0;
                 margin-bottom: 5px;
                 color: #07111B;

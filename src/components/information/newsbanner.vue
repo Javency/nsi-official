@@ -2,26 +2,26 @@
     <div class="newsbanner-com">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 newsPic">
                     <div class="newsbanner">
-                        <div class="swiper-container">
+                        <div class="swiper-container" id="newsbanner">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
-                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.id)">
+                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.articleUrl)">
                                 </div>
                             </div>
                             <div class="swiper-pagination"  slot="pagination"></div>
-                            <div class="swiper-button-prev" slot="button-prev">‹</div>
-                            <div class="swiper-button-next" slot="button-next">›</div>
+                            <div class="swiper-button-prev" slot="button-prev"><span class="iconfont icon-arrow-left"></span></div>
+                            <div class="swiper-button-next" slot="button-next"><span class="iconfont icon-youjiantou"></span></div>
                         </div>
                          <div class="slide-bar">
-                            <p class="slidebar2"><span>新</span> 闻头条<h1></h1></p>
+                            <p class="slidebar2"><span class="bigWord">{{$t('news.newsOne')}}</span><br/><span>{{$t('news.newsTwo')}}</span><br/><span>{{$t('news.newsThree')}}</span><br/><span>{{$t('news.newsFour')}}</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
-                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.id)">{{bannerInfos.title}}</a></h3>
+                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.articleUrl)">{{bannerInfos.title}}</a></h3>
                         <p class="newsInfo-desc">{{bannerInfos.summary}}</p>
                         <a href="javascript:;" @click="toDetail(bannerInfos.id)" class="news-detail">阅读全文</a>
                     </div>
@@ -39,14 +39,15 @@ export default {
     data () {
         return {
         newsBannerIndex:0,
-        bannerInfo:[]
+        bannerInfo:[],
+        news:[this.$t('news.newsOne'),this.$t('news.newsTwo'),this.$t('news.newsThree'),this.$t('news.newsFour'),this.$t('news.overviewNews'),this.$t('news.policyNews'),this.$t('news.schoolNews'),this.$t('news.tmtNews'),this.$t('news.personNews')]
       }
     },
     methods:{
-        toDetail(id){
+        toDetail(href){
             // console.log(id)
-            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
-            window.open(routeData.href, '_blank');
+            // let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            window.open(href, '_blank');
         },
         getBannerInfo(){
             const newsBanner = new URLSearchParams();
@@ -67,10 +68,10 @@ export default {
         },
         swiperInit(){
             const self=this
-            new Swiper('.swiper-container', {
+            new Swiper('#newsbanner', {
                  notNextTick: true,
                  autoplay: {
-                    delay:3000,
+                    delay:5000,
                     disableOnInteraction: false,
                 },
                 loop: true,
@@ -106,11 +107,20 @@ export default {
      $official-color: #20528f;
      $newsBanner-bg:linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
     .newsbanner-com{
+        .newsPic{
+            @media (max-width: 768px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
         .newsbanner{
             overflow: hidden;
             border-radius: 2px;
             transition: all .3s;
             box-shadow: 0 12px 24px 0 rgba(7, 17, 27, 0.4);
+            @media (max-width: 768px) {
+                box-shadow: none;
+            }
             &:hover .swiper-button-prev,
             &:hover .swiper-button-next{
               opacity: .4;
@@ -119,7 +129,7 @@ export default {
             .swiper-button-next{
               width:60px !important;
               height: 60px !important;
-              line-height: 52px;
+              line-height: 38px;
               text-align: center;
               border-radius: 50%;
               color: #222;
@@ -130,6 +140,14 @@ export default {
               transition: all .3s;
               &:hover{
                 opacity: .9;
+              }
+              @media (max-width: 768px) {
+                  width: 40px !important;
+                  height: 40px !important;
+                  line-height: 25px;
+                  font-size: 40px;
+                  outline: none;
+                  opacity: .8 !important;
               }
             }
             .swiper-pagination-bullet-active{
@@ -159,7 +177,7 @@ export default {
                     line-height: 28px;
                     text-align: center;
                     margin-bottom: 0;
-                    span{
+                    span.bigWord{
                       display: inline-block;
                       color: $official-color;
                       font-size: 45px;
@@ -188,18 +206,31 @@ export default {
                     text-decoration: none;
                     color: #44638a;
                 }
+                @media (max-width: 768px) {
+                    font-size: 22px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    min-height: 48px;
+                    max-height: 48px;
+                }
             }
             .newsInfo-desc{
                 font-size: 14px;
                 margin-top: 30px;
                 color: #999999;
                 line-height: 2;
-                 overflow: hidden;
+                overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-line-clamp: 6;
                 -webkit-box-orient: vertical;
                 max-height: 168px;
+                @media (max-width: 768px) {
+                    display: none;
+                }
             }
             .news-detail{
                 color: #666;
