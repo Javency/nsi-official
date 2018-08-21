@@ -1,14 +1,32 @@
  <template>
-    <div class="eventList-com">
+    <div class="eventList-com researchList-com">
         <div class="container">
             <h2 class="title">热门课程<span class="hot">HOT</span></h2>
             <div class="row">
-                <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
+                <!-- <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
                     <a class="event-list" :href="list.url" target="_blank">
                         <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
                             <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
                         </div>
                     </a>
+                </div> -->
+                <div class="col-md-6 col-xs-6 mb30" v-for="(list,index) in eventList">
+                    <div class="row">
+                      <div class="col-md-8 pl0 pr0">
+                        <a class="event-list" :href="list.url" target="_blank">
+                          <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
+                              <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4 pr0">
+                        <div class="researchInfo">
+                            <h5 class="research-title">{{list.title}}</h5>
+                            <p class="apply-time"><span class="iconfont icon-shijian timeLogo"></span> {{list.time}}</p>
+                            <a :href="list.url" target="_blank" class="toApply">了解详情</a>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
             <div class="row mt20">
@@ -27,19 +45,22 @@ export default {
             addMoreHtml:"加载更多",
             eventList:[
                 {
-                    title:"",
+                    title:"国际学校市场招生班",
                     imgSrc:require("../../assets/img/research/mac.jpg"),
-                    url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/courseDesc/macM.html"
+                    url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/courseDesc/macM.html",
+                    time:"2018-09-03"
                 },
                  {
-                    title:"",
+                    title:"国际学校投资战略班",
                     imgSrc:require("../../assets/img/research/zhanlue.jpg"),
-                    url:"https://jinshuju.net/f/UbcHrR"
+                    url:"https://jinshuju.net/f/UbcHrR",
+                    time:"2018-09-03"
                 },
                 {
                     title:"国际学校校长研修班",
                     imgSrc:require("../../assets/img/research/headteacher.jpg"),
-                    url:"https://jinshuju.net/f/a4LhEl"
+                    url:"https://jinshuju.net/f/a4LhEl",
+                    time:"2018-09-03"
                 },
             ]
         }
@@ -56,7 +77,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .eventList-com{
+    .researchList-com{
         // common
          @mixin transitionAnimate{
             -webkit-transition: all 0.3s ease 0s;
@@ -72,6 +93,9 @@ export default {
         }
         .mb15{
             margin-bottom: 15px;
+        }
+        .mb30{
+          margin-bottom: 30px;
         }
         .mt20{
             margin-top: 20px;
@@ -190,6 +214,55 @@ export default {
                         bottom: 15px;
                     }
             }
+        }
+        .researchInfo{
+          position: relative;
+          padding-top: 20px;
+          @media (max-width: 768px) {
+            padding-top: 0;
+          }
+          .research-title{
+              min-height: auto !important;
+              font-weight: 700;
+              font-size: 18px;
+              margin-bottom: 20px;
+              color: #4d555d;
+              @media (max-width: 768px) {
+                margin-bottom: 10px;
+              }
+            }
+          .toApply{
+            display: inline-block;
+            background: #b89561;
+            box-shadow: 0 4px 8px 0 rgba(28, 31, 33, 0.2);
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 200;
+            color: #fff;
+            padding: 0 22px;
+            height: 33px;
+            line-height: 33px;
+            text-align: center;
+            &:link{
+              text-decoration: none;
+            }
+            &:hover{
+              text-decoration: none;
+              background-color:#c2a77f
+            }
+          }
+          // .timeLogo{
+          //   position: relative;
+          //   top: 0px;
+          // }
+          .apply-time{
+            font-size: 15px;
+            margin-bottom: 15px;
+            color: #666;
+            @media (max-width: 768px) {
+              margin-bottom: 10px;
+            }
+          }
         }
         .loadMore{
             display: inline-block;
