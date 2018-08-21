@@ -37,9 +37,9 @@ export default {
                     url:"https://jinshuju.net/f/UbcHrR"
                 },
                 {
-                    title:"校长班",
+                    title:"国际学校高级管理研修班",
                     imgSrc:require("../../assets/img/research/headteacher.jpg"),
-                    url:"https://jinshuju.net/f/UbcHrR"
+                    url:"https://jinshuju.net/f/a4LhEl"
                 },
             ]
         }

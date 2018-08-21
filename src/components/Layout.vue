@@ -96,19 +96,19 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/pisom'}"><img src="../assets/img/layoutImg/pisom.png" alt="" width="70">&nbsp;{{$t('layoutNav.researchChild.pisom')}}</router-link>
+                                                            <router-link :to="{path:'/research/pisom'}">{{$t('layoutNav.researchChild.pisom')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
+                                                            <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutNav.researchChild.classOnline')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/report'}"><span class="iconfont icon-baogao fontLogo"></span>{{$t('layoutNav.researchChild.report')}}</router-link>
+                                                            <router-link :to="{path:'/research/report'}">{{$t('layoutNav.researchChild.report')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                            <router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/apply'}"><span class="iconfont icon-baoming fontLogo"></span>{{$t('layoutNav.researchChild.apply')}}</router-link>
+                                                            <router-link :to="{path:'/research/apply'}">{{$t('layoutNav.researchChild.apply')}}</router-link>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>

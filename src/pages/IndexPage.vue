@@ -26,7 +26,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="newsBox">
-                                        <h5 class="mt0 multiline"><a href="javascript:;" class="news-title" @click="toDetail(news.id)">{{news.title}}</a></h5>
+                                        <!-- <h5 class="mt0 multiline"><a href="javascript:;" class="news-title" @click="toDetail(news.id)">{{news.title}}</a></h5> -->
+                                        <h5 class="mt0 multiline"><a :href="news.articleUrl" class="news-title" target="_blank">{{news.title}}</a></h5>
                                         <p class="news-articel multiline" :title="news.summary">{{news.summary}}</p>
                                         <span class="news-time">{{news.time}}</span>
                                     </div>
@@ -41,7 +42,8 @@
                               <div class="newsInfo">
                                   <div class="row">
                                     <div class="col-md-10">
-                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail" @click="toDetail(news.id)">{{"• "+news.title}}</a></p>
+                                      <!-- <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail" @click="toDetail(news.id)">{{"• "+news.title}}</a></p> -->
+                                      <p class="multiline newsInfo-title"><a :href="news.articleUrl" class="newsInfo-detail" target="_blank">{{"• "+news.title}}</a></p>
                                     </div>
                                     <div class="col-md-2">
                                       <span class="newsInfo-time">{{news.time}}</span>
