@@ -64,18 +64,21 @@ export default {
                     text-decoration: none;
                 }
                 span{
+                    display: inline-block;
                     font-weight: 700;
                     color: #444;
                     font-size: 25px !important;
+                    margin-bottom: 5px;
+                    margin-right: 0;
                 }
             }
             .classLogo{
-                margin-bottom: 2px;
+                margin-bottom: 5px;
                 margin-top: 4px;
             }
             .pisom{
                 margin-top: 8px;
-                margin-bottom: 5px;
+                margin-bottom: 8px;
             }
         }
         .router-link-active{

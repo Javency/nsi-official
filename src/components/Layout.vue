@@ -297,7 +297,7 @@ export default {
         font-size: 25px !important;
         position: relative;
         top: 5px;
-        margin-right: 10px;
+        // margin-right: 10px;
     }
     .layout-com{
       .slide-fade-enter-active {
