@@ -51,7 +51,8 @@
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
-                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li>
+                                            <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
+                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
@@ -327,13 +328,19 @@ export default {
           }
       }
       .theNew{
+            // position: absolute;
+            // top: -1px;
+            // color: #fff;
+            // font-size: 16px;
+            // right: -10px;
+            // text-shadow: 0 5px 10px #050935;
+            // z-index: 999;
             position: absolute;
-            top: -1px;
-            color: #fff;
-            font-size: 16px;
-            right: -10px;
-            text-shadow: 0 5px 10px #050935;
-            z-index: 999;
+            // top: -1px;
+            background-color: #faf807;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
       }
     }
     .logoFont{
