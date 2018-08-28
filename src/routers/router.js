@@ -39,10 +39,10 @@ const routes = [{
         component: IndexPage
     }, {
         path: "/news",
-        redirect: "/news/newestArticle",
+        redirect: "/news/latest",
         component: InformationPage,
         children: [{
-                path: "newestArticle",
+                path: "latest",
                 component: newestList
             },
             {
