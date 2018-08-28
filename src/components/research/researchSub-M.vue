@@ -1,5 +1,5 @@
 <template>
-    <div class="eventSub-m-com">
+    <div class="researchSub-com">
         <div class="container-fluid">
             <div class="swiper-container eventSwiper" id="researchSwiper">
                 <div class="swiper-wrapper">
@@ -53,8 +53,9 @@ export default {
 </script>
 
 <style lang="scss">
-    .eventSub-m-com{
+    .researchSub-com{
         $official-color: #20528f;
+        border-bottom: 1px solid #ddd;
         .eventSwiper{
             padding: 10px 0;
             a{

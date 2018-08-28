@@ -50,6 +50,7 @@ export default {
 <style lang="scss">
     .eventSub-m-com{
         $official-color: #20528f;
+        border-bottom: 1px solid #ddd;
         .eventSwiper{
             padding: 10px 0;
             a{
@@ -57,6 +58,9 @@ export default {
                 &:hover,
                 &:link{
                     text-decoration: none;
+                }
+                span{
+                    margin-bottom: 0;
                 }
             }
         }

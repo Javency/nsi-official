@@ -1,5 +1,5 @@
 <template>
-    <div class="eventPage-com">
+    <div class="eventApply-com">
         <event-banner/>
         <apply-list/>
     </div>
@@ -47,8 +47,8 @@ export default {
 </script>
 
 <style lang="scss">
-    .eventPage-com{
-      padding-top: 52px;
+    .eventApply-com{
+    //   padding-top: 52px;
       @media (max-width: 768px) {
           padding-top: 0;
       }

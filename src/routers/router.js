@@ -17,6 +17,7 @@ import interview from '../components/information/interview.vue'
 import historyNews from '../components/information/histroy.vue'
 import historydetail from '../components/information/historyDetail.vue'
 
+import eventLatest from '../components/event/eventLatest.vue'
 import eventDetail from '../components/event/eventDetail.vue'
 import eventApply from '../components/event/eventApply.vue'
 import periodical from '../components/research/periodical.vue'
@@ -78,17 +79,24 @@ const routes = [{
     },
     {
         path: "/event",
-        component: eventPage
-    }, {
-        path: '/event/subject',
-        component: notFondPage
-    }, {
-        path: '/event/apply',
-        component: eventApply
-    }, {
-        path: "/event/detail",
-        name: "eventDetail",
-        component: eventDetail
+        component: eventPage,
+        redirect: '/event/latest',
+        children: [{
+                path: 'latest',
+                component: eventLatest
+            },
+            {
+                path: 'subject',
+                component: notFondPage
+            }, {
+                path: 'apply',
+                component: eventApply
+            }, {
+                path: "detail",
+                name: "eventDetail",
+                component: eventDetail
+            }
+        ]
     }, {
         path: "/about",
         component: aboutusPage
