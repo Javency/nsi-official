@@ -5,18 +5,19 @@
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a>
-                            <!-- <a :href="list.articleUrl" class="img-box" target="_blank"><img :src="list.coverImage" alt="" height="270" ><i class="articleType">{{list.articleCat|articleType}}</i></a> -->
+                            <!-- <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a> -->
+                            <a :href="list.articleUrl" class="img-box" target="_blank"><img :src="list.coverImage" alt="" height="270" ><i class="articleType">{{list.articleCat|articleType}}</i></a>
                         </div>
                         <div class="list-content-box">
-                            <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
+                            <!-- <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3> -->
+                            <h3><a :href="list.articleUrl" :title="list.title" target="_blank">{{list.title}}</a></h3>
                             <p :title="list.summary">{{list.summary}}</p>
                         </div>
                         <div class="list-share-box">
                             <span class="time">{{list.createTime|formatDate}}</span>
                             <p class="text-right">分享到：
                                 <el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="微信二维码">
-                                    <img width="150" :src="weixinQRcode" alt="">
+                                    <img width="150" :src="weixinQRcode" alt="" >
                                     <span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat" @mouseenter="addUrl(list.articleUrl)"></span>
                                 </el-popover><span @click="shareWibo(list.articleUrl,list.title,list.coverImage)" title="分享到微博" class="iconfont icon-weibo2 weibo"></span>
                             </p>
@@ -122,7 +123,10 @@ export default {
             window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         },
         addUrl(url) {
-            this.weixinQRcode = 'http://qr.liantu.com/api.php?text=' + url
+            this.weixinQRcode=require("../../assets/img/common/loading.gif")
+            let _url=url.split('https')[1]
+            let currentUrl='http'+_url
+            this.weixinQRcode = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + currentUrl
         },
     },
     beforeMount(){

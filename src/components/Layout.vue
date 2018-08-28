@@ -51,12 +51,13 @@
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
-                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}</router-link></li>
+                                            <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
+                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
-                                                        <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link>
+                                                        <router-link :to="{path:'/event/latest'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link>
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
@@ -64,6 +65,9 @@
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <router-link :to="{path:'/event/subject'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>{{$t('layoutNav.eventChild.subject')}}</router-link>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <router-link :to="{path:'/event/apply'}">&nbsp;<span class="iconfont icon-baoming logoFont"></span>{{$t('layoutNav.eventChild.apply')}}</router-link>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -93,16 +97,19 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/classLogo.png" width="20" alt="">&nbsp;{{$t('layoutNav.researchChild.classOnline')}}</a>
+                                                            <router-link :to="{path:'/research/pisom'}">{{$t('layoutNav.researchChild.pisom')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/pisom'}"><img src="../assets/img/layoutImg/pisom.png" alt="" width="70">&nbsp;{{$t('layoutNav.researchChild.pisom')}}</router-link>
+                                                            <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutNav.researchChild.classOnline')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                            <router-link :to="{path:'/research/report'}">{{$t('layoutNav.researchChild.report')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
-                                                            <router-link :to="{path:'/research/report'}"><span class="iconfont icon-baogao fontLogo"></span>&nbsp;{{$t('layoutNav.researchChild.report')}}</router-link>
+                                                            <router-link :to="{path:'/research/periodical'}">{{$t('layoutNav.researchChild.magazine')}}</router-link>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
+                                                            <router-link :to="{path:'/research/apply'}">{{$t('layoutNav.researchChild.apply')}}</router-link>
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
@@ -143,10 +150,12 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="blogroll">友情链接 <span>Blogroll</span></h4>
+                                    <h4 class="blogroll">友情链接 <span>Friendly Link</span></h4>
                                     <div class="shareHref">
-                                        <a href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a>
-                                        <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.classOnline')}}</a>
+                                        <a href="http://data.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/database.png" alt=""></a>
+                                        <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/class.png" alt=""></a>
+                                        <!-- <a href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a>
+                                        <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.classOnline')}}</a> -->
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -237,7 +246,7 @@ export default {
                 country:"English",
                 switchFlag:false
             }],
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),this.$t('layoutNav.lotus'),this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.consult')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),this.$t('layoutNav.eventChild.apply'),this.$t('layoutNav.lotus'),this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.researchChild.apply'),this.$t('layoutNav.consult')],
             layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo'),this.$t('layoutFooter.database'),this.$t('layoutFooter.classOnline')]
         }
     },
@@ -286,7 +295,10 @@ export default {
     $official-footerFontColor:#699bda;
     $official-otherColor:#8fb8fb;
     .fontLogo{
-        font-size: 20px !important;
+        font-size: 25px !important;
+        position: relative;
+        top: 5px;
+        // margin-right: 10px;
     }
     .layout-com{
       .slide-fade-enter-active {
@@ -314,6 +326,21 @@ export default {
           @media (max-width: 768px) {
               display: none;
           }
+      }
+      .theNew{
+            // position: absolute;
+            // top: -1px;
+            // color: #fff;
+            // font-size: 16px;
+            // right: -10px;
+            // text-shadow: 0 5px 10px #050935;
+            // z-index: 999;
+            position: absolute;
+            // top: -1px;
+            background-color: #faf807;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
       }
     }
     .logoFont{
@@ -547,7 +574,7 @@ export default {
         }
         a{
             color: #8fb8fb;
-            margin-right:25px;
+            margin-right:5px;
         }
         a:hover{
             text-decoration: none;

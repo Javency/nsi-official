@@ -10,6 +10,9 @@
                     <div class="swiper-slide text-center">
                         <router-link :to="{path:'/event/subject'}"><span class="iconfont icon-zhuanti fontlogo"></span><br/>{{$t('layoutNav.eventChild.subject')}}</router-link>
                     </div>
+                     <div class="swiper-slide text-center">
+                        <router-link :to="{path:'/event/apply'}"><span class="iconfont icon-baoming fontlogo"></span><br/>{{$t('layoutNav.eventChild.apply')}}</router-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,7 +24,7 @@ import Swiper from 'swiper'
 export default {
     data(){
         return{
-            layoutNav:[this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject')]
+            layoutNav:[this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),this.$t('layoutNav.eventChild.apply')]
         }
     },
     methods:{
@@ -32,7 +35,7 @@ export default {
                 freeModeMomentumRatio : 5,
                 freeModeMomentum:true,
                 freeModeMomentumBounce:false,
-                slidesPerView : 2,
+                slidesPerView : 3,
                 slideToClickedSlide: true,
                 resistanceRatio:0.4,
             })
@@ -47,6 +50,7 @@ export default {
 <style lang="scss">
     .eventSub-m-com{
         $official-color: #20528f;
+        border-bottom: 1px solid #ddd;
         .eventSwiper{
             padding: 10px 0;
             a{
@@ -54,6 +58,9 @@ export default {
                 &:hover,
                 &:link{
                     text-decoration: none;
+                }
+                span{
+                    margin-bottom: 0;
                 }
             }
         }

@@ -13,13 +13,13 @@
                     </div> -->
                     <div class="author">
                         <p class="news-summary">{{detail.summary}}</p>
-                        <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.updateTime}}</span></p>
+                        <p class="news-info"><strong>责任编辑：{{detail.articleWriter}}</strong><span class="news-time">{{detail.createTime}}</span></p>
                     </div>
                     <div v-html="detail.articleContent" class="news-article-content"></div>
                     <div class="cut-off-line text-center"><span class="cut-off-text">● END ●</span></div>
                     <div class="statement">
-                        <p class="nsi-statement" v-if="detail.articleSourceTitle=='新学说'">本文系<a href="http://www.xinxueshuo.cn" target="_blank">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
-                        <p class="nsi-statement" v-else>本文系<a href="http://www.xinxueshuo.cn" target="_blank"> 新学说 </a>转载文章，来源 <a :href="detail.articleSourceAdress" target="_blank">{{detail.articleSourceTitle}}</a></p>
+                        <p class="nsi-statement" v-if="detail.articleSourceTitle=='新学说'">本文系<a href="https://www.xinxueshuo.cn" target="_blank">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
+                        <p class="nsi-statement" v-else>本文系<a href="https://www.xinxueshuo.cn" target="_blank"> 新学说 </a>转载文章，来源 <a :href="detail.articleSourceAdress" target="_blank">{{detail.articleSourceTitle}}</a></p>
                         <div>
                           <div class="row">
                             <div class="col-md-2 col-xs-4 text-center">

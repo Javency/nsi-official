@@ -4,9 +4,10 @@
         <Banner class="mt30 bannerPC"/>
         <banner-m class="showInMobile bannerM"/>
         <div class="container-fulid">
+            <nsi-product class="hideInmobile"></nsi-product>
             <div class="container newestPlpr0">
                 <!-- 最新动态 -->
-                <div class="newest pt50">
+                <div class="newest indexNews">
                     <!-- title -->
                     <div class="index-title">
                         <span class="line left-line"></span>
@@ -25,7 +26,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="newsBox">
-                                        <h5 class="mt0 multiline"><a href="javascript:;" class="news-title" @click="toDetail(news.id)">{{news.title}}</a></h5>
+                                        <!-- <h5 class="mt0 multiline"><a href="javascript:;" class="news-title" @click="toDetail(news.id)">{{news.title}}</a></h5> -->
+                                        <h5 class="mt0 multiline"><a :href="news.articleUrl" class="news-title" target="_blank">{{news.title}}</a></h5>
                                         <p class="news-articel multiline" :title="news.summary">{{news.summary}}</p>
                                         <span class="news-time">{{news.time}}</span>
                                     </div>
@@ -40,7 +42,8 @@
                               <div class="newsInfo">
                                   <div class="row">
                                     <div class="col-md-10">
-                                      <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail" @click="toDetail(news.id)">{{"• "+news.title}}</a></p>
+                                      <!-- <p class="multiline newsInfo-title"><a href="javascript:;" class="newsInfo-detail" @click="toDetail(news.id)">{{"• "+news.title}}</a></p> -->
+                                      <p class="multiline newsInfo-title"><a :href="news.articleUrl" class="newsInfo-detail" target="_blank">{{"• "+news.title}}</a></p>
                                     </div>
                                     <div class="col-md-2">
                                       <span class="newsInfo-time">{{news.time}}</span>
@@ -84,7 +87,7 @@
                             <div class="row">
                               <div class="col-md-6 col-xs-6 plpr0" v-for="(activities,index) in activitiesCurrent" @mouseenter="active(index)" :key="index">
                                 <a :href="activities.content07" target="_blank">
-                                  <div class="othersBox" :class="'othersBox0'+(index+1)">
+                                  <div class="othersBox" :class="'othersBox0'+(index+1)" :style="{'background-image':'url('+activities.content05+')'}">
                                     <!-- <div class="othersBox-bg"></div> -->
                                     <div class="othersBox-content">
                                       <p>{{activities.content01}}</p>
@@ -112,13 +115,15 @@
     import recentEvent from '../components/index/recentEvent-M.vue'
     import bannerM from '../components/index/banner-M.vue'
     import wxShareInit from '../assets/js/weChatShare.js'
+    import nsiProduct from '../components/index/nsiProduct.vue'
     var currentSerialNum=0;
     export default {
         components: {
            Banner,
            newsInfoM,
            recentEvent,
-           bannerM
+           bannerM,
+           nsiProduct
         },
         name: 'carrousel',
         data() {
@@ -130,7 +135,7 @@
                 activitiesCurrent:[],
                 wxShareInfo:{
                     title:"新学说 | 国际学校多边服务平台",
-                    imgUrl:"http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                    imgUrl:"https://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                     href:window.location.href,
                     desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
                 }
@@ -198,6 +203,11 @@
     /* common */
     .showInMobile{
         display: none;
+    }
+    .hideInmobile{
+        @media (max-width:768px) {
+            display: none;
+        }
     }
     @media (max-width: 768px) {
         .showInMobile{
@@ -283,6 +293,11 @@
             color: #333;
         }
     }
+    }
+    .indexNews{
+        @media (max-width: 768px) {
+            padding-top: 50px !important;
+        }
     }
     /* 最新动态 */
     .index-title{

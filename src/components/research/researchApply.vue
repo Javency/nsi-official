@@ -1,27 +1,26 @@
 <template>
-    <div class="eventPage-com">
-        <event-sub class="showInMobile"/>
-        <keep-alive>
-            <router-view></router-view>
-        </keep-alive>
+    <div class="researchApply-com">
+        <event-banner/>
+        <apply-list/>
     </div>
 </template>
 
 <script>
-
-import eventSub from '../components/event/eventSub-M'
-import wxShareInit from '../assets/js/weChatShare.js'
+import eventBanner from '../../components/research/researchBanner'
+import applyList from '../../components/research/researchList'
+import wxShareInit from '../../assets/js/weChatShare.js'
 export default {
     components:{
-        eventSub
+        eventBanner,
+        applyList,
     },
     data(){
         return{
             wxShareInfo:{
-                  title:"新学说 | 2018VIS国际学校发展大会",
+                  title:"新学说 | 课程报名汇总",
                   imgUrl:"https://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                   href:window.location.href,
-                  desc:"“有界无边，育在未来”  2018VIS国际学校发展大会，将于11月11日在北京盛大召开。"
+                  desc:"报名课程：国际学校市场招生&国际学校战略投资班&国际学校校长研修班"
               }
         }
     },
@@ -48,11 +47,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .eventPage-com{
-      padding-top: 52px;
-      @media (max-width: 768px) {
-          padding-top: 0;
-      }
+    .researchApply-com{
       .showInMobile{
           display: none;
           @media (max-width: 768px) {

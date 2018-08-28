@@ -6,8 +6,9 @@ module.exports = {
         information: "资讯中心",
         event: "会议活动",
         eventChild: {
-            vis: "VIS国际学校发展大会",
-            subject: "专题研讨会"
+            vis: "国际学校发展大会",
+            subject: "专题研讨会",
+            apply: "参会报名"
         },
         lotus: "新荷学校",
         lotusChild: {
@@ -19,14 +20,16 @@ module.exports = {
         researchChild: {
             magazine: "国际学校内参",
             report: "研究报告",
-            pisom: "必盛研修班",
-            classOnline: "新学说国际教育研究院"
+            pisom: "国际学校高阶研修班",
+            classOnline: "国际学校职能岗位课程",
+            apply: "课程报名"
         },
         researchChild_Mob: {
             magazine: "国际学校内参",
             report: "研究报告",
             pisom: "必盛研修班",
-            classOnline: "国际教育研究院"
+            classOnline: "教育研究院",
+            apply: "参会报名"
         },
         consult: "咨询服务"
     },
@@ -43,8 +46,8 @@ module.exports = {
     },
     // 关于我们
     aboutus: {
-        mission: "我们的使命",
-        missionContent: "致力于中国国际学校行业研究，为多家学校提供详细的市场、运营、建设方案",
+        mission: "我们的使命和愿景",
+        missionContent: "服务国际学校成长，助力行业健康发展。成为中国国际学校行业第一服务平台",
         aboutNSI: "关于 新学说",
         aboutNSIContent: "北京新学说文化传媒有限公司是由国际学校行业专家共同打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台。自成立以来一直致力于中国国际学校行业研究，对于中国国际学校有着深刻的了解。到目前为止，新学说已在自有媒体上发表了近千篇行业原创文章，十多本深度行业报告，并为多家学校提供了详细的市场、运营、建设方案，受到业内人士和单位的高度认可。",
         team: "团队介绍",
@@ -57,8 +60,8 @@ module.exports = {
     news: {
         newsOne: "新",
         newsTwo: "闻",
-        newsThree: "中",
-        newsFour: "心",
+        newsThree: "头",
+        newsFour: "条",
         overviewNews: "资讯全览",
         policyNews: "政策解读",
         schoolNews: "访校观察",

@@ -63,7 +63,10 @@ export default {
         },
         addUrl(url) {
             // alert(url)
-            this.weixinQRcode = 'http://qr.liantu.com/api.php?text=' + url
+            // this.weixinQRcode = 'https://www.kuaizhan.com/common/encode-png?large=true&data=' + url
+            let _url=url.split('https')[1]
+            let currentUrl='http'+_url
+            this.weixinQRcode = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + currentUrl
         },
     },
     beforeMount(){

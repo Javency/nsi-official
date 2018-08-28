@@ -7,7 +7,7 @@
                         <div class="swiper-container" id="newsbanner">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
-                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.id)">
+                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.articleUrl)">
                                 </div>
                             </div>
                             <div class="swiper-pagination"  slot="pagination"></div>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
-                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.id)">{{bannerInfos.title}}</a></h3>
+                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.articleUrl)">{{bannerInfos.title}}</a></h3>
                         <p class="newsInfo-desc">{{bannerInfos.summary}}</p>
                         <a href="javascript:;" @click="toDetail(bannerInfos.id)" class="news-detail">阅读全文</a>
                     </div>
@@ -44,10 +44,10 @@ export default {
       }
     },
     methods:{
-        toDetail(id){
+        toDetail(href){
             // console.log(id)
-            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
-            window.open(routeData.href, '_blank');
+            // let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            window.open(href, '_blank');
         },
         getBannerInfo(){
             const newsBanner = new URLSearchParams();

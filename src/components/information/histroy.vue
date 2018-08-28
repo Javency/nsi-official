@@ -5,7 +5,7 @@
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="'http://www.xinxueshuo.cn/old_article'+list.path" alt="" @click="toDetail(list.id)"></a>
+                            <a href="javascript:;" class="img-box"><img :src="'https://www.xinxueshuo.cn/old_article'+list.path" alt="" @click="toDetail(list.id)"></a>
                         </div>
                         <div class="list-content-box">
                             <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3>
@@ -13,11 +13,11 @@
                         </div>
                         <div class="list-share-box">
                             <span class="time">{{list.createTime|timestampToTime}}</span>
-                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'http://qr.liantu.com/api.php?text='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
+                            <p class="text-right">分享到：<el-popover class="text-center" placement="top-start" title="打开微信 “扫一扫”" width="190" trigger="hover" content="这是二维码"><img width="150" :src="'https://www.kuaizhan.com/common/encode-png?large=true&data='+list.articleUrl" alt=""><span slot="reference" title="分享到微信" class="iconfont icon-weixin weiChat"></span></el-popover><span title="分享到微博" class="iconfont icon-weibo2 weibo"></span></p>
                         </div>
                     </div>
                 </div>
-                <inter-view-m class="showInMobile col-md-12" :loadNews="newsList"></inter-view-m>
+                <histroy-m class="showInMobile col-md-12" :loadNews="newsList"></histroy-m>
             </div>
             <div class="row mt20">
                 <div class="col-md-12 text-center">
@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import interViewM from './interview-M'
+import histroyM from './history-M'
 export default {
     components:{
-      interViewM
+      histroyM
     },
     data(){
         return{
@@ -63,7 +63,7 @@ export default {
             params.append('pageSize', 8);
             this.axios({
                 method: 'post',
-                url: 'http://192.168.0.46:8080/nsi-1.0/previousArticles/list.do',
+                url: '/previousArticles/list.do',
                 data: params
             }).then((res)=>{
                 let msg=res.data.data.list
@@ -84,7 +84,7 @@ export default {
         params.append('pageSize', 8);
         this.axios({
              method: 'post',
-             url: 'http://192.168.0.46:8080/nsi-1.0/previousArticles/list.do',
+             url: '/previousArticles/list.do',
              data:params
         }).then((res)=>{
             let msg=res.data.data.list
@@ -99,6 +99,12 @@ export default {
 <style lang="scss">
    @import '../../assets/style/news/common.scss';
    .histroy{
+       .showInMobile{
+           display: none;
+           @media (max-width: 768px) {
+               display: block;
+           }
+       }
        .list-img-box{
            text-align: center;
            .img-box{
