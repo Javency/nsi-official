@@ -212,6 +212,7 @@ export default {
                         padding-right: 15px;
                         left: 15px;
                         bottom: 15px;
+                        display: none;
                     }
             }
         }
