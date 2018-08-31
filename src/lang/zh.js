@@ -29,7 +29,7 @@ module.exports = {
             report: "研究报告",
             pisom: "必盛研修班",
             classOnline: "教育研究院",
-            apply: "参会报名"
+            apply: "课程报名"
         },
         consult: "咨询服务",
         ges: "GES"

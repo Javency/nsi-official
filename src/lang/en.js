@@ -29,7 +29,7 @@ module.exports = {
             report: "Research Report",
             pisom: "Talents Training",
             classOnline: "Education Academy",
-            apply: "Convention Apply"
+            apply: "Class Apply"
         },
         consult: "Service",
         ges: "GES"

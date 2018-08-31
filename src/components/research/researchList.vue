@@ -14,9 +14,12 @@
                     <div class="row">
                       <div class="col-md-8 pl0 pr0">
                         <a class="event-list" :href="list.url" target="_blank">
-                          <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
-                              <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
-                          </div>
+                            <div v-if="isMobile" class="event-box" :style="{'background-image':'url('+list.imgSrcM+')'}">
+                                <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                            </div>
+                            <div v-else class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
+                                <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                            </div>
                         </a>
                       </div>
                       <div class="col-md-4 pr0">
@@ -42,23 +45,27 @@
 export default {
     data(){
         return{
+            isMobile:false,
             addMoreHtml:"加载更多",
             eventList:[
                 {
                     title:"国际学校市场招生班",
                     imgSrc:require("../../assets/img/research/mac.jpg"),
+                    imgSrcM:require('../../assets/img/research/researchM01.jpg'),
                     url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/courseDesc/macM.html",
                     time:"2018-09-03"
                 },
                  {
                     title:"国际学校投资战略班",
                     imgSrc:require("../../assets/img/research/zhanlue.jpg"),
+                    imgSrcM:require("../../assets/img/research/zhanlue.jpg"),
                     url:"https://jinshuju.net/f/UbcHrR",
                     time:"2018-09-03"
                 },
                 {
                     title:"国际学校校长研修班",
                     imgSrc:require("../../assets/img/research/headteacher.jpg"),
+                    imgSrcM:require('../../assets/img/research/researchM02.jpg'),
                     url:"https://jinshuju.net/f/a4LhEl",
                     time:"2018-09-03"
                 },
@@ -71,6 +78,13 @@ export default {
         },
         addMore(){
             console.log("加载更多")
+        }
+    },
+    created(){
+        if(window.innerWidth<769){
+            this.isMobile=true
+        }else{
+            this.isMobile=false
         }
     }
 }
@@ -225,7 +239,7 @@ export default {
           .research-title{
               min-height: auto !important;
               font-weight: 700;
-              font-size: 18px;
+              font-size: 17px;
               margin-bottom: 20px;
               color: #4d555d;
               @media (max-width: 768px) {
