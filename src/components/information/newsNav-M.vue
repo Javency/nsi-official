@@ -4,7 +4,7 @@
             <div class="swiper-container swiperM" id="newsSwiperM">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/news/newestArticle>{{$t('news.overviewNews')}}</router-link>
+                        <router-link tag="i" to=/news/latest>{{$t('news.overviewNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" to="/news/policy">{{$t('news.policyNews')}}</router-link>

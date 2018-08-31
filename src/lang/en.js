@@ -65,9 +65,9 @@ module.exports = {
         overviewNews: "Overview",
         policyNews: "Policy",
         schoolNews: "School",
-        tmtNews: "Analyze",
-        personNews: "Personage",
-        oldNews: "Histroy"
+        tmtNews: "Research",
+        personNews: "Figure",
+        oldNews: "History"
     },
     // 咨询服务
     service: {

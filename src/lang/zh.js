@@ -6,7 +6,7 @@ module.exports = {
         information: "资讯中心",
         event: "会议活动",
         eventChild: {
-            vis: "VIS国际学校发展大会",
+            vis: "国际学校发展大会",
             subject: "专题研讨会",
             apply: "参会报名"
         },
@@ -28,7 +28,7 @@ module.exports = {
             magazine: "国际学校内参",
             report: "研究报告",
             pisom: "必盛研修班",
-            classOnline: "国际教育研究院",
+            classOnline: "教育研究院",
             apply: "参会报名"
         },
         consult: "咨询服务"

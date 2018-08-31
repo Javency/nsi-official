@@ -4,7 +4,7 @@
         <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
         <ul class="news-nav mt50">
-          <li><router-link to=/news/newestArticle>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/latest>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/news/policy">{{$t('news.policyNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/news/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to=/news/original>{{$t('news.tmtNews')}}</router-link><i class="newsnavLine"></i></li>
