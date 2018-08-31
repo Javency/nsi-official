@@ -1,5 +1,5 @@
 <template>
-    <div class="eventPage-com">
+    <div class="eventApply-com">
         <event-banner/>
         <apply-list/>
     </div>
@@ -17,10 +17,10 @@ export default {
     data(){
         return{
             wxShareInfo:{
-                  title:"新学说 | 2018VIS国际学校发展大会",
+                  title:"新学说 | 参会报名汇总",
                   imgUrl:"https://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
                   href:window.location.href,
-                  desc:"“有界无边，育在未来”  2018VIS国际学校发展大会，将于11月11日在北京盛大召开。"
+                  desc:"最新活动：“有界无边，育在未来”  2018VIS国际学校发展大会，将于11月11日在北京盛大召开。"
               }
         }
     },
@@ -47,8 +47,8 @@ export default {
 </script>
 
 <style lang="scss">
-    .eventPage-com{
-      padding-top: 52px;
+    .eventApply-com{
+    //   padding-top: 52px;
       @media (max-width: 768px) {
           padding-top: 0;
       }

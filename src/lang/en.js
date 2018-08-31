@@ -46,8 +46,8 @@ module.exports = {
     },
     // 关于我们
     aboutus: {
-        mission: "Our Mission",
-        missionContent: "We devote ourselves to the research of China's international school industry and provide detailed marketing, operation and construction plans for many schools",
+        mission: "Our Mission and Vision",
+        missionContent: "To promote the growth of international schools and the healthy development of the industry on the world stage.To be the China's preeminent service platform for the international school industry",
         aboutNSI: "About NSI",
         aboutNSIContent: "Beijing NewSchool Insight Culture and Media Limited Company, known as NewSchool Insight (NSI), is a multilateral media, research and consulting firm established in 2015 by experts from China’s international school industry.Since its formation, NSI has been committed to the scientific analysis and field study of public and private K-12 international schools and their related industries in China. Through contact with over 400 international schools, NSI has amassed an extensive database and sweeping expertise in the international education sector at both the local and national levels, mapping out the country’s distribution of international schools and keeping a pulse on the latest issues and trends.",
         team: "Team Introduction",
@@ -65,9 +65,9 @@ module.exports = {
         overviewNews: "Overview",
         policyNews: "Policy",
         schoolNews: "School",
-        tmtNews: "Analyze",
-        personNews: "Personage",
-        oldNews: "Histroy"
+        tmtNews: "Research",
+        personNews: "Figure",
+        oldNews: "History"
     },
     // 咨询服务
     service: {
