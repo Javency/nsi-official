@@ -1,20 +1,18 @@
 <template>
     <div class="eventPage-com">
         <event-sub class="showInMobile"/>
-        <event-banner/>
-        <event-list/>
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
     </div>
 </template>
 
 <script>
-import eventBanner from '../components/event/eventBanner'
-import eventList from '../components/event/eventList'
+
 import eventSub from '../components/event/eventSub-M'
 import wxShareInit from '../assets/js/weChatShare.js'
 export default {
     components:{
-        eventBanner,
-        eventList,
         eventSub
     },
     data(){

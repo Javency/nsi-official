@@ -2,13 +2,31 @@
     <div class="eventList-com">
         <div class="container">
             <h2 class="title">热门活动<span class="hot">HOT</span></h2>
-            <div class="row">
-                <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList" :key="index">
+            <div class="row mb30">
+                <!-- <div class="col-md-4 col-xs-12 mb15" v-for="(list,index) in eventList">
                     <a class="event-list" :href="list.url" target="_blank">
                         <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
-                            <!-- <h3 class="event-box-title" :title="list.title">{{list.title}}</h3> -->
+                            <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
                         </div>
                     </a>
+                </div> -->
+                 <div class="col-md-6 col-xs-6 mb30" v-for="(list,index) in eventList" :key="index">
+                    <div class="row">
+                      <div class="col-md-8 pl0 pr0">
+                        <a class="event-list" :href="list.url" target="_blank">
+                          <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
+                              <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4 pr0">
+                        <div class="researchInfo">
+                            <h5 class="research-title">{{list.title}}</h5>
+                            <p class="apply-time"><span class="iconfont icon-shijian timeLogo"></span> {{list.time}}</p>
+                            <a :href="list.url" target="_blank" class="toApply">了解详情</a>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
             <div class="row mt20">
@@ -29,12 +47,14 @@ export default {
                 {
                     title:"新荷 ● 中国国际学校节",
                     imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
-                    url:"https://jinshuju.net/f/L4Iz9D"
+                    url:"https://jinshuju.net/f/L4Iz9D",
+                    time:"2018-02"
                 },
                 {
                     title:"2018VIS国际学校发展大会",
                     imgSrc:require("../../assets/img/event/eventBanner03.jpg"),
-                    url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/visM.html"
+                    url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/visM.html",
+                    time:"2018-02"
                 },
                 // {
                 //    title:"2017VIS国际学校发展大会",
@@ -87,6 +107,9 @@ export default {
         }
         .mb15{
             margin-bottom: 15px;
+        }
+        .mb30{
+            margin-bottom: 30px;
         }
         .mt20{
             margin-top: 20px;
@@ -205,6 +228,55 @@ export default {
                         bottom: 15px;
                     }
             }
+        }
+        .researchInfo{
+          position: relative;
+          padding-top: 20px;
+          @media (max-width: 768px) {
+            padding-top: 0;
+          }
+          .research-title{
+              font-weight: 700;
+              font-size: 18px;
+              margin-bottom: 20px;
+              color: #4d555d;
+              min-height: 39px;
+              @media (max-width: 768px) {
+                margin-bottom: 10px;
+              }
+            }
+          .toApply{
+            display: inline-block;
+            background: #b89561;
+            box-shadow: 0 4px 8px 0 rgba(28, 31, 33, 0.2);
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 200;
+            color: #fff;
+            padding: 0 22px;
+            height: 33px;
+            line-height: 33px;
+            text-align: center;
+            &:link{
+              text-decoration: none;
+            }
+            &:hover{
+              text-decoration: none;
+              background-color:#c2a77f
+            }
+          }
+          // .timeLogo{
+          //   position: relative;
+          //   top: 0px;
+          // }
+          .apply-time{
+            font-size: 15px;
+            margin-bottom: 15px;
+            color: #666;
+            @media (max-width: 768px) {
+              margin-bottom: 10px;
+            }
+          }
         }
         .loadMore{
             display: inline-block;

@@ -1,5 +1,5 @@
 <template>
-    <div class="eventSub-m-com">
+    <div class="researchSub-com">
         <div class="container-fluid">
             <div class="swiper-container eventSwiper" id="researchSwiper">
                 <div class="swiper-wrapper">
@@ -53,8 +53,9 @@ export default {
 </script>
 
 <style lang="scss">
-    .eventSub-m-com{
+    .researchSub-com{
         $official-color: #20528f;
+        border-bottom: 1px solid #ddd;
         .eventSwiper{
             padding: 10px 0;
             a{
@@ -64,18 +65,21 @@ export default {
                     text-decoration: none;
                 }
                 span{
+                    display: inline-block;
                     font-weight: 700;
                     color: #444;
                     font-size: 25px !important;
+                    margin-bottom: 5px;
+                    margin-right: 0;
                 }
             }
             .classLogo{
-                margin-bottom: 2px;
+                margin-bottom: 5px;
                 margin-top: 4px;
             }
             .pisom{
                 margin-top: 8px;
-                margin-bottom: 5px;
+                margin-bottom: 8px;
             }
         }
         .router-link-active{
