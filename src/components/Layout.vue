@@ -74,7 +74,7 @@
                                             <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
-                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotus')}}<span class="caret"></span></router-link></a>
+                                                        <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotus')}}<span class="caret"></span></a>
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
@@ -114,6 +114,9 @@
                                                 </el-dropdown>
                                             </li>
                                             <li><router-link :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link></li>
+                                            <li class="dropdown">
+                                                <router-link :to="{path:'/ges'}">{{$t('layoutNav.ges')}}</router-link>
+                                            </li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
                                 </div><!-- /.container-fluid -->
