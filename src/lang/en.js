@@ -29,9 +29,10 @@ module.exports = {
             report: "Research Report",
             pisom: "Talents Training",
             classOnline: "Education Academy",
-            apply: "Convention Apply"
+            apply: "Class Apply"
         },
-        consult: "Service"
+        consult: "Service",
+        ges: "GES"
     },
     // 底部
     layoutFooter: {
@@ -44,16 +45,29 @@ module.exports = {
         database: "International School DataBase",
         classOnline: "Academy of NSI"
     },
+    layoutgesFooter: {
+        tel01: "Tel：",
+        tel02: "+1 (512) 203-3185",
+        email01: "Email：",
+        email02: "dbarrutia@xinxueshuo.cn",
+        address01: "Address：",
+        address02: "Global Education Solutions, 1103 West ",
+        address03: "24th Street, Austin, TX 78705 USA",
+        weChat: "微信公众号",
+        weibo: "官方微店",
+        database: "国际学校在线四库全书",
+        classOnline: "新学说国际教育研究院"
+    },
     // 关于我们
     aboutus: {
         mission: "Our Mission and Vision",
-        missionContent: "To promote the growth of international schools and the healthy development of the industry on the world stage.To be the China's preeminent service platform for the international school industry",
+        missionContent: "To promote the growth of international schools and the healthy development of the industry on the world stage. To be China's preeminent service platform for the international school industry.",
         aboutNSI: "About NSI",
-        aboutNSIContent: "Beijing NewSchool Insight Culture and Media Limited Company, known as NewSchool Insight (NSI), is a multilateral media, research and consulting firm established in 2015 by experts from China’s international school industry.Since its formation, NSI has been committed to the scientific analysis and field study of public and private K-12 international schools and their related industries in China. Through contact with over 400 international schools, NSI has amassed an extensive database and sweeping expertise in the international education sector at both the local and national levels, mapping out the country’s distribution of international schools and keeping a pulse on the latest issues and trends.",
+        aboutNSIContent: "Beijing NewSchool Insight Culture and Media Limited Company, known as NewSchool Insight (NSI), is a multilateral media, research and consulting firm established in 2015 by experts from China’s international school industry. Since its formation, NSI has been committed to the scientific analysis and field study of public and private K-12 international schools and their related industries in China. Through contact with over 400 international schools, NSI has amassed an extensive database and sweeping expertise in the international education sector at both the local and national levels, mapping out the country’s distribution of international schools and keeping a pulse on the latest issues and trends.",
         team: "Team Introduction",
-        teamContent: "NSI is composed of many unique and talented members who are committed to providing all-round services to a number of international schools. Efforts will be made to translate the research results into practical operational plans, providing various advisory services for international schools, such as pre-school construction consultation, curriculum design and marketing planning.",
-        partner: "Partner",
-        partnerContent: "Since its establishment, NSI has provided in-depth customized promotion strategies for hundreds of well-known brands, and has always focused on high-quality content communication and innovative publicity services.",
+        teamContent: "NSI is composed of a team of unique and talented professionals who are committed to providing all-around quality service to international schools. Based on hard data and research conclusions, we provide schools with practical operational plans and advisory services, such as pre-school construction consultation, curriculum design and marketing planning.",
+        partner: "Cooperation",
+        partnerContent: "NSI has cooperated with most of the industry’s leading brands to provide them with customized in-depth marketing strategies, with a focus on high-quality content and innovative publicity.",
         connectUs: "Contact Us"
     },
     // 资讯中心
@@ -76,5 +90,21 @@ module.exports = {
         capacity: "Capacity",
         vision: "Lnsight",
         connectUs: "Contact"
-    }
+    },
+    // 关于ges
+    ges: {
+        mission: "Global Education Solutions ",
+        missionContent: "We provide innovative solutions to challenging issues and get meaningful outcomes.",
+        missionContent01: "We provide",
+        missionContent02: "innovative solutions",
+        missionContent03: "to challenging issues",
+        missionContent04: "and get meaningful outcomes.",
+        aboutNSI: "About GES",
+        aboutNSIContent: "With the news of China becoming the nation with the most international schools in the world, Global Education Solutions Inc. (GES) was established in 2018 as the American operational arm of NewSchool Insight (NSI) to play a supporting role overseas in promoting and lifting up the Chinese international school industry on the global stage. Strategically based in Austin, Texas – the capital of the largest state in the contiguous United States and a major hub for the American education and technology industries – GES is uniquely positioned to innovate the bridges of Sino-American education and exchange. ",
+        team: "Our Mission",
+        teamContent: "GES is committed to fostering international friendship and cultural exchange with China by promoting institutional relationships and business exchange in the field of international education.",
+        partner: "Your Solution Provider",
+        partnerContent: "Multi-culturally oriented and fluent in English, Mandarin and Spanish, GES advises and represents both American and Chinese educational institutions and education businesses.Based on the latest market research, scientific analysis, industry experience and deep networks, GES is able to cultivate school-to-school partnerships, advise on cross-border education investments, and facilitate business opportunities with local and national entities in the Chinese international education sector, both public and private.GES offers a wide range of consulting and operational services with the necessary tools and expertise to help grow your school, and reach students and partners internationally. We cooperate closely with our clients from start to finish, focusing on their needs while producing new ideas and results, developing effective and efficient strategies, and designing rewarding and scalable solutions. ",
+        connectUs: "Contact Us"
+    },
 }

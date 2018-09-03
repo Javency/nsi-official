@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import IndexPage from '../pages/IndexPage.vue'
 import aboutusPage from '../pages/aboutusPage.vue'
+import gesPage from '../pages/gesPage.vue'
 import InformationPage from '../pages/InformationPage.vue'
 import eventPage from "../pages/eventPage.vue"
 import researchPage from '../pages/researchPage.vue'
@@ -100,6 +101,9 @@ const routes = [{
     }, {
         path: "/about",
         component: aboutusPage
+    }, {
+        path: "/ges",
+        component: gesPage
     }, {
         path: "/research",
         component: researchPage,

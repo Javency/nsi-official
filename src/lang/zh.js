@@ -29,9 +29,10 @@ module.exports = {
             report: "研究报告",
             pisom: "必盛研修班",
             classOnline: "教育研究院",
-            apply: "参会报名"
+            apply: "课程报名"
         },
-        consult: "咨询服务"
+        consult: "咨询服务",
+        ges: "GES"
     },
     // 底部
     layoutFooter: {
@@ -39,6 +40,19 @@ module.exports = {
         email: "邮箱：info@xinxueshuo.cn",
         phone: "手机：15010927730",
         address: "地址：北京市西城区新风街2号天成科技大厦A座1006",
+        weChat: "微信公众号",
+        weibo: "官方微店",
+        database: "国际学校在线四库全书",
+        classOnline: "新学说国际教育研究院"
+    },
+    layoutgesFooter: {
+        tel01: "Tel：",
+        tel02: "+1 (512) 203-3185",
+        email01: "Email：",
+        email02: "dbarrutia@xinxueshuo.cn",
+        address01: "Address：",
+        address02: "Global Education Solutions, 1103 West ",
+        address03: "24th Street, Austin, TX 78705 USA",
         weChat: "微信公众号",
         weibo: "官方微店",
         database: "国际学校在线四库全书",
@@ -76,5 +90,21 @@ module.exports = {
         capacity: "核心能力",
         vision: "行业洞见",
         connectUs: "联系我们"
-    }
+    },
+    // 关于ges
+    ges: {
+        mission: "Global Education Solutions ",
+        missionContent: "We provide innovative solutions to challenging issues and get meaningful outcomes.",
+        missionContent01: "We provide",
+        missionContent02: "innovative solutions",
+        missionContent03: "to challenging issues",
+        missionContent04: "and get meaningful outcomes.",
+        aboutNSI: "About GES",
+        aboutNSIContent: "With the news of China becoming the nation with the most international schools in the world, Global Education Solutions Inc. (GES) was established in 2018 as the American operational arm of NewSchool Insight (NSI) to play a supporting role overseas in promoting and lifting up the Chinese international school industry on the global stage. Strategically based in Austin, Texas – the capital of the largest state in the contiguous United States and a major hub for the American education and technology industries – GES is uniquely positioned to innovate the bridges of Sino-American education and exchange. ",
+        team: "Our Mission",
+        teamContent: "GES is committed to fostering international friendship and cultural exchange with China by promoting institutional relationships and business exchange in the field of international education.",
+        partner: "Your Solution Provider",
+        partnerContent: "Multi-culturally oriented and fluent in English, Mandarin and Spanish, GES advises and represents both American and Chinese educational institutions and education businesses.Based on the latest market research, scientific analysis, industry experience and deep networks, GES is able to cultivate school-to-school partnerships, advise on cross-border education investments, and facilitate business opportunities with local and national entities in the Chinese international education sector, both public and private.GES offers a wide range of consulting and operational services with the necessary tools and expertise to help grow your school, and reach students and partners internationally. We cooperate closely with our clients from start to finish, focusing on their needs while producing new ideas and results, developing effective and efficient strategies, and designing rewarding and scalable solutions. ",
+        connectUs: "Contact Us"
+    },
 }
