@@ -24,6 +24,9 @@
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link>
                     </div>
+                    <div class="swiper-slide navSlide">
+                        <router-link tag="i" :to="{path:'/ges'}">{{$t('layoutNav.ges')}}</router-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,6 +43,7 @@
                     <router-link :to="{path:'/lotus'}" tag="li" @click.native="hidePanel(4)">{{$t('layoutNav.lotus')}}</router-link>
                     <router-link :to="{path:'/research'}" tag="li" @click.native="hidePanel(5)">{{$t('layoutNav.research')}}</router-link>
                     <router-link :to="{path:'/consulting'}" tag="li" @click.native="hidePanel(6)">{{$t('layoutNav.consult')}}</router-link>
+                    <router-link :to="{path:'/ges'}" tag="li" @click.native="hidePanel(7)">{{$t('layoutNav.ges')}}</router-link>
                 </ul>
             </div>
         </transition>
@@ -53,7 +57,7 @@ export default {
         return{
             activeNav:0,
             openMore:false,
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.lotus'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),,this.$t('layoutNav.consult')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.lotus'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.consult'),this.$t('layoutNav.ges')],
         }
     },
     methods:{
