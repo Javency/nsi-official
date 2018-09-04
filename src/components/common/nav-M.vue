@@ -15,9 +15,9 @@
                     <div class="swiper-slide navSlide">
                          <router-link tag="i" :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link>
                     </div>
-                    <div class="swiper-slide navSlide">
+                    <!-- <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/lotus'}">{{$t('layoutNav.lotus')}}</router-link>
-                    </div>
+                    </div> -->
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/research'}">{{$t('layoutNav.research')}}</router-link>
                     </div>

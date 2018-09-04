@@ -72,7 +72,7 @@
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
                                             </li>
-                                            <li class="hasSubmenu">
+                                            <!-- <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
                                                         <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotus')}}<span class="caret"></span></a>
@@ -89,7 +89,7 @@
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
-                                            </li>
+                                            </li> -->
                                             <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
