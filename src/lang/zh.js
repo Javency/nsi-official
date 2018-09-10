@@ -32,7 +32,8 @@ module.exports = {
             apply: "课程报名"
         },
         consult: "咨询服务",
-        ges: "GES"
+        ges: "GES",
+        vip: "会员"
     },
     // 底部
     layoutFooter: {

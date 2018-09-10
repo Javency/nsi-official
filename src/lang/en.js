@@ -32,7 +32,8 @@ module.exports = {
             apply: "Class Apply"
         },
         consult: "Service",
-        ges: "GES"
+        ges: "GES",
+        vip: "VIP"
     },
     // 底部
     layoutFooter: {
@@ -108,5 +109,5 @@ module.exports = {
         partner: "Your Solution Provider",
         partnerContent: "Multi-culturally oriented and fluent in English, Mandarin and Spanish, GES advises and represents both American and Chinese educational institutions and education businesses.Based on the latest market research, scientific analysis, industry experience and deep networks, GES is able to cultivate school-to-school partnerships, advise on cross-border education investments, and facilitate business opportunities with local and national entities in the Chinese international education sector, both public and private.GES offers a wide range of consulting and operational services with the necessary tools and expertise to help grow your school, and reach students and partners internationally. We cooperate closely with our clients from start to finish, focusing on their needs while producing new ideas and results, developing effective and efficient strategies, and designing rewarding and scalable solutions. ",
         connectUs: "Contact Us"
-    },
+    }
 }

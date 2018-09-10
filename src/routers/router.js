@@ -8,6 +8,7 @@ import eventPage from "../pages/eventPage.vue"
 import researchPage from '../pages/researchPage.vue'
 import consultingPage from '../pages/consulting.vue'
 import lotusPage from '../pages/lotusPage.vue'
+import vipPage from '../pages/vipPage.vue'
 
 import newestList from '../components/information/newList.vue'
 import original from '../components/information/original.vue'
@@ -33,6 +34,7 @@ import consultFive from '../components/consulting/consultFive.vue'
 import consultMob from '../components/consulting/consultMob.vue'
 
 import notFondPage from '../components/common/notFondPage.vue'
+
 
 Vue.use(Router)
 
@@ -153,6 +155,9 @@ const routes = [{
     }, {
         path: "/lotus/beijing",
         component: notFondPage
+    }, {
+        path: "/vip",
+        component: vipPage
     }
 ]
 
