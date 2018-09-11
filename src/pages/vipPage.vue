@@ -20,17 +20,17 @@
                            <div class="vipInfo">
                                <p>{{item.vipInfo}}</p>
                            </div>
-                           <a href="javascript:;" class="applyVIP" :style="'background-color:'+item.vipColor">立即开通</a>
+                           <a href="javascript:;" class="applyVIP" :style="'background-color:'+item.vipColor" @click="showPayBox(item.vipName,item.vipLogo)">立即开通</a>
                        </div>
                    </div>
                </div>
             </div>
         </div>
-        <div class="payBox">
+        <div class="payBox animated" :class="currentActiveClass" v-if="isShow">
             <div class="payBox-content">
                 <div class="content-header">
-                    <span class="iconfont icon-huiyuanVIPrenzhengjiaVzhongyaogaodengji"></span>&nbsp;注册会员
-                    <i class="iconfont icon-hao closeBtn"></i>
+                    <span class="iconfont" :class="currentLogo"></span>&nbsp;&nbsp;{{currentName}}
+                    <i class="iconfont icon-hao closeBtn" @click="closePayBox()"></i>
                 </div>
             </div>
         </div>
@@ -70,8 +70,24 @@ export default {
                     vipColor:"#c1a773",
                     vipLogo:"icon-huiyuan"
                 }
-            ]
+            ],
+            isShow:false,
+            currentLogo:"",
+            currentName:"",
+            currentActiveClass:"fadeIn"
         }
+    },
+    methods:{
+      closePayBox(){
+        this.currentActiveClass="fadeOut"
+        this.isShow=false
+      },
+      showPayBox(name,logo){
+        this.isShow=true
+        this.currentLogo=logo
+        this.currentName=name
+        this.currentActiveClass="fadeIn"
+      }
     }
 }
 </script>
@@ -263,15 +279,17 @@ export default {
             top: 0;
             left: 0;
             z-index: 9999;
+            -webkit-animation-duration: .3s;
+            animation-duration: .3s;
         }
         .payBox-content{
             position: fixed;
             width: 650px;
             height: 550px;
             background-color: #FFF;
-            top: 150px;
+            top: 50%;
             left: 50%;
-            transform: translate3d(-50%,0,0);
+            transform: translate3d(-50%,-50%,0);
             .content-header{
                 position: relative;
                 background: #242424;
