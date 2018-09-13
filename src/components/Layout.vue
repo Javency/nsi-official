@@ -52,7 +52,7 @@
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
                                             <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
-                                            <li><router-link :to="{path:'/'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
+                                            <li><router-link :to="{path:'/latest'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">

@@ -32,8 +32,8 @@ module.exports = {
             apply: "Class Apply"
         },
         consult: "Service",
-        ges: "GES",
-        vip: "VIP"
+        ges: "G E S",
+        vip: "V I P"
     },
     // 底部
     layoutFooter: {

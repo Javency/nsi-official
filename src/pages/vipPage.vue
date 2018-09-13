@@ -1,7 +1,7 @@
 <template>
     <div class="vipPage-com">
         <div class="banner text-center">
-            <img src="../assets/img/vip/banner.jpg" alt="">
+            <img src="../assets/img/vip/banner.jpg" alt="" class="vipPageBanner">
         </div>
         <!-- 会员权益简介 -->
         <!-- 媒体部提供 -->
@@ -380,6 +380,11 @@ export default {
         .notAllow:hover{
             opacity: .5 !important
         }
+        .vipPageBanner{
+          @media (max-width: 768px) {
+            min-height: 160px;
+          }
+        }
         .vipCardList{
             padding: 45px 20px;
             margin-bottom: 300px;
@@ -478,7 +483,7 @@ export default {
                 font-size: 60px;
                 color: #c8a06a;
             }
-            
+
         }
         // card
         .vipBanner{
