@@ -498,7 +498,7 @@ export default {
         }
         .card{
             padding: 30px 15px 15px;
-            box-shadow: 0 0 30px #dddddd;;
+            box-shadow: 0 20px 30px #dddddd;;
             border-radius: 4px;
             overflow: hidden;
             border-top: 3px solid #fff;
