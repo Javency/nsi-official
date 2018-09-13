@@ -39,11 +39,11 @@ import notFondPage from '../components/common/notFondPage.vue'
 Vue.use(Router)
 
 const routes = [{
-        path: "/",
+        path: "/index",
         component: IndexPage
     }, {
-        path: "/news",
-        redirect: "/news/latest",
+        path: "/",
+        redirect: "/latest",
         component: InformationPage,
         children: [{
                 path: "latest",

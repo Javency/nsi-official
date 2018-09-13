@@ -3,27 +3,94 @@
         <div class="banner text-center">
             <img src="../assets/img/vip/banner.jpg" alt="">
         </div>
-        <!-- 会员卡 -->
-        <div class="container vipCardList">
+        <!-- 会员权益简介 -->
+        <!-- 媒体部提供 -->
+        <div class="container ptpb30" style="padding-bottom:0">
             <div class="row">
-               <div class="col-md-3 cardBox" v-for="(item,index) in vipList">
-                   <div class="card" :style="'border-top: 3px solid'+ item.vipColor">
-                       <div class="cardContent text-canter">
-                           <!-- <img src="../assets/img/vip/vip01.jpg" alt="" width="200"> -->
-                           <div class="iconfont vipLogo" :class="item.vipLogo" :style="'color:'+item.vipColor"></div>
-                           <h4 class="text-canter vipName">{{item.vipName}}</h4>
-                           <p class="vipInteresse" :style="'color:'+item.vipColor">
-                               <span class="title-left" :class="'title-left0'+index"></span>
-                               {{item.vipInteresse}}
-                               <span class="title-right" :class="'title-right0'+index"></span>
-                           </p>
-                           <div class="vipInfo">
-                               <p>{{item.vipInfo}}</p>
-                           </div>
-                           <a href="javascript:;" class="applyVIP" :style="'background-color:'+item.vipColor" @click="showPayBox(item.vipName,item.vipLogo,item.vipPrice,item.vipDesc,item.vipCard)">立即开通</a>
-                       </div>
-                   </div>
-               </div>
+                <div class="col-md-12">
+                    <h4 class="vip-title">媒体特权</h4>
+                </div>
+                <div class="col-md-12">
+                    <div class="vip-line"></div>
+                </div>
+            </div>
+            <div class="row ptpb30">
+                <div class="col-md-3 col-xs-6" v-for="(item,index) in vipItem" :class="{'pr7M':(index%2==0),'pl7M':(index%2!=0)}">
+                    <a class="vipItem" href="javascript:;">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="vipItem-title">
+                                    <p class="hoverColor">{{item.title}}</p>
+                                    <span class="hoverColor01">{{item.desc}}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <span class="iconfont vipItemLogo hoverColor01" :class="item.logo"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 咨询部 -->
+        <div class="container ptpb30">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="vip-title">咨询特权</h4>
+                </div>
+                <div class="col-md-12">
+                    <div class="vip-line"></div>
+                </div>
+            </div>
+            <div class="row ptpb30">
+                <div class="col-md-3 col-xs-6" v-for="(item,index) in vipItem01" :class="{'pr7M':(index%2==0),'pl7M':(index%2!=0)}">
+                    <a class="vipItem" href="javascript:;">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="vipItem-title">
+                                    <p class="hoverColor">{{item.title}}</p>
+                                    <span class="hoverColor01">{{item.desc}}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <span class="iconfont vipItemLogo hoverColor01" :class="item.logo"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 会员卡 -->
+        <div class="vipBanner">
+            <div class="container vipCardList">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="vipCardTitle">
+                        <h3>加入新学说会员</h3>
+                        <h4>掌握一手资讯、权威数据，运筹帷幄</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row vipCardContainer">
+                    <div class="col-md-3 cardBox" v-for="(item,index) in vipList">
+                        <div class="card" :style="'border-top: 3px solid'+ item.vipColor">
+                            <div class="cardContent text-canter">
+                                <!-- <img src="../assets/img/vip/vip01.jpg" alt="" width="200"> -->
+                                <div class="iconfont vipLogo" :class="item.vipLogo" :style="'color:'+item.vipColor"></div>
+                                <h4 class="text-canter vipName">{{item.vipName}}</h4>
+                                <p class="vipInteresse" :style="'color:'+item.vipColor">
+                                    <span class="title-left" :class="'title-left0'+index"></span>
+                                    {{item.vipInteresse}}
+                                    <span class="title-right" :class="'title-right0'+index"></span>
+                                </p>
+                                <div class="vipInfo">
+                                    <p>{{item.vipInfo}}</p>
+                                </div>
+                                <a href="javascript:;" class="applyVIP" :style="'background-color:'+item.vipColor" @click="showPayBox(item.vipName,item.vipLogo,item.vipPrice,item.vipDesc,item.vipCard)">立即开通</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="payBox animated" :class="currentActiveClass" v-if="isShow">
@@ -159,7 +226,51 @@ export default {
                 job:"",
                 weiChat:"",
                 mail:""
-            }
+            },
+            vipItem:[
+                {
+                    title:"最新动态",
+                    desc:"国际学校内参第一时间看",
+                    logo:"icon-dongtai"
+                },
+                {
+                    title:"学校会议",
+                    desc:"提供国际学校行业的平台",
+                    logo:"icon-huiyi"
+                },
+                {
+                    title:"访校团",
+                    desc:"发掘各所国际学校的亮点",
+                    logo:"icon-xuexiao"
+                },
+                {
+                    title:"研学团",
+                    desc:"促进国内外教育行业人士交流",
+                    logo:"icon-haiwai"
+                }
+            ],
+            vipItem01:[
+                {
+                    title:"市场调研",
+                    desc:"市场环境、市场选址、消费者、竞争者、运营尽职调查",
+                    logo:"icon-shichang"
+                },
+                {
+                    title:"人才服务",
+                    desc:"新学说课堂、北京大学国际学校运营与管理研修项目",
+                    logo:"icon-rencaifuwu"
+                },
+                {
+                    title:"新校投建",
+                    desc:"办学模式、市场定位、课程设计、招生规划、人员配置",
+                    logo:"icon-qiyetouzixiangmuqingkuang"
+                },
+                {
+                    title:"品牌市场",
+                    desc:"品牌建设、品牌推广、市场活动策划、招生流程化",
+                    logo:"icon-pinpai"
+                }
+            ]
         }
     },
     methods:{
@@ -196,7 +307,7 @@ export default {
                 data.append('memberType', vipType);
                 this.axios({
                     method:"post",
-                    url:"http://192.168.0.49:8080/nsi-1.0/members/add_members.do",
+                    url:"/members/add_members.do",
                     data:data
                 }).then((res)=>{
                     this.loading=false
@@ -227,6 +338,12 @@ export default {
 
 <style lang="scss">
     .vipPage-com{
+        @mixin transitionAnimate{
+          -webkit-transition: all 0.3s ease 0s;
+          -ms-transition: all 0.3s ease 0s;
+          -o-transition: all 0.3s ease 0s;
+          transition: all 0.3s ease 0s;
+      }
         padding-top: 52px;
         @media (max-width: 768px) {
             padding-top: 0;
@@ -236,11 +353,25 @@ export default {
             max-width: 100%;
             height: auto;
         }
+        .ptpb30{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
         .pt30{
             padding-top: 30px;
         }
         .pt45{
             padding-top: 45px;
+        }
+        .pl7M{
+            @media (max-width: 768px) {
+                padding-left: 7px;
+            }
+        }
+        .pr7M{
+            @media (max-width: 768px) {
+                padding-right: 7px;
+            }
         }
         .notAllow{
             opacity: .5;
@@ -251,8 +382,113 @@ export default {
         }
         .vipCardList{
             padding: 45px 20px;
+            margin-bottom: 300px;
             @media (min-width: 1200px) {
                 width: 1265px;
+            }
+            @media (max-width: 768px) {
+                display: none;
+            }
+            .vipCardTitle{
+                h3{
+                    font-size: 45px;
+                    font-weight: 500;
+                    color: #2c2c2c;
+                    margin-bottom: 50px;
+                }
+                h4{
+                    font-size: 25px;
+                    color: #333;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        //vip权益
+        .vip-title{
+            line-height: 60px;
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 0;
+        }
+        .vip-line{
+            position: relative;
+            width: 100%;
+            height: 1px;
+            background: #e5e5e5;
+            &::before{
+                display: block;
+                content:"";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 7%;
+                height: 2px;
+                background: #333;
+            }
+        }
+        .vipItem{
+            display:block;
+            width: 100%;
+            border-color: #f2f2f2;
+            background: #f9f9f9;
+            padding: 20px;
+            border-width: 1px;
+            border-style: solid;
+            @include transitionAnimate();
+            &:hover{
+                text-decoration: none;
+                // background: #582d00;
+                background: #1d4c86;
+                .hoverColor{
+                    color: #ffe6bf;
+                }
+                .hoverColor01{
+                    color: #c49955;
+                }
+            }
+            @media (max-width: 768px) {
+                margin-bottom: 10px;
+            }
+            .vipItem-title{
+                p{
+                    line-height: 36px;
+                    font-size: 20px;
+                    color: #582d00;
+                    position: relative;
+                    &::before{
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        width: 50%;
+                        height: 2px;
+                        background-color:#c8a06a;
+                        bottom: -5px;
+                    }
+                }
+                span{
+                    display: inline-block;
+                    line-height: 22px;
+                    font-size: 14px;
+                    color: #c8a06a;
+                    margin-top: 10px;
+                }
+            }
+            .vipItemLogo{
+                font-size: 60px;
+                color: #c8a06a;
+            }
+            
+        }
+        // card
+        .vipBanner{
+            background: url('../assets/img/vip/banner02.jpg');
+            background-position: center 0;
+            background-size: cover;
+            max-height: 430px;
+            .vipCardContainer{
+                position: relative;
+                top: 50px;
             }
         }
         .card{
@@ -261,6 +497,7 @@ export default {
             border-radius: 4px;
             overflow: hidden;
             border-top: 3px solid #fff;
+            background-color: #FFF;
             .cardContent{
                 img{
                     display: inline-block;
@@ -273,7 +510,7 @@ export default {
             // height: 441px;
             border-radius: 4px;
             // border-top: 3px solid #fff;
-            background: #fff;
+            // background: #fff;
             // overflow: hidden;
             text-align: center;
         }

@@ -4,13 +4,13 @@
             <div class="swiper-container swiperM" id="swiperM" ref="swiperM">
                 <div class="swiper-wrapper newsWrapper" ref="newsWrapper">
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" :to="{path:'/'}" exact>{{$t('layoutNav.index')}}</router-link>
+                        <router-link tag="i" :to="{path:'/index'}">{{$t('layoutNav.index')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" :to="{path:'/news'}">{{$t('layoutNav.information')}}</router-link>
+                        <router-link tag="i" :to="{path:'/'}" exact>{{$t('layoutNav.information')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
                          <router-link tag="i" :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link>
@@ -39,9 +39,9 @@
         <transition name="fade">
             <div class="morePanel" v-show="openMore">
                 <ul>
-                    <router-link :to="{path:'/'}" tag="li" exact @click.native="hidePanel(0)">{{$t('layoutNav.index')}}</router-link>
+                    <router-link :to="{path:'/index'}" tag="li" exact @click.native="hidePanel(0)">{{$t('layoutNav.index')}}</router-link>
                     <router-link :to="{path:'/about'}" tag="li" @click.native="hidePanel(1)">{{$t('layoutNav.aboutus')}}</router-link>
-                    <router-link :to="{path:'/news'}" tag="li" @click.native="hidePanel(2)">{{$t('layoutNav.information')}}</router-link>
+                    <router-link :to="{path:'/'}" tag="li" @click.native="hidePanel(2)">{{$t('layoutNav.information')}}</router-link>
                     <router-link :to="{path:'/event'}" tag="li" @click.native="hidePanel(3)">{{$t('layoutNav.event')}}</router-link>
                     <router-link :to="{path:'/lotus'}" tag="li" @click.native="hidePanel(4)">{{$t('layoutNav.lotus')}}</router-link>
                     <router-link :to="{path:'/research'}" tag="li" @click.native="hidePanel(5)">{{$t('layoutNav.research')}}</router-link>

@@ -47,12 +47,12 @@
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-center">
-                                            <li><router-link :to="{path:'/'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
+                                            <li><router-link :to="{path:'/index'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
                                             <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
-                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
+                                            <li><router-link :to="{path:'/'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
