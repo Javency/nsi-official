@@ -160,11 +160,19 @@
                 </div>
             </div>
         </div>
+        <div class="btnsContainer showInMobile" @click="showApplyM">
+            <a href="javascript:;" class="rightBtn btnContainer">立即开通&nbsp;&nbsp;<span>尊享会员权益</span></a>
+        </div>
+        <apply-com v-if="showApplyMFlag" v-on:isClose="isClose" class="toApply animated fadeIn"></apply-com>
     </div>
 </template>
 
 <script>
+import applyCom from '../components/vip/applyBtn'
 export default {
+    components:{
+        applyCom
+    },
     data(){
         return{
             vipList:[
@@ -219,6 +227,7 @@ export default {
             loading: false,
             isAllow:true,
             sendFlag:false,
+            showApplyMFlag:false,
             userInput:{
                 name:"",
                 school:"",
@@ -322,6 +331,12 @@ export default {
                     });
                 })
           }
+      },
+      showApplyM(){
+          this.showApplyMFlag=true
+      },
+      isClose(val){
+          this.showApplyMFlag=val
       }
     },
     updated(){
@@ -347,6 +362,12 @@ export default {
         padding-top: 52px;
         @media (max-width: 768px) {
             padding-top: 0;
+        }
+        .showInMobile{
+            display: none;
+            @media (max-width:768px) {
+                display: block;
+            }
         }
         img{
             display: inline-block;
@@ -774,6 +795,28 @@ export default {
                      &:hover{
                          opacity: .8;
                      }
+                }
+            }
+        }
+        
+        // 立即加入按钮
+        .btnsContainer{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            width: 100%;
+            a{
+                display: block;
+                width: 80%;
+                margin: 0 auto;
+                font-size: 18px;
+                background-color: #203671;
+                color: #f3ce89;
+                border-radius: 25px;
+                // box-shadow: 0 5px 10px #bababa;
+                span{
+                    font-size: 14px;
+                    color:#c1a773;
                 }
             }
         }
