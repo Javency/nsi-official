@@ -20,7 +20,7 @@
                 <a href="javascript:;" class="rightBtn btnContainer" :class="{notAllow:isAllow}" @click="applyForm">立即提交</a>
             </div>
         </div>
-        
+
     </div>
 </template>
 
@@ -155,7 +155,7 @@ export default {
                 width: 100%;
                 border: none;
                 border-bottom: 1px solid #ccc;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
                 font-size: 15px;
                 color: #c1a773;
                 padding-left: 10px;
