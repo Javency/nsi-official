@@ -32,7 +32,8 @@ module.exports = {
             apply: "课程报名"
         },
         consult: "咨询服务",
-        ges: "GES"
+        ges: "G E S",
+        vip: "会 员"
     },
     // 底部
     layoutFooter: {
@@ -51,8 +52,10 @@ module.exports = {
         email01: "Email：",
         email02: "dbarrutia@xinxueshuo.cn",
         address01: "Address：",
-        address02: "Global Education Solutions, 1103 West ",
-        address03: "24th Street, Austin, TX 78705 USA",
+        address02: "Global Education Solutions",
+        address03: "1103 West 24th Street",
+        address04: "Austin, TX 78705",
+        address05: " USA",
         weChat: "微信公众号",
         weibo: "官方微店",
         database: "国际学校在线四库全书",
@@ -93,7 +96,7 @@ module.exports = {
     },
     // 关于ges
     ges: {
-        mission: "Global Education Solutions ",
+        mission: "GES",
         missionContent: "We provide innovative solutions to challenging issues and get meaningful outcomes.",
         missionContent01: "We provide",
         missionContent02: "innovative solutions",
