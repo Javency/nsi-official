@@ -196,7 +196,7 @@ export default {
             position: fixed !important;
             transition: all .1s;
             // right: 200px;
-            width: 19%;
+            width: 17%;
             top: 272px;
         }
         .por{
