@@ -480,6 +480,8 @@ export default {
     }
     .footer{
       color: #FFF;
+      position: relative;
+      z-index: 99;
     }
     .footer>.container{
         padding-left: 0;
@@ -508,6 +510,7 @@ export default {
     }
     .footer-bottom{
       padding: 20px 0;
+      position: relative;
       background-color: #2f2f2f;
       @media (max-width:768px) {
           margin-top: 30px;

@@ -119,9 +119,10 @@ export default {
             margin-bottom: 7.5px;
             padding-bottom: 7.5px;
             border-bottom: 1px solid #eee;
+            position: relative;
             i{
                 position: absolute;
-                left: 10px;
+                left: -3px;
                 color: #366df0;
                 font-weight: 800;
                 font-size: 15px;
