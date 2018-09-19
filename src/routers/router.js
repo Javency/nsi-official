@@ -20,6 +20,7 @@ import historydetail from '../components/information/historyDetail.vue'
 
 import eventLatest from '../components/event/eventLatest.vue'
 import eventDetail from '../components/event/eventDetail.vue'
+import eventLotus from '../components/event/eventLotus.vue'
 import eventApply from '../components/event/eventApply.vue'
 import periodical from '../components/research/periodical.vue'
 import report from '../components/research/report.vue'
@@ -89,6 +90,9 @@ const routes = [{
             {
                 path: 'subject',
                 component: notFondPage
+            }, {
+                path: 'lotus',
+                component: eventLotus
             }, {
                 path: 'apply',
                 component: eventApply
