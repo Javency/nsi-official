@@ -64,6 +64,9 @@
                                                             <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_blank"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;{{$t('layoutNav.eventChild.vis')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
+                                                            <router-link :to="{path:'/event/lotus'}">&nbsp;<span class="iconfont icon-huiyi logoFont"></span>{{$t('layoutNav.eventChild.lotus')}}</router-link>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
                                                             <router-link :to="{path:'/event/subject'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>{{$t('layoutNav.eventChild.subject')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
@@ -252,7 +255,7 @@ export default {
                 country:"English",
                 switchFlag:false
             }],
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),this.$t('layoutNav.eventChild.apply'),this.$t('layoutNav.lotus'),this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.researchChild.apply'),this.$t('layoutNav.consult'),this.$t('layoutNav.vip')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),,this.$t('layoutNav.eventChild.lotus'),this.$t('layoutNav.eventChild.apply'),this.$t('layoutNav.lotus'),this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.researchChild.apply'),this.$t('layoutNav.consult')],
             layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo'),this.$t('layoutFooter.database'),this.$t('layoutFooter.classOnline')]
         }
     },

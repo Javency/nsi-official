@@ -71,9 +71,9 @@
                     <div class="col-md-6">
                         <p><span style="margin-left:35px">{{$t('layoutgesFooter.tel01')}}</span><span style="margin-left:3px;">{{$t('layoutgesFooter.tel02')}}</span></p>
                         <p><span style="margin-left:17px">{{$t('layoutgesFooter.email01')}}</span><span style="margin-left:2px;">{{$t('layoutgesFooter.email02')}}</span></p>
-                        <p>{{$t('layoutgesFooter.address01')}}</P>
-                        <div style="position:relative;top:-30px;left:73px;">
-                            <p>{{$t('layoutgesFooter.address02')}}</p>
+                        <span>{{$t('layoutgesFooter.address01')}}</span>
+                        <span>{{$t('layoutgesFooter.address02')}}</span>
+                        <div style="margin-left: 73px;margin-top: 10px;">
                             <P>{{$t('layoutgesFooter.address03')}}</P>
                             <P>{{$t('layoutgesFooter.address04')}}</P>
                             <P>{{$t('layoutgesFooter.address05')}}</P>
@@ -123,6 +123,7 @@ export default {
 
 <style lang="scss">
     .ges-com{
+        // overflow-x: hidden;
         .img-responsive{  
             display: inline-block;     
         }
@@ -139,6 +140,11 @@ export default {
             }
             p{
                font-family:'华文新魏'; 
+            }
+            span{
+                font-family:'华文新魏'; 
+                font-size:16px;
+                color:#777;
             }
             @media (max-width: 768px) {
                 padding: 30px 0;
