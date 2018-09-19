@@ -8,6 +8,7 @@ import eventPage from "../pages/eventPage.vue"
 import researchPage from '../pages/researchPage.vue'
 import consultingPage from '../pages/consulting.vue'
 import lotusPage from '../pages/lotusPage.vue'
+import vipPage from '../pages/vipPage.vue'
 
 import newestList from '../components/information/newList.vue'
 import original from '../components/information/original.vue'
@@ -25,6 +26,7 @@ import eventApply from '../components/event/eventApply.vue'
 import periodical from '../components/research/periodical.vue'
 import report from '../components/research/report.vue'
 import researchApply from '../components/research/researchApply.vue'
+import researchIndex from '../components/research/researchIndex.vue'
 
 import consultOne from '../components/consulting/consultOne.vue'
 import consultTwo from '../components/consulting/consultTwo.vue'
@@ -35,14 +37,15 @@ import consultMob from '../components/consulting/consultMob.vue'
 
 import notFondPage from '../components/common/notFondPage.vue'
 
+
 Vue.use(Router)
 
 const routes = [{
-        path: "/",
+        path: "/index",
         component: IndexPage
     }, {
-        path: "/news",
-        redirect: "/news/latest",
+        path: "/",
+        redirect: "/latest",
         component: InformationPage,
         children: [{
                 path: "latest",
@@ -111,20 +114,25 @@ const routes = [{
     }, {
         path: "/research",
         component: researchPage,
-        redirect: '/research/periodical',
+        redirect: '/research/info',
         children: [{
-            path: 'periodical',
-            component: periodical
-        }, {
-            path: 'report',
-            component: report
-        }, {
-            path: 'pisom',
-            component: notFondPage
-        }, {
-            path: 'apply',
-            component: researchApply
-        }]
+                path: 'info',
+                component: researchIndex
+            },
+            {
+                path: 'periodical',
+                component: periodical
+            }, {
+                path: 'report',
+                component: report
+            }, {
+                path: 'pisom',
+                component: notFondPage
+            }, {
+                path: 'apply',
+                component: researchApply
+            }
+        ]
     }, {
         path: "/consulting",
         component: consultingPage,
@@ -157,6 +165,9 @@ const routes = [{
     }, {
         path: "/lotus/beijing",
         component: notFondPage
+    }, {
+        path: "/vip",
+        component: vipPage
     }
 ]
 

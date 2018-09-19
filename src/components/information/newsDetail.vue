@@ -17,6 +17,11 @@
                     </div>
                     <div v-html="detail.articleContent" class="news-article-content"></div>
                     <div class="cut-off-line text-center"><span class="cut-off-text">● END ●</span></div>
+                    <div class="bottomAD">
+                        <a :href="bottomADHref" target="_blank">
+                            <img alt="" :src="bottomAD">
+                        </a>
+                    </div>
                     <div class="statement">
                         <p class="nsi-statement" v-if="detail.articleSourceTitle=='新学说'">本文系<a href="https://www.xinxueshuo.cn" target="_blank">{{detail.articleSourceTitle}}</a>原创文章，转载须经授权，违者将依法追究责任。</p>
                         <p class="nsi-statement" v-else>本文系<a href="https://www.xinxueshuo.cn" target="_blank"> 新学说 </a>转载文章，来源 <a :href="detail.articleSourceAdress" target="_blank">{{detail.articleSourceTitle}}</a></p>
@@ -33,8 +38,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 por">
-                    <div class="slideItem">
+                <div class="col-md-3 por" >
+                    <div class="slideItem" :class="{'slideIsFixed':isPC}" id="slideContent">
                         <div class="slide-ad">
                             <slide-ad/>
                         </div>
@@ -73,7 +78,10 @@ export default {
                   imgUrl:"",
                   href:window.location.href,
                   desc:""
-              }
+              },
+            isPC:true,
+            bottomAD:"",
+            bottomADHref:""
         }
     },
     methods:{
@@ -119,9 +127,42 @@ export default {
                   wxShareInit.wxConfig(res)
                   wxShareInit.wxReady(this.wxShareInfo)
               })
+        },
+        // slide文章fixed
+        slideHandle(){
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            var slideContentTop = document.querySelector('#slideContent').offsetTop
+            if(scrollTop>0){
+            slideContentTop = 272 - Number(scrollTop);
+            if(slideContentTop<=0){
+              document.querySelector('#slideContent').style.top ='80px';
+            }else{
+              document.querySelector('#slideContent').style.top = slideContentTop+'px';
+            }
+          }else{
+            document.querySelector('#slideContent').style.top = '272px';
+          }
+        },
+        getBottomAD(){
+            this.axios({
+                methods:"get",
+                url:"/article/getArticleAd.do",
+                params:{
+                    articleId:1,
+                    typeName:"文章页底部广告位"
+                }
+            }).then((res)=>{
+                // console.log(res.data.data[0])
+                this.bottomAD=res.data.data[0].imgurl
+                this.bottomADHref=res.data.data[0].clickurl
+            })
         }
     },
     created(){
+        if(window.innerWidth<1024){
+            this.isPC=false
+            window.removeEventListener('scroll',this.slideHandle)
+        }
         this.fetchDate();
     },
     beforeMount(){
@@ -129,6 +170,14 @@ export default {
         if(wxShareInit.isWeixinBrowser()){
             setTimeout(this.wxInit,500)
         }
+    },
+    mounted(){
+        if(this.isPC){
+            window.addEventListener('scroll', this.slideHandle)
+        }else{
+            window.removeEventListener('scroll',this.slideHandle)
+        }
+        this.getBottomAD()
     },
     destroyed(){
         document.title="新学说 | 国际学校多边服务平台"
@@ -143,6 +192,13 @@ export default {
     .newsDetail-com{
         // padding: 0 35px;
         padding-top: 52px;
+        .slideIsFixed{
+            position: fixed !important;
+            transition: all .1s;
+            // right: 200px;
+            width: 17%;
+            top: 272px;
+        }
         .por{
            position: relative; 
         }
@@ -229,6 +285,9 @@ export default {
                     margin-bottom: 20px;
                 }
             }
+        }
+        .bottomAD{
+            padding-bottom: 30px;
         }
         .slide-ad{
             @media (max-width: 768px) {

@@ -47,12 +47,12 @@
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-center">
-                                            <li><router-link :to="{path:'/'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
+                                            <li><router-link :to="{path:'/index'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
                                             <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
-                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
+                                            <li><router-link :to="{path:'/latest'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
@@ -75,7 +75,7 @@
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
                                             </li>
-                                            <li class="hasSubmenu">
+                                            <!-- <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
                                                         <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotus')}}<span class="caret"></span></a>
@@ -92,7 +92,7 @@
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
-                                            </li>
+                                            </li> -->
                                             <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
@@ -120,6 +120,9 @@
                                             <li><router-link :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/ges'}">{{$t('layoutNav.ges')}}</router-link>
+                                            </li>
+                                            <li class="dropdown">
+                                                <router-link :to="{path:'/vip'}">{{$t('layoutNav.vip')}}</router-link>
                                             </li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
@@ -480,6 +483,8 @@ export default {
     }
     .footer{
       color: #FFF;
+      position: relative;
+      z-index: 99;
     }
     .footer>.container{
         padding-left: 0;
@@ -508,6 +513,7 @@ export default {
     }
     .footer-bottom{
       padding: 20px 0;
+      position: relative;
       background-color: #2f2f2f;
       @media (max-width:768px) {
           margin-top: 30px;

@@ -20,9 +20,10 @@ import Swiper from 'swiper'
 export default {
     data () {
       return {
-          bannerInfo:[{
-              coverImage:require('../../assets/img/event/eventBanner01.jpg')
-          },
+          bannerInfo:[
+        //   {
+        //       coverImage:require('../../assets/img/event/eventBanner01.jpg')
+        //   },
           {
               coverImage:require('../../assets/img/event/eventBanner03.jpg')
           }]
