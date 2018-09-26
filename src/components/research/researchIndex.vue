@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="Item item03">
-                        <h3 class="text-center item-title">新学说<span>国际教育研究院</span></h3>
+                        <h3 class="text-center item-title">新学说<span>在线课堂</span></h3>
                         <p class="text-cneter item-apply"><a href="http://class.xinxueshuo.cn/nsi-class/" target="_blank">立即前往</a></p>
                     </div>
                     <div class="row">
@@ -69,12 +69,12 @@
             <div class="row pt30">
                 <div class="col-md-3 col-xs-6 text-center reportlist">
                     <a href="javascript:;">
-                        <img src="../../assets/img/research/report01.jpg" alt="" width="200">
+                        <img src="../../assets/img/research/report02.jpg" alt="" width="220">
                     </a>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center reportlist reportItem">
                     <a href="javascript:;">
-                        <img src="../../assets/img/research/report02.jpg" alt="" width="220">
+                        <img src="../../assets/img/research/report01.jpg" alt="" width="200">
                     </a>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center reportlist">
@@ -121,9 +121,12 @@
                     <p class="text-left class-time">开课时间：2018-10-23</p>
                 </div>
                 <div class="col-md-3 col-xs-6 reportlist">
-                    <h5 class="text-center class-title">关于职能课程</h5>
-                    <p class="class-info">在国际教育行业内，不仅需要优秀的教学管理，对于市场招生环节的重视，更是关系到学校品牌和生源规模的根本。</p>
-                    <p class="text-center class-apply"><a href="http://class.xinxueshuo.cn/nsi-class/pages/mac.html" target="_blank">立即报名</a></p>
+                    <a href="http://class.xinxueshuo.cn/nsi-class/pages/mac.html" target="_blank">
+                        <img src="../../assets/img/research/subItem03.jpg" alt="">
+                    </a>
+                    <p class="subItem-title">公共关系</p>
+                    <p class="subItem-desc">通过有效沟通策略实现招生转化；构建健康牢固的家校关系 </p>
+                    <p class="text-left class-time">开课时间：2018-11-20</p>
                 </div>
             </div>
             <!-- 培训课程 END-->
