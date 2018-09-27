@@ -69,24 +69,29 @@
             <div class="row pt30">
                 <div class="col-md-3 col-xs-6 text-center reportlist">
                     <a href="javascript:;">
-                        <img src="../../assets/img/research/report02.jpg" alt="" width="220">
-                    </a>
-                </div>
-                <div class="col-md-3 col-xs-6 text-center reportlist reportItem">
-                    <a href="javascript:;">
-                        <img src="../../assets/img/research/report01.jpg" alt="" width="200">
+                        <img src="../../assets/img/research/report04.jpg" alt="" class="reportImg">
                     </a>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center reportlist">
                     <a href="javascript:;">
-                        <img src="../../assets/img/research/report03.jpg" alt="" width="185">
+                        <img src="../../assets/img/research/report02.jpg" alt="" class="reportImg">
                     </a>
                 </div>
-                <div class="col-md-3 col-xs-6 reportlist">
+                <div class="col-md-3 col-xs-6 text-center reportlist reportItem">
+                    <a href="javascript:;">
+                        <img src="../../assets/img/research/report01.jpg" alt="" class="reportImg">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 text-center reportlist">
+                    <a href="javascript:;">
+                        <img src="../../assets/img/research/report03.jpg" alt="" class="reportImg">
+                    </a>
+                </div>
+                <!-- <div class="col-md-3 col-xs-6 reportlist">
                     <h5 class="text-center class-title">关于研究院</h5>
                     <p class="class-info">新学说研究院是包括行业专家共同研究编撰国际学校内参，国际学校发展报告，行业研究报告，国际学校职能课程，国际学校研修班等</p>
                     <p class="text-center class-apply"><router-link tag="a" :to="{path:'/research/periodical'}">资源下载</router-link></p>
-                </div>
+                </div> -->
             </div>
             <!-- 研究成果 END-->
             <!-- 培训课程 -->
@@ -122,7 +127,7 @@
                 </div>
                 <div class="col-md-3 col-xs-6 reportlist">
                     <a href="http://class.xinxueshuo.cn/nsi-class/pages/mac.html" target="_blank">
-                        <img src="../../assets/img/research/subItem03.jpg" alt="">
+                        <img src="../../assets/img/research/subItem06.jpg" alt="">
                     </a>
                     <p class="subItem-title">公共关系</p>
                     <p class="subItem-desc">通过有效沟通策略实现招生转化；构建健康牢固的家校关系 </p>
@@ -233,6 +238,9 @@ export default {
                }
            }
        }
+       .reportImg{
+           box-shadow: 0 5px 20px rgb(190, 190, 190);
+       }
        .item01{
            background-image: url('../../assets/img/research/item01.png')
        }
@@ -290,9 +298,9 @@ export default {
         }
         .reportItem{
             img{
-                   @media (max-width: 768px) {
-                        display: inline-block;
-                        height: 240px;
+                @media (max-width: 768px) {
+                    display: inline-block;
+                    height: 240px;
                 }
             }
         }
