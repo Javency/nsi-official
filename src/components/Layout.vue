@@ -20,6 +20,14 @@
                                         </el-dropdown-menu>
                                     </el-dropdown>
                                 </div>
+                                <!-- 国庆 -->
+                                <div class="nationDay">
+                                    <img src="../assets/img/NationalDay/tiananmen.png" alt="">
+                                </div>
+                                <div class="nationDayFont">
+                                    <img src="../assets/img/NationalDay/font.png" alt="" width="300">
+                                </div>
+                                <!-- 国庆 END-->
                             </div>
                         </div>
                     </div>
@@ -303,6 +311,12 @@ export default {
     $official-footerColor:#2c6daf;
     $official-footerFontColor:#699bda;
     $official-otherColor:#8fb8fb;
+    // nationalDay
+    $nationDay-Color:#ce1922;
+    $nationDay-hoverColor:#a01f24;
+    $nationDay-footerColor:#ce343c;
+    $nationDay-footerFontColor:#db7378;
+    $nationDay-otherColor:#d3656a;
     .fontLogo{
         font-size: 25px !important;
         position: relative;
@@ -310,6 +324,25 @@ export default {
         // margin-right: 10px;
     }
     .layout-com{
+        // 国庆
+        .header{
+            background-image: url('../assets/img/NationalDay/body-bg.png');
+            @media (max-width: 768px) {
+                 background-image: none;
+            }
+        }
+        .nationDay{
+            position: absolute;
+            right: 155px;
+            top: 9px;
+        }
+        .nationDayFont{
+            position: absolute;
+            right: 110px;
+            top: 70px;
+            z-index: 999999;
+        }
+        // 国庆end
       .slide-fade-enter-active {
         transition: all .5s ease;
       }
@@ -380,15 +413,18 @@ export default {
     }
 
     .nav-bg{
-        background-color: $official-color;
+        // background-color: $official-color;
+        background-image: url('../assets/img/NationalDay/nav-bg.jpg');
         z-index: 999;
         position: relative;
         width: 100%;
     }
     .navbar{
         margin-bottom: 0;
-        background-color: $official-color;
-        border-color: $official-color;
+        // background-color: $official-color;
+        background-image: url('../assets/img/NationalDay/nav-bg.jpg');
+        // border-color: $official-color;
+        border-color: $nationDay-Color;
     }
     .navbar-default .navbar-nav li a{
         color: #fff;
@@ -401,15 +437,15 @@ export default {
     }
     .navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:focus, .navbar-default .navbar-nav .active a:hover {
         color: #fff;
-        background-color: $official-hoverColor;
+        background-color: $nationDay-hoverColor;
     }
     .navbar-default .navbar-nav li a:focus, .navbar-default .navbar-nav li a:hover {
         color: #fff;
-        background-color: $official-hoverColor;
+        background-color: $nationDay-hoverColor;
     }
     .navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:focus, .navbar-default .navbar-nav .open a:hover {
         color: #fff;
-        background-color: $official-hoverColor;
+        background-color: $nationDay-hoverColor;
     }
     .navbar-default .navbar-toggle {
         border-color: #fff;
@@ -479,7 +515,7 @@ export default {
     /* footer */
     .footer{
       padding: 20px 0;
-      background-color: $official-footerColor;
+      background-color: $nationDay-footerColor;
     }
     .footer{
       color: #FFF;
@@ -508,7 +544,7 @@ export default {
     }
     .contact-info>li{
       line-height: 2;
-      color: $official-footerFontColor;
+      color: $nationDay-footerFontColor;
     //   font-family: Arial, Helvetica, sans-serif
     }
     .footer-bottom{
@@ -543,10 +579,10 @@ export default {
     .aboutUs{
         font-weight: 700;
         margin: 20px 0 10px 0;
-        color: $official-otherColor;
+        color: $nationDay-otherColor;
     }
    .aboutUs-info>li>a{
-        color: $official-footerFontColor;
+        color: $nationDay-footerFontColor;
     }
     .aboutUs-info{
         padding-left: 0;

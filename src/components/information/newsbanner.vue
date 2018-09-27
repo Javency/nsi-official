@@ -17,6 +17,14 @@
                          <div class="slide-bar">
                             <p class="slidebar2"><span class="bigWord">{{$t('news.newsOne')}}</span><br/><span>{{$t('news.newsTwo')}}</span><br/><span>{{$t('news.newsThree')}}</span><br/><span>{{$t('news.newsFour')}}</span></p>
                         </div>
+                        <!-- 国庆 -->
+                        <div class="sidaiContainer-01">
+                            <img src="../../assets/img/NationalDay/sidai01.png" alt="" width="700">
+                        </div>
+                        <div class="sidaiContainer-02">
+                            <img src="../../assets/img/NationalDay/sidai02.png" alt="" width="400">
+                        </div>
+                        <!-- 国庆 END-->
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -105,8 +113,22 @@ export default {
 
 <style lang="scss">
      $official-color: #20528f;
+     $nationDay-Color:#ce1922;
+     $nationDay-hoverColor:#c44d53;
      $newsBanner-bg:linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
     .newsbanner-com{
+        // 国庆
+        .sidaiContainer-01{
+            position: absolute;
+            left: -216px;
+            top: 110px; 
+        }
+        .sidaiContainer-02{
+            position: absolute;
+            right: -280px;
+            bottom: -55px;
+        }
+        // 国庆END
         .newsPic{
             @media (max-width: 768px) {
                 padding-left: 0;
@@ -162,6 +184,8 @@ export default {
                 align-items: flex-end;
                 justify-content: center;
                 flex-direction: column;
+                z-index: 999;
+                text-shadow: 0 5px 5px rgb(56, 56, 56);
                 .slidebar1{
                     font-size: 14px;
                     color: #999999;
@@ -179,7 +203,8 @@ export default {
                     margin-bottom: 0;
                     span.bigWord{
                       display: inline-block;
-                      color: $official-color;
+                    //   color: $official-color;
+                      color: $nationDay-Color;
                       font-size: 45px;
                       margin-bottom: 15px;
                     }
@@ -204,7 +229,8 @@ export default {
                 transition: all .3s;
                 &:hover{
                     text-decoration: none;
-                    color: #44638a;
+                    // color: #44638a;
+                    color: $nationDay-hoverColor;
                 }
                 @media (max-width: 768px) {
                     font-size: 22px;
