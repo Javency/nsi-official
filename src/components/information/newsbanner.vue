@@ -1,7 +1,7 @@
 <template>
     <div class="newsbanner-com">
         <div class="container">
-            <div class="row">
+            <div class="row" style="position:relative">
                 <div class="col-md-8 newsPic">
                     <div class="newsbanner">
                         <div class="swiper-container" id="newsbanner">
@@ -18,12 +18,12 @@
                             <p class="slidebar2"><span class="bigWord">{{$t('news.newsOne')}}</span><br/><span>{{$t('news.newsTwo')}}</span><br/><span>{{$t('news.newsThree')}}</span><br/><span>{{$t('news.newsFour')}}</span></p>
                         </div>
                         <!-- 国庆 -->
-                        <div class="sidaiContainer-01">
+                        <!-- <div class="sidaiContainer-01">
                             <img src="../../assets/img/NationalDay/sidai01.png" alt="" width="700">
                         </div>
                         <div class="sidaiContainer-02">
                             <img src="../../assets/img/NationalDay/sidai02.png" alt="" width="400">
-                        </div>
+                        </div> -->
                         <!-- 国庆 END-->
                     </div>
                 </div>
@@ -34,6 +34,11 @@
                         <a href="javascript:;" @click="toDetail(bannerInfos.articleUrl)" class="news-detail">阅读全文</a>
                     </div>
                 </div>
+                <!-- 国庆 -->
+                <div class="tiananmenCloud hideInmobile">
+                  <img src="../../assets/img/NationalDay/other.png" alt="" width="350">
+                </div>
+                <!-- 国庆 END-->
             </div>
         </div>
     </div>
@@ -118,15 +123,26 @@ export default {
      $newsBanner-bg:linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
     .newsbanner-com{
         // 国庆
+        .hideInmobile{
+          display: block;
+          @media (max-width: 768px) {
+              display: none;
+          }
+        }
         .sidaiContainer-01{
             position: absolute;
             left: -216px;
-            top: 110px; 
+            top: 110px;
         }
         .sidaiContainer-02{
             position: absolute;
             right: -280px;
-            bottom: -55px;
+            bottom: -70px;
+        }
+        .tiananmenCloud{
+          position: absolute;
+          right: 0;
+          bottom: 0;
         }
         // 国庆END
         .newsPic{
@@ -185,7 +201,6 @@ export default {
                 justify-content: center;
                 flex-direction: column;
                 z-index: 999;
-                text-shadow: 0 5px 5px rgb(56, 56, 56);
                 .slidebar1{
                     font-size: 14px;
                     color: #999999;
@@ -221,6 +236,8 @@ export default {
         }
         // 新闻标题
         .newsInfo{
+            position: relative;
+            z-index: 999;
             .newsInfo-title{
                 color: #333;
                 font-weight: 700;

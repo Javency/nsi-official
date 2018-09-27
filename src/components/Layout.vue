@@ -21,10 +21,10 @@
                                     </el-dropdown>
                                 </div>
                                 <!-- 国庆 -->
-                                <div class="nationDay">
+                                <div class="nationDay hideInM">
                                     <img src="../assets/img/NationalDay/tiananmen.png" alt="">
                                 </div>
-                                <div class="nationDayFont">
+                                <div class="nationDayFont hideInM">
                                     <img src="../assets/img/NationalDay/font.png" alt="" width="300">
                                 </div>
                                 <!-- 国庆 END-->
@@ -324,6 +324,12 @@ export default {
         // margin-right: 10px;
     }
     .layout-com{
+      .hideInM{
+        display: block;
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
         // 国庆
         .header{
             background-image: url('../assets/img/NationalDay/body-bg.png');
@@ -477,7 +483,7 @@ export default {
     .el-dropdown-menu a{
         display: block;
         text-decoration: none !important;
-        color: #004f94;
+        color: $nationDay-footerColor;
         font-weight: 600;
     }
     /* 选择语言*/
