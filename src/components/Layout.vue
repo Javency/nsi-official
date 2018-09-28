@@ -332,7 +332,9 @@ export default {
       }
         // 国庆
         .header{
-            background-image: url('../assets/img/NationalDay/body-bg.png');
+            background-image: url('../assets/img/NationalDay/body-bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
             @media (max-width: 768px) {
                  background-image: none;
             }

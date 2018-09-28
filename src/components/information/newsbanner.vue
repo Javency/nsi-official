@@ -35,9 +35,9 @@
                     </div>
                 </div>
                 <!-- 国庆 -->
-                <div class="tiananmenCloud hideInmobile">
+                <!-- <div class="tiananmenCloud hideInmobile">
                   <img src="../../assets/img/NationalDay/other.png" alt="" width="350">
-                </div>
+                </div> -->
                 <!-- 国庆 END-->
             </div>
         </div>

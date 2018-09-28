@@ -5,8 +5,8 @@
                 <div class="col-md-3 list" v-for="(list,index) in newsList" :key="index">
                     <div class="list-box">
                         <div class="list-img-box">
-                            <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a>
-                            <!-- <a :href="list.articleUrl" class="img-box" target="_blank"><img :src="list.coverImage" alt="" height="270" ><i class="articleType">{{list.articleCat|articleType}}</i></a> -->
+                            <!-- <a href="javascript:;" class="img-box"><img :src="list.coverImage" alt="" height="270" @click="toDetail(list.id)"><i class="articleType">{{list.articleCat|articleType}}</i></a> -->
+                            <a :href="list.articleUrl" class="img-box" target="_blank"><img :src="list.coverImage" alt="" height="270" ><i class="articleType">{{list.articleCat|articleType}}</i></a>
                         </div>
                         <div class="list-content-box">
                             <!-- <h3><a href="javascript:;" :title="list.title" @click="toDetail(list.id)">{{list.title}}</a></h3> -->
