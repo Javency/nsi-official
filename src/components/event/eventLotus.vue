@@ -77,7 +77,6 @@
 </template>
 
 <script>
-import '../../assets/iconfont/iconfont.css'
 export default {
     data(){
         return{
