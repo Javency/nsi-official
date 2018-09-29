@@ -114,7 +114,8 @@
     import newsInfoM from '../components/index/newsInfo-M.vue'
     import recentEvent from '../components/index/recentEvent-M.vue'
     import bannerM from '../components/index/banner-M.vue'
-    import wxShareInit from '../assets/js/weChatShare.js'
+    // import wxShareInit from '../assets/js/weChatShare.js'
+    // import wxShareInit from '../assets/js/weChatShare01.js'
     import nsiProduct from '../components/index/nsiProduct.vue'
     var currentSerialNum=0;
     export default {
@@ -151,22 +152,23 @@
                 window.open(routeData.href, '_blank');
             },
             // 微信分享
-            wxInit(){
-              this.axios({
-                  method:"get",
-                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
-                  params:{
-                      URL: window.location.href
-                  }
-              }).then((res)=>{
-                  wxShareInit.wxConfig(res)
-                  wxShareInit.wxReady(this.wxShareInfo)
-              })
-          }
+        //     wxInit(){
+        //       this.axios({
+        //           method:"get",
+        //           url:'/Admin_api?whereFrom=WeChatShare&Callback=',
+        //           params:{
+        //               URL: window.location.href
+        //           }
+        //       }).then((res)=>{
+        //           wxShareInit.wxConfig(res)
+        //           wxShareInit.wxReady(this.wxShareInfo)
+        //       })
+        //   }
         },
         beforeMount(){
+            // 微信分享
             if(wxShareInit.isWeixinBrowser()){
-                setTimeout(this.wxInit,500)
+                setTimeout(wxShareInit.wxReady(this.wxShareInfo),500)
             }
         },
         mounted(){
