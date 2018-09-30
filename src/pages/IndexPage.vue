@@ -115,7 +115,7 @@
     import recentEvent from '../components/index/recentEvent-M.vue'
     import bannerM from '../components/index/banner-M.vue'
     // import wxShareInit from '../assets/js/weChatShare.js'
-    // import wxShareInit from '../assets/js/weChatShare01.js'
+    import wxShareInit from '../assets/js/weChatShare01.js'
     import nsiProduct from '../components/index/nsiProduct.vue'
     var currentSerialNum=0;
     export default {

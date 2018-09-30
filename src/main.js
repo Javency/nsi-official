@@ -19,6 +19,9 @@ Vue.config.productionTip = false
 // 罗震
 // axios.defaults.baseURL = "http://192.168.0.191:8080/nsi-1.0"
 
+// 李岩
+// axios.defaults.baseURL = "http://192.168.0.144:8080/nsi-1.0"
+
 // 生产
 axios.defaults.baseURL = "https://data.xinxueshuo.cn/nsi-1.0"
 
@@ -27,7 +30,7 @@ Vue.prototype.axios = axios;
 
 // i18n
 const i18n = new VueI18n({
-    locale: 'zh', // 语言标识
+    locale: 'en', // 语言标识
     messages: {
         'zh': require('./lang/zh'),
         'en': require('./lang/en')

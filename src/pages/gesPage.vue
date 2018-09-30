@@ -9,7 +9,10 @@
                             <h3 class="text-center">{{$t('ges.missionContent')}}</h3>
                        </div>
                        <div class="mol text-left">
-                            <h4>{{$t('ges.mission')}}</h4>
+                            <div class="team-img-bg">
+                                <img src="../assets/img/about/gesLogo.png" alt="" class="team-img img-responsive" width="100">
+                            </div>
+                            <!-- <h4>{{$t('ges.mission')}}</h4> -->
                             <h3>{{$t('ges.missionContent01')}}</h3>
                             <h3>{{$t('ges.missionContent02')}}</h3>
                             <h3>{{$t('ges.missionContent03')}}</h3>
@@ -25,7 +28,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div>
-                            <div class="text-center">
+                            <div class="text-center hideInM">
                                 <img src="../assets/img/about/gesLogo.png" alt="" class="team-img img-responsive" width="100">
                             </div>
                             <h3 class="text-center" style="margin-top:40px;">{{$t('ges.aboutNSI')}}</h3>
@@ -124,6 +127,12 @@ export default {
 <style lang="scss">
     .ges-com{
         // overflow-x: hidden;
+        .hideInM{
+            display: block;
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
         .img-responsive{  
             display: inline-block;     
         }
@@ -250,6 +259,11 @@ export default {
                     line-height: 2
                 }
             }
+        }
+        .team-img-bg{
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #FFF;
         }
         .team-intro{
             max-width: 900px;

@@ -44,8 +44,8 @@ const routes = [{
         path: "/index",
         component: IndexPage
     }, {
-        path: "/",
-        redirect: "/latest",
+        path: "/news",
+        redirect: "/news/latest",
         component: InformationPage,
         children: [{
                 path: "latest",
@@ -109,7 +109,7 @@ const routes = [{
         path: "/about",
         component: aboutusPage
     }, {
-        path: "/ges",
+        path: "/",
         component: gesPage
     }, {
         path: "/research",

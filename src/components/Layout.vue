@@ -52,7 +52,7 @@
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
                                             <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
-                                            <li><router-link :to="{path:'/latest'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
+                                            <li><router-link :to="{path:'/news/latest'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
@@ -119,7 +119,7 @@
                                             </li>
                                             <li><router-link :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link></li>
                                             <li class="dropdown">
-                                                <router-link :to="{path:'/ges'}">{{$t('layoutNav.ges')}}</router-link>
+                                                <router-link :to="{path:'/'}">{{$t('layoutNav.ges')}}</router-link>
                                             </li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/vip'}">{{$t('layoutNav.vip')}}</router-link>
@@ -242,8 +242,8 @@ export default {
         return{
             searchBarFixed:false,
             switchFlag:true,
-            logoActive:require("../assets/img/layoutImg/zh.png"),
-            countryActive:"中文",
+            logoActive:require("../assets/img/layoutImg/en.png"),
+            countryActive:"English",
             logos:[{
                 lang:"zh",
                 logoImg:require("../assets/img/layoutImg/zh.png"),

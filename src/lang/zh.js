@@ -99,7 +99,7 @@ module.exports = {
         tel01: "Tel：",
         tel02: "+1 (512) 203-3185",
         email01: "Email：",
-        email02: "dbarrutia@xinxueshuo.cn",
+        email02: "info@gesnsi.com",
         address01: "Address：",
         address02: "Global Education Solutions",
         address03: "1103 West 24th Street",
