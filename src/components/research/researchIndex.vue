@@ -43,17 +43,17 @@
                 </div>
                 <div class="col-md-4">
                     <div class="Item item03">
-                        <h3 class="text-center item-title">新学说<span>在线课堂</span></h3>
+                        <h3 class="text-center item-title">新学说<span>国际学校在线课堂</span></h3>
                         <p class="text-cneter item-apply"><a href="http://class.xinxueshuo.cn/nsi-class/" target="_blank">立即前往</a></p>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xs-6 subItem pr7">
-                            <img src="../../assets/img/research/subItem04.jpg" alt="">
+                            <img src="../../assets/img/research/subItem08.png" alt="">
                             <p class="subItem-title">国际学校HR管理课程</p>
                             <p class="subItem-desc">提升学校在市场竞争中的识别度，进而实施有效的信息传播。</p>
                         </div>
                         <div class="col-md-6 col-xs-6 subItem pl7">
-                            <img src="../../assets/img/research/subItem05.jpg" alt="">
+                            <img src="../../assets/img/research/subItem07.jpg" alt="">
                             <p class="subItem-title">国际学校市场招生课程</p>
                             <p class="subItem-desc">一站式解决国际化学校运营各层面人才职业培训和能力提升</p>
                         </div>
@@ -248,7 +248,7 @@ export default {
            background-image: url('../../assets/img/research/item02.png')
        }
        .item03{
-           background-image: url('../../assets/img/research/item03.png')
+           background-image: url('../../assets/img/research/researchM04.png')
        }
        .subItem{
            img{
@@ -256,11 +256,11 @@ export default {
            }
        }
        .subItem-title{
-               font-weight: 700;
-               margin-top: 10px;
-               color: #202020;
-               margin-bottom: 0;
-               font-size: 15px;
+            font-weight: 700;
+            margin-top: 10px;
+            color: #202020;
+            margin-bottom: 0;
+            font-size: 15px;
         }
         .subItem-desc{
             line-height: 25px;
