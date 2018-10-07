@@ -7,7 +7,7 @@
                         <div class="swiper-container" id="newsbanner">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
-                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.articleUrl)">
+                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.id)">
                                 </div>
                             </div>
                             <div class="swiper-pagination"  slot="pagination"></div>
@@ -29,9 +29,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
-                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.articleUrl)">{{bannerInfos.title}}</a></h3>
+                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.id)">{{bannerInfos.title}}</a></h3>
                         <p class="newsInfo-desc">{{bannerInfos.summary}}</p>
-                        <a href="javascript:;" @click="toDetail(bannerInfos.articleUrl)" class="news-detail">阅读全文</a>
+                        <a href="javascript:;" @click="toDetail(bannerInfos.id)" class="news-detail">阅读全文</a>
                     </div>
                 </div>
                 <!-- 国庆 -->
@@ -57,10 +57,11 @@ export default {
       }
     },
     methods:{
-        toDetail(href){
+        toDetail(id){
             // console.log(id)
-            // let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
-            window.open(href, '_blank');
+            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            window.open(routeData.href, '_blank');
+            // window.open(href, '_blank');
         },
         getBannerInfo(){
             const newsBanner = new URLSearchParams();
