@@ -7,7 +7,7 @@
                         <div class="swiper-container" id="newsbanner">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item">
-                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.id)">
+                                    <img :src="bannerInfos.coverImage" alt="" class="img-responsive" @click="toDetail(bannerInfos.articleUrl)">
                                 </div>
                             </div>
                             <div class="swiper-pagination"  slot="pagination"></div>
@@ -17,28 +17,15 @@
                          <div class="slide-bar">
                             <p class="slidebar2"><span class="bigWord">{{$t('news.newsOne')}}</span><br/><span>{{$t('news.newsTwo')}}</span><br/><span>{{$t('news.newsThree')}}</span><br/><span>{{$t('news.newsFour')}}</span></p>
                         </div>
-                        <!-- 国庆 -->
-                        <!-- <div class="sidaiContainer-01">
-                            <img src="../../assets/img/NationalDay/sidai01.png" alt="" width="700">
-                        </div>
-                        <div class="sidaiContainer-02">
-                            <img src="../../assets/img/NationalDay/sidai02.png" alt="" width="400">
-                        </div> -->
-                        <!-- 国庆 END-->
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
-                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.id)">{{bannerInfos.title}}</a></h3>
+                        <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.articleUrl)">{{bannerInfos.title}}</a></h3>
                         <p class="newsInfo-desc">{{bannerInfos.summary}}</p>
-                        <a href="javascript:;" @click="toDetail(bannerInfos.id)" class="news-detail">阅读全文</a>
+                        <a href="javascript:;" @click="toDetail(bannerInfos.articleUrl)" class="news-detail">阅读全文</a>
                     </div>
                 </div>
-                <!-- 国庆 -->
-                <!-- <div class="tiananmenCloud hideInmobile">
-                  <img src="../../assets/img/NationalDay/other.png" alt="" width="350">
-                </div> -->
-                <!-- 国庆 END-->
             </div>
         </div>
     </div>
@@ -57,11 +44,11 @@ export default {
       }
     },
     methods:{
-        toDetail(id){
+        toDetail(href){
             // console.log(id)
-            let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
-            window.open(routeData.href, '_blank');
-            // window.open(href, '_blank');
+            // let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            // window.open(routeData.href, '_blank');
+            window.open(href, '_blank');
         },
         getBannerInfo(){
             const newsBanner = new URLSearchParams();
@@ -123,29 +110,6 @@ export default {
      $nationDay-hoverColor:#c44d53;
      $newsBanner-bg:linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
     .newsbanner-com{
-        // 国庆
-        .hideInmobile{
-          display: block;
-          @media (max-width: 768px) {
-              display: none;
-          }
-        }
-        .sidaiContainer-01{
-            position: absolute;
-            left: -216px;
-            top: 110px;
-        }
-        .sidaiContainer-02{
-            position: absolute;
-            right: -280px;
-            bottom: -70px;
-        }
-        .tiananmenCloud{
-          position: absolute;
-          right: 0;
-          bottom: 0;
-        }
-        // 国庆END
         .newsPic{
             @media (max-width: 768px) {
                 padding-left: 0;
@@ -219,8 +183,7 @@ export default {
                     margin-bottom: 0;
                     span.bigWord{
                       display: inline-block;
-                    //   color: $official-color;
-                      color: $nationDay-Color;
+                      color: $official-color;
                       font-size: 45px;
                       margin-bottom: 15px;
                     }
@@ -247,8 +210,7 @@ export default {
                 transition: all .3s;
                 &:hover{
                     text-decoration: none;
-                    // color: #44638a;
-                    color: $nationDay-hoverColor;
+                    color: #44638a;
                 }
                 @media (max-width: 768px) {
                     font-size: 22px;
