@@ -3,7 +3,13 @@
         <!-- 头条新闻 -->
         <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
-        <ul class="news-nav mt50">
+        
+        <!-- <ul class="news-nav mt50">
+          <div class="text-center">
+          <a href="javascript:;">
+            <img src="../assets/img/information/vis.jpg" alt="" style="display:inline-block;max-width:100%;height:auto;margin-bottom:30px;">
+          </a>
+        </div> -->
           <li><router-link to=/latest>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/policy">{{$t('news.policyNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
