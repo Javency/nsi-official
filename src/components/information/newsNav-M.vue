@@ -1,6 +1,11 @@
 <template>
     <div class="newsnav-m-com">
         <div class="container-fluid">
+            <div class="text-center" style="margin-bottom:30px;">
+                <a class="visBanner" href="http://data.xinxueshuo.cn/nsi-event/event/vis2018/visM.html" target="_blank">
+                <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/VIS-ADBanner.jpg" alt="" style="display:inline-block;max-width:100%;height:auto;">
+                </a>
+            </div>
             <div class="swiper-container swiperM" id="newsSwiperM">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide navSlide">
@@ -92,6 +97,10 @@ export default {
                 color: $official-color;
                 border-bottom: 2px solid $official-color;
             }
+        }
+        // visBanner
+        .visBanner{
+            box-shadow: 0 3px 10px #ccc;
         }
     }
 </style>

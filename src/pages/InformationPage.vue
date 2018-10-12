@@ -4,12 +4,12 @@
         <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
         
-        <!-- <ul class="news-nav mt50">
-          <div class="text-center">
-          <a href="javascript:;">
-            <img src="../assets/img/information/vis.jpg" alt="" style="display:inline-block;max-width:100%;height:auto;margin-bottom:30px;">
-          </a>
-        </div> -->
+        <ul class="news-nav mt50">
+          <div class="text-center" style="margin-bottom:30px;">
+            <a class="visBanner" href="http://data.xinxueshuo.cn/nsi-event/event/vis2018/visM.html" target="_blank">
+              <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/VIS-ADBanner.jpg" alt="" style="display:inline-block;max-width:100%;height:auto;">
+            </a>
+          </div>
           <li><router-link to=/latest>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/policy">{{$t('news.policyNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
@@ -77,6 +77,12 @@ export default {
       overflow-x: hidden;
     }
     .infoCenter-com{
+      @mixin transitionAnimate {
+        -webkit-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
       .showInMobile{
         display: none;
         @media (max-width: 768px) {
@@ -170,6 +176,18 @@ export default {
               color: #333;
             }
           }
+        }
+      }
+      // visBanner
+      .visBanner{
+        display: inline-block;
+        padding: 5px;
+        background-color: #FFF;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px #ccc;
+        @include transitionAnimate();
+        &:hover{
+          box-shadow: 0 5px 10px #ccc;
         }
       }
     }
