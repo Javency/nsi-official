@@ -4,11 +4,12 @@
             <div class="cover-bg">
                <div class="container">
                    <div class="content">
-                       <h4 class="text-center">{{$t('ges.mission')}}</h4>
                        <div class="pc">
+                            <h4 class="text-center">{{$t('ges.mission')}}</h4>
                             <h3 class="text-center">{{$t('ges.missionContent')}}</h3>
                        </div>
                        <div class="mol text-left">
+                            <h4>{{$t('ges.mission')}}</h4>
                             <h3>{{$t('ges.missionContent01')}}</h3>
                             <h3>{{$t('ges.missionContent02')}}</h3>
                             <h3>{{$t('ges.missionContent03')}}</h3>
@@ -68,9 +69,15 @@
                         <h3>{{$t('ges.connectUs')}}</h3>
                     </div>
                     <div class="col-md-6">
-                        <p><span style="margin-left:37px">{{$t('layoutgesFooter.tel01')}}</span><span style="margin-left:3px;">{{$t('layoutgesFooter.tel02')}}</span></p>
+                        <p><span style="margin-left:35px">{{$t('layoutgesFooter.tel01')}}</span><span style="margin-left:3px;">{{$t('layoutgesFooter.tel02')}}</span></p>
                         <p><span style="margin-left:17px">{{$t('layoutgesFooter.email01')}}</span><span style="margin-left:2px;">{{$t('layoutgesFooter.email02')}}</span></p>
-                        <p><span>{{$t('layoutgesFooter.address01')}}</span><span>{{$t('layoutgesFooter.address02')}}</span><span style="margin-left:75px;">{{$t('layoutgesFooter.address03')}}</span></p>
+                        <span>{{$t('layoutgesFooter.address01')}}</span>
+                        <span>{{$t('layoutgesFooter.address02')}}</span>
+                        <div style="margin-left: 73px;margin-top: 10px;">
+                            <P>{{$t('layoutgesFooter.address03')}}</P>
+                            <P>{{$t('layoutgesFooter.address04')}}</P>
+                            <P>{{$t('layoutgesFooter.address05')}}</P>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,7 +90,7 @@ import wxShareInit from '../assets/js/weChatShare.js'
 export default {
     data(){
         return{
-            aboutus:[this.$t('ges.mission'),this.$t('ges.missionContent'),this.$t('ges.missionContent01'),this.$t('ges.missionContent02'),this.$t('ges.missionContent03'),this.$t('ges.missionContent04'),this.$t('ges.aboutNSI'),this.$t('ges.aboutNSIContent'),this.$t('ges.team'),this.$t('ges.teamContent'),this.$t('ges.partner'),this.$t('ges.partnerContent'),this.$t('ges.connectUs'),this.$t('layoutgesFooter.tel01'),this.$t('layoutgesFooter.tel02'),this.$t('layoutgesFooter.email01'),this.$t('layoutgesFooter.email02'),this.$t('layoutgesFooter.phone'),this.$t('layoutgesFooter.address01'),this.$t('layoutgesFooter.address02'),this.$t('layoutgesFooter.address03')],
+            aboutus:[this.$t('ges.mission'),this.$t('ges.missionContent'),this.$t('ges.missionContent01'),this.$t('ges.missionContent02'),this.$t('ges.missionContent03'),this.$t('ges.missionContent04'),this.$t('ges.aboutNSI'),this.$t('ges.aboutNSIContent'),this.$t('ges.team'),this.$t('ges.teamContent'),this.$t('ges.partner'),this.$t('ges.partnerContent'),this.$t('ges.connectUs'),this.$t('layoutgesFooter.tel01'),this.$t('layoutgesFooter.tel02'),this.$t('layoutgesFooter.email01'),this.$t('layoutgesFooter.email02'),this.$t('layoutgesFooter.phone'),this.$t('layoutgesFooter.address01'),this.$t('layoutgesFooter.address02'),this.$t('layoutgesFooter.address03'),this.$t('layoutgesFooter.address04'),this.$t('layoutgesFooter.address05')],
             wxShareInfo:{
                   title:"新学说 | 国际学校多边服务平台",
                   imgUrl:"https://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
@@ -116,6 +123,7 @@ export default {
 
 <style lang="scss">
     .ges-com{
+        // overflow-x: hidden;
         .img-responsive{  
             display: inline-block;     
         }
@@ -132,6 +140,11 @@ export default {
             }
             p{
                font-family:'华文新魏'; 
+            }
+            span{
+                font-family:'华文新魏'; 
+                font-size:16px;
+                color:#777;
             }
             @media (max-width: 768px) {
                 padding: 30px 0;
@@ -201,7 +214,7 @@ export default {
                    }
                    h4{
                        max-width: 100%;
-                       font-size: 40px;
+                       font-size: 50px;
                        font-weight: 700;
                    }
                    h3{

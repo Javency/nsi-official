@@ -47,12 +47,12 @@
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-center">
-                                            <li><router-link :to="{path:'/'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
+                                            <li><router-link :to="{path:'/index'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
                                             <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
-                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
+                                            <li><router-link :to="{path:'/latest'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
@@ -64,6 +64,9 @@
                                                             <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_blank"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;{{$t('layoutNav.eventChild.vis')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
+                                                            <router-link :to="{path:'/event/lotus'}">&nbsp;<span class="iconfont icon-huiyi1 logoFont"></span>{{$t('layoutNav.eventChild.lotus')}}</router-link>
+                                                        </el-dropdown-item>
+                                                        <el-dropdown-item>
                                                             <router-link :to="{path:'/event/subject'}">&nbsp;<span class="iconfont icon-zhuanti logoFont"></span>{{$t('layoutNav.eventChild.subject')}}</router-link>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
@@ -72,7 +75,7 @@
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
                                             </li>
-                                            <li class="hasSubmenu">
+                                            <!-- <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
                                                         <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank">{{$t('layoutNav.lotus')}}<span class="caret"></span></a>
@@ -89,7 +92,7 @@
                                                         </el-dropdown-item>
                                                     </el-dropdown-menu>
                                                 </el-dropdown>
-                                            </li>
+                                            </li> -->
                                             <li class="hasSubmenu">
                                                 <el-dropdown placement="top">
                                                     <span class="el-dropdown-link">
@@ -117,6 +120,9 @@
                                             <li><router-link :to="{path:'/consulting'}">{{$t('layoutNav.consult')}}</router-link></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/ges'}">{{$t('layoutNav.ges')}}</router-link>
+                                            </li>
+                                            <li class="dropdown">
+                                                <router-link :to="{path:'/vip'}">{{$t('layoutNav.vip')}}</router-link>
                                             </li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
@@ -153,7 +159,7 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="blogroll">友情链接 <span>Friendly Link</span></h4>
+                                    <h4 class="blogroll">友情链接 <span>Links</span></h4>
                                     <div class="shareHref">
                                         <a href="http://data.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/database.png" alt=""></a>
                                         <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/class.png" alt=""></a>
@@ -249,7 +255,7 @@ export default {
                 country:"English",
                 switchFlag:false
             }],
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),this.$t('layoutNav.eventChild.apply'),this.$t('layoutNav.lotus'),this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.researchChild.apply'),this.$t('layoutNav.consult')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.eventChild.vis'),this.$t('layoutNav.eventChild.subject'),,this.$t('layoutNav.eventChild.lotus'),this.$t('layoutNav.eventChild.apply'),this.$t('layoutNav.lotus'),this.$t('layoutNav.lotusChild.gunagzhou'),this.$t('layoutNav.lotusChild.shanghai'),this.$t('layoutNav.lotusChild.beijing'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.researchChild.apply'),this.$t('layoutNav.consult')],
             layoutFooter:[this.$t('layoutFooter.tel'),this.$t('layoutFooter.email'),this.$t('layoutFooter.phone'),this.$t('layoutFooter.address'),this.$t('layoutFooter.weChat'),this.$t('layoutFooter.weibo'),this.$t('layoutFooter.database'),this.$t('layoutFooter.classOnline')]
         }
     },
@@ -297,6 +303,12 @@ export default {
     $official-footerColor:#2c6daf;
     $official-footerFontColor:#699bda;
     $official-otherColor:#8fb8fb;
+    // nationalDay
+    $nationDay-Color:#ce1922;
+    $nationDay-hoverColor:#a01f24;
+    $nationDay-footerColor:#ce343c;
+    $nationDay-footerFontColor:#db7378;
+    $nationDay-otherColor:#d3656a;
     .fontLogo{
         font-size: 25px !important;
         position: relative;
@@ -304,6 +316,33 @@ export default {
         // margin-right: 10px;
     }
     .layout-com{
+      .hideInM{
+        display: block;
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+        // 国庆
+        .header{
+            // background-image: url('../assets/img/NationalDay/body-bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            @media (max-width: 768px) {
+                 background-image: none;
+            }
+        }
+        .nationDay{
+            position: absolute;
+            right: 155px;
+            top: 9px;
+        }
+        .nationDayFont{
+            position: absolute;
+            right: 110px;
+            top: 70px;
+            z-index: 999999;
+        }
+        // 国庆end
       .slide-fade-enter-active {
         transition: all .5s ease;
       }
@@ -375,6 +414,7 @@ export default {
 
     .nav-bg{
         background-color: $official-color;
+        // background-image: url('../assets/img/NationalDay/nav-bg.jpg');
         z-index: 999;
         position: relative;
         width: 100%;
@@ -382,7 +422,9 @@ export default {
     .navbar{
         margin-bottom: 0;
         background-color: $official-color;
+        // background-image: url('../assets/img/NationalDay/nav-bg.jpg');
         border-color: $official-color;
+        // border-color: $nationDay-Color;
     }
     .navbar-default .navbar-nav li a{
         color: #fff;
@@ -435,7 +477,7 @@ export default {
     .el-dropdown-menu a{
         display: block;
         text-decoration: none !important;
-        color: #004f94;
+        color: $official-footerColor;
         font-weight: 600;
     }
     /* 选择语言*/
@@ -477,6 +519,8 @@ export default {
     }
     .footer{
       color: #FFF;
+      position: relative;
+      z-index: 99;
     }
     .footer>.container{
         padding-left: 0;
@@ -505,6 +549,7 @@ export default {
     }
     .footer-bottom{
       padding: 20px 0;
+      position: relative;
       background-color: #2f2f2f;
       @media (max-width:768px) {
           margin-top: 30px;

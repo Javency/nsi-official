@@ -4,20 +4,20 @@
             <div class="swiper-container swiperM" id="swiperM" ref="swiperM">
                 <div class="swiper-wrapper newsWrapper" ref="newsWrapper">
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" :to="{path:'/'}" exact>{{$t('layoutNav.index')}}</router-link>
+                        <router-link tag="i" :to="{path:'/index'}">{{$t('layoutNav.index')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" :to="{path:'/news'}">{{$t('layoutNav.information')}}</router-link>
+                        <router-link tag="i" :to="{path:'/latest'}" exact>{{$t('layoutNav.information')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
                          <router-link tag="i" :to="{path:'/event'}">{{$t('layoutNav.event')}}</router-link>
                     </div>
-                    <div class="swiper-slide navSlide">
+                    <!-- <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/lotus'}">{{$t('layoutNav.lotus')}}</router-link>
-                    </div>
+                    </div> -->
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/research'}">{{$t('layoutNav.research')}}</router-link>
                     </div>
@@ -26,6 +26,9 @@
                     </div>
                     <div class="swiper-slide navSlide">
                         <router-link tag="i" :to="{path:'/ges'}">{{$t('layoutNav.ges')}}</router-link>
+                    </div>
+                    <div class="swiper-slide navSlide">
+                        <router-link tag="i" :to="{path:'/vip'}">{{$t('layoutNav.vip')}}</router-link>
                     </div>
                 </div>
             </div>
@@ -36,14 +39,15 @@
         <transition name="fade">
             <div class="morePanel" v-show="openMore">
                 <ul>
-                    <router-link :to="{path:'/'}" tag="li" exact @click.native="hidePanel(0)">{{$t('layoutNav.index')}}</router-link>
+                    <router-link :to="{path:'/index'}" tag="li"  @click.native="hidePanel(0)">{{$t('layoutNav.index')}}</router-link>
                     <router-link :to="{path:'/about'}" tag="li" @click.native="hidePanel(1)">{{$t('layoutNav.aboutus')}}</router-link>
-                    <router-link :to="{path:'/news'}" tag="li" @click.native="hidePanel(2)">{{$t('layoutNav.information')}}</router-link>
+                    <router-link :to="{path:'/latest'}" tag="li" exact @click.native="hidePanel(2)">{{$t('layoutNav.information')}}</router-link>
                     <router-link :to="{path:'/event'}" tag="li" @click.native="hidePanel(3)">{{$t('layoutNav.event')}}</router-link>
-                    <router-link :to="{path:'/lotus'}" tag="li" @click.native="hidePanel(4)">{{$t('layoutNav.lotus')}}</router-link>
+                    <!-- <router-link :to="{path:'/lotus'}" tag="li" @click.native="hidePanel(4)">{{$t('layoutNav.lotus')}}</router-link> -->
                     <router-link :to="{path:'/research'}" tag="li" @click.native="hidePanel(5)">{{$t('layoutNav.research')}}</router-link>
                     <router-link :to="{path:'/consulting'}" tag="li" @click.native="hidePanel(6)">{{$t('layoutNav.consult')}}</router-link>
                     <router-link :to="{path:'/ges'}" tag="li" @click.native="hidePanel(7)">{{$t('layoutNav.ges')}}</router-link>
+                    <router-link :to="{path:'/vip'}" tag="li" @click.native="hidePanel(8)">{{$t('layoutNav.vip')}}</router-link>
                 </ul>
             </div>
         </transition>
@@ -57,7 +61,7 @@ export default {
         return{
             activeNav:0,
             openMore:false,
-            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.lotus'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.consult'),this.$t('layoutNav.ges')],
+            layoutNav:[this.$t('layoutNav.index'),this.$t('layoutNav.aboutus'),this.$t('layoutNav.information'),this.$t('layoutNav.event'),this.$t('layoutNav.lotus'),this.$t('layoutNav.research'),this.$t('layoutNav.researchChild.magazine'),this.$t('layoutNav.researchChild.report'),this.$t('layoutNav.researchChild.pisom'),this.$t('layoutNav.researchChild.classOnline'),this.$t('layoutNav.consult'),this.$t('layoutNav.ges'),this.$t('layoutNav.vip')],
         }
     },
     methods:{

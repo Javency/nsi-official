@@ -14,9 +14,12 @@
                     <div class="row">
                       <div class="col-md-8 pl0 pr0">
                         <a class="event-list" :href="list.url" target="_blank">
-                          <div class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
-                              <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
-                          </div>
+                            <div v-if="isMobile" class="event-box" :style="{'background-image':'url('+list.imgSrcM+')'}">
+                                <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                            </div>
+                            <div v-else class="event-box" :style="{'background-image':'url('+list.imgSrc+')'}">
+                                <h3 class="event-box-title" :title="list.title">{{list.title}}</h3>
+                            </div>
                         </a>
                       </div>
                       <div class="col-md-4 pr0">
@@ -42,40 +45,23 @@
 export default {
     data(){
         return{
+            isMobile:false,
             addMoreHtml:"加载更多",
             eventList:[
                 {
-                    title:"新荷 ● 中国国际学校节",
-                    imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
-                    url:"https://jinshuju.net/f/L4Iz9D",
-                    time:"2018-02"
-                },
-                {
                     title:"2018VIS国际学校发展大会",
                     imgSrc:require("../../assets/img/event/eventBanner03.jpg"),
+                    imgSrcM:require('../../assets/img/event/eventBanner03.jpg'),
                     url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/visM.html",
                     time:"2018-02"
                 },
-                // {
-                //    title:"2017VIS国际学校发展大会",
-                //    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity002.jpg",
-                //    url:"http://edu.qq.com/cross/20171215/P27Rp8V4.html"
-                // },
-                // {
-                //    title:"2017VIS国际学校投融资分会",
-                //    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity001.jpg",
-                //    url:"http://edu.qq.com/cross/20170519/D36Tp6V3.html"
-                // },
-                // {
-                //    title:"2016VIS国际学校发展大会",
-                //    imgSrc:"https://img1.gtimg.com/18/1854/185463/18546304_980x1200_0.jpg",
-                //    url:"http://edu.qq.com/p/topic/20161221027199/"
-                // },
-                // {
-                //    title:"2015VIS国际学校发展大会",
-                //    imgSrc:"https://img1.gtimg.com/edu/pics/hv1/85/77/1990/129419470.jpg",
-                //    url:"http://edu.qq.com/p/topic/20151209029457/index.html"
-                // }
+                {
+                   title:"新荷 ● 中国国际学校节",
+                    imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
+                    imgSrcM:require('../../assets/img/event/eventM03.jpg'),
+                    url:"https://jinshuju.net/f/L4Iz9D",
+                    time:"2018-02"
+                },
             ]
         }
     },
@@ -85,6 +71,13 @@ export default {
         },
         addMore(){
             console.log("加载更多")
+        }
+    },
+    created(){
+        if(window.innerWidth<769){
+            this.isMobile=true
+        }else{
+            this.isMobile=false
         }
     }
 }
@@ -226,6 +219,7 @@ export default {
                         padding-right: 15px;
                         left: 15px;
                         bottom: 15px;
+                        display: none;
                     }
             }
         }
@@ -237,7 +231,7 @@ export default {
           }
           .research-title{
               font-weight: 700;
-              font-size: 18px;
+              font-size: 17px;
               margin-bottom: 20px;
               color: #4d555d;
               min-height: 39px;

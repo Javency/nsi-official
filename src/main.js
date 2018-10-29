@@ -7,7 +7,6 @@ import axios from 'axios'
 import VueI18n from 'vue-i18n'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import wx from 'weixin-js-sdk'
 // import VueAwesomeSwiper from 'vue-awesome-swiper';
 
 // Vue.use(VueAwesomeSwiper)

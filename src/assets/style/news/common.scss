@@ -3,6 +3,9 @@
 }
 
 .newsList-com {
+    // 国庆
+    $nationDay-footerColor: #ce343c;
+    // 国庆
     @mixin transitionAnimate {
         -webkit-transition: all 0.3s ease 0s;
         -ms-transition: all 0.3s ease 0s;

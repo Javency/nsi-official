@@ -1,7 +1,7 @@
 <template>
     <div class="newsbanner-com">
         <div class="container">
-            <div class="row">
+            <div class="row" style="position:relative">
                 <div class="col-md-8 newsPic">
                     <div class="newsbanner">
                         <div class="swiper-container" id="newsbanner">
@@ -23,7 +23,7 @@
                     <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
                         <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.articleUrl)">{{bannerInfos.title}}</a></h3>
                         <p class="newsInfo-desc">{{bannerInfos.summary}}</p>
-                        <a href="javascript:;" @click="toDetail(bannerInfos.id)" class="news-detail">阅读全文</a>
+                        <a href="javascript:;" @click="toDetail(bannerInfos.articleUrl)" class="news-detail">阅读全文</a>
                     </div>
                 </div>
             </div>
@@ -47,6 +47,7 @@ export default {
         toDetail(href){
             // console.log(id)
             // let routeData =this.$router.resolve({name:"detailNews",params:{id:id}})
+            // window.open(routeData.href, '_blank');
             window.open(href, '_blank');
         },
         getBannerInfo(){
@@ -105,6 +106,8 @@ export default {
 
 <style lang="scss">
      $official-color: #20528f;
+     $nationDay-Color:#ce1922;
+     $nationDay-hoverColor:#c44d53;
      $newsBanner-bg:linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
     .newsbanner-com{
         .newsPic{
@@ -162,6 +165,7 @@ export default {
                 align-items: flex-end;
                 justify-content: center;
                 flex-direction: column;
+                z-index: 999;
                 .slidebar1{
                     font-size: 14px;
                     color: #999999;
@@ -196,6 +200,8 @@ export default {
         }
         // 新闻标题
         .newsInfo{
+            position: relative;
+            z-index: 999;
             .newsInfo-title{
                 color: #333;
                 font-weight: 700;
