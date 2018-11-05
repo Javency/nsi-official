@@ -1,6 +1,6 @@
 <template>
     <div class="eventLotus-com">
-        <img src="/static/img/eventBanner01.3094b76.jpg" alt="" class="img-responsive">
+        <img src="../../assets/img/event/eventBanner01.jpg" alt="" class="img-responsive">
         <div class="container">
             <div class="row">
                 <div class="title">{{$t('layoutNav.lotusContent.lotusIntroTitle')}}</div>
