@@ -1,7 +1,7 @@
 <template>
     <div class="recentEvent-m-com">
         <div class="row">
-            <div class="col-xs-6" v-for="(event,index) in eventInfo" :class="'eventBox'+index">
+            <div class="col-xs-6" v-for="(event,index) in eventInfo" :class="'eventBox'+index" :key="index">
                 <div class="eventBox" :style="{'background-image':'url('+event.content05+')'}" @click="toDetail(event.content07)">
                     <div class="content-bg">
                         <p class="eventName">{{event.content01}}</p>
