@@ -5,11 +5,11 @@
         <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
         <ul class="news-nav mt50">
-          <div class="text-center" style="margin-bottom:30px;">
+          <!-- <div class="text-center" style="margin-bottom:30px;">
             <a class="visBanner" href="http://data.xinxueshuo.cn/nsi-event/event/vis2018/visM.html" target="_blank">
               <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/VIS-ADBanner.jpg" alt="" style="display:inline-block;max-width:100%;height:auto;">
             </a>
-          </div>
+          </div> -->
           <li><router-link to=/latest>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/policy">{{$t('news.policyNews')}}</router-link><i class="newsnavLine"></i></li>
           <li><router-link to="/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
