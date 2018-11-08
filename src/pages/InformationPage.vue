@@ -1,9 +1,9 @@
 <template>
     <div class="infoCenter-com">
+        <activity />
         <!-- 头条新闻 -->
         <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
-        
         <ul class="news-nav mt50">
           <div class="text-center" style="margin-bottom:30px;">
             <a class="visBanner" href="http://data.xinxueshuo.cn/nsi-event/event/vis2018/visM.html" target="_blank">
@@ -25,6 +25,7 @@
             </keep-alive>
         </transition>
         <back-top></back-top>
+        
     </div>
 </template>
 
@@ -33,11 +34,13 @@ import NewsBanner from '../components/information/newsbanner'
 import backTop from '../components/common/backToTop'
 import newsNavM from '../components/information/newsNav-M'
 import wxShareInit from '../assets/js/weChatShare.js'
+import activity from '../components/activities/activity.vue'
 export default {
     components:{
         NewsBanner,
         backTop,
-        newsNavM
+        newsNavM,
+        activity
     },
     data(){
       return{

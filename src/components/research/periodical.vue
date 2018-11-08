@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-xs-6" v-for="(list,index) in internalReferList">
+                <div class="col-md-3 col-xs-6" v-for="(list,index) in internalReferList" :key="index">
                     <div class="internalRefer-book">
                             <a href="javascript:;" @click="toDownload(list.fileUrl)" class="internalRefer-box" slot="reference" :style="{'background-image':'url('+list.imageUrl+')'}">
                             </a>
