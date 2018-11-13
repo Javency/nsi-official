@@ -68,19 +68,19 @@
             </div>
             <div class="row pt30">
                 <div class="col-md-3 col-xs-6 text-center reportlist">
-                    <a href="javascript:;">
+                    <router-link :to="{path:'/research/report'}">
                         <img src="../../assets/img/research/report04.jpg" alt="" class="reportImg">
-                    </a>
+                    </router-link>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center reportlist">
-                    <a href="javascript:;">
+                    <router-link :to="{path:'/research/report'}">
                         <img src="../../assets/img/research/report02.jpg" alt="" class="reportImg">
-                    </a>
+                    </router-link>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center reportlist reportItem">
-                    <a href="javascript:;">
+                    <router-link :to="{path:'/research/periodical'}">
                         <img src="../../assets/img/research/report01.jpg" alt="" class="reportImg">
-                    </a>
+                    </router-link>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center reportlist">
                     <a href="javascript:;">

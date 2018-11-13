@@ -8,7 +8,7 @@
                             <a href="http://data.xinxueshuo.cn" target="_blank" class="databaseLogo"><span class="iconfont icon-shu"></span></a>
                         </div>
                         <div class="product-name text-center">
-                            <p><a href="http://data.xinxueshuo.cn" target="_blank" class="name">新学说四库全书&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
+                            <p><a href="http://data.xinxueshuo.cn" target="_blank" class="name">国际学校四库全书&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
                         </div>
                         <!-- <div class="bg">
                             <a href="http://class.xinxueshuo.cn">新学说四库全书</a>

@@ -1,6 +1,6 @@
 <template>
     <div class="periodical-com">
-        <!-- 内参 -->
+        <!-- 报告 -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -60,6 +60,7 @@ export default {
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
         params.append('pageSize', 8);
+        params.append('type', '报告');
         this.axios({
              method: 'post',
              url: '/manager/resource/list.do',

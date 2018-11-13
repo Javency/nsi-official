@@ -60,6 +60,7 @@ export default {
         const params = new URLSearchParams();
         params.append('pageNum', this.pageNum,);
         params.append('pageSize', 8);
+        params.append('type', '内参');
         this.axios({
              method: 'post',
              url: '/manager/resource/list.do',
