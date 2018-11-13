@@ -1,6 +1,6 @@
 <template>
     <div class="infoCenter-com">
-        <activity />
+        <!-- <activity /> -->
         <!-- 头条新闻 -->
         <news-banner class="pt60 newsbanner-com"></news-banner>
         <!-- 新闻nav -->
@@ -34,13 +34,13 @@ import NewsBanner from '../components/information/newsbanner'
 import backTop from '../components/common/backToTop'
 import newsNavM from '../components/information/newsNav-M'
 import wxShareInit from '../assets/js/weChatShare.js'
-import activity from '../components/activities/activity.vue'
+// import activity from '../components/activities/activity.vue'
 export default {
     components:{
         NewsBanner,
         backTop,
         newsNavM,
-        activity
+        // activity
     },
     data(){
       return{
