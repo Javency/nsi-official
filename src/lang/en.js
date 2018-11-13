@@ -7,6 +7,7 @@ module.exports = {
         event: "Events",
         eventChild: {
             vis: "Vision of International School Conference",
+            lotus: "Lotus School Conference",
             subject: "Symposium",
             apply: "Convention Apply"
         },
