@@ -61,14 +61,14 @@ export default {
         height:680px;
         background: -webkit-linear-gradient(-45deg,#d1b7d7 25%, #fbfcfe 53%, #cae9fb 99%);
         overflow: hidden;
-        z-index: 999999;
+        z-index: 999;
         @media (max-width:768px) {
             height:75px;
         }
         .cardTop{
             position: relative;
             top:-40px;
-            z-index: 9999;
+            z-index: 999;
             .box{
                 width:70%;
                 height:90px;
