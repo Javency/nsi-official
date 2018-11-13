@@ -4,21 +4,21 @@
         <div class="container">
             <div class="row">
                 <div class="title">为什么创办新荷国际学校</div>
-                <div class="line"></div>
+                <div class="line1"></div>
                 <div class="lotusIntro">
                     <div>新荷评选的出现，在于通过向西方先进的国际学校认证评选标准借鉴经验，因地制宜，结合中国当下的教育环境与国情，形成一套专属于中国国际学校的认证标尺。通过评选新荷国际学校，达到竖立行业标杆的目的，形成良好的行业评价标准，助力中国的国际学校办学水平的整体提高。同时也起到引导市场的作用，向家长展示在选择学校时候应考虑的因素。</div>
                     <div>新荷评选的专业性、学术性与中立性为市场传递着正能量，通过新荷这样一个公正的认证平台，将中国的国际学校聚集于此，用专业的评判流程划分国际学校的好与坏，为还处在新建期、迷茫中的国际学校或是发展上升期的国际学校树立一个真正意义上可以称之为优秀的国际学校的架构，作为行业标尺而存在，给予中国的国际学校以今后发展方向的参考，通过这样一个标尺约束自己，不断提高办学水平、办学质量，兼顾外部基础设施建设与内部教育软实力发展。此外，新荷评选也为给孩子择校而犯难的家长群体提供了更为直观的国际学校筛选平台，通过关注新荷评选的动态，可以更加方便的浏览到中国国际学校信息，由新荷来为家长们“层层把关”，将最优秀的国际学校清晰地呈现在家长面前，解决家长择校难题。</div>
                     <div>新荷是一个公益性的评选平台，新学说创办新荷的目的在于为中国教育事业树立标杆的促进行业整体品质提升的同时，也希望为学校发展起到正面促进作用，提高优质学校整体曝光率和行业知名度。</div>
                 </div>
                 <div class="title">新荷学校评选时间</div>
-                <div class="line"></div>
+                <div class="line1"></div>
                 <div class="lotusTime text-center">
                     <span><i class="iconfont icon-jianzhu"></i>广东地区 3 - 5 月</span>
                     <span><i class="iconfont icon-shanghai"></i>上海地区 7 - 9 月</span>
                     <span><i class="iconfont icon-beijing"></i>北京地区 8 - 10 月</span>
                 </div>
                 <div class="title">活动流程</div>
-                <div class="line"></div>
+                <div class="line1"></div>
                 <div class="activity">
                     <div class="process">报名</div>
                     <p>时间：为期45天左右</p>
@@ -47,7 +47,7 @@
                     <p style='position:relative;top:-45px;'>观众：对国际教育有兴趣的人士</p>
                 </div>
                 <div class="title">新荷学校评选标准</div>
-                <div class="line"></div>
+                <div class="line1"></div>
                 <div class="weidu">
                     <p class="process" style="margin-top:20px;">新荷·评选七大维度</p>
                     <p>新学说曾研究了许多学校评估标准，基于长期积累的行业研究经验，新学说根据当前中国民办教育形势与发展，与行业内部多名行业泰斗、学术权威共同探讨出新学说国际学校评估准则。</p>
@@ -110,7 +110,7 @@ export default {
                     padding:0 20px;
                 }
             }
-            .line{
+            .line1{
                 height: 5px;
                 background-color: #4c77ab;
                 margin-top: 5px;
