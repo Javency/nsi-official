@@ -124,16 +124,16 @@ export default {
             }
             .bookName{
                 color: #a3a3a3;
-                font-size: 22px;
+                font-size: 20px;
                 margin-top: 15px;
                 overflow: hidden;
                 text-overflow: -o-ellipsis-lastline;
                 text-overflow: ellipsis;
                 display: -webkit-box;
-                -webkit-line-clamp: 1;
+                -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
-                min-height: 24px;
-                max-height: 24px;
+                min-height: 47px;
+                max-height: 47 px;
 
             }
             .internalRefer-box{
