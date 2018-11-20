@@ -10,12 +10,12 @@
               <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/VIS-ADBanner.jpg" alt="" style="display:inline-block;max-width:100%;height:auto;">
             </a>
           </div> -->
-          <li><router-link to=/latest>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to="/policy">{{$t('news.policyNews')}}</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to="/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to=/original>{{$t('news.tmtNews')}}</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to=/interview>{{$t('news.personNews')}}</router-link><i class="newsnavLine"></i></li>
-          <li><router-link to=/histroy>{{$t('news.oldNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/latest>{{$t('news.overviewNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/news/policy">{{$t('news.policyNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to="/news/visitSchool">{{$t('news.schoolNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/original>{{$t('news.tmtNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/interview>{{$t('news.personNews')}}</router-link><i class="newsnavLine"></i></li>
+          <li><router-link to=/news/histroy>{{$t('news.oldNews')}}</router-link><i class="newsnavLine"></i></li>
         </ul>
         <news-nav-m class="showInMobile"></news-nav-m>
         <!-- 新闻列表 -->

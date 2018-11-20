@@ -47,12 +47,12 @@
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-center">
-                                            <li><router-link :to="{path:'/index'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
+                                            <li><router-link :to="{path:'/'}">{{$t('layoutNav.index')}}</router-link><span class="sr-only">(current)</span></li>
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/about'}">{{$t('layoutNav.aboutus')}}</router-link>
                                             </li>
                                             <!-- <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="iconfont icon-Newx theNew"></span></router-link></li> -->
-                                            <li><router-link :to="{path:'/latest'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
+                                            <li><router-link :to="{path:'/news'}">{{$t('layoutNav.information')}}<span class="theNew"></span></router-link></li>
                                             <li class="hasSubmenu">
                                                 <!-- <router-link :to="{path:'/event'}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$t('layoutNav.event')}}<span class="caret"></span></router-link> -->
                                                 <el-dropdown placement="top">
@@ -124,6 +124,8 @@
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/vip'}">{{$t('layoutNav.vip')}}</router-link>
                                             </li>
+                                            <li><a style="padding: 5px 8px;background-color: #337ab7;border-radius: 4px;box-shadow: rgb(22, 58, 103) 2px 2px 14px;" href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a></li>
+                                            <li><a style="padding: 5px 8px;background-color: #337ab7;border-radius: 4px;box-shadow: rgb(22, 58, 103) 2px 2px 14px;" href="https://data.xinxueshuo.cn/nsi-class/index.html" target="_blank">{{$t('layoutFooter.classOnline')}}</a></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
                                 </div><!-- /.container-fluid -->
@@ -159,7 +161,7 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="blogroll">友情链接 <span>Links</span></h4>
+                                    <h4 class="blogroll">链接 <span>Links</span></h4>
                                     <div class="shareHref">
                                         <a href="http://data.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/database.png" alt=""></a>
                                         <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/class.png" alt=""></a>
@@ -432,20 +434,29 @@ export default {
         font-size: 16px;
         // font-weight: 600;
         letter-spacing: 1px;
-        height: 52px;
-        line-height: 26px;
+        // height: 52px;
+        // line-height: 26px;
+        display: inline-block;
+        padding: 0;
     }
-    .navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:focus, .navbar-default .navbar-nav .active a:hover {
+    .navbar-default .navbar-nav>li{
+        transition: all .3s;
+    }
+    .navbar-default .navbar-nav>li>a:hover {
+        color: #fff;
+        background-color: transparent;
+    }
+    .navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:focus, .navbar-default .navbar-nav .active:hover {
         color: #fff;
         background-color: $official-hoverColor;
     }
-    .navbar-default .navbar-nav li a:focus, .navbar-default .navbar-nav li a:hover {
+    .navbar-default .navbar-nav li:focus, .navbar-default .navbar-nav li:hover {
         color: #fff;
         background-color: $official-hoverColor;
     }
     .navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:focus, .navbar-default .navbar-nav .open a:hover {
         color: #fff;
-        background-color: $official-hoverColor;
+        background-color: $official-color;
     }
     .navbar-default .navbar-toggle {
         border-color: #fff;
@@ -479,6 +490,20 @@ export default {
         text-decoration: none !important;
         color: $official-footerColor;
         font-weight: 600;
+    }
+    .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+        color: #fff;
+        background-color: transparent;
+    }
+    @media (min-width: 768px){
+        .navbar-nav>li {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 52px;
+            padding: 15px;
+        }
     }
     /* 选择语言*/
     .selectLang{

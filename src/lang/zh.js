@@ -92,8 +92,9 @@ module.exports = {
         address: "地址：北京市西城区新风街2号天成科技大厦A座1006",
         weChat: "微信公众号",
         weibo: "官方微店",
-        database: "国际学校在线四库全书",
-        classOnline: "新学说国际教育研究院"
+        database: "国际学校四库全书",
+        classOnline: "在线课堂",
+        databaseM: "四库全书"
     },
     layoutgesFooter: {
         tel01: "Tel：",

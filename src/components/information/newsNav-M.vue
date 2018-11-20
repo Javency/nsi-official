@@ -9,22 +9,22 @@
             <div class="swiper-container swiperM" id="newsSwiperM">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/latest>{{$t('news.overviewNews')}}</router-link>
+                        <router-link tag="i" to=/news/latest>{{$t('news.overviewNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to="/policy">{{$t('news.policyNews')}}</router-link>
+                        <router-link tag="i" to="/news/policy">{{$t('news.policyNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to="/visitSchool">{{$t('news.schoolNews')}}</router-link>
+                        <router-link tag="i" to="/news/visitSchool">{{$t('news.schoolNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/original>{{$t('news.tmtNews')}}</router-link>
+                        <router-link tag="i" to=/news/original>{{$t('news.tmtNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/interview>{{$t('news.personNews')}}</router-link>
+                        <router-link tag="i" to=/news/interview>{{$t('news.personNews')}}</router-link>
                     </div>
                     <div class="swiper-slide navSlide">
-                        <router-link tag="i" to=/histroy>{{$t('news.oldNews')}}</router-link>
+                        <router-link tag="i" to=/news/histroy>{{$t('news.oldNews')}}</router-link>
                     </div>
                 </div>
             </div>

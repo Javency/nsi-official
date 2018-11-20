@@ -44,8 +44,9 @@ module.exports = {
         address: "Address：A#1006, Tiancheng Technology Building, Xinfeng Street #2, Xicheng District, Beijing",
         weChat: "WeChat Account",
         weibo: "Store Account",
-        database: "International School DataBase",
-        classOnline: "Academy of NSI"
+        database: "DataBase",
+        classOnline: "Class",
+        databaseM: "DataBase"
     },
     layoutgesFooter: {
         tel01: "Tel：",

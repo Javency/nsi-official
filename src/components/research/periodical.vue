@@ -140,6 +140,7 @@ export default {
                 display: inline-block;
                 width: 100%;
                 min-height: 345px;
+                box-shadow: 0 5px 10px #ccc;
                 @media (max-width: 768px) {
                     min-height: 250px;
                     box-shadow: 0 5px 10px #ccc;
