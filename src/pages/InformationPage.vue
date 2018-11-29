@@ -33,7 +33,7 @@
 import NewsBanner from '../components/information/newsbanner'
 import backTop from '../components/common/backToTop'
 import newsNavM from '../components/information/newsNav-M'
-import wxShareInit from '../assets/js/weChatShare.js'
+import wxShareInit from '../assets/js/weChatShare01.js'
 // import activity from '../components/activities/activity.vue'
 export default {
     components:{
@@ -53,23 +53,10 @@ export default {
             }
       }
     },
-    methods:{
-        wxInit(){
-          this.axios({
-                  method:"get",
-                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
-                  params:{
-                      URL: window.location.href
-                  }
-              }).then((res)=>{
-                  wxShareInit.wxConfig(res)
-                  wxShareInit.wxReady(this.wxShareInfo)
-              })
-        }
-    },
     beforeMount(){
+         // 微信分享
         if(wxShareInit.isWeixinBrowser()){
-            setTimeout(this.wxInit,500)
+            setTimeout(wxShareInit.wxReady(this.wxShareInfo),500)
         }
     }
 }

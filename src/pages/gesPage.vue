@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import wxShareInit from '../assets/js/weChatShare.js'
+import wxShareInit from '../assets/js/weChatShare01.js'
 export default {
     data(){
         return{
@@ -98,24 +98,11 @@ export default {
                   desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
               }
         }
-    },  
-    methods:{
-        wxInit(){
-          this.axios({
-                  method:"get",
-                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
-                  params:{  
-                      URL: window.location.href
-                  }
-              }).then((res)=>{
-                  wxShareInit.wxConfig(res)
-                  wxShareInit.wxReady(this.wxShareInfo)
-              })
-        }
     },
     beforeMount(){
+        // 微信分享
         if(wxShareInit.isWeixinBrowser()){
-            setTimeout(this.wxInit,500)
+            setTimeout(wxShareInit.wxReady(this.wxShareInfo),500)
         }
     }
 }

@@ -142,28 +142,28 @@
                 </div>
             </div>
             <div class="row pt30">
-                <div class="col-md-3 col-xs-6 reportlist">
+                <div class="col-md-3 col-xs-6 reportlist classList">
                     <a href="http://data.xinxueshuo.cn/nsi/school/school.html" target="_blank">
                         <img src="../../assets/img/research/classPic01.jpg" alt="">
                     </a>
                     <p class="subItem-title">国际学校库</p>
                     <p class="subItem-desc">国际学校数据库，为国际学校提供科学的行业数据分析。掌握行业的发展态势，了解自身的成长阶段</p>
                 </div>
-                <div class="col-md-3 col-xs-6 reportlist">
+                <div class="col-md-3 col-xs-6 reportlist classList">
                     <a href="http://data.xinxueshuo.cn/nsi/company/company.html" target="_blank">
                         <img src="../../assets/img/research/classPic03.jpg" alt="">
                     </a>
                     <p class="subItem-title">国际学校服务机构库</p>
                     <p class="subItem-desc">国际教育机构数据库提供与国际学校国际教育相关的各类服务机构和服务提供商的详细信息</p>
                 </div>
-                <div class="col-md-3 col-xs-6 reportlist">
+                <div class="col-md-3 col-xs-6 reportlist classList">
                     <a href="http://data.xinxueshuo.cn/nsi/talent/talent.html" target="_blank">
                         <img src="../../assets/img/research/classPic02.jpg" alt="">
                     </a>
                     <p class="subItem-title">国际学校人才库</p>
                     <p class="subItem-desc">国际教育人才数据为内部数据库，上传个人简历，进入国际教育人才储备库，获得更多的展示自己的机会</p>
                 </div>
-                <div class="col-md-3 col-xs-6 reportlist">
+                <div class="col-md-3 col-xs-6 reportlist classList">
                     <a href="http://data.xinxueshuo.cn/nsi/project/project.html" target="_blank">
                         <img src="../../assets/img/research/classPic04.jpg" alt="">
                     </a>
@@ -306,6 +306,7 @@ export default {
         }
         .reportlist{
             margin-bottom: 15px;
+            min-height: 242px;
             .class-desc{
                 margin-top: 10px;
                 color: #333;
@@ -314,6 +315,9 @@ export default {
             .class-time{
                 color: rgb(82, 82, 82);
             }
+        }
+        .classList{
+            min-height: 260px;
         }
         .class-title{
             font-weight: 700;

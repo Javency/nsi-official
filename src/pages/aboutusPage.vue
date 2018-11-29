@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import wxShareInit from '../assets/js/weChatShare.js'
+import wxShareInit from '../assets/js/weChatShare01.js'
 export default {
     data(){
         return{
@@ -116,23 +116,10 @@ export default {
               }
         }
     },
-    methods:{
-        wxInit(){
-          this.axios({
-                  method:"get",
-                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
-                  params:{
-                      URL: window.location.href
-                  }
-              }).then((res)=>{
-                  wxShareInit.wxConfig(res)
-                  wxShareInit.wxReady(this.wxShareInfo)
-              })
-        }
-    },
     beforeMount(){
+         // 微信分享
         if(wxShareInit.isWeixinBrowser()){
-            setTimeout(this.wxInit,500)
+            setTimeout(wxShareInit.wxReady(this.wxShareInfo),500)
         }
     }
 }

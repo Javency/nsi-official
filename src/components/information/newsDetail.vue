@@ -60,7 +60,7 @@ import slideAd from './slideAD'
 import shareBox from '../common/share'
 import slideArticle from './slideArticle'
 import backTop from '../common/backToTop'
-import wxShareInit from '../../assets/js/weChatShare.js'
+import wxShareInit from '../../assets/js/weChatShare01.js'
 export default {
     components:{
         slideAd,
@@ -116,18 +116,18 @@ export default {
             })
         },
         // 微信分享
-        wxInit(){
-          this.axios({
-                  method:"get",
-                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
-                  params:{
-                      URL: window.location.href
-                  }
-              }).then((res)=>{
-                  wxShareInit.wxConfig(res)
-                  wxShareInit.wxReady(this.wxShareInfo)
-              })
-        },
+        // wxInit(){
+        //   this.axios({
+        //           method:"get",
+        //           url:'/Admin_api?whereFrom=WeChatShare&Callback=',
+        //           params:{
+        //               URL: window.location.href
+        //           }
+        //       }).then((res)=>{
+        //           wxShareInit.wxConfig(res)
+        //           wxShareInit.wxReady(this.wxShareInfo)
+        //       })
+        // },
         // slide文章fixed
         slideHandle(){
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
@@ -167,8 +167,9 @@ export default {
     },
     beforeMount(){
         setTimeout(this.statistics,10000)
+         // 微信分享
         if(wxShareInit.isWeixinBrowser()){
-            setTimeout(this.wxInit,500)
+            setTimeout(wxShareInit.wxReady(this.wxShareInfo),500)
         }
     },
     mounted(){

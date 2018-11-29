@@ -49,8 +49,34 @@ export default {
                 duration:3000
             });
         },
+        // 判断微信浏览器
+        isWechat(){
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger"){
+                return true
+            }
+        },
+        // 判断ios
+        isIOS(){
+            var u = navigator.userAgent,version = '';
+            if(u.indexOf('Mac OS X') > -1){
+                return true
+            }
+        },
         toDownload(url){
-            window.open(url)
+            // 为ios微信浏览器
+            if(this.isWechat()&&this.isIOS()&&url.indexOf('.zip')>-1){
+                const h = this.$createElement;
+                this.$notify({
+                    title: '温馨提示',
+                    message: h('i', { style: 'color: #20528f'}, '请在Safari浏览器打开下载'),
+                    offset: 150,
+                    type:'info',
+                    duration:3000
+                });
+            }else{
+                window.open(url)
+            }
         }
     },
     mounted(){
@@ -132,8 +158,8 @@ export default {
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
-                min-height: 47px;
-                max-height: 47px;
+                min-height: 45px;
+                max-height: 45px;
 
             }
             .internalRefer-box{

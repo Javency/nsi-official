@@ -124,8 +124,8 @@
                                             <li class="dropdown">
                                                 <router-link :to="{path:'/vip'}">{{$t('layoutNav.vip')}}</router-link>
                                             </li>
-                                            <li><a style="padding: 5px 8px;background-color: #337ab7;border-radius: 4px;box-shadow: rgb(22, 58, 103) 2px 2px 14px;" href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a></li>
-                                            <li><a style="padding: 5px 8px;background-color: #337ab7;border-radius: 4px;box-shadow: rgb(22, 58, 103) 2px 2px 14px;" href="https://data.xinxueshuo.cn/nsi-class/index.html" target="_blank">{{$t('layoutFooter.classOnline')}}</a></li>
+                                            <li><a href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a></li>
+                                            <li><a href="https://data.xinxueshuo.cn/nsi-class/index.html" target="_blank">{{$t('layoutFooter.classOnline')}}</a></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
                                 </div><!-- /.container-fluid -->

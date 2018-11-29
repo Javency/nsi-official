@@ -30,7 +30,7 @@
 <script>
 import connectUs from '../components/consulting/connectUs.vue'
 import consultMob from '../components/consulting/consultMob.vue'
-import wxShareInit from '../assets/js/weChatShare.js'
+import wxShareInit from '../assets/js/weChatShare01.js'
 export default {
     data() {
         return {
@@ -54,18 +54,6 @@ export default {
         this.fetchDate();
     },
     methods:{
-      wxInit(){
-          this.axios({
-                  method:"get",
-                  url:'/Admin_api?whereFrom=WeChatShare&Callback=',
-                  params:{
-                      URL: window.location.href
-                  }
-              }).then((res)=>{
-                  wxShareInit.wxConfig(res)
-                  wxShareInit.wxReady(this.wxShareInfo)
-              })
-        },
         fetchDate(){
             this.axios({
                 method:"get",
@@ -117,8 +105,9 @@ export default {
 
     },
     beforeMount(){
+        // 微信分享
         if(wxShareInit.isWeixinBrowser()){
-            setTimeout(this.wxInit,500)
+            setTimeout(wxShareInit.wxReady(this.wxShareInfo),500)
         }
     },
     watch:{

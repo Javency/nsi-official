@@ -169,6 +169,7 @@
 
 <script>
 import applyCom from '../components/vip/applyBtn'
+import wxShareInit from '../assets/js/weChatShare01.js'
 export default {
     components:{
         applyCom
@@ -279,7 +280,13 @@ export default {
                     desc:"品牌建设、品牌推广、市场活动策划、招生流程化",
                     logo:"icon-pinpai"
                 }
-            ]
+            ],
+            wxShareInfo:{
+                title:"新学说 | 会员中心",
+                imgUrl:"https://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg",
+                href:window.location.href,
+                desc:"国际学校行业专家打造的多边媒体平台，以新媒体为载体、以行业研究为核心、以行业服务为平台"
+            }
         }
     },
     methods:{
@@ -346,6 +353,12 @@ export default {
         }else{
             this.isAllow=false
             this.sendFlag=true
+        }
+    },
+    beforeMount(){
+        // 微信分享
+        if(wxShareInit.isWeixinBrowser()){
+            setTimeout(wxShareInit.wxReady(this.wxShareInfo),500)
         }
     }
 }
