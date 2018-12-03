@@ -20,7 +20,7 @@ module.exports = {
         research: "Research",
         researchChild: {
             magazine: "Magazine",
-            report: "Magazine and Report",
+            report: "Report",
             pisom: "Talents Training",
             classOnline: "International Education Academy",
             apply: "Class Apply",

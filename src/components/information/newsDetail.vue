@@ -20,6 +20,7 @@
                     <div class="bottomAD">
                         <a :href="bottomADHref" target="_blank">
                             <img alt="" :src="bottomAD">
+                            <!-- <img alt="" src=""> -->
                         </a>
                     </div>
                     <div class="statement">
