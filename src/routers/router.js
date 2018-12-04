@@ -27,6 +27,7 @@ import periodical from '../components/research/periodical.vue'
 import report from '../components/research/report.vue'
 import researchApply from '../components/research/researchApply.vue'
 import researchIndex from '../components/research/researchIndex.vue'
+import experts from '../components/research/experts.vue'
 
 import consultOne from '../components/consulting/consultOne.vue'
 import consultTwo from '../components/consulting/consultTwo.vue'
@@ -37,6 +38,8 @@ import consultMob from '../components/consulting/consultMob.vue'
 
 import notFondPage from '../components/common/notFondPage.vue'
 
+// nullPage
+import applyTalent from '../components/nullPage/apply.vue'
 
 Vue.use(Router)
 
@@ -131,6 +134,9 @@ const routes = [{
             }, {
                 path: 'apply',
                 component: researchApply
+            }, {
+                path: 'experts',
+                component: experts
             }
         ]
     }, {
@@ -168,6 +174,9 @@ const routes = [{
     }, {
         path: "/vip",
         component: vipPage
+    }, {
+        path: '/apply',
+        component: applyTalent
     }
 ]
 

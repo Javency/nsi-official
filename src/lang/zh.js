@@ -71,7 +71,8 @@ module.exports = {
             report: "研究报告",
             pisom: "国际学校高阶研修班",
             classOnline: "国际学校职能岗位课程",
-            apply: "课程报名"
+            apply: "课程报名",
+            experts: "专家智库"
         },
         researchChild_Mob: {
             magazine: "国际学校内参",

@@ -24,13 +24,15 @@ module.exports = {
             pisom: "Talents Training",
             classOnline: "International Education Academy",
             apply: "Class Apply",
+            experts: "Experts Database"
         },
         researchChild_Mob: {
             magazine: "Magazine",
             report: "Research Report",
             pisom: "Talents Training",
             classOnline: "Education Academy",
-            apply: "Class Apply"
+            apply: "Class Apply",
+            experts: "Experts Database"
         },
         consult: "Service",
         ges: "G E S",

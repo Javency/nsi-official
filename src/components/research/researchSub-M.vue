@@ -18,6 +18,9 @@
                     <div class="swiper-slide text-center">
                         <router-link :to="{path:'/research/apply'}"><span class="iconfont icon-baoming fontLogo"></span><br/>{{$t('layoutNav.researchChild_Mob.apply')}}</router-link>
                     </div>
+                    <div class="swiper-slide text-center">
+                        <router-link :to="{path:'/research/experts'}"><span class="iconfont icon-icon- fontLogo"></span><br/>{{$t('layoutNav.researchChild.experts')}}</router-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -29,7 +32,7 @@ import Swiper from 'swiper'
 export default {
     data(){
         return{
-            layoutNav:[this.$t('layoutNav.researchChild_Mob.magazine'),this.$t('layoutNav.researchChild_Mob.report'),this.$t('layoutNav.researchChild_Mob.pisom'),this.$t('layoutNav.researchChild_Mob.classOnline'),this.$t('layoutNav.researchChild_Mob.apply')]
+            layoutNav:[this.$t('layoutNav.researchChild_Mob.magazine'),this.$t('layoutNav.researchChild_Mob.report'),this.$t('layoutNav.researchChild_Mob.pisom'),this.$t('layoutNav.researchChild_Mob.classOnline'),this.$t('layoutNav.researchChild_Mob.apply'),this.$t('layoutNav.researchChild.experts')]
         }
     },
     methods:{
