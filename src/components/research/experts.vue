@@ -44,8 +44,14 @@ export default {
                 {
                     imgUrl:require('../../assets/img/research/experts/安盈.jpg'),
                     name:'安瀛',
-                    job:'新学说国际教育研究院院长',
+                    job:'新学说教育研究院首席研究员',
                     desc:'原北京四中国际校区创校校长'
+                },
+                {
+                    imgUrl:require('../../assets/img/research/experts/杨总.jpg'),
+                    name:'杨飞',
+                    job:'原狄邦教育集团副总裁',
+                    desc:'紫光学大学校事业部总经理'
                 },
                 {
                     imgUrl:require('../../assets/img/research/experts/李周.jpg'),
