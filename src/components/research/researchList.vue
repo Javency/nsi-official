@@ -50,22 +50,22 @@ export default {
             eventList:[
                 {
                     title:"国际学校市场招生班",
-                    imgSrc:require("../../assets/img/research/mac.jpg"),
-                    imgSrcM:require('../../assets/img/research/researchM01.jpg'),
+                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/mac.jpg",
+                    imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/researchM01.jpg',
                     url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/courseDesc/macM.html",
                     time:"2018-09-03"
                 },
                  {
                     title:"国际学校投资战略班",
-                    imgSrc:require("../../assets/img/research/zhanlue.jpg"),
-                    imgSrcM:require("../../assets/img/research/zhanlue.jpg"),
+                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/zhanlue.jpg",
+                    imgSrcM:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/zhanlue.jpg",
                     url:"https://jinshuju.net/f/UbcHrR",
                     time:"2018-09-03"
                 },
                 {
                     title:"国际学校校长研修班",
-                    imgSrc:require("../../assets/img/research/headteacher.jpg"),
-                    imgSrcM:require('../../assets/img/research/researchM02.jpg'),
+                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/headteacher.jpg",
+                    imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/researchM02.jpg',
                     url:"https://jinshuju.net/f/a4LhEl",
                     time:"2018-09-03"
                 },

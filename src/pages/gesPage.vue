@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div>
                             <div class="text-center">
-                                <img src="../assets/img/about/gesLogo.png" alt="" class="team-img img-responsive" width="100">
+                                <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/about/gesLogo.png" alt="" class="team-img img-responsive" width="100">
                             </div>
                             <h3 class="text-center" style="margin-top:40px;">{{$t('ges.aboutNSI')}}</h3>
                             <h3><small>{{$t('ges.aboutNSIContent')}}</small></h3>
@@ -45,7 +45,7 @@
                         <p class="team-info">{{$t('ges.teamContent')}}</p>
                     </div>
                     <div class="col-md-6 text-center">
-                        <img alt="" src="../assets/img/about/team-img.jpg" class="team-img img-responsive" width="500">
+                        <img alt="" src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/about/team-img.jpg" class="team-img img-responsive" width="500">
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@ export default {
         .ges-bg{
             width: 100%;
             height: 550px;
-            background-image: url("../assets/img/about/about.jpg");
+            background-image: url("https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/about/about.jpg");
             background-size: 100%;
             background-position: center;
             position: relative;

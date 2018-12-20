@@ -18,7 +18,7 @@
                 <div class="col-md-3 col-xs-6">
                     <div class="productBox">
                         <div class="product-logo text-center">
-                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../../assets/img/layoutImg/classLogo.png" width="50" alt="" style="padding:5px 0"></a>
+                            <a href="http://class.xinxueshuo.cn" target="_blank"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/classLogo.png" width="50" alt="" style="padding:5px 0"></a>
                         </div>
                         <div class="product-name text-center">
                             <p><a href="http://class.xinxueshuo.cn" target="_blank" class="name">新学说在线课堂&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
@@ -31,7 +31,7 @@
                 <div class="col-md-3 col-xs-6">
                     <div class="productBox">
                         <div class="product-logo text-center">
-                            <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank"><img src="../../assets/img/layoutImg/lotus.png" width="75" alt=""></a>
+                            <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/lotus.png" width="75" alt=""></a>
                         </div>
                         <div class="product-name text-center">
                             <p><a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html" target="_blank" class="name">新荷学校&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
@@ -44,7 +44,7 @@
                                 <div class="col-md-3 col-xs-6">
                     <div class="productBox">
                         <div class="product-logo text-center">
-                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html" target="_blank"><img src="../../assets/img/layoutImg/vis2018.png" width="65" alt=""></a>
+                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html" target="_blank"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/vis2018.png" width="65" alt=""></a>
                         </div>
                         <div class="product-name text-center">
                             <p><a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018_pc.html" target="_blank" class="name">VIS2018国际学校发展大会&nbsp;<span class="iconfont icon-yuanjiantou"></span></a></p>
@@ -91,6 +91,7 @@ export default {
             position: relative;
             padding: 10px 15px;
             background-color: #f8f8f8;
+            min-height: 140px;
             @include transitionAnimate();
             .databaseLogo{
                 span{

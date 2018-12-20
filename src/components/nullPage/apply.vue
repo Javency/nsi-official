@@ -152,10 +152,13 @@ export default {
             }).then((res)=>{
                 this.$notify({
                 title: '提交成功',
-                message: '这是一条成功的提示消息',
+                message: '您的信息将被展示在人才库',
                 offset: 100,
-                type: 'success'
-                });
+                type: 'success',
+                onClose:function(){
+                    window.location.reload()
+                }
+                })
             })
 
             // alert('submit!');

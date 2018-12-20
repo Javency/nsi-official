@@ -453,18 +453,18 @@
       opacity: 0.88;
       background-size: contain;
     }
-    .othersBox01{
-        background: url("../assets/img/index/othersBox01.jpg") no-repeat;
-    }
-    .othersBox02{
-        background: url("../assets/img/index/othersBox02.jpg") no-repeat;
-    }
-    .othersBox03{
-        background: url("../assets/img/index/othersBox03.jpg") no-repeat;
-    }
-    .othersBox04{
-        background: url("../assets/img/index/othersBox04.jpg") no-repeat;
-    }
+    // .othersBox01{
+    //     background: url("../assets/img/index/othersBox01.jpg") no-repeat;
+    // }
+    // .othersBox02{
+    //     background: url("../assets/img/index/othersBox02.jpg") no-repeat;
+    // }
+    // .othersBox03{
+    //     background: url("../assets/img/index/othersBox03.jpg") no-repeat;
+    // }
+    // .othersBox04{
+    //     background: url("../assets/img/index/othersBox04.jpg") no-repeat;
+    // }
     .othersBox-content{
       position: absolute;
       bottom: 15px;

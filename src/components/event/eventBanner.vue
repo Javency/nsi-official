@@ -22,10 +22,10 @@ export default {
       return {
           bannerInfo:[
         //   {
-        //       coverImage:require('../../assets/img/event/eventBanner01.jpg')
+        //       coverImage:require('https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner01.jpg')
         //   },
           {
-              coverImage:require('../../assets/img/event/eventBanner03.jpg')
+              coverImage:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner03.jpg'
           }]
       }
     },

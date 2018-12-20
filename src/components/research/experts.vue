@@ -30,53 +30,53 @@ export default {
         return{
             expertsList:[
                 {
-                    imgUrl:require('../../assets/img/research/experts/越姐.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/越姐.jpg',
                     name:'吴越',
                     job:'新学说创始人',
                     desc:'汉通教育 创始人兼 CEO<br/>腾讯教育专栏作家',
                 },
                 {
-                    imgUrl:require('../../assets/img/research/experts/静姐.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/静姐.jpg',
                     name:'程静',
                     job:'新学说联合创始人兼运营总监',
                     desc:''
                 },
                 {
-                    imgUrl:require('../../assets/img/research/experts/安盈.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/安盈.jpg',
                     name:'安瀛',
                     job:'新学说教育研究院首席研究员',
                     desc:'原北京四中国际校区创校校长'
                 },
                 {
-                    imgUrl:require('../../assets/img/research/experts/杨总.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/杨总.jpg',
                     name:'杨飞',
                     job:'原狄邦教育集团副总裁',
                     desc:'紫光学大学校事业部总经理'
                 },
                 {
-                    imgUrl:require('../../assets/img/research/experts/李周.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/李周.jpg',
                     name:'李周',
                     job:'良裁教育创办人',
                     desc:''
                 },
                 {
-                    imgUrl:require('../../assets/img/research/experts/吴峥原图.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/吴峥原图.jpg',
                     name:'吴峥',
                     job:'博实乐教育集团市场部副总',
                     desc:'博实乐旗下60余所园校招生总教头<br/>《博实乐市场招生大全》作者<br/>创建博实乐三级招生管理体系。'
                 },
                 {
-                    imgUrl:require('../../assets/img/research/experts/陈红霞.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/陈红霞.jpg',
                     name:'陈红霞',
                     job:'某教育集团国际事业部HRBP',
                     desc:'15年国际学校/国际教育机构/集团跨文化HR管理经验，曾在北京某知名全 IB 体系的K12国际学校任人力资源部主任职务4年。'
                 },{
-                    imgUrl:require('../../assets/img/research/experts/金赟.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/金赟.jpg',
                     name:'金赟',
                     job:'海归人才子女学校人事行政总监',
                     desc:'从事教育工作18年，其中国际学校HR及行政管理工作15年。曾就职于新加坡伊顿、UWC世界联合学院等多个国际教育机构。'
                 },{
-                    imgUrl:require('../../assets/img/research/experts/高美华.jpg'),
+                    imgUrl:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/experts/高美华.jpg',
                     name:'高美华',
                     job:'某外籍子女学校人力资源部负责',
                     desc:'15年的从业经验中在世界五百强某外资银行6年以及先后在上海重庆两家知名外籍子女学校任职9年，任人力资源部负责人。'
@@ -132,6 +132,11 @@ export default {
                 img{
                     border-radius: 2px;
                     display: inline-block !important;
+                    min-height: 135px;
+                    background-color: #eee;
+                    @media (max-width: 768px) {
+                        min-height: auto;
+                    }
                 }
             }
             .infoBox{
@@ -164,6 +169,7 @@ export default {
                     -webkit-box-orient: vertical;
                     min-height: 24px;
                     max-height: 24px;
+                    text-align: center;
                 }
                 .info-desc{
                     // padding:0 15px;

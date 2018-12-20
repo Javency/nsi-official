@@ -50,15 +50,15 @@ export default {
             eventList:[
                 {
                     title:"2018VIS国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner03.jpg"),
-                    imgSrcM:require('../../assets/img/event/eventBanner03.jpg'),
+                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner03.jpg",
+                    imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner03.jpg',
                     url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/visM.html",
                     time:"2018-02"
                 },
                 {
                    title:"新荷 ● 中国国际学校节",
-                    imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
-                    imgSrcM:require('../../assets/img/event/eventM03.jpg'),
+                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner01.jpg",
+                    imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventM03.jpg',
                     url:"https://jinshuju.net/f/L4Iz9D",
                     time:"2018-02"
                 },

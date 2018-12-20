@@ -3,7 +3,7 @@
         <div class="consulting-com">
             <connectUs></connectUs>
             <div class="text-center">
-                <img src="../assets/img/consulting/pcConsult.jpg" alt="">
+                <img class="skeleton" src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/consulting/pcConsult.jpg" alt="">
                 <div class="item" style="width:1070px;margin:30px auto;">
                     <el-row :gutter="20">
                       <el-col :span="8" v-for="(list, index) in lists" :key="index" style="margin-bottom:20px;">
@@ -20,7 +20,7 @@
                       </el-col>
                     </el-row>
                 </div>
-                <img src="../assets/img/consulting/pcConsult2.jpg" alt="">
+                <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/consulting/pcConsult2.jpg" alt="">
             </div>
         </div>
         <consultMob v-show="mobHtml"></consultMob>

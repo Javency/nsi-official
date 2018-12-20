@@ -1,6 +1,6 @@
 <template>
   <!-- banner -->
-  <div class="swiper-container" id="indexBannerTop">
+  <div class="swiper-container indexBannerTop" id="indexBannerTop">
         <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(bannerInfos,item) in bannerInfo" :key="item" v-if="item>=6&&item<9">
                 <img :src="bannerInfos.content01" alt="" class="img-responsive" @click="linkTo(bannerInfos.content02)">
@@ -59,6 +59,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    .indexBannerTop{
+        min-height: 175px;
+        background-color: #eee;
+    }
 </style>

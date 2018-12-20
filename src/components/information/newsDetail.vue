@@ -29,7 +29,7 @@
                         <div>
                           <div class="row">
                             <div class="col-md-2 col-xs-4 text-center">
-                              <img src="../../assets/img/layoutImg/wechat_QR.png" alt="">
+                              <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/wechat_QR.png" alt="">
                             </div>
                             <div class="col-md-10 col-xs-8 pl0 mt15 connection">
                               <p>新学说面向国际学校行业，传递行业资讯，深挖有价值内容，有料有态度，如果你想投稿或爆料，<br/></p>

@@ -1,6 +1,6 @@
 <template>
     <div class="isContruct-com text-center">
-        <img src="../../assets/img/common/404.jpg" alt="" width="500">
+        <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/common/404.jpg" alt="" width="500">
     </div>
 </template>
 

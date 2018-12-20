@@ -1,6 +1,6 @@
 <template>
   <div class="banner-M-com">
-      <div class="swiper-container" id="indexBannerM">
+      <div class="swiper-container indexBannerM" id="indexBannerM">
           <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(bannerInfos,item) in bannerList" :key="item" v-if="item<4">
                   <img :src="bannerInfos.content03" alt="" class="img-responsive" @click="toDetail(bannerInfos.content02)">
@@ -78,6 +78,10 @@ export default {
 
 <style lang="scss">
     .banner-M-com{
+        .indexBannerM{
+            min-height: 171px;
+            background-color: #eee;
+        }
         .swiper-button-prev,
         .swiper-button-next{
           width:40px !important;

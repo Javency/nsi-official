@@ -21,7 +21,7 @@ export default {
     data () {
       return {
           bannerInfo:[{
-              coverImage:require('../../assets/img/research/mac.jpg')
+              coverImage:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/research/mac.jpg'
             },
           ]
       }

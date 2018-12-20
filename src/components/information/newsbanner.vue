@@ -20,6 +20,15 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <div class="skeleton skeleton-title" id="skeleton" ref="skeleton">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="skeleton skeleton-desc">
+                        <p></p>
+                        <p></p>
+                    </div>
                     <div class="newsInfo animated fadeIn" v-for="(bannerInfos,index) in bannerInfo" :key="index" v-if="index==newsBannerIndex">
                         <h3><a href="javascript:;" class="newsInfo-title" @click="toDetail(bannerInfos.articleUrl)">{{bannerInfos.title}}</a></h3>
                         <p class="newsInfo-desc">{{bannerInfos.summary}}</p>
@@ -34,6 +43,7 @@
 <script>
 import 'swiper/dist/css/swiper.css'
 import Swiper from 'swiper'
+import { setTimeout } from 'timers';
 
 export default {
     data () {
@@ -60,9 +70,12 @@ export default {
                 data: newsBanner
             }).then((res)=>{
                 const msg=res.data.data.list
-                // console.log(msg)
                 this.bannerInfo=msg
                 this.$nextTick(()=>{
+                    var skeletonList= document.getElementsByClassName("skeleton")
+                    for(var i=0;i<skeletonList.length;i++){
+                        skeletonList[i].style.display='none'
+                    }
                     this.swiperInit()
                 })
             })
@@ -110,6 +123,31 @@ export default {
      $nationDay-hoverColor:#c44d53;
      $newsBanner-bg:linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
     .newsbanner-com{
+        .skeleton-title{
+            margin-top: 25px;
+            p{
+                width: 100%;
+                height: 27px;
+                background-color: #eee;
+                &:last-of-type{
+                    width: 40%;
+                }
+            }
+        }
+        .skeleton-desc{
+            margin-top: 30px;
+            p{
+                width: 100%;
+                height: 15px;
+                background-color: #eee;
+                &:last-of-type{
+                    width: 40%;
+                }
+            }
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
         .newsPic{
             @media (max-width: 768px) {
                 padding-left: 0;
@@ -121,7 +159,10 @@ export default {
             border-radius: 2px;
             transition: all .3s;
             box-shadow: 0 12px 24px 0 rgba(7, 17, 27, 0.4);
+            min-height: 400px;
+            background-color: #eee;
             @media (max-width: 768px) {
+                min-height: 200px;
                 box-shadow: none;
             }
             &:hover .swiper-button-prev,

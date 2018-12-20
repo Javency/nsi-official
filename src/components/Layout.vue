@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-12 noPl15">
                             <div class="logoContainer">
-                                <a href="javascript:;"><img src="../assets/img/layoutImg/logo.png" alt="" width="220" height="45" class="logo"></a>
+                                <a href="javascript:;"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/logo.png" alt="" width="220" height="45" class="logo"></a>
                                 <div class="selectLang">
                                     <el-dropdown @command="handleCommand" placement="top" trigger="click">
                                         <span class="el-dropdown-link">
@@ -61,7 +61,7 @@
                                                     </span>
                                                     <el-dropdown-menu slot="dropdown">
                                                         <el-dropdown-item>
-                                                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_blank"><img src="../assets/img/layoutImg/vis2018.png" width="35" alt="">&nbsp;{{$t('layoutNav.eventChild.vis')}}</a>
+                                                            <a href="http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/vis2018.html" target="_blank"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/vis2018.png" width="35" alt="">&nbsp;{{$t('layoutNav.eventChild.vis')}}</a>
                                                         </el-dropdown-item>
                                                         <el-dropdown-item>
                                                             <router-link :to="{path:'/event/lotus'}">&nbsp;<span class="iconfont icon-huiyi1 logoFont"></span>{{$t('layoutNav.eventChild.lotus')}}</router-link>
@@ -166,8 +166,8 @@
                                 <div class="col-md-12">
                                     <h4 class="blogroll">链接 <span>Links</span></h4>
                                     <div class="shareHref">
-                                        <a href="http://data.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/database.png" alt=""></a>
-                                        <a href="http://class.xinxueshuo.cn" target="_blank"><img src="../assets/img/layoutImg/class.png" alt=""></a>
+                                        <a href="http://data.xinxueshuo.cn" target="_blank"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/database.png" alt=""></a>
+                                        <a href="http://class.xinxueshuo.cn" target="_blank"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/class.png" alt=""></a>
                                         <!-- <a href="http://data.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.database')}}</a>
                                         <a href="http://class.xinxueshuo.cn" target="_blank">{{$t('layoutFooter.classOnline')}}</a> -->
                                     </div>
@@ -176,27 +176,27 @@
                                     <div class="logoShare">
                                         <!-- 搜狐 -->
                                         <a href="http://mp.sohu.com/profile?xpt=cHBhZzc3MzAzZjExYTE3ZUBzb2h1LmNvbQ==&_f=index_pagemp_2" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/souhu.png" alt="" width="35">
+                                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/shareIcon/souhu.png" alt="" width="35">
                                         </a>
                                         <!-- 头条 -->
                                         <a href="https://www.toutiao.com/c/user/6030021946/#mid=6033071476" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/toutiao.png" alt="" width="35">
+                                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/shareIcon/toutiao.png" alt="" width="35">
                                         </a>
                                         <!-- 微博 -->
                                          <a href="https://weibo.com/u/5786464903?refer_flag=1001030101_&is_hot=1" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/weibo.png" alt="" width="35">
+                                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/shareIcon/weibo.png" alt="" width="35">
                                         </a>
                                         <!-- 知乎 -->
                                         <a href="https://www.zhihu.com/org/xin-xue-shuo-chuan-mei-74/activities" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/zhihu.png" alt="" width="35">
+                                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/shareIcon/zhihu.png" alt="" width="35">
                                         </a>
                                         <!-- link -->
                                         <a href="https://www.linkedin.com/in/newschool-insight-b96319139" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/linked.png" alt="" width="35">
+                                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/shareIcon/linked.png" alt="" width="35">
                                         </a>
                                         <!-- 推特 -->
                                         <a href="https://mobile.twitter.com/nsi_media;" target="_blank">
-                                            <img src="../assets/img/layoutImg/shareIcon/twitter.png" alt="" width="35">
+                                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/shareIcon/twitter.png" alt="" width="35">
                                         </a>
                                     </div>
                                 </div>
@@ -205,13 +205,13 @@
                          <div class="col-md-2 col-xs-2 col-md-offset-1 text-center noPr15">
                             <div class="wechatBox">
                                 <h6 class="aboutUs">{{this.$t('layoutFooter.weChat')}}</h6>
-                                <img src="../assets/img/layoutImg/wechat_QR.png" alt="" width="110" height="110">
+                                <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/wechat_QR.png" alt="" width="110" height="110">
                             </div>
                         </div>
                         <div class="col-md-2 col-xs-2 col-xs-offset-1 text-center noPr15">
                             <div class="wechatBox weiboBox">
                                 <h6 class="aboutUs">{{this.$t('layoutFooter.weibo')}}</h6>
-                                <img src="../assets/img/layoutImg/weidian.png" alt="" width="110" height="110">
+                                <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/weidian.png" alt="" width="110" height="110">
                             </div>
                         </div>
                   </div>
@@ -247,16 +247,16 @@ export default {
         return{
             searchBarFixed:false,
             switchFlag:true,
-            logoActive:require("../assets/img/layoutImg/zh.png"),
+            logoActive:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/zh.png",
             countryActive:"中文",
             logos:[{
                 lang:"zh",
-                logoImg:require("../assets/img/layoutImg/zh.png"),
+                logoImg:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/zh.png",
                 country:"中文",
                 switchFlag:true
             },{
                 lang:"en",
-                logoImg:require("../assets/img/layoutImg/en.png"),
+                logoImg:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/en.png",
                 country:"English",
                 switchFlag:false
             }],

@@ -50,30 +50,30 @@ export default {
             eventList:[
                 {
                     title:"2018VIS国际学校发展大会",
-                    imgSrc:require("../../assets/img/event/eventBanner03.jpg"),
-                    imgSrcM:require('../../assets/img/event/eventBanner03.jpg'),
+                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner03.jpg",
+                    imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner03.jpg',
                     url:"http://data.xinxueshuo.cn/nsi-class/admin/activity/meeting/visM.html",
                     time:"2018.11.09-2018.11.11"
                     
                 },
                 {
                     title:"新荷 ● 中国国际学校节",
-                    imgSrc:require("../../assets/img/event/eventBanner01.jpg"),
-                    imgSrcM:require('../../assets/img/event/eventM03.jpg'),
+                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner01.jpg",
+                    imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventM03.jpg',
                     url:"http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html",
                     time:"2018.02-2018.10"
                 },
                 {
                    title:"2017VIS国际学校发展大会",
                    imgSrc:"https://nsi.oss-cn-zhangjiakou.aliyuncs.com/ArticlePic/activity002.jpg",
-                   imgSrcM:require('../../assets/img/event/eventM02.jpg'),
+                   imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventM02.jpg',
                    url:"http://edu.qq.com/cross/20171215/P27Rp8V4.html",
                    time:"2017.11.09-2017.11.11"
                 },
                 {
                    title:"2017VIS国际学校投融资分会",
-                   imgSrc:require('../../assets/img/event/eventBanner05.jpg'),
-                   imgSrcM:require('../../assets/img/event/eventM01.jpg'),
+                   imgSrc:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner05.jpg',
+                   imgSrcM:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventM01.jpg',
                    url:"http://edu.qq.com/cross/20170519/D36Tp6V3.html",
                    time:"2017.11.09-2017.11.11"
                 },

@@ -3,7 +3,7 @@
           <lotus-sub class="showInMobile"/>
           <!-- <h1>这是新荷页</h1> -->
           <div class="text-center mt30">
-            <img src="../assets/img/common/404.jpg" alt="" class="img-responsive">
+            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/common/404.jpg" alt="" class="img-responsive">
           </div>
     </div>
 </template>

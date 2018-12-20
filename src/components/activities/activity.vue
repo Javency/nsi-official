@@ -5,14 +5,14 @@
                 <div class="col-md-12 cardTop">
                     <a href="http://data.xinxueshuo.cn/nsi-event/event/2018VIS-live/2018VIS-live.html" target="_blank">
                         <div class="box">
-                            <img src="../../assets/img/activity/visLogo.png" alt="" class="img-responsive" width="90">
+                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/activity/visLogo.png" alt="" class="img-responsive" width="90">
                             <span class="title">2018国际学校发展大会</span>
                             <p><span>时间：2018.11.09 - 2018.11.11</span><span style="margin-left:15px;">地点：北京昆泰酒店</span></p>
                             <p class="hiddenPc"><span>时间：2018.11.09 - 2018.11.11</span></p>
                             <a href="http://data.xinxueshuo.cn/nsi-event/event/2018VIS-live/2018VIS-live.html" target="_blank" class="pulse infinite " :class='{"animated":isMobile}'>正在进行中</a>
                         </div>
                         <div class="pic">
-                            <img src="../../assets/img/activity/vis01.jpg" alt="" class="img-responsive banner">
+                            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/activity/vis01.jpg" alt="" class="img-responsive banner">
                             <a href="http://data.xinxueshuo.cn/nsi-event/event/2018VIS-live/2018VIS-live.html" target="_blank" class="animated pulse infinite">
                                 <span class="iconfont icon-bofang"></span>
                             </a>

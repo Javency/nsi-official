@@ -1,6 +1,6 @@
 <template>
     <div class="eventLotus-com">
-        <img src="../../assets/img/event/eventBanner01.jpg" alt="" class="img-responsive">
+        <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/eventBanner01.jpg" alt="" class="img-responsive">
         <div class="container">
             <div class="row">
                 <div class="title">为什么创办新荷国际学校</div>
@@ -65,7 +65,7 @@
                 
                 <div class="guangdong text-center">
                     <h3>历届新荷学校大会</h3>
-                    <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html"><img src="../../assets/img/event/guangdong.jpg" alt=""></a>
+                    <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html"><img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/event/guangdong.jpg" alt=""></a>
                     <p class="text-center" style="margin-top:15px">
                         <a href="http://data.xinxueshuo.cn/nsi-event/Lotus2018/lotus.html">2018新荷学校大会广东站</a>
                     </p>

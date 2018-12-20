@@ -1,7 +1,7 @@
 <template>
     <div class="vipPage-com">
         <div class="banner text-center">
-            <img src="../assets/img/vip/banner.jpg" alt="" class="vipPageBanner">
+            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/vip/banner.jpg" alt="" class="vipPageBanner">
         </div>
         <!-- 会员权益简介 -->
         <!-- 媒体部提供 -->
@@ -185,7 +185,7 @@ export default {
                     vipLogo:"icon-huiyuanVIPrenzhengjiaVzhongyaogaodengji",
                     vipPrice:'免费',
                     vipDesc:"电子刊物：新学说行业电子周刊邮箱发送/新学说行业报告电子精简版邮箱定时发送/新学说行业报告电子精简版邮箱定时发送",
-                    vipCard:require('../assets/img/vip/vip01.jpg')
+                    vipCard:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/vip/vip01.jpg'
                 },
                 {
                     vipName:"个人会员",
@@ -195,7 +195,7 @@ export default {
                     vipLogo:"icon-huiyuan1",
                     vipPrice:'￥ 5,000 / 年',
                     vipDesc:"注册会员权益 + 纸质刊物：新学说纸质报告邮寄（2册/套）/ 新学说纸质《国际学校内参》邮寄（4册/套）/ 会议活动：研讨会坐席",
-                    vipCard:require('../assets/img/vip/vip02.png')
+                    vipCard:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/vip/vip02.png'
                 },
                 {
                     vipName:"企业会员",
@@ -205,7 +205,7 @@ export default {
                     vipLogo:"icon-vip",
                     vipPrice:'￥ 50,000 / 年',
                     vipDesc:'个人会员权益 + 媒体宣传：《国际学校内参》广告位赠送 / 会议活动：研讨会坐席 + ICE/VIS 普通坐席 / 互联网服务：新学说行业国际学校 / 机构数据库首页热点展示位',
-                    vipCard:require('../assets/img/vip/vip03.png')
+                    vipCard:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/vip/vip03.png'
                 },
                 {
                     vipName:"企业高级会员",
@@ -215,7 +215,7 @@ export default {
                     vipLogo:"icon-huiyuan",
                     vipPrice:'￥ 100,000 / 年',
                     vipDesc:'企业会员权益 + 人才服务：专项培训线上课程（50人/班）10次，20课时 / 互联网服务：新学说行业国际学校 / 机构数据库首页热点展示位',
-                    vipCard:require('../assets/img/vip/vip04.png')
+                    vipCard:'https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/vip/vip04.png'   
                 }
             ],
             isShow:false,
@@ -521,7 +521,7 @@ export default {
         }
         // card
         .vipBanner{
-            background: url('../assets/img/vip/banner02.jpg');
+            background: url('https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/vip/banner02.jpg');
             background-position: center 0;
             background-size: cover;
             max-height: 430px;

@@ -1,7 +1,7 @@
 <template>
     <div class="consuleMain newsConsuleMain">
         <div class="banner">
-            <img src="../../assets/img/consulting/insight.jpg" alt="">
+            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/consulting/insight.jpg" alt="">
         </div>  
         <div class="item">
             <el-row :gutter="20">

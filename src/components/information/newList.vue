@@ -123,7 +123,7 @@ export default {
             window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
         },
         addUrl(url) {
-            this.weixinQRcode=require("../../assets/img/common/loading.gif")
+            this.weixinQRcode="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/common/loading.gif"
             let _url=url.split('https')[1]
             let currentUrl='http'+_url
             this.weixinQRcode = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + currentUrl

@@ -4,10 +4,10 @@
             <div class="swiper-container eventSwiper" id="researchSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
-                        <router-link :to="{path:'/research/pisom'}"><img width="75" class="classLogo pisom" src="../../assets/img/layoutImg/pisom.png" alt=""><br/>{{$t('layoutNav.researchChild_Mob.pisom')}}</router-link>
+                        <router-link :to="{path:'/research/pisom'}"><img width="75" class="classLogo pisom" src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/pisom.png" alt=""><br/>{{$t('layoutNav.researchChild_Mob.pisom')}}</router-link>
                     </div>
                     <div class="swiper-slide text-center">
-                        <a href="http://class.xinxueshuo.cn" target="'_'"><img width="25" class="classLogo" src="../../assets/img/layoutImg/classLogo.png" alt=""><br/>{{$t('layoutNav.researchChild_Mob.classOnline')}}</a>
+                        <a href="http://class.xinxueshuo.cn" target="'_'"><img width="25" class="classLogo" src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/layoutImg/classLogo.png" alt=""><br/>{{$t('layoutNav.researchChild_Mob.classOnline')}}</a>
                     </div>
                     <div class="swiper-slide text-center">
                         <router-link :to="{path:'/research/periodical'}"><span class="iconfont icon-qikan fontLogo"></span><br/>{{$t('layoutNav.researchChild_Mob.magazine')}}</router-link>

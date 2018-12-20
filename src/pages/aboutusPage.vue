@@ -33,7 +33,7 @@
                         <p class="team-info">{{$t('aboutus.teamContent')}}</p>
                     </div>
                     <div class="col-md-6 text-center">
-                        <img alt="" src="../assets/img/about/team-img.jpg" class="team-img img-responsive" width="500">
+                        <img alt="" src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/about/team-img.jpg" class="team-img img-responsive" width="500">
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@ export default {
         .about-bg{
             width: 100%;
             height: 550px;
-            background-image: url("../assets/img/about/about.jpg");
+            background-image: url("https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-official/image/about/about.jpg");
             background-size: 100%;
             background-position: center;
             position: relative;
