@@ -43,7 +43,7 @@ module.exports = {
         tel: "Telephone：010-52468286",
         email: "Email：info@xinxueshuo.cn",
         phone: "Phone：15010927730",
-        address: "Address：A#1006, Tiancheng Technology Building, Xinfeng Street #2, Xicheng District, Beijing",
+        address: "Address：Room 1501, building A, shuguang xili international time, chaoyang district, Beijing",
         weChat: "WeChat Account",
         weibo: "Store Account",
         database: "DataBase",

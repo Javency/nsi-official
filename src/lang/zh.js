@@ -90,7 +90,7 @@ module.exports = {
         tel: "联系电话：010-52468286",
         email: "邮箱：info@xinxueshuo.cn",
         phone: "手机：15010927730",
-        address: "地址：北京市西城区新风街2号天成科技大厦A座1006",
+        address: "地址：北京市朝阳区曙光西里时间国际A座1501",
         weChat: "微信公众号",
         weibo: "官方微店",
         database: "国际学校四库全书",
