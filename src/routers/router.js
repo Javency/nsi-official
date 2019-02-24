@@ -25,6 +25,7 @@ import eventLotus from '../components/event/eventLotus.vue'
 import eventApply from '../components/event/eventApply.vue'
 import periodical from '../components/research/periodical.vue'
 import report from '../components/research/report.vue'
+import advancedClass from '../components/research/advancedClass.vue'
 import researchApply from '../components/research/researchApply.vue'
 import researchIndex from '../components/research/researchIndex.vue'
 import experts from '../components/research/experts.vue'
@@ -130,7 +131,7 @@ const routes = [{
                 component: report
             }, {
                 path: 'pisom',
-                component: notFondPage
+                component: advancedClass
             }, {
                 path: 'apply',
                 component: researchApply
