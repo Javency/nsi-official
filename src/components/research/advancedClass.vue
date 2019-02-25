@@ -1,8 +1,8 @@
 <template>
 	<div class="advanced-com">
 		<div class="banner">
-            <h1 class="text-center">新学说国际学校高级管理研修班</h1>
-            <h1 class="text-center">NSI International Principal Academy</h1>
+            <h1 class="text-center banTxt">新学说国际学校高级管理研修班</h1>
+            <h1 class="text-center banTxt">NSI International Principal Academy</h1>
         </div>
         <div class="container">
         	<div class="discrip">
@@ -126,7 +126,7 @@
             flex-direction: column;
             min-height: 360px;
             background-image: url('../../images/b.png')
-
+            
 		}
 		.container{
             width: 80%;
@@ -152,6 +152,11 @@
                         font-weight: bold;
     					text-align: right;
                         margin-right: 30px;
+                        @media (max-width: 768px) {
+                            width: 100%;
+                            margin-right: 0;
+                            text-align: center;
+                        }
 					}
                     .titleDis{
                         margin-bottom: 45px;
@@ -160,6 +165,11 @@
                         font-weight: bold;
 						text-align: left;
                         margin-left: 30px;
+                        @media (max-width: 768px) {
+                            width: 100%;
+                            margin-left: 0;
+                            text-align: center;
+                        }
 					}
 					.item01{
                         margin-right: 30px;
@@ -167,6 +177,10 @@
                         font-size: 108%;
 						line-height: 3.5rem;
 						border-bottom:2px dashed #cecece;
+                        @media (max-width: 768px) {
+                            width: 100%;
+                            text-align: left;
+                        }
 					}
 					.item02{
                         margin-left: 30px;
