@@ -184,6 +184,7 @@ export default {
                     -webkit-line-clamp: 4;
                     -webkit-box-orient: vertical;
                     line-height: 2;
+                    text-align: center;
                     @media (max-width: 768px) {
                         min-height: 44px;
                         max-height: 44px;
