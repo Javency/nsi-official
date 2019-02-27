@@ -1,12 +1,12 @@
 <template>
     <div class="advanced-com">
-       <div v-show="isPcOrMob=='pc'?true:false" class="advanced-pc">
+       <div v-show="isPcOrMob=='pc'" class="advanced-pc">
           <div>
               <img class="mainPage" src="../../images/advanced.jpg">
           </div> 
        </div>
 
-        <div v-show="isPcOrMob=='mob'?true:false" class="advanced-mob">
+        <div v-show="isPcOrMob=='mob'" class="advanced-mob">
             <div class="banner">
                 <h1 class="text-center banTxt">新学说国际学校高级管理研修班</h1>
                 <h1 class="text-center banTxt">NSI International Principal Academy</h1>
