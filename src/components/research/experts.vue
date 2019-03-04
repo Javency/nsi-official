@@ -164,7 +164,7 @@ export default {
                     margin-bottom: 5px;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    display: -webkit-box;
+                    //display: -webkit-box;
                     -webkit-line-clamp: 1;
                     -webkit-box-orient: vertical;
                     min-height: 24px;
@@ -184,6 +184,7 @@ export default {
                     -webkit-line-clamp: 4;
                     -webkit-box-orient: vertical;
                     line-height: 2;
+                    text-align: center;
                     @media (max-width: 768px) {
                         min-height: 44px;
                         max-height: 44px;

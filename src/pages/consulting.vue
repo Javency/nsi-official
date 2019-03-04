@@ -56,7 +56,7 @@ export default {
     methods:{
         fetchDate(){
             this.axios({
-                method:"get",
+                method:"get",  
                 url: '/article/detail.do',
                 params:{
                     articleId:20085

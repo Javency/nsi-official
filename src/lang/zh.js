@@ -69,7 +69,7 @@ module.exports = {
         researchChild: {
             magazine: "国际学校内参",
             report: "研究报告",
-            pisom: "国际学校高阶研修班",
+            pisom: "国际学校高级管理研修班",
             classOnline: "国际学校职能岗位课程",
             apply: "课程报名",
             experts: "专家智库"
@@ -90,9 +90,10 @@ module.exports = {
         tel: "联系电话：010-52468286",
         email: "邮箱：info@xinxueshuo.cn",
         phone: "手机：15010927730",
+        
         address: "地址：北京市朝阳区曙光西里时间国际A座1501",
         weChat: "微信公众号",
-        weibo: "官方微店",
+        weibo: "国际教育研究院",
         database: "国际学校四库全书",
         classOnline: "在线课堂",
         databaseM: "四库全书"
@@ -108,7 +109,7 @@ module.exports = {
         address04: "Austin, TX 78705",
         address05: " USA",
         weChat: "微信公众号",
-        weibo: "官方微店",
+        weibo: "国际教育研究院",
         database: "国际学校在线四库全书",
         classOnline: "新学说国际教育研究院"
     },
